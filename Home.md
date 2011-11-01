@@ -2,9 +2,9 @@ Welcome to the CMB wiki! This is a code library for WordPress themes and plugins
 
 Tutorials:
 1. Basic Usage
-2. Field Types
-3. Display options
+1. Field Types
+1. Display options
 
 Advanced tutorials:
 1. Adding your own field types
-2. Adding your own show_on filters
+1. Adding your own show_on filters
