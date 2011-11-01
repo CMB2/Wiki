@@ -1,6 +1,8 @@
-This code is designed to be run inside themes and plugins. I typically put it inside [theme or plugin]/lib/metabox, but you can put it wherever you like. For this example it will be in child-theme/lib/metabox.
+This code is designed to be run inside themes and plugins. I typically put it inside [theme or plugin]/lib/metabox, but you can put it wherever you like. For this example it will be in child-theme/lib/metabox.You can then use it within your theme or plugin. For this example, my customizations are going in child-theme/functions.php. 
 
-You can then use it within your theme or plugin. For this example, my customizations are going in child-theme/functions.php. First you add a filter to 'cmb_meta_boxes' that adds your metabox to the $meta_boxes array. 
+## Create Metaboxes
+
+First you add a filter to 'cmb_meta_boxes' that adds your metabox to the $meta_boxes array. 
 
 ```php
 <?php
@@ -28,6 +30,8 @@ add_filter( 'cmb_meta_boxes', 'be_sample_metaboxes' );
 ```
 
 This creates a metabox titled "Text Metabox" that shows up on all pages and contains a single text field. The important things to note are that you're adding to the existing $meta_boxes array ( `$meta_boxes[] = ... ` ) and at the end you're returning the whole array. 
+
+## Initialize Metaboxes
 
 Once you've set up your metaboxes, you'll need to add the initialization function:
 
