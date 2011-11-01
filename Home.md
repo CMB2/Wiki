@@ -4,12 +4,12 @@ Tutorials:
 
 1. [Basic Usage](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Basic-Usage)
 
-1. Field Types
+1. [Field Types](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types)
 
-1. Display options
+1. [Display Options](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Display-Options)
 
 Advanced tutorials:
 
-1. Adding your own field types
+1. [Adding your own field types](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types)
 
-1. Adding your own show_on filters
+1. [Adding your own show_on filters](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters)
