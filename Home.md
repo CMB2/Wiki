@@ -9,6 +9,7 @@ Tutorials:
 1. Display options
 
 Advanced tutorials:
+
 1. Adding your own field types
 
-2. Adding your own show_on filters
+1. Adding your own show_on filters
