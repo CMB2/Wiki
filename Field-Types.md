@@ -22,7 +22,7 @@ array(
 ),
 ```
 
-`text_medium' - Medium text field. Example:
+`text_medium` - Medium text field. Example:
 
 ```php
 array(
@@ -54,3 +54,15 @@ array(
 	'type' => 'text_date_timestamp'
 ),
 ```
+
+`text_money` - Standard text field with dollar sign in front of it (useful to prevent users from adding a dollar sign to input). Example:
+
+```php
+array(
+	'name' => 'Test Money',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_textmoney',
+	'type' => 'text_money'
+),
+```
+
