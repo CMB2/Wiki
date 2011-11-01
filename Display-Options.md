@@ -7,7 +7,7 @@ Both of these are used when you define your metabox.
 
 ### Limit to specific post types
 
-For every metabox you create, you should specify the to which it applies. They'll be listed as an array. Here's an example that only applies to pages:
+For every metabox you create, you should specify the post types to which it applies. They'll be listed as an array. Here's an example that only applies to pages:
 
 ```php
 	$meta_boxes[] = array(
