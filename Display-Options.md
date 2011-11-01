@@ -18,7 +18,7 @@ For every metabox you create, you should specify the to which it applies. They'l
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
 	    'fields' => array( ...
- ```
+```
 
 Here's an example that displays on posts and events:
 
