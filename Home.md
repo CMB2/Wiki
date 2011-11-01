@@ -2,7 +2,7 @@ Welcome to the CMB wiki! This is a code library for WordPress themes and plugins
 
 Tutorials:
 
-1. Basic Usage
+1. [Basic Usage](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Basic-Usage)
 
 1. Field Types
 
