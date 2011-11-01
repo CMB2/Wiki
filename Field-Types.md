@@ -222,3 +222,18 @@ array(
 	'allow => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
 ),
 ```
+
+`file_list` - Displays all files attached to the post and has a file uploader. Example:
+
+```php
+array(
+	'name' => 'Test File List',
+	'desc' => '',
+	'id' => 'be_file_list',
+	'type' => 'file_list',
+),
+```
+
+### Custom Field Types
+
+You can [define your own field types](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types) as well.
