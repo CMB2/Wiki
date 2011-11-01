@@ -33,7 +33,7 @@ array(
 ),
 ```
 
-'text_date' - Date field. Stored in m/d/Y format (ex: 09/01/2011). Example:
+`text_date` - Date field. Stored in m/d/Y format (ex: 09/01/2011). Example:
 
 ```php
 array(
@@ -44,7 +44,7 @@ array(
 ),
 ```
 
-'text_date_timestamp' - Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
+`text_date_timestamp` - Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
 
 ```php
 array(
