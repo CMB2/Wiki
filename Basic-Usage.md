@@ -1,8 +1,6 @@
 This code is designed to be run inside themes and plugins. I typically put it inside [theme or plugin]/lib/metabox, but you can put it wherever you like. For this example it will be in child-theme/lib/metabox.
 
-You can then use it within your theme or plugin. For this example, my customizations are going in child-theme/functions.php. First you add a filter to 'cmb_meta_boxes' that adds your metabox to the $meta_boxes array. Then you add a function on 'init' that loads the class if it doesn't already exist. 
-
-It's important to check if it exists first since this same code library can be run by a theme and many plugins at once. We only want to load the class once.
+You can then use it within your theme or plugin. For this example, my customizations are going in child-theme/functions.php. First you add a filter to 'cmb_meta_boxes' that adds your metabox to the $meta_boxes array. 
 
 ```php
 <?php
