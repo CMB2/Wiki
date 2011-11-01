@@ -1,5 +1,16 @@
 Here's the built-in fields you can include in your metabox. You can also [add your own field types](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types).
 
+`title' - A large title (useful for breaking up sections of fields in metabox). Example:
+
+```php
+array(
+	'name' => 'Test Title',
+	'desc' => 'This is a title description',
+	'type' => 'title',
+	'id' => $prefix . 'test_title'
+),
+```
+
 `text` - Standard text field (large). Example:
 
 ```php
@@ -66,3 +77,148 @@ array(
 ),
 ```
 
+`textarea` - Standard textarea. Example:
+
+```php
+array(
+	'name' => 'Test Text Area',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_textarea',
+	'type' => 'textarea'
+),
+```
+
+`textarea_small` - Smaller textarea. Example:
+
+```php
+array(
+	'name' => 'Test Text Area Small',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_textareasmall',
+	'type' => 'textarea_small'
+),
+```
+
+`select` - Standard select dropdown. Example:
+
+```php
+array(
+	'name' => 'Test Select',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_select',
+	'type' => 'select',
+	'options' => array(
+		array('name' => 'Option One', 'value' => 'standard'),
+		array('name' => 'Option Two', 'value' => 'custom'),
+		array('name' => 'Option Three', 'value' => 'none')				
+	)
+),
+```
+
+`radio_inline` - Inline radio buttons. Example:
+
+```php
+array(
+	'name' => 'Test Radio inline',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_radio',
+	'type' => 'radio_inline',
+	'options' => array(
+		array('name' => 'Option One', 'value' => 'standard'),
+		array('name' => 'Option Two', 'value' => 'custom'),
+		array('name' => 'Option Three', 'value' => 'none')				
+	)
+),
+```
+
+`radio` - Standard radio buttons. Example: 
+
+```php
+array(
+	'name' => 'Test Radio',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_radio',
+	'type' => 'radio',
+	'options' => array(
+		array('name' => 'Option One', 'value' => 'standard'),
+		array('name' => 'Option Two', 'value' => 'custom'),
+		array('name' => 'Option Three', 'value' => 'none')				
+	)
+),
+```
+
+`checkbox` - Standard checkbox. Example:
+
+```php
+array(
+	'name' => 'Test Checkbox',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_checkbox',
+	'type' => 'checkbox'
+),
+```
+
+`multicheck` - A field with multiple checkboxes (and multiple can be selected). Example:
+
+```php
+
+array(
+	'name' => 'Test Multi Checkbox',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_multicheckbox',
+	'type' => 'multicheck',
+	'options' => array(
+		'check1' => 'Check One',
+		'check2' => 'Check Two',
+		'check3' => 'Check Three',
+	)
+),
+```
+
+`wysiwyg` - A metabox with TinyMCE editor (same as WordPress' visual editor). Example:
+
+```php
+array(
+	'name' => 'Test wysiwyg',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_wysiwyg',
+	'type' => 'wysiwyg'
+),
+```
+
+`taxonomy_select` - A select field pre-populated with taxonomy terms. Example:
+
+```php
+array(
+	'name' => 'Test Taxonomy Select',
+	'desc' => 'Description Goes Here',
+	'id' => $prefix . 'text_taxonomy_select',
+	'taxonomy' => 'category', //Enter Taxonomy Slug
+	'type' => 'taxonomy_select',	
+),
+```
+
+`taxonomy_radio` - Radio buttons pre-populated with taxonomy terms. Example:
+
+```php
+array(
+	'name' => 'Test Taxonomy Radio',
+	'desc' => 'Description Goes Here',
+	'id' => $prefix . 'text_taxonomy_radio',
+	'taxonomy' => '', //Enter Taxonomy Slug
+	'type' => 'taxonomy_radio',	
+),
+```
+
+`file` - A file uploader. By default it will store the file url and allow either attachments or URLs. You can use the 'save' field to make it also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `test_image` the ID is stored in `test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
+
+```php
+array(
+	'name' => 'Test File',
+	'desc' => 'Upload an image or enter an URL.',
+	'id' => $prefix . 'test_image',
+	'type' => 'file',
+	'save' => array( 'url' ), // also save ID using array( 'url', 'id' )
+	'allow => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
+),
+```
