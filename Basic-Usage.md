@@ -2,11 +2,13 @@ This code is designed to be run inside themes and plugins. I typically put it in
 
 ### Create Metaboxes
 
-First you add a filter to 'cmb_meta_boxes' that adds your metabox to the $meta_boxes array. 
+First you add a filter to 'cmb_meta_boxes' that adds your metabox to the $meta_boxes array. It is also a good idea to define a $prefix variable.
 
 ```php
 <?php
+$prefix = '_cmb_'; // Prefix for all fields
 function be_sample_metaboxes( $meta_boxes ) {
+	global $prefix;
 	$meta_boxes[] = array(
 		'id' => 'test_metabox',
 		'title' => 'Test Metabox',
