@@ -1,6 +1,6 @@
 Here's the built-in fields you can include in your metabox. You can also [add your own field types](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types).
 
-`title' - A large title (useful for breaking up sections of fields in metabox). Example:
+`title` - A large title (useful for breaking up sections of fields in metabox). Example:
 
 ```php
 array(
