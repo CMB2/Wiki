@@ -17,8 +17,8 @@ A simple example would be a `text_email` field that only allowed users to enter 
 The first step is to write the code for *rendering the field* within the WordPress administrative area:
 
 ```
-add_action('cmb_render_text_email','rrh_cmb_render_text_email',10,2);
-function rrh_cmb_render_text_email($field,$meta) {
+add_action( 'cmb_render_text_email', 'rrh_cmb_render_text_email', 10, 2 );
+function rrh_cmb_render_text_email( $field, $meta ) {
     echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" style="width:97%" />','<p class="cmb_metabox_description">', $field['desc'], '</p>';
 }
 ```
@@ -36,9 +36,9 @@ In this example, our custom field type will display an input box, with the prope
 You can optionally add code that validates or modifies the entered value before it is saved. In our example, we only want to allow valid email addresses; we can remove any invalid values before they are saved to the database:
 
 ```
-add_filter('cmb_validate_text_email','rrh_cmb_validate_text_email');
-function rrh_cmb_validate_text_email($new) {
-    if (!is_email($new)) {$new = "";}   
+add_filter( 'cmb_validate_text_email', 'rrh_cmb_validate_text_email' );
+function rrh_cmb_validate_text_email( $new ) {
+    if ( !is_email( $new ) ) {$new = "";}   
     return $new;
 }
 ```
@@ -55,8 +55,8 @@ When the user attempts to save a value in the field, we will check if the new va
 With the action (and optionally the filter) added, we can now use the field type in our code just like we would use the built-in field types.
 
 ```
-add_filter('cmb_meta_boxes', 'rrh_person_meta_boxes');
-function rrh_book_meta_boxes($meta_boxes) {
+add_filter( 'cmb_meta_boxes', 'rrh_person_meta_boxes' );
+function rrh_book_meta_boxes( $meta_boxes ) {
 	$meta_boxes[] = array(
 		'id' => 'rrh_person_metabox',
 		'title' => 'Person Information',
@@ -99,7 +99,7 @@ function imag_render_imag_select_taxonomy( $field, $meta ) {
             'selected' => $meta  
 
         ));
-    if ( !empty($field['desc']) ) echo '<p class="cmb_metabox_description">' . $field['desc'] . '</p>';
+    if ( !empty( $field['desc'] ) ) echo '<p class="cmb_metabox_description">' . $field['desc'] . '</p>';
 
 }
 ```
