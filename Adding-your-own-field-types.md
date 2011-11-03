@@ -79,7 +79,7 @@ function rrh_book_meta_boxes($meta_boxes) {
 
 ![Screenshot](http://randyhoyt.com/files/screenshot_text_email.jpg)
 
-# Example 2: Taxonomy Dropdown, store term_id
+## Example 2: Taxonomy Dropdown, store term_id
 
 This creates a dropdown box containing a list of all the terms within a specific taxonomy. It also demonstrates how your custom field types can also have their own custom attributes that you define.
 
