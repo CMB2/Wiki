@@ -7,7 +7,7 @@ cmb_validate_{field-type}
 
 You can add actions and filters to these hooks (using WordPress's native add_action() function) that enable the custom field types.
 
-# Example 1: Email field
+## Example 1: Email field
 
 A simple example would be a `text_email` field that only allowed users to enter a valid email address.
 
@@ -122,6 +122,6 @@ This code instantiates the field type within your meta box:
 
 ![Screenshot](http://randyhoyt.com/files/screenshot_imag_theme.jpg)
 
-# Add Your Own Examples
+## Add Your Own Examples
 
 The possibilities are endless. If you create custom field types that you think others would find useful, please share them here!
