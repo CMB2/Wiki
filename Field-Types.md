@@ -210,7 +210,7 @@ array(
 ),
 ```
 
-`file` - A file uploader. By default it will store the file url and allow either attachments or URLs. You can use the 'save' field to make it also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `test_image` the ID is stored in `test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
+`file` - A file uploader. By default it will store the file url and allow either attachments or URLs. You can use the 'save_id' field to make it also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `test_image` the ID is stored in `test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
 
 ```php
 array(
@@ -218,7 +218,7 @@ array(
 	'desc' => 'Upload an image or enter an URL.',
 	'id' => $prefix . 'test_image',
 	'type' => 'file',
-	'save' => array( 'url' ), // also save ID using array( 'url', 'id' )
+	'save_id' => false, // save ID using true
 	'allow => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
 ),
 ```
