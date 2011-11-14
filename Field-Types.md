@@ -1,6 +1,6 @@
 Here's the built-in fields you can include in your metabox. You can also [add your own field types](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types). 
 
-Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same as another theme/plugin. Take a look at [example-functions.php](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php) to see how you define the prefix.
+Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php) to see how you define the prefix.
 
 `title` - A large title (useful for breaking up sections of fields in metabox). Example:
 
