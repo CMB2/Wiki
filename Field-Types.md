@@ -233,7 +233,7 @@ array(
 	'id' => $prefix . 'test_image',
 	'type' => 'file',
 	'save_id' => false, // save ID using true
-	'allow => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
+	'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
 ),
 ```
 
