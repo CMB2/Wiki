@@ -7,7 +7,7 @@ The filter passes two parameters:
 * $display - either true or false, default is true
 * $metabox - array of metabox parameters
 
-Make sure you check early on to see if this filter should be running (check `$meta_box['show_on']['key']` ). Since this runs on every metabox, you'll want to return `$default` instead of true so you don't override the other show_on filters. At the end, either return true to display it or false to not display it.
+Make sure you check early on to see if this filter should be running (check `$meta_box['show_on']['key']` ). Since this runs on every metabox, you'll want to return `$display` (the default) instead of true so you don't override the other show_on filters. At the end, either return true to display it or false to not display it.
 
 _Have you made some useful show_on filters? List them as examples here so others can use them._
 
