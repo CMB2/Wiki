@@ -46,3 +46,45 @@ function be_metabox_exclude_for_id( $display, $meta_box ) {
 add_filter( 'cmb_show_on', 'be_metabox_exclude_for_id', 10, 2 );
 ```
 
+### Example: Exclude on New Post Screens
+
+Excluding by ID works once the post type and ID has been set, but the metaboxes still display on new post type screens. This filter removes the metaboxes from the new post type screens so that they only appear on the one instance you specify in the show_on filter (like the example above):
+
+```php
+<?php
+add_filter( 'cmb_show_on', 'tgm_exclude_from_new', 10, 2 );
+/**
+ * Removes metabox from appearing on post new screens before the post
+ * ID has been set.
+ *
+ * @author Thomas Griffin
+ *
+ * @param bool $display
+ * @param array $meta_box The array of metabox options
+ * @return bool $display True on success, false on failure
+ */
+function tgm_exclude_from_new( $display, $meta_box ) {
+	
+	global $pagenow;
+	
+	if ( ! isset( $meta_box['show_on']['alt_key'] ) )
+		return $display; // If the key isn't set, return
+	
+	if ( 'exclude_new' !== $meta_box['show_on']['alt_key'] )
+		return $display; // If the key is set but not the one we want, return
+		
+	$meta_box['show_on']['alt_value'] = ! is_array( $meta_box['show_on']['alt_value'] ) ? array( $meta_box['show_on']['alt_value'] ) : $meta_box['show_on']['alt_value']; // Force to be an array
+	
+	if ( 'post-new.php' == $pagenow && in_array( 'post-new.php', $meta_box['show_on']['alt_value'] ) )
+		return false; // Don't display this on any new post areas
+	else
+		return true;
+
+}
+```
+
+Now all you need to do is specify this in the 'show_on' option, like this: 
+
+`'show_on' => array( 'key' => 'id', 'value' => '$post_ID', 'alt_key' => 'exclude_new', 'alt_value' => 'post-new.php' )`
+
+where `$post_ID` is the ID of the post you are targeting with the metabox.
