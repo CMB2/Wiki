@@ -14,8 +14,8 @@ For every metabox you create, you should specify the post types to which it appl
 		'id' => 'test_metabox',
 		'title' => 'Test Metabox',
 		'pages' => array('page'), // post type
-		'context' => 'normal',
-		'priority' => 'high',
+		'context' => 'normal', //  'normal', 'advanced', or 'side'
+		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
 		'show_names' => true, // Show field names on the left
 		'fields' => array( ...
 ```
@@ -28,8 +28,8 @@ Here's an example that displays on posts and events:
 		'id' => 'test_metabox',
 		'title' => 'Test Metabox',
 		'pages' => array('post', 'event'), // post type
-		'context' => 'normal',
-		'priority' => 'high',
+		'context' => 'normal', //  'normal', 'advanced', or 'side'
+		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
 ```
@@ -45,8 +45,8 @@ Let's say you have two pages, About Us (page ID - 50) and Contact Us (page ID - 
 		'title' => 'Contact Information',
 		'pages' => array('page'), // post type
 		'show_on' => array( 'key' => 'id', 'value' => array( 50, 24 ) ),
-		'context' => 'normal',
-		'priority' => 'high',
+		'context' => 'normal', //  'normal', 'advanced', or 'side'
+		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
 ```
@@ -64,8 +64,8 @@ This will limit it to the page template with the file name `template-contact.php
 		'title' => 'Contact Information',
 		'pages' => array('page'), // post type
 		'show_on' => array( 'key' => 'page-template', 'value' => 'template-contact.php' ),
-		'context' => 'normal',
-		'priority' => 'high',
+		'context' => 'normal', //  'normal', 'advanced', or 'side'
+		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
 ```
