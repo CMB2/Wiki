@@ -120,7 +120,7 @@ function ba_metabox_add_for_top_level_posts_only( $display, $meta_box ) {
 
 	// If the post doesn't have ancestors, show the box
 	if ( !get_post_ancestors( $post_id ) )
-		return true;
+		return $display;
         // Otherwise, it's not a top level post, so don't show it
 	else
 		return false;
