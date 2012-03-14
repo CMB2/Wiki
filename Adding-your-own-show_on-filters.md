@@ -88,3 +88,41 @@ Now all you need to do is specify this in the 'show_on' option, like this:
 `'show_on' => array( 'key' => 'id', 'value' => '$post_ID', 'alt_key' => 'exclude_new', 'alt_value' => 'post-new.php' )`
 
 where `$post_ID` is the ID of the post you are targeting with the metabox.
+
+
+### Example: Exclude on non top level posts
+
+This will only show the metabox if the post is a top level post, by checking if get_post_ancestors() returns a value for the current post ID
+
+```php
+<?php
+
+/**
+ * Exclude metabox on non top level posts
+ * @author Travis Northcutt
+ * @link https://gist.github.com/gists/2039760
+ *
+ * @param bool $display
+ * @param array $meta_box
+ * @return bool display metabox
+ */
+
+add_filter( 'cmb_show_on', 'ba_metabox_add_for_top_level_posts_only', 10, 2 );
+function ba_metabox_add_for_top_level_posts_only( $display, $meta_box ) {
+	if ( 'parent-id' !== $meta_box['show_on']['key'] )
+		return $display;
+
+	// Get the post's ID so we can see if it has ancestors					
+	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
+	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
+	if( !isset( $post_id ) )
+		return false;
+
+	// If the post doesn't have ancestors, show the box
+	if ( !get_post_ancestors( $post_id ) )
+		return true;
+        // Otherwise, it's not a top level post, so don't show it
+	else
+		return false;
+}
+```
