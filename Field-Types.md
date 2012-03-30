@@ -269,7 +269,7 @@ array(
 array(
 	'name' => 'Test File List',
 	'desc' => '',
-	'id' => 'be_file_list',
+	'id' => $prefix . 'file_list',
 	'type' => 'file_list',
 ),
 ```
