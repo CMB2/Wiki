@@ -52,7 +52,7 @@ The important things to note here are that you're first checking to see if the `
 
 ### Display the Metadata
 
-In your theme file, you'll need to use the get_post_meta() function to display your metadata within the loop. Let's assume you created a metabox with the field outlined above, and want to display this on the single page template (page.php). Your template might look like this before you start (from TwentyEleven:
+In your theme file, you'll need to use the get_post_meta() function to display your metadata within the loop. Let's assume you created a metabox with the field outlined above, and want to display this on the single page template (page.php). Your template might look like this before you start (from TwentyEleven):
 
 ```
 <?php
