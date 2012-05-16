@@ -49,3 +49,95 @@ function be_initialize_cmb_meta_boxes() {
 ```
 
 The important things to note here are that you're first checking to see if the `cmb_Meta_Box` class exists, and if it doesn't you're calling the init.php file. Make sure you're linking to the file correctly. I typically use a theme or plugin constant (not shown in above code).
+
+### Display the Metadata
+
+In your theme file, you'll need to use the get_post_meta() function to display your metadata within the loop. Let's assume you created a metabox with the field outlined above, and want to display this on the single page template (page.php). Your template might look like this before you start (from TwentyEleven:
+
+```
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Eleven
+ * @since Twenty Eleven 1.0
+ */
+
+get_header(); ?>
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'content', 'page' ); ?>
+
+					<?php comments_template( '', true ); ?>
+
+				<?php endwhile; // end of the loop. ?>
+
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+<?php get_footer(); ?>
+```
+
+After loading the page content with get_template_part( 'content', 'page' ), we'll add our code for the metabox:
+
+```
+<?php
+global $post;
+$text = get_post_meta( $post->ID, 'cmb_test_text', true );
+echo $text;
+?>
+```
+
+So the final template will look like this:
+
+```
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Eleven
+ * @since Twenty Eleven 1.0
+ */
+
+get_header(); ?>
+
+		<div id="primary">
+			<div id="content" role="main">
+
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'content', 'page' ); ?>
+
+					<?php
+					global $post;
+					$text = get_post_meta( $post->ID, 'cmb_test_text', true );
+					echo $text;
+					?>
+
+					<?php comments_template( '', true ); ?>
+
+				<?php endwhile; // end of the loop. ?>
+
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+<?php get_footer(); ?>
+```
+
+For more information, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta)
