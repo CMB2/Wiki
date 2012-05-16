@@ -93,7 +93,7 @@ After loading the page content with get_template_part( 'content', 'page' ), we'l
 ```
 <?php
 global $post;
-$text = get_post_meta( $post->ID, 'cmb_test_text', true );
+$text = get_post_meta( $post->ID, '_cmb_test_text', true );
 echo $text;
 ?>
 ```
@@ -126,7 +126,7 @@ get_header(); ?>
 
 					<?php
 					global $post;
-					$text = get_post_meta( $post->ID, 'cmb_test_text', true );
+					$text = get_post_meta( $post->ID, '_cmb_test_text', true );
 					echo $text;
 					?>
 
