@@ -48,7 +48,7 @@ function be_initialize_cmb_meta_boxes() {
 }
 ```
 
-The important things to note here are that you're first checking to see if the `cmb_Meta_Box` class exists, and if it doesn't you're calling the init.php file. Make sure you're linking to the file correctly. I typically use a theme or plugin constant (not shown in above code).
+The important things to note here are that you're first checking to see if the `cmb_Meta_Box` class exists, and if it doesn't you're calling the init.php file. Make sure you're linking to the file correctly. I typically use a theme or plugin constant (not shown in above code). Simply putting the require_once() function call inside your functions.php file will not work, so make sure that you attach it via the shown add_action().
 
 ### Display the Metadata
 
