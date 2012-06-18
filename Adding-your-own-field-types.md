@@ -56,7 +56,7 @@ With the action (and optionally the filter) added, we can now use the field type
 
 ```
 add_filter( 'cmb_meta_boxes', 'rrh_person_meta_boxes' );
-function rrh_book_meta_boxes( $meta_boxes ) {
+function rrh_person_meta_boxes( $meta_boxes ) {
 	$meta_boxes[] = array(
 		'id' => 'rrh_person_metabox',
 		'title' => 'Person Information',
