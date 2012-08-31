@@ -6,9 +6,8 @@ First you add a filter to 'cmb_meta_boxes' that adds your metabox to the $meta_b
 
 ```php
 <?php
-$prefix = '_cmb_'; // Prefix for all fields
 function be_sample_metaboxes( $meta_boxes ) {
-	global $prefix;
+	$prefix = '_cmb_'; // Prefix for all fields
 	$meta_boxes[] = array(
 		'id' => 'test_metabox',
 		'title' => 'Test Metabox',
