@@ -126,3 +126,44 @@ function ba_metabox_add_for_top_level_posts_only( $display, $meta_box ) {
 		return false;
 }
 ```
+
+### Example: taxonomy show_on filter
+
+This allows you to specify one or more taxonomies, and for each taxonomy one or more terms on which this metabox should be displayed. [Here's an example of it in use](https://gist.github.com/070476e584b04a20c770). 
+
+```
+/**
+ * Taxonomy show_on filter 
+ * @author Bill Erickson
+ * @link
+ *
+ * @param bool $display
+ * @param array $metabox
+ * @return bool display metabox
+ */
+function be_taxonomy_show_on_filter( $display, $meta_box ) {
+
+	if ( 'taxonomy' !== $meta_box['show_on']['key'] )
+		return $display;
+
+	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
+	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
+	if( !isset( $post_id ) )
+		return $display;
+	
+	foreach( $meta_box['show_on']['value'] as $taxonomy => $slugs ) {
+		if( !is_array( $slugs ) )
+			$slugs = array( $slugs );
+		
+		$display = false;			
+		$terms = wp_get_object_terms( $post_id, $taxonomy );
+		foreach( $terms as $term )
+			if( in_array( $term->slug, $slugs ) )
+				$display = true;
+	}
+	
+	return $display;
+	
+}
+add_filter( 'cmb_show_on', 'be_taxonomy_show_on_filter', 10, 2 );
+```
