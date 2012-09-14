@@ -129,9 +129,10 @@ function ba_metabox_add_for_top_level_posts_only( $display, $meta_box ) {
 
 ### Example: taxonomy show_on filter
 
-This allows you to specify one or more taxonomies, and for each taxonomy one or more terms on which this metabox should be displayed. [Here's an example of it in use](https://gist.github.com/070476e584b04a20c770). 
+This allows you to specify one or more taxonomies, and for each taxonomy one or more terms. If a post is tagged one of those terms, this metabox shows up on its Edit screen. [Here's an example of it in use](https://gist.github.com/070476e584b04a20c770). 
 
 ```
+<?php
 /**
  * Taxonomy show_on filter 
  * @author Bill Erickson
