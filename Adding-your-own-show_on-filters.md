@@ -136,7 +136,7 @@ This allows you to specify one or more taxonomies, and for each taxonomy one or 
 /**
  * Taxonomy show_on filter 
  * @author Bill Erickson
- * @link
+ * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $metabox
