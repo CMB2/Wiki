@@ -168,3 +168,44 @@ function be_taxonomy_show_on_filter( $display, $meta_box ) {
 }
 add_filter( 'cmb_show_on', 'be_taxonomy_show_on_filter', 10, 2 );
 ```
+
+### Example: Child page show_on filter
+This allows you to specify one or more parent page ids and the metabox will only appear on the children of those pages.
+
+```
+/**
+ * Metabox for Children of Parent ID
+ * @author Kenneth White (GitHub: sprclldr)
+ * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ *
+ * @param bool $display
+ * @param array $meta_box
+ * @return bool display metabox
+ */
+function be_metabox_show_on_child_of( $display, $meta_box ) {
+	if ( 'child_of' !== $meta_box['show_on']['key'] )
+		return $display;
+
+	// If we're showing it based on ID, get the current ID					
+	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
+	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
+	if( !isset( $post_id ) )
+		return $display;
+
+	// If current page id is in the included array, do not display the metabox
+	$meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
+   $pageids = array();
+	foreach ($meta_box['show_on']['value'] as $parent_id) {
+   	$pages = get_pages('child_of='.$parent_id);
+   	  foreach($pages as $page){
+      	  $pageids[] = $page->ID;
+         }
+	}
+	$pageids_unique = array_unique($pageids);
+	if ( in_array( $post_id, $pageids_unique ) )
+		return true;
+	else
+		return false;
+}
+add_filter( 'cmb_show_on', 'be_metabox_show_on_child_of', 10, 2 );
+```
