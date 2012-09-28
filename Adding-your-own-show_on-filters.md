@@ -173,6 +173,7 @@ add_filter( 'cmb_show_on', 'be_taxonomy_show_on_filter', 10, 2 );
 This allows you to specify one or more parent page ids and the metabox will only appear on the children of those pages.
 
 ```
+<?php
 /**
  * Metabox for Children of Parent ID
  * @author Kenneth White (GitHub: sprclldr)
