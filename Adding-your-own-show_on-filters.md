@@ -195,13 +195,13 @@ function be_metabox_show_on_child_of( $display, $meta_box ) {
 
 	// If current page id is in the included array, do not display the metabox
 	$meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
-   $pageids = array();
-	foreach ($meta_box['show_on']['value'] as $parent_id) {
-   	$pages = get_pages('child_of='.$parent_id);
-   	  foreach($pages as $page){
-      	  $pageids[] = $page->ID;
-         }
-	}
+        $pageids = array();
+        foreach ($meta_box['show_on']['value'] as $parent_id) {
+           $pages = get_pages('child_of='.$parent_id);
+           foreach($pages as $page){
+              $pageids[] = $page->ID;
+           }
+        }
 	$pageids_unique = array_unique($pageids);
 	if ( in_array( $post_id, $pageids_unique ) )
 		return true;
