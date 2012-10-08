@@ -125,3 +125,36 @@ This code instantiates the field type within your meta box:
 ## Add Your Own Examples
 
 The possibilities are endless. If you create custom field types that you think others would find useful, please share them here!
+
+
+### text_url - adds http:// to the beginning of the meta value if it is not present.
+
+This is useful if you would like to display a URL in a template by pulling it from the post meta. Using this will make sure the link works if the user doesn't put the "http://" before the domain name.
+
+```
+add_action( 'cmb_render_text_url', 'jt_cmb_render_text_url', 10, 2 );
+/**
+ * Outputs the markup for the text_url field
+ */
+function jt_cmb_render_text_url( $field, $meta ) {
+    echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" style="width:97%" />','<p class="cmb_metabox_description">', $field['desc'], '</p>';
+}
+
+add_filter( 'cmb_validate_text_url', 'jt_cmb_validate_text_url' );
+/**
+ * Adds the http:// to the beginning of the url if it is not present
+ *
+ * Use 'text_url' as the value for the type key
+ *
+ * @author Justin Tallant
+ */
+function jt_cmb_validate_text_url( $new ) {
+	if ( '' == $new ) { return; }
+
+	if ( !preg_match('/http:\/\//', $new) ) {
+		$new = 'http://' . $new;
+	}
+
+    return $new;
+}
+```
