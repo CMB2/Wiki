@@ -149,11 +149,11 @@ add_filter( 'cmb_validate_text_url', 'jt_cmb_validate_text_url' );
  * @author Justin Tallant
  */
 function jt_cmb_validate_text_url( $new ) {
-	if ( '' == $new ) { return; }
+    if ( '' == $new ) { return; }
 
-	if ( !preg_match('/http:\/\//', $new) ) {
-		$new = 'http://' . $new;
-	}
+    if ( !preg_match('/http:\/\//', $new) ) {
+        $new = 'http://' . $new;
+    }
 
     return $new;
 }
