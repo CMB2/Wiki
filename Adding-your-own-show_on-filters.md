@@ -208,5 +208,42 @@ function be_metabox_show_on_child_of( $display, $meta_box ) {
 	else
 		return false;
 }
-add_filter( 'cmb_show_on', 'be_metabox_show_on_child_of', 10, 2 );
+```
+
+### Example: Page Slug show_on filter
+This is similar to the built-in 'id' show_on filter, but it lets you specify the page slug instead.
+
+```
+<?php
+
+/**
+ * Metabox for Page Slug
+ * @author Tom Morton 
+ * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ *
+ * @param bool $display
+ * @param array $meta_box
+ * @return bool display metabox
+ */
+function be_metabox_show_on_slug( $display, $meta_box ) {
+
+	if( 'slug' !== $meta_box['show_on']['key'] )
+		return $display;
+
+	// Get the current ID
+	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
+	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
+	if( !( isset( $post_id ) || is_page() ) ) return false;
+
+	$slug = get_post($post_id)->post_name;
+
+	// If value isn't an array, turn it into one
+	$meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
+
+	// See if there's a match
+	return in_array( $slug, $meta_box['show_on']['value'] ) );
+}
+add_filter( 'cmb_show_on', 'be_metabox_show_on_slug', 10, 2 );
+
+
 ```
