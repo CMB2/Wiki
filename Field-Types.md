@@ -191,7 +191,7 @@ array(
 **Note:** Text added in a wysiwyg field will not have paragraph tags automatically added, the same is true of  standard WordPress post content editing with the WYSIWYG. When outputting formatted text, wrap your get_post_meta() call with wpautop to generate the paragraph tags.
 
 ```
-echo wpautop( get_post_meta( $prefix . 'test_wysiwyg' ) );
+echo wpautop( get_post_meta( get_the_ID(), $prefix . 'test_wysiwyg', true ) );
 ```
 
 The options array allows you to customize the settings of the wysiwyg. Here's an example with all the options:
@@ -277,6 +277,22 @@ array(
 	'id' => $prefix . 'file_list',
 	'type' => 'file_list',
 ),
+```
+
+`oembed` - Displays embedded media inline using WordPress' built-in oEmbed support. See [codex.wordpress.org/Embeds](http://codex.wordpress.org/Embeds) for more info and for a list of embed services supported. (added in 0.9.1)
+
+```php
+array(
+	'name' => 'oEmbed',
+	'desc' => 'Enter a youtube, twitter, or instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.',
+	'id' => $prefix . 'test_embed',
+	'type' => 'oembed',
+),
+```
+**Note:** Text added in a `oembed` field will not automatically display the embed in your theme. To generate the embed in your theme, this is a method you could use:
+
+```
+echo apply_filters( 'the_content', get_post_meta( get_the_ID(), $prefix . 'test_embed', true ) );
 ```
 
 ### Custom Field Types
