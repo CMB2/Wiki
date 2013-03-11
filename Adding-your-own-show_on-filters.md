@@ -264,7 +264,7 @@ This shows only if a static page is set and you're editing it.
  */
 function ed_metabox_include_front_page( $display, $meta_box ) {
 	if ( 'front-page' !== $meta_box['show_on']['key'] )
-		return false;
+		return $display;
 
 	// Get the current ID
 	if ( isset( $_GET['post'] ) ) {
