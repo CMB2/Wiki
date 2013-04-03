@@ -25,7 +25,7 @@ function rrh_cmb_render_text_email( $field, $meta ) {
 
 The `add_action` function has four parameters:
 
-* `cmb_render_text_email` -- By adding an action to this hook, we are essentially creating the new field type. This action defines what code gets executed when you instantiate a field type called `text_email` in the library. This first parameter, the hook name, must be `cmd_render_` followed by the field type name.
+* `cmb_render_text_email` -- By adding an action to this hook, we are essentially creating the new field type. This action defines what code gets executed when you instantiate a field type called `text_email` in the library. This first parameter, the hook name, must be `cmb_render_` followed by the field type name.
 * `rrh_cmb_render_text_email` -- This is the name of your custom function that gets executed when you instantiate a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
 * `10` -- This is the priority for this action, the order in which it is executed. (The exact number matter should not matter unless you have multiple action on this hook.)
 * `2` -- This is the number of parameters your custom function will receive. You want to set this to 2 so that you can receive the field definition [`$field`] and the existing value [`$meta`].
@@ -45,7 +45,7 @@ function rrh_cmb_validate_text_email( $new ) {
 
 The `add_filter` function has two parameters:
 
-* `cmb_validate_text_email` -- This filter defines what code gets executed when the user attempts to save a value in a field type called `text_email` in the library. This first parameter, the hook name, must be `cmd_validate_` followed by the field type name.
+* `cmb_validate_text_email` -- This filter defines what code gets executed when the user attempts to save a value in a field type called `text_email` in the library. This first parameter, the hook name, must be `cmb_validate_` followed by the field type name.
 * `rrh_cmb_validate_text_email` -- This is the name of your custom function that gets executed when the user attempts to save a value in a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
 
 When the user attempts to save a value in the field, we will check if the new value is a valid email address. If not, we will remove it. We will then return the possibly-modified value back to the library to do the saving.
