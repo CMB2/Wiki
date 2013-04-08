@@ -197,7 +197,10 @@ function be_metabox_show_on_child_of( $display, $meta_box ) {
 	$meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
         $pageids = array();
         foreach ($meta_box['show_on']['value'] as $parent_id) {
-           $pages = get_pages('child_of='.$parent_id);
+           $pages = get_pages(array(
+   	     'child_of' => $parent_id,
+   	     'post_status' => 'publish,draft,pending'
+   	   ));
            foreach($pages as $page){
               $pageids[] = $page->ID;
            }
