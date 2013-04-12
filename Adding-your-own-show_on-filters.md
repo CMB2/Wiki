@@ -289,3 +289,36 @@ function ed_metabox_include_front_page( $display, $meta_box ) {
 
 }
 add_filter( 'cmb_show_on', 'ed_metabox_include_front_page', 10, 2 );
+
+```
+
+### Example: By Capability show_on filter
+Metaboxes show based on user capability.
+'show_on' => array( 'key' => 'user-type'),
+```
+<?php
+/**
+ * Show metaboxes to users with specified capabilities
+ * @author Missy Cook
+ * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ *
+ * @param bool $display
+ * @param array $meta_box
+ * @return bool display metabox
+ */
+ 
+ // Don't show metaboxes to users who can't publish posts
+add_filter( 'cmb_show_on', 'show_meta_to_chosen_users', 10, 2 );
+function show_meta_to_chosen_users( $display, $meta_box ) {
+	if ( 'user-type' !== $meta_box['show_on']['key'] )
+		return $display;
+
+
+	// If the current user can publish posts show metaboxes(can be adjusted by capability)
+	if ( current_user_can( 'publish_posts' ) )
+		return $display;
+        // Otherwise, they can't, so don't show the metaboxes
+	else
+		return false;
+}
+```
