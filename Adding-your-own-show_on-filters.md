@@ -322,9 +322,10 @@ function show_meta_to_chosen_users( $display, $meta_box ) {
 		return false;
 }
 ```
+
 ### Example: Page Template show_on filter
 Shows up on a page using a specific template. Use the template's slug. (e.g. template-name.php would be 'template-name')
-```
+```php
 <?php
 /**
  * Metabox for Page Template
