@@ -9,6 +9,7 @@ The filter passes two parameters:
 
 Make sure you check early on to see if this filter should be running (check `$meta_box['show_on']['key']` ). Since this runs on every metabox, you'll want to return `$display` (the default) instead of true so you don't override the other show_on filters. At the end, either return true to display it or false to not display it.
 
+
 _Have you made some useful show_on filters? List them as examples here so others can use them._
 
 ### Example: Exclude on IDs
@@ -356,3 +357,4 @@ function be_metabox_show_on_template( $display, $meta_box ) {
 	return in_array( $template_name, $meta_box['show_on']['value'] );
 }
 add_filter( 'cmb_show_on', 'be_metabox_show_on_template', 10, 2 );
+```
