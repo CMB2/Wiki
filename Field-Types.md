@@ -19,6 +19,7 @@ array(
 array(
 	'name' => 'Test Text',
 	'desc' => 'field description (optional)',
+	'std' => 'standard value (optional)',
 	'id' => $prefix . 'test_text',
 	'type' => 'text'
 ),
@@ -30,6 +31,7 @@ array(
 array(
 	'name' => 'Test Text Small',
 	'desc' => 'field description (optional)',
+	'std' => 'standard value (optional)',
 	'id' => $prefix . 'test_textsmall',
 	'type' => 'text_small'
 ),
@@ -41,6 +43,7 @@ array(
 array(
 	'name' => 'Test Text Medium',
 	'desc' => 'field description (optional)',
+	'std' => 'standard value (optional)',
 	'id' => $prefix . 'test_textmedium',
 	'type' => 'text_medium'
 ),
@@ -74,6 +77,7 @@ array(
 array(
 	'name' => 'Test Money',
 	'desc' => 'field description (optional)',
+	'std' => 'standard value (optional)',
 	'id' => $prefix . 'test_textmoney',
 	'type' => 'text_money'
 ),
@@ -85,6 +89,7 @@ array(
 array(
 	'name' => 'Test Text Area',
 	'desc' => 'field description (optional)',
+	'std' => 'standard value (optional)',
 	'id' => $prefix . 'test_textarea',
 	'type' => 'textarea'
 ),
@@ -96,6 +101,7 @@ array(
 array(
 	'name' => 'Test Text Area Small',
 	'desc' => 'field description (optional)',
+	'std' => 'standard value (optional)',
 	'id' => $prefix . 'test_textareasmall',
 	'type' => 'textarea_small'
 ),
