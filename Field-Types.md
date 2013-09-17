@@ -107,6 +107,18 @@ array(
 ),
 ```
 
+`textarea_code` - Code textarea. Example:
+
+```php
+array(
+	'name' => 'Test Text Area Code',
+	'desc' => 'field description (optional)',
+	'std' => 'standard value (optional)',
+	'id' => $prefix . 'test_textareacode',
+	'type' => 'textarea_code'
+),
+```
+
 `select` - Standard select dropdown. Example:
 
 ```php
