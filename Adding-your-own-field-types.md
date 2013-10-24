@@ -126,6 +126,37 @@ This code instantiates the field type within your meta box:
 
 The possibilities are endless. If you create custom field types that you think others would find useful, please share them here!
 
+### post_select - adds a select dropdown with a list of posts from a post type
+
+For the times when you need to relate one post to another this little bastard comes in handy.
+
+```
+// render post select
+add_action( 'cmb_render_post_select', 'sm_cmb_render_post_select', 10, 2 );
+
+function sm_cmb_render_post_select( $field, $meta ) {
+	$post_type = ($field['post_type'] ? $field['post_type'] : 'post');
+	$limit = ($field['limit'] ? $field['limit'] : '-1');
+	echo '<select name="', $field['id'], '" id="', $field['id'], '">';
+	$posts = get_posts('post_type='.$post_type.'&numberposts='.$limit.'&posts_per_page='.$limit);
+	
+	foreach ( $posts as $art ) {
+		if ($art->ID == $meta ) {
+			echo '<option value="' . $art->ID . '" selected>' . get_the_title($art->ID) . '</option>';
+		} else {
+			echo '<option value="' . $art->ID . '  ">' . get_the_title($art->ID) . '</option>';
+		}
+	}
+	echo '</select>';
+	echo '<p class="cmb_metabox_description">', $field['desc'], '</p>';
+}
+
+// the field doesnt really need any validation, but just in case
+add_filter( 'cmb_validate_post_select', 'rrh_cmb_validate_post_select' );
+function rrh_cmb_validate_post_select( $new ) {
+    return $new;
+}
+```
 
 ### text_url - adds http:// to the beginning of the meta value if it is not present.
 
