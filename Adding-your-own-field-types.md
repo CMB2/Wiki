@@ -126,6 +126,27 @@ This code instantiates the field type within your meta box:
 
 The possibilities are endless. If you create custom field types that you think others would find useful, please share them here!
 
+### text_number - adds a text number input
+
+Sometimes you only want a number in your input. 
+
+```
+// render numbers
+add_action( 'cmb_render_text_number', 'sm_cmb_render_text_number', 10, 2 );
+
+function sm_cmb_render_text_number( $field, $meta ) {
+	echo '<input class="cmb_text_small" type="number" name="', $field['id'], '" id="', $field['id'], '" value="', '' !== $meta ? $meta : $field['std'], '" /><span class="cmb_metabox_description">', $field['desc'], '</span>';
+}
+
+// validate the field
+add_filter( 'cmb_validate_text_number', 'rrh_cmb_validate_text_number' );
+function rrh_cmb_validate_text_number( $new ) {
+	$new = preg_replace("/[^0-9]/","",$new);
+
+    return $new;
+}
+```
+
 ### post_select - adds a select dropdown with a list of posts from a post type
 
 For the times when you need to relate one post to another this little bastard comes in handy.
