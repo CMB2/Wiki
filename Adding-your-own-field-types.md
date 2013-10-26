@@ -139,8 +139,8 @@ function sm_cmb_render_text_number( $field, $meta ) {
 }
 
 // validate the field
-add_filter( 'cmb_validate_text_number', 'rrh_cmb_validate_text_number' );
-function rrh_cmb_validate_text_number( $new ) {
+add_filter( 'cmb_validate_text_number', 'sm_cmb_validate_text_number' );
+function sm_cmb_validate_text_number( $new ) {
 	$new = preg_replace("/[^0-9]/","",$new);
 
     return $new;
