@@ -34,7 +34,7 @@ function cmb_sample_metaboxes( $meta_boxes = array() ) {
 
 Now in order to get the metabox config array we need, we'll use the same method CMB uses to grab the entire metabox array:
 ```
-$meta_boxes = apply_filters( 'cmb_meta_boxes', array() );
+<?php $meta_boxes = apply_filters( 'cmb_meta_boxes', array() ); ?>
 ```
 
 Then we'll use our metabox key to select the right metabox:
