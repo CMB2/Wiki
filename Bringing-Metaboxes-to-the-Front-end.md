@@ -50,8 +50,11 @@ cmb_metabox_form( $meta_boxes['test_metabox'], $object_id );
 ?>
 ```
 
+## Metabox Shortcode
+
 Now, for real world usage, let's add this in the form of a shortcode:
 ```php
+<?php
 add_shortcode( 'cmb-form', 'cmb_do_frontend_form' );
 /**
  * Shortcode to display a CMB form for a post ID.
