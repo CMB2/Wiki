@@ -93,5 +93,9 @@ function cmb_do_frontend_form( $attr = array() ) {
 	return $form;
 }
 ```
+Adding this shortcode to your WordPress editor would look something like this:
+```
+[cmb-form id=2]
+```
 
 With this shortcode, you'll be able to add any metabox to the front-end. Just specify which WordPress post ID (or user/comment ID) to be editing, and which metabox to use.
