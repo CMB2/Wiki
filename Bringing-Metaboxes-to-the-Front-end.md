@@ -37,7 +37,7 @@ Now in order to get the metabox config array we need, we'll use the same method 
 <?php $meta_boxes = apply_filters( 'cmb_meta_boxes', array() ); ?>
 ```
 
-Then we'll use our metabox key to select the right metabox:
+Then we'll use our metabox key to select and display the right metabox wherever we want:
 ```php
 <?php
 // This is the WordPress post ID where the data should be stored/displayed.
@@ -91,4 +91,4 @@ function cmb_do_frontend_form( $attr = array() ) {
 }
 ```
 
-With this shortcode, you'll be able to add any metabox to the front-end. Just specify which WordPress post ID to be editing, and which metabox to use.
+With this shortcode, you'll be able to add any metabox to the front-end. Just specify which WordPress post ID (or user/comment ID) to be editing, and which metabox to use.
