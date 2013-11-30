@@ -15,3 +15,5 @@ Advanced tutorials:
 1. [Adding your own show_on filters](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters)
 
 2. [Adding interactivity in metaboxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/) 
+
+3. [Displaying metaboxes on the front-end](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Bringing-Metaboxes-to-the-Front-end) 
