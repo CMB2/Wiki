@@ -369,3 +369,49 @@ function be_metabox_show_on_template( $display, $meta_box ) {
 }
 add_filter( 'cmb_show_on', 'be_metabox_show_on_template', 10, 2 );
 ```
+
+### Example: Show metabox for certain user roles
+Will display if the current logged-in user's user-role is whitelisted. Props [@Mte90](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/issues/418)
+```php
+<?php
+
+/**
+ * Display metabox for only certain user roles.
+ * @author @Mte90
+ * @link   https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ *
+ * @param  bool  $display  Whether metabox should be displayed or not.
+ * @param  array $meta_box Metabox config array
+ * @return bool            (Modified) Whether metabox should be displayed or not.
+ */
+function cmb_show_meta_to_chosen_roles( $display, $meta_box ) {
+    if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) )
+        return $display;
+
+    if ( 'role' !== $meta_box['show_on']['key'] )
+        return $display;
+
+    $user = wp_get_current_user();
+
+    // No user found, return
+    if ( empty( $user ) )
+        return false;
+
+    $roles = $meta_box['show_on']['value'];
+    $is_array = is_array( $roles );
+
+    foreach ( $user->roles as $role ) {
+        // Does user have role.. check if array
+        if ( $is_array && in_array( $role, $roles ) ) {
+            return $display;
+        }
+        // Does user have role.. check if just a string
+        if ( ! $is_array && $role === $roles ) {
+            return $display;
+        }
+    }
+
+    return false;
+}
+add_filter( 'cmb_show_on', 'cmb_show_meta_to_chosen_roles', 10, 2 );
+```
