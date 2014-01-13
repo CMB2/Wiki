@@ -19,6 +19,7 @@ Make sure you check early on to see if this filter should be running (check `$me
 1. [Front Page show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-front-page-show_on-filter)
 1. [By Capability show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-by-capability-show_on-filter)
 1. [Page Template show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-page-template-show_on-filter)
+1. [Show metabox for certain user-roles](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-show-metabox-for-certain-user-roles)
 
 _Have you made some useful show_on filters? List them as examples here so others can use them._
 
@@ -371,7 +372,7 @@ add_filter( 'cmb_show_on', 'be_metabox_show_on_template', 10, 2 );
 ```
 
 ### Example: Show metabox for certain user roles
-Will display if the current logged-in user's user-role is whitelisted. Props [@Mte90](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/issues/418)
+Will display if the current logged-in user's user-role is whitelisted. Props [@Mte90].(https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/issues/418)
 ```php
 <?php
 
