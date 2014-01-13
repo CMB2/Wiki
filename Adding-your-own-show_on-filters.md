@@ -9,6 +9,16 @@ The filter passes two parameters:
 
 Make sure you check early on to see if this filter should be running (check `$meta_box['show_on']['key']` ). Since this runs on every metabox, you'll want to return `$display` (the default) instead of true so you don't override the other show_on filters. At the end, either return true to display it or false to not display it.
 
+#### Examples:
+1. [Exclude on IDs](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-exclude-on-ids)
+1. [Exclude on New Post Screens](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-exclude-on-new-post-screens)
+1. [Exclude on non top level posts](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-exclude-on-non-top-level-posts)
+1. [taxonomy show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-taxonomy-show_on-filter)
+1. [Child page show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-child-page-show_on-filter)
+1. [Page Slug show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-page-slug-show_on-filter)
+1. [Front Page show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-front-page-show_on-filter)
+1. [By Capability show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-by-capability-show_on-filter)
+1. [Page Template show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#example-page-template-show_on-filter)
 
 _Have you made some useful show_on filters? List them as examples here so others can use them._
 
