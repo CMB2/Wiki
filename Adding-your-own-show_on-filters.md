@@ -256,7 +256,7 @@ add_filter( 'cmb_show_on', 'be_metabox_show_on_slug', 10, 2 );
 This shows only if a static page is set and you're editing it.
 'show_on' => array( 'key' => 'front-page', 'value' => ''  ),
 ```
-
+<?php 
 /**
  * Include metabox on front page
  * @author Ed Townend
