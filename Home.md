@@ -18,4 +18,4 @@ Advanced tutorials:
 
 3. [Displaying metaboxes on the front-end](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Bringing-Metaboxes-to-the-Front-end) 
 
-4. [Using CMB to create an Admin Theme Options Page]()
+4. [Using CMB to create an Admin Theme Options Page](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)
