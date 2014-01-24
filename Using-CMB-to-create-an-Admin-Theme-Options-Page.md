@@ -139,3 +139,5 @@ function myprefix_get_option( $key = '' ) {
 	return cmb_get_option( myprefix_Admin::key(), $key );
 }
 ```
+
+Link to gist: https://gist.github.com/jtsternberg/8601075
