@@ -8,9 +8,23 @@ This class is an example of how you can use CMB to create an Admin Theme Options
  */
 class myprefix_Admin{
  
-	protected static $key           = 'myprefix_options';
+ 	/**
+ 	 * Option key, and option page slug
+ 	 * @var string
+ 	 */
+	protected static $key = 'myprefix_options';
+
+	/**
+	 * Array of metaboxes/fields
+	 * @var array
+	 */
 	protected static $theme_options = array();
-	protected $title                = '';
+
+	/**
+	 * Options Page title
+	 * @var string
+	 */
+	protected $title = '';
  
 	/**
 	 * Constructor
@@ -101,6 +115,11 @@ class myprefix_Admin{
 		return self::$theme_options;
 	}
 
+	/**
+	 * Make public the protected $key variable.
+	 * @since  0.1.0
+	 * @return string  Option key
+	 */
 	public static function key() {
 		return self::$key;
 	}
