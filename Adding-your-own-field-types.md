@@ -130,7 +130,7 @@ This code instantiates the field type within your meta box:
 
 ```php
 /**
- * Gets a number of posts and displays them as options
+ * Gets a number of terms and displays them as options
  * @param  string       $taxonomy Taxonomy terms to retrieve. Default is category.
  * @param  string|array $args     Optional. Change the defaults retrieving terms.
  * @return array                  An array of options that matches the CMB options array
@@ -200,34 +200,50 @@ function sm_cmb_validate_text_number( $new ) {
 
 ### post_select - adds a select dropdown with a list of posts from a post type
 
-For the times when you need to relate one post to another this little bastard comes in handy.
+For the times when you need to relate one post to another this comes in handy.
+
+Like the terms field above, we would pass an array of posts to the `select` field type. First we'll create a function to pull back an array of post options:
 
 ```php
-// render post select
-add_action( 'cmb_render_post_select', 'sm_cmb_render_post_select', 10, 2 );
+/**
+ * Gets a number of posts and displays them as options
+ * @param  array $query_args Optional. Overrides defaults.
+ * @return array             An array of options that matches the CMB options array
+ */
+function cmb_get_post_options( $query_args ) {
 
-function sm_cmb_render_post_select( $field, $meta ) {
-	$post_type = ($field['post_type'] ? $field['post_type'] : 'post');
-	$limit = ($field['limit'] ? $field['limit'] : '-1');
-	echo '<select name="', $field['id'], '" id="', $field['id'], '">';
-	$posts = get_posts('post_type='.$post_type.'&numberposts='.$limit.'&posts_per_page='.$limit);
-	
-	foreach ( $posts as $art ) {
-		if ($art->ID == $meta ) {
-			echo '<option value="' . $art->ID . '" selected>' . get_the_title($art->ID) . '</option>';
-		} else {
-			echo '<option value="' . $art->ID . '  ">' . get_the_title($art->ID) . '</option>';
+	$args = wp_parse_args( $args, array(
+		'post_type' => 'post',
+		'numberposts' => 10,
+	) );
+
+	$posts = get_posts( $args );
+
+	$post_options = array();
+	if ( $posts ) {
+		foreach ( $posts as $post ) {
+			$post_options[ $post->ID ] = $post->post_title;
 		}
 	}
-	echo '</select>';
-	echo '<p class="cmb_metabox_description">', $field['desc'], '</p>';
-}
 
-// the field doesnt really need any validation, but just in case
-add_filter( 'cmb_validate_post_select', 'rrh_cmb_validate_post_select' );
-function rrh_cmb_validate_post_select( $new ) {
-    return $new;
+	return $post_options;
 }
+```
+Then, in our fields array, we would add the `select` type and pass the `cmb_get_post_options` function as our 'options' array.
+
+```php
+...
+        'fields' => array(
+			array(
+				'name'    => 'Select Posts',
+				'desc'    => 'field description (optional)',
+				'id'      => $prefix . 'post_multicheckbox',
+				'type'    => 'multicheck',
+				'options' => cmb_get_post_options( array( 'post_type' => 'your_post_type', 'numberposts' => 5 ) ),
+			),
+        )
+...
+
 ```
 
 ### text_url - adds http:// to the beginning of the meta value if it is not present.
