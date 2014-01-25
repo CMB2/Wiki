@@ -9,6 +9,8 @@ You can add actions and filters to these hooks (using WordPress's native add_act
 
 ## Example 1: Email field
 
+> Update: This field is now [in CMB core](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php#L64), so consider this tutorial as an example.
+
 A simple example would be a `text_email` field that only allowed users to enter a valid email address.
 
 ![Screenshot](images/screenshot_text_email.jpg)
@@ -77,7 +79,7 @@ function rrh_person_meta_boxes( $meta_boxes ) {
 }
 ```
 
-![Screenshot](http://randyhoyt.com/files/screenshot_text_email.jpg)
+![Screenshot](images/screenshot_text_email.jpg)
 
 ## Example 2: Taxonomy Dropdown, store term_id
 
@@ -120,7 +122,7 @@ This code instantiates the field type within your meta box:
 ...
 ```
 
-![Screenshot](http://randyhoyt.com/files/screenshot_imag_theme.jpg)
+![Screenshot](images/screenshot_image_theme.jpg)
 
 ## Add Your Own Examples
 
