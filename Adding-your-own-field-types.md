@@ -173,7 +173,7 @@ Then, in our fields array, we would add the `select` type and pass the `cmb_get_
 
 ```
 
-### post_select - adds a select dropdown with a list of posts from a post type
+## Example 3: Posts (or other post_type) Dropdown, store post_id
 
 For the times when you need to relate one post to another, this comes in handy.
 
