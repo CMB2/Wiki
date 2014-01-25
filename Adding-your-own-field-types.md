@@ -249,6 +249,9 @@ Then, in our fields array, we would add the `select` type and pass the `cmb_get_
 
 ### text_url - adds http:// to the beginning of the meta value if it is not present.
 
+
+> Update: This field is now [in CMB core](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php#L56), so consider this tutorial as an example.
+
 This is useful if you would like to display a URL in a template by pulling it from the post meta. Using this will make sure the link works if the user doesn't put the "http://" before the domain name.
 
 ```php
