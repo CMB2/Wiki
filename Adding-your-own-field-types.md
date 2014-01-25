@@ -124,6 +124,55 @@ This code instantiates the field type within your meta box:
 
 ![Screenshot](images/screenshot_image_theme.jpg)
 
+***
+
+**Alternatively**, you could produce the same results by passing an array of terms to the `select` field type. First we'll create a function to pull back an array of term options:
+
+```php
+/**
+ * Gets a number of posts and displays them as options
+ * @param  string       $taxonomy Taxonomy terms to retrieve. Default is category.
+ * @param  string|array $args     Optional. Change the defaults retrieving terms.
+ * @return array                  An array of options that matches the CMB options array
+ */
+function cmb_get_term_options( $taxonomy = 'category', $args = array() ) {
+
+	$args['taxonomy'] = $taxonomy;
+	// $defaults = array( 'taxonomy' => 'category' );
+	$args = wp_parse_args( $args, array( 'taxonomy' => 'category' ) );
+
+	$taxonomy = $args['taxonomy'];
+
+	$terms = (array) get_terms( $taxonomy, $args );
+
+	// Initate an empty array
+	$term_options = array();
+	if ( ! empty( $terms ) ) {
+		foreach ( $terms as $term ) {
+			$term_options[ $term->slug ] = $term->name;
+		}
+	}
+
+	return $term_options;
+}
+```
+Then, in our fields array, we would add the `select` type and pass the `cmb_get_term_options` function as our 'options' array.
+
+```php
+...
+        'fields' => array(
+            array(
+                'name' => 'Featured Theme',
+                'desc' => 'Select the featured theme',
+                'id' => 'featured_theme',
+                'type' => 'select',
+                'options' => cmb_get_term_options( 'imag_theme' ),
+            ),
+        )
+...
+
+```
+
 ## Add Your Own Examples
 
 The possibilities are endless. If you create custom field types that you think others would find useful, please share them here!
