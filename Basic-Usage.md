@@ -139,4 +139,4 @@ get_header(); ?>
 <?php get_footer(); ?>
 ```
 
-For more information, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta)
+For more information, see the Codex page for [`get_post_meta()`](http://codex.wordpress.org/Function_Reference/get_post_meta).
