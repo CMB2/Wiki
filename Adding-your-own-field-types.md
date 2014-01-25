@@ -173,31 +173,6 @@ Then, in our fields array, we would add the `select` type and pass the `cmb_get_
 
 ```
 
-## Add Your Own Examples
-
-The possibilities are endless. If you create custom field types that you think others would find useful, please share them here!
-
-### text_number - adds a text number input
-
-Sometimes you only want a number in your input. 
-
-```php
-// render numbers
-add_action( 'cmb_render_text_number', 'sm_cmb_render_text_number', 10, 2 );
-
-function sm_cmb_render_text_number( $field, $meta ) {
-	echo '<input class="cmb_text_small" type="number" name="', $field['id'], '" id="', $field['id'], '" value="', '' !== $meta ? $meta : $field['std'], '" /><span class="cmb_metabox_description">', $field['desc'], '</span>';
-}
-
-// validate the field
-add_filter( 'cmb_validate_text_number', 'sm_cmb_validate_text_number' );
-function sm_cmb_validate_text_number( $new ) {
-	$new = preg_replace("/[^0-9]/","",$new);
-
-    return $new;
-}
-```
-
 ### post_select - adds a select dropdown with a list of posts from a post type
 
 For the times when you need to relate one post to another, this comes in handy.
@@ -246,6 +221,32 @@ Then, in our fields array, we would add the `select` type and pass the `cmb_get_
 
 ```
 **Alternatively**, you could use the `multicheck`, or `radio` field types as well.
+
+
+## Add Your Own Examples
+
+The possibilities are endless. If you create custom field types that you think others would find useful, please share them here!
+
+### text_number - adds a text number input
+
+Sometimes you only want a number in your input. 
+
+```php
+// render numbers
+add_action( 'cmb_render_text_number', 'sm_cmb_render_text_number', 10, 2 );
+
+function sm_cmb_render_text_number( $field, $meta ) {
+	echo '<input class="cmb_text_small" type="number" name="', $field['id'], '" id="', $field['id'], '" value="', '' !== $meta ? $meta : $field['std'], '" /><span class="cmb_metabox_description">', $field['desc'], '</span>';
+}
+
+// validate the field
+add_filter( 'cmb_validate_text_number', 'sm_cmb_validate_text_number' );
+function sm_cmb_validate_text_number( $new ) {
+	$new = preg_replace("/[^0-9]/","",$new);
+
+    return $new;
+}
+```
 
 ### text_url - adds http:// to the beginning of the meta value if it is not present.
 
