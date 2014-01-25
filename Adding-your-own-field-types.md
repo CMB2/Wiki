@@ -1,6 +1,6 @@
 This library contains a couple of hooks that make it possible for you to create your own field types:
 
-```
+```php
 cmb_render_{field-type}
 cmb_validate_{field-type}
 ```
@@ -16,7 +16,7 @@ A simple example would be a `text_email` field that only allowed users to enter 
 ### Step 1: `cmb_render_{field-type}`  
 The first step is to write the code for *rendering the field* within the WordPress administrative area:
 
-```
+```php
 add_action( 'cmb_render_text_email', 'rrh_cmb_render_text_email', 10, 2 );
 function rrh_cmb_render_text_email( $field, $meta ) {
     echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" style="width:97%" />','<p class="cmb_metabox_description">', $field['desc'], '</p>';
@@ -35,7 +35,7 @@ In this example, our custom field type will display an input box, with the prope
 ### Step 2: `cmb_validate_{field-type}`
 You can optionally add code that validates or modifies the entered value before it is saved. In our example, we only want to allow valid email addresses; we can remove any invalid values before they are saved to the database:
 
-```
+```php
 add_filter( 'cmb_validate_text_email', 'rrh_cmb_validate_text_email' );
 function rrh_cmb_validate_text_email( $new ) {
     if ( !is_email( $new ) ) {$new = "";}   
@@ -54,7 +54,7 @@ When the user attempts to save a value in the field, we will check if the new va
 
 With the action (and optionally the filter) added, we can now use the field type in our code just like we would use the built-in field types.
 
-```
+```php
 add_filter( 'cmb_meta_boxes', 'rrh_person_meta_boxes' );
 function rrh_person_meta_boxes( $meta_boxes ) {
 	$meta_boxes[] = array(
@@ -85,7 +85,7 @@ This creates a dropdown box containing a list of all the terms within a specific
 
 This code makes the field type available to the library:
 
-```
+```php
 add_filter( 'cmb_render_imag_select_taxonomy', 'imag_render_imag_select_taxonomy', 10, 2 );
 function imag_render_imag_select_taxonomy( $field, $meta ) {
 
@@ -106,7 +106,7 @@ function imag_render_imag_select_taxonomy( $field, $meta ) {
 
 This code instantiates the field type within your meta box:
 
-```
+```php
 ...
         'fields' => array(
             array(
@@ -130,7 +130,7 @@ The possibilities are endless. If you create custom field types that you think o
 
 Sometimes you only want a number in your input. 
 
-```
+```php
 // render numbers
 add_action( 'cmb_render_text_number', 'sm_cmb_render_text_number', 10, 2 );
 
@@ -151,7 +151,7 @@ function sm_cmb_validate_text_number( $new ) {
 
 For the times when you need to relate one post to another this little bastard comes in handy.
 
-```
+```php
 // render post select
 add_action( 'cmb_render_post_select', 'sm_cmb_render_post_select', 10, 2 );
 
@@ -183,7 +183,7 @@ function rrh_cmb_validate_post_select( $new ) {
 
 This is useful if you would like to display a URL in a template by pulling it from the post meta. Using this will make sure the link works if the user doesn't put the "http://" before the domain name.
 
-```
+```php
 add_action( 'cmb_render_text_url', 'jt_cmb_render_text_url', 10, 2 );
 /**
  * Outputs the markup for the text_url field
