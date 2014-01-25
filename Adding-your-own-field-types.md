@@ -200,7 +200,7 @@ function sm_cmb_validate_text_number( $new ) {
 
 ### post_select - adds a select dropdown with a list of posts from a post type
 
-For the times when you need to relate one post to another this comes in handy.
+For the times when you need to relate one post to another, this comes in handy.
 
 Like the terms field above, we would pass an array of posts to the `select` field type. First we'll create a function to pull back an array of post options:
 
@@ -245,6 +245,7 @@ Then, in our fields array, we would add the `select` type and pass the `cmb_get_
 ...
 
 ```
+**Alternatively**, you could use the `multicheck`, or `radio` field types as well.
 
 ### text_url - adds http:// to the beginning of the meta value if it is not present.
 
