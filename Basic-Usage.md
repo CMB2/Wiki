@@ -1,8 +1,8 @@
-This code is designed to be run inside themes and plugins. I typically put it inside [theme or plugin]/lib/metabox, but you can put it wherever you like. For this example it will be in child-theme/lib/metabox.You can then use it within your theme or plugin. For this example, my customizations are going in child-theme/functions.php. 
+This code is designed to be run inside themes and plugins. I typically put it inside `[theme or plugin]/lib/metabox`, but you can put it wherever you like. For this example it will be in child-theme/lib/metabox.You can then use it within your theme or plugin. For this example, my customizations are going in child-theme/functions.php. 
 
 ### Create Metaboxes
 
-First you add a filter to 'cmb_meta_boxes' that adds your metabox to the $meta_boxes array. It is also a good idea to define a `$prefix` variable.
+First you add a filter to `cmb_meta_boxes` that adds your metabox to the $meta_boxes array. It is also a good idea to define a `$prefix` variable.
 
 ```php
 <?php
