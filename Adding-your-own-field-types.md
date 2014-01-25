@@ -11,7 +11,7 @@ You can add actions and filters to these hooks (using WordPress's native add_act
 
 A simple example would be a `text_email` field that only allowed users to enter a valid email address.
 
-![Screenshot](http://randyhoyt.com/files/screenshot_text_email.jpg)
+![Screenshot](images/screenshot_text_email.jpg)
 
 ### Step 1: `cmb_render_{field-type}`  
 The first step is to write the code for *rendering the field* within the WordPress administrative area:
