@@ -2,13 +2,13 @@ This code is designed to be run inside themes and plugins. I typically put it in
 
 ### Create Metaboxes
 
-First you add a filter to 'cmb_meta_boxes' that adds your metabox to the $meta_boxes array. It is also a good idea to define a $prefix variable.
+First you add a filter to 'cmb_meta_boxes' that adds your metabox to the $meta_boxes array. It is also a good idea to define a `$prefix` variable.
 
 ```php
 <?php
 function be_sample_metaboxes( $meta_boxes ) {
 	$prefix = '_cmb_'; // Prefix for all fields
-	$meta_boxes[] = array(
+	$meta_boxes['test_metabox'] = array(
 		'id' => 'test_metabox',
 		'title' => 'Test Metabox',
 		'pages' => array('page'), // post type
@@ -53,7 +53,7 @@ The important things to note here are that you're first checking to see if the `
 
 In your theme file, you'll need to use the get_post_meta() function to display your metadata within the loop. Let's assume you created a metabox with the field outlined above, and want to display this on the single page template (page.php). Your template might look like this before you start (from TwentyEleven):
 
-```
+```php
 <?php
 /**
  * The template for displaying all pages.
@@ -89,7 +89,7 @@ get_header(); ?>
 
 After loading the page content with get_template_part( 'content', 'page' ), we'll add our code for the metabox:
 
-```
+```php
 <?php
 global $post;
 $text = get_post_meta( $post->ID, '_cmb_test_text', true );
@@ -99,7 +99,7 @@ echo $text;
 
 So the final template will look like this:
 
-```
+```php
 <?php
 /**
  * The template for displaying all pages.
