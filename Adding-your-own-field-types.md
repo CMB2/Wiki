@@ -226,7 +226,7 @@ Then, in our fields array, we would add the `select` type and pass the `cmb_get_
 
 You may want to create your own field type that stores multiple inputs. Here's how you could create an address field type:
 
-```
+```php
 add_filter( 'cmb_render_address', 'cmb_render_address_field', 10, 2 );
 /**
  * Render Address Field
