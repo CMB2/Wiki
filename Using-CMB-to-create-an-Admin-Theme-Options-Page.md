@@ -111,6 +111,7 @@ class myprefix_Admin{
 					'type'    => 'colorpicker',
 					'default' => '#ffffff'
 				),
+			),
 		);
 		return self::$theme_options;
 	}
