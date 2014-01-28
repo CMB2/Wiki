@@ -187,7 +187,7 @@ Like the terms field above, we would pass an array of posts to the `select` fiel
  */
 function cmb_get_post_options( $query_args ) {
 
-	$args = wp_parse_args( $args, array(
+	$args = wp_parse_args( $query_args, array(
 		'post_type' => 'post',
 		'numberposts' => 10,
 	) );
@@ -235,6 +235,8 @@ function cmb_render_address_field( $field, $meta ) {
 
 	$state_list = array( 'AL'=>'Alabama','AK'=>'Alaska','AZ'=>'Arizona','AR'=>'Arkansas','CA'=>'California','CO'=>'Colorado','CT'=>'Connecticut','DE'=>'Delaware','DC'=>'District Of Columbia','FL'=>'Florida','GA'=>'Georgia','HI'=>'Hawaii','ID'=>'Idaho','IL'=>'Illinois','IN'=>'Indiana','IA'=>'Iowa','KS'=>'Kansas','KY'=>'Kentucky','LA'=>'Louisiana','ME'=>'Maine','MD'=>'Maryland','MA'=>'Massachusetts','MI'=>'Michigan','MN'=>'Minnesota','MS'=>'Mississippi','MO'=>'Missouri','MT'=>'Montana','NE'=>'Nebraska','NV'=>'Nevada','NH'=>'New Hampshire','NJ'=>'New Jersey','NM'=>'New Mexico','NY'=>'New York','NC'=>'North Carolina','ND'=>'North Dakota','OH'=>'Ohio','OK'=>'Oklahoma','OR'=>'Oregon','PA'=>'Pennsylvania','RI'=>'Rhode Island','SC'=>'South Carolina','SD'=>'South Dakota','TN'=>'Tennessee','TX'=>'Texas','UT'=>'Utah','VT'=>'Vermont','VA'=>'Virginia','WA'=>'Washington','WV'=>'West Virginia','WI'=>'Wisconsin','WY'=>'Wyoming' );
 
+	// echo '<xmp>$meta: '. print_r( $meta, true ) .'</xmp>';
+	// echo '<xmp>$field: '. print_r( $field, true ) .'</xmp>';
 	$meta = wp_parse_args( $meta, array(
 		'address-1' => '',
 		'address-2' => '',
@@ -260,9 +262,31 @@ function cmb_render_address_field( $field, $meta ) {
 		</select></div>',
 	'<div><p><label for="', $field['id'], '-zip">Zip</label></p>',
 		'<input type="text" class="cmb_text_small" name="', $field['id'] ,'[zip]" id="', $field['id'], '-zip', '" value="', cmb_Meta_Box_types::esc( $meta['zip'] ), '" /></div>',
-	cmb_Meta_Box_types::desc( true );
+	'<p class="cmb_metabox_description">'. $field['desc'] .'</p>';
 
 }
+```
+We can then retrieve the address later in our theme or plugin like so:
+
+```php
+$post_id = get_the_ID();
+$address = get_post_meta( $post_id, $prefix . 'address', 1 );
+
+// Set default values for each address key
+$address = wp_parse_args( $address, array(
+	'address-1' => '',
+	'address-2' => '',
+	'city' => '',
+	'state' => '',
+	'zip' => '',
+) );
+
+echo '<p><strong>Address:</strong> '. esc_html( $address['address-1'] ) .'</p>';
+echo '<p><strong>Address 2:</strong> '. esc_html( $address['address-2'] ) .'</p>';
+echo '<p><strong>City:</strong> '. esc_html( $address['city'] ) .'</p>';
+echo '<p><strong>State:</strong> '. esc_html( $address['state'] ) .'</p>';
+echo '<p><strong>Zip:</strong> '. esc_html( $address['zip'] ) .'</p>';
+
 ```
 
 
