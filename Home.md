@@ -1,4 +1,4 @@
-Welcome to the CMB wiki! This is a code library for WordPress themes and plugins that makes it easy to add metaboxes to the post screen.
+Welcome to the CMB wiki! This is a code library for WordPress themes and plugins that makes it easy to add metaboxes and fields to WordPress.
 
 Tutorials:
 
