@@ -32,7 +32,7 @@ class myprefix_Admin{
 	 */
 	public function __construct() {
 		// Set our title
-		$this->title = __( 'Madame Noire Options', 'myprefix' );
+		$this->title = __( 'Site Options', 'myprefix' );
  	}
  
 	/**
@@ -40,7 +40,7 @@ class myprefix_Admin{
 	 * @since 0.1.0
 	 */
 	public function hooks() {
-		add_action( 'admin_init', array( $this, 'mninit' ) );
+		add_action( 'admin_init', array( $this, 'myprefix_init' ) );
 		add_action( 'admin_menu', array( $this, 'add_page' ) );
 	}
  
@@ -48,7 +48,7 @@ class myprefix_Admin{
 	 * Register our setting to WP
 	 * @since  0.1.0
 	 */
-	public function mninit() {
+	public function myprefix_init() {
 		register_setting( self::$key, self::$key );
 	}
  
@@ -75,7 +75,7 @@ class myprefix_Admin{
 	 */
 	public function admin_page_display() {
 		?>
-		<div class="wrap">
+		<div class="wrap cmb_options_page <?php echo self::$key; ?>">
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 			<?php cmb_metabox_form( $this->option_fields(), self::$key ); ?>
 		</div>
