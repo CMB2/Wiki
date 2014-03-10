@@ -197,7 +197,10 @@ function cmb_get_post_options( $query_args ) {
 	$post_options = array();
 	if ( $posts ) {
 		foreach ( $posts as $post ) {
-			$post_options[ $post->ID ] = $post->post_title;
+                   $post_options[] = array(
+            	       'name' => $post->post_title,
+            	       'value' => $post->ID
+                   );
 		}
 	}
 
