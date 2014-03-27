@@ -330,9 +330,9 @@ array(
 	'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
 ),
 ```
-Example using the `$id . '_id'` to retrieve a medium image:
+Example using the `test_image_id` to retrieve a medium image:
 ```php
-$image = wp_get_attachment_image( get_post_meta( get_the_ID(), $id . '_id', 'medium' );
+$image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'test_image_id', 'medium' );
 ```
 
 #### `file_list`
