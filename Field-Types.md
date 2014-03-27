@@ -330,9 +330,13 @@ array(
 	'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
 ),
 ```
+Example using the `$id . '_id'` to retrieve a medium image:
+```php
+$image = wp_get_attachment_image( get_post_meta( get_the_ID(), $id . '_id', 'medium' );
+```
 
 #### `file_list`
-Displays all files attached to the post and has a file uploader. Example:
+A file uploader than allows you to add as many files as you want. Is a repeatable field. Example:
 
 ```php
 array(
