@@ -1,8 +1,35 @@
-Here's the built-in fields you can include in your metabox. You can also [add your own field types](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types). 
+Here's the built-in fields you can include in your metabox. You can also [add your own field types](https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types).
 
-Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php) to see how you define the prefix.
+Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php) to see how you define the prefix. 
 
-`title` - A large title (useful for breaking up sections of fields in metabox). Example:
+Not all built-in fields have been documented, so please see the example file for more types.
+
+#### Types:
+1. [`title`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#title)
+1. [`text`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#text)
+1. [`text_small`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#text_small)
+1. [`text_medium`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#text_medium)
+1. [`text_date`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#text_date)
+1. [`text_date_timestamp`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#text_date_timestamp)
+1. [`text_money`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#text_money)
+1. [`textarea`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#textarea)
+1. [`textarea_small`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#textarea_small)
+1. [`textarea_code`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#textarea_code)
+1. [`select`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#select)
+1. [`radio_inline`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#radio_inline)
+1. [`radio`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#radio)
+1. [`checkbox`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#checkbox)
+1. [`multicheck`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#multicheck)
+1. [`wysiwyg`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wysiwyg)
+1. [`taxonomy_select`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#taxonomy_select)
+1. [`taxonomy_radio`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#taxonomy_radio)
+1. [`taxonomy_multicheck`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#taxonomy_multicheck)
+1. [`file`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#file)
+1. [`file_list`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#file_list)
+1. [`oembed`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#oembed)
+
+#### `title`
+A large title (useful for breaking up sections of fields in metabox). Example:
 
 ```php
 array(
@@ -13,7 +40,8 @@ array(
 ),
 ```
 
-`text` - Standard text field (large). Example:
+#### `text`
+Standard text field (large). Example:
 
 ```php
 array(
@@ -25,7 +53,8 @@ array(
 ),
 ```
 
-`text_small` - Small text field. Example:
+#### `text_small`
+Small text field. Example:
 
 ```php
 array(
@@ -37,7 +66,8 @@ array(
 ),
 ```
 
-`text_medium` - Medium text field. Example:
+#### `text_medium`
+Medium text field. Example:
 
 ```php
 array(
@@ -49,7 +79,8 @@ array(
 ),
 ```
 
-`text_date` - Date field. Stored in m/d/Y format (ex: 09/01/2011). Example:
+#### `text_date`
+Date field. Stored in m/d/Y format (ex: 09/01/2011). Example:
 
 ```php
 array(
@@ -60,7 +91,8 @@ array(
 ),
 ```
 
-`text_date_timestamp` - Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
+#### `text_date_timestamp`
+Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
 
 ```php
 array(
@@ -71,7 +103,8 @@ array(
 ),
 ```
 
-`text_money` - Standard text field with dollar sign in front of it (useful to prevent users from adding a dollar sign to input). Example:
+#### `text_money`
+Standard text field with dollar sign in front of it (useful to prevent users from adding a dollar sign to input). Example:
 
 ```php
 array(
@@ -83,7 +116,8 @@ array(
 ),
 ```
 
-`textarea` - Standard textarea. Example:
+#### `textarea`
+Standard textarea. Example:
 
 ```php
 array(
@@ -95,7 +129,8 @@ array(
 ),
 ```
 
-`textarea_small` - Smaller textarea. Example:
+#### `textarea_small`
+Smaller textarea. Example:
 
 ```php
 array(
@@ -107,7 +142,8 @@ array(
 ),
 ```
 
-`textarea_code` - Code textarea. Example:
+#### `textarea_code`
+Code textarea. Example:
 
 ```php
 array(
@@ -119,7 +155,8 @@ array(
 ),
 ```
 
-`select` - Standard select dropdown. Example:
+#### `select`
+Standard select dropdown. Example:
 
 ```php
 array(
@@ -135,7 +172,8 @@ array(
 ),
 ```
 
-`radio_inline` - Inline radio buttons. Example:
+#### `radio_inline`
+Inline radio buttons. Example:
 
 ```php
 array(
@@ -151,7 +189,8 @@ array(
 ),
 ```
 
-`radio` - Standard radio buttons. Example: 
+#### `radio`
+Standard radio buttons. Example: 
 
 ```php
 array(
@@ -167,7 +206,8 @@ array(
 ),
 ```
 
-`checkbox` - Standard checkbox. Example:
+#### `checkbox`
+Standard checkbox. Example:
 
 ```php
 array(
@@ -178,7 +218,8 @@ array(
 ),
 ```
 
-`multicheck` - A field with multiple checkboxes (and multiple can be selected). Example:
+#### `multicheck`
+A field with multiple checkboxes (and multiple can be selected). Example:
 
 ```php
 
@@ -195,7 +236,8 @@ array(
 ),
 ```
 
-`wysiwyg` - A metabox with TinyMCE editor (same as WordPress' visual editor). Example:
+#### `wysiwyg`
+A metabox with TinyMCE editor (same as WordPress' visual editor). Example:
 
 ```php
 array(
@@ -237,7 +279,8 @@ array(
 
 ```
 
-`taxonomy_select` - A select field pre-populated with taxonomy terms. Example:
+#### `taxonomy_select`
+A select field pre-populated with taxonomy terms. Example:
 
 ```php
 array(
@@ -249,7 +292,8 @@ array(
 ),
 ```
 
-`taxonomy_radio` - Radio buttons pre-populated with taxonomy terms. Example:
+#### `taxonomy_radio`
+Radio buttons pre-populated with taxonomy terms. Example:
 
 ```php
 array(
@@ -261,7 +305,8 @@ array(
 ),
 ```
 
-`taxonomy_multicheck` - A field with checkboxes with taxonomy terms, and multiple terms can be selected
+#### `taxonomy_multicheck`
+A field with checkboxes with taxonomy terms, and multiple terms can be selected
 
 ```php
 array(
@@ -273,7 +318,8 @@ array(
 ),
 ```
 
-`file` - A file uploader. By default it will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `test_image` the ID is stored in `test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
+#### `file`
+A file uploader. By default it will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `test_image` the ID is stored in `test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
 
 ```php
 array(
@@ -285,7 +331,8 @@ array(
 ),
 ```
 
-`file_list` - Displays all files attached to the post and has a file uploader. Example:
+#### `file_list`
+Displays all files attached to the post and has a file uploader. Example:
 
 ```php
 array(
@@ -296,7 +343,8 @@ array(
 ),
 ```
 
-`oembed` - Displays embedded media inline using WordPress' built-in oEmbed support. See [codex.wordpress.org/Embeds](http://codex.wordpress.org/Embeds) for more info and for a list of embed services supported. (added in 0.9.1)
+#### `oembed`
+Displays embedded media inline using WordPress' built-in oEmbed support. See [codex.wordpress.org/Embeds](http://codex.wordpress.org/Embeds) for more info and for a list of embed services supported. (added in 0.9.1)
 
 ```php
 array(
@@ -314,4 +362,4 @@ echo apply_filters( 'the_content', get_post_meta( get_the_ID(), $prefix . 'test_
 
 ### Custom Field Types
 
-You can [define your own field types](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types) as well.
+You can [define your own field types](https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types) as well.
