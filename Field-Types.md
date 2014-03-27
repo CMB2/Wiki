@@ -336,7 +336,7 @@ $image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'test_image_id', 
 ```
 
 #### `file_list`
-A file uploader than allows you to add as many files as you want. Is a repeatable field. Example:
+A file uploader than allows you to add as many files as you want. This is a repeatable field, and will store its data in an array. Example:
 
 ```php
 array(
