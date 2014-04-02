@@ -545,6 +545,7 @@ Most (if not all) fields support these parameters:
 * `type`: What makes the whole thing work.
 * `repeatable`: [Supported by most](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress#field-types), and will make the individual field a repeatable one.
 * `default`: Specify a default value for the field.
+* `show_names`: Hide label for the field.
 * `options`: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`.
 * `before` and `after`: These allow you to add arbitrary text/markup before and after the field just inside the `td` tag.
 * `on_front`: If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`.
