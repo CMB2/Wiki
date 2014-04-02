@@ -37,7 +37,10 @@ Not all built-in fields have been documented, so please see the example file for
 1. [`file_list`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#file_list)
 1. [`oembed`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#oembed)
 1. [`group`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#group)
-1. [Custom Field Types](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#Custom)
+
+#### More Info
+* [Create your own field type](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#Custom)
+* [Common field parameters shared by all fields](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#common-field-parameters)
 
 #### `title`
 A large title (useful for breaking up sections of fields in metabox). Example:
@@ -106,9 +109,10 @@ Standard text field which enforces a url. Example:
 
 ```php
 array(
-	'name' => __( 'Facebook URL', 'cmb' ),
+	'name' => __( 'Website URL', 'cmb' ),
 	'id'   => $prefix . 'facebookurl',
 	'type' => 'text_url',
+	// 'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
 ),
 ```
 
@@ -119,7 +123,6 @@ Standard text field with dollar sign in front of it (useful to prevent users fro
 array(
 	'name' => 'Test Money',
 	'desc' => 'field description (optional)',
-	'default' => 'standard value (optional)',
 	'id' => $prefix . 'test_textmoney',
 	'type' => 'text_money',
 	// 'before' => '£', // Replaces default '$'
@@ -441,6 +444,7 @@ array(
 	'desc' => '',
 	'id' => $prefix . 'file_list',
 	'type' => 'file_list',
+	// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 ),
 ```
 
@@ -505,3 +509,30 @@ array(
 #### Custom Field Types
 
 You can [define your own field types](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types) as well.
+
+#### Common Field Parameters
+
+Most (if not all) fields support these parameters:  
+
+* `name`: The field label
+* `desc`: Field description. Usually under or adjacent to the field input.
+* `id`: The data key. If using for posts, will be the post-meta key. If using for an options page, will be the array key.
+* `type`: What makes the whole thing work.
+* `repeatable`: [Supported by most](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress#field-types), and will make the individual field a repeatable one.
+* `default`: Specify a default value for the field.
+* `options`: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`.
+* `before` and `after`: These allow you to add arbitrary text/markup before and after the field just inside the `td` tag.
+* `on_front`: If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`.
+* <a name="attributes">`attributes`</a>: Will modify default attributes (class, input type, rows, etc), or add your own (placeholder, data attributes). Example:
+
+	```php
+	array(
+		'name'        => 'Extra Small Textarea',
+		'id'          => $prefix .'xtra_small_textarea',
+		'type'        => 'textarea_small',
+		'attributes'  => array(
+			'placeholder' => 'A small amount of text',
+			'rows'        => 3,
+		),
+	),
+	```
