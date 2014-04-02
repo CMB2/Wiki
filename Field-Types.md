@@ -561,3 +561,5 @@ Most (if not all) fields support these parameters:
 		),
 	),
 	```
+* `escape_cb`: Bypass the CMB escaping (escapes before display) methods with your own callback.
+* `sanitization_cb`: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback.
