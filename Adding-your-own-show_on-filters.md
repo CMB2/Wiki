@@ -223,6 +223,7 @@ function be_metabox_show_on_child_of( $display, $meta_box ) {
 	else
 		return false;
 }
+add_filter( 'cmb_show_on', 'be_metabox_show_on_child_of', 10, 2 );
 ```
 
 ### Example: Page Slug show_on filter
