@@ -3,7 +3,7 @@ Using CMB we can create a front-end form that will allow visitors to create new 
 ```php
 <?php
 /**
- * Create a front-end submission form for CMB which creates new post/post-type entries.
+ * Create a front-end submission form for CMB which creates new posts/post-type entries.
  *
  * @package  Custom Metaboxes and Fields for WordPress
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
