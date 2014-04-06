@@ -20,4 +20,4 @@ Advanced tutorials:
 
 4. [Using CMB to create an Admin Theme Options Page](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)
 
-5. [Create new posts/post-types using a front-end form](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Create-New-Posts-Post-Type-Entries-Using-A-Front-End-Form)
+5. [Create new posts/post-type entries using a front-end form](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Create-New-Posts-Post-Type-Entries-Using-A-Front-End-Form)
