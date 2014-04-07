@@ -1,4 +1,4 @@
-This class is an example of how you can use CMB to create an Admin Theme Options Page. Keep in mind that the `self::$theme_options` array can be added to and extended the same way you would in the [`cmb_meta_boxes` filter](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php). Obviously replace all instances of `myprefix` with your own custom prefix.
+This class is an example of how you can use CMB to create an Admin Theme Options Page. Keep in mind that the `self::$theme_options` array can be added to and extended the same way you would in the [`cmb_meta_boxes` filter](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php). Obviously replace all instances of `myprefix` with your own custom prefix. If you want to echo out your options in your template files, use `<?php echo cmb_get_option('your-own-custom-prefix', 'test_text'); ?>` etc. 
 
 ```php
 <?php
