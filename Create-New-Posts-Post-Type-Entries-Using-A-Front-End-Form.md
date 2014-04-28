@@ -108,7 +108,7 @@ class Example_Front_End_Form {
 		// This is the WordPress post ID where the data should be stored/displayed.
 		$post_id = 0;
 
-		if ( $new_id = $this->cmb_intercept_post_id() ) {
+		if ( $new_id = $this->intercept_post_id() ) {
 			$post_id = $new_id;
 			echo 'Thank You for your submission.';
 		}
