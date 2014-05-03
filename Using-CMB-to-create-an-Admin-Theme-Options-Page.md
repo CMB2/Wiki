@@ -89,14 +89,14 @@ class myprefix_Admin {
 			'show_names' => true,
 			'fields'     => array(
 				array(
-					'name' => __( 'Test Text', 'cmb' ),
-					'desc' => __( 'field description (optional)', 'cmb' ),
+					'name' => __( 'Test Text', 'myprefix' ),
+					'desc' => __( 'field description (optional)', 'myprefix' ),
 					'id'   => 'test_text',
 					'type' => 'text',
 				),
 				array(
-					'name'    => __( 'Test Color Picker', 'cmb' ),
-					'desc'    => __( 'field description (optional)', 'cmb' ),
+					'name'    => __( 'Test Color Picker', 'myprefix' ),
+					'desc'    => __( 'field description (optional)', 'myprefix' ),
 					'id'      => 'test_colorpicker',
 					'type'    => 'colorpicker',
 					'default' => '#ffffff'
