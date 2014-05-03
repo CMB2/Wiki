@@ -474,7 +474,7 @@ array(
 	'type'        => 'group',
 	'description' => __( 'Generates reusable form entries', 'cmb' ),
 	'options'     => array(
-		'group_title'   => __( 'Entry #{#}', 'cmb' ), // {#} gets replaced by row number
+		'group_title'   => __( 'Entry #{#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
 		'add_button'    => __( 'Add Another Entry', 'cmb' ),
 		'remove_button' => __( 'Remove Entry', 'cmb' ),
 		'sortable'      => true, // beta
@@ -562,6 +562,28 @@ Most (if not all) fields support these parameters:
 			'rows'        => 3,
 		),
 	),
+	```
+* `show_on_cb`: (since version 1.1.4) A callback to conditionally display a field. Callback funciton should return a boolean (true/false) value. Function passes in the current field object. Example:
+
+	```php
+	array(
+		'name'       => __( 'Test Text', 'cmb' ),
+		'id'         => $prefix . 'test_text',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb_only_show_for_user_1', // function should return a bool value
+	),
+
+	...
+
+	/**
+	 * Only display a field if the current user is 1
+	 * @param  object $field Current field object
+	 * @return bool          True if current user's ID is 1
+	 */
+	function cmb_only_show_for_user_1( $field ) {
+		// Returns true if current user's ID is 1, else false
+		return 1 === get_current_user_id();
+	}
 	```
 * `escape_cb`: Bypass the CMB escaping (escapes before display) methods with your own callback.
 * `sanitization_cb`: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback.
