@@ -19,33 +19,38 @@ A simple example would be a `text_email` field that only allowed users to enter 
 The first step is to write the code for *rendering the field* within the WordPress administrative area:
 
 ```php
-add_action( 'cmb_render_text_email', 'rrh_cmb_render_text_email', 10, 2 );
-function rrh_cmb_render_text_email( $field, $meta ) {
-    echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" style="width:97%" />','<p class="cmb_metabox_description">', $field['desc'], '</p>';
+add_action( 'cmb_render_text_email', 'rrh_cmb_render_text_email', 10, 5 );
+function rrh_cmb_render_text_email( $field_args, $escaped_value, $object_id, $object_type, $field_type ) {
+	echo $field_type->input( array( 'type' => 'email' ) );
 }
 ```
 
-The `add_action` function has four parameters:
+This snippet has a few things going on:
 
 * `cmb_render_text_email` -- By adding an action to this hook, we are essentially creating the new field type. This action defines what code gets executed when you instantiate a field type called `text_email` in the library. This first parameter, the hook name, must be `cmb_render_` followed by the field type name.
 * `rrh_cmb_render_text_email` -- This is the name of your custom function that gets executed when you instantiate a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
 * `10` -- This is the priority for this action, the order in which it is executed. (The exact number matter should not matter unless you have multiple action on this hook.)
-* `2` -- This is the number of parameters your custom function will receive. You want to set this to 2 so that you can receive the field definition [`$field`] and the existing value [`$meta`].
+* `5` -- This is the number of parameters your custom function will receive. We've set this to 5 so that we  can access the `$field_type` object. This allows us to use CMB's built in input method.
 
-In this example, our custom field type will display an input box, with the proper `name` attribute of `$field['id']` so that it will save to the database the way the built-in field types do. It displays the value previously specified for the field, if there is one.
+In this example, our custom field type will display an input box, with the proper `name` attribute of `$field['id']` so that it will save to the database the way the built-in field types do. It displays the value previously specified for the field, if there is one. The only difference we've specified from the built in text input is that the input should have a type of `email`, which is a new type attribute introduced with html5. 
 
 ### Step 2: `cmb_validate_{field-type}`
-You can optionally add code that validates or modifies the entered value before it is saved. In our example, we only want to allow valid email addresses; we can remove any invalid values before they are saved to the database:
+You can optionally add code that validates or modifies the entered value before it is saved. In our example, we only want to allow valid email addresses; we can remove any invalid values before they are saved to the database.  
+**Note:** in most modern browsers, the field will not be allowed to submit if using the `email` attribute and the value is not an email, but we're including the validation filter as a fallback for older browsers.
 
 ```php
 add_filter( 'cmb_validate_text_email', 'rrh_cmb_validate_text_email' );
-function rrh_cmb_validate_text_email( $new ) {
-    if ( !is_email( $new ) ) {$new = "";}   
-    return $new;
+function rrh_cmb_validate_text_email( $value ) {
+	// not an email?
+	if ( ! is_email( $value ) ) {
+		// Empty the value
+		$value = '';
+	}   
+	return $value;
 }
 ```
 
-The `add_filter` function has two parameters:
+What's going on:
 
 * `cmb_validate_text_email` -- This filter defines what code gets executed when the user attempts to save a value in a field type called `text_email` in the library. This first parameter, the hook name, must be `cmb_validate_` followed by the field type name.
 * `rrh_cmb_validate_text_email` -- This is the name of your custom function that gets executed when the user attempts to save a value in a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
@@ -89,19 +94,21 @@ This code makes the field type available to the library:
 
 ```php
 add_filter( 'cmb_render_imag_select_taxonomy', 'imag_render_imag_select_taxonomy', 10, 2 );
-function imag_render_imag_select_taxonomy( $field, $meta ) {
+function imag_render_imag_select_taxonomy( $field_args, $value ) {
 
-    wp_dropdown_categories(array(
-            'show_option_none' => '&#8212; Select &#8212;',
-            'hierarchical' => 1,
-            'taxonomy' => $field['taxonomy'],
-            'orderby' => 'name', 
-            'hide_empty' => 0, 
-            'name' => $field['id'],
-            'selected' => $meta  
+	wp_dropdown_categories( array(
+		'show_option_none' => '&#8212; Select &#8212;',
+		'hierarchical'     => 1,
+		'taxonomy'         => $field_args['taxonomy'],
+		'orderby'          => 'name', 
+		'hide_empty'       => 0, 
+		'name'             => $field_args['id'],
+		'selected'         => $value  
+	) );
 
-        ));
-    if ( !empty( $field['desc'] ) ) echo '<p class="cmb_metabox_description">' . $field['desc'] . '</p>';
+	if ( ! empty( $field_args['desc'] ) ) {
+		echo '<p class="cmb_metabox_description">' . $field['desc'] . '</p>';
+	}
 
 }
 ```
@@ -230,43 +237,76 @@ Then, in our fields array, we would add the `select` type and pass the `cmb_get_
 You may want to create your own field type that stores multiple inputs. Here's how you could create an address field type:
 
 ```php
-add_filter( 'cmb_render_address', 'cmb_render_address_field', 10, 2 );
+add_action( 'cmb_render_address', 'cmb_render_address_field', 10, 5 );
 /**
  * Render Address Field
  */
-function cmb_render_address_field( $field, $meta ) {
+function cmb_render_address_field( $field_args, $value, $object_id, $object_type, $field_type ) {
 
 	$state_list = array( 'AL'=>'Alabama','AK'=>'Alaska','AZ'=>'Arizona','AR'=>'Arkansas','CA'=>'California','CO'=>'Colorado','CT'=>'Connecticut','DE'=>'Delaware','DC'=>'District Of Columbia','FL'=>'Florida','GA'=>'Georgia','HI'=>'Hawaii','ID'=>'Idaho','IL'=>'Illinois','IN'=>'Indiana','IA'=>'Iowa','KS'=>'Kansas','KY'=>'Kentucky','LA'=>'Louisiana','ME'=>'Maine','MD'=>'Maryland','MA'=>'Massachusetts','MI'=>'Michigan','MN'=>'Minnesota','MS'=>'Mississippi','MO'=>'Missouri','MT'=>'Montana','NE'=>'Nebraska','NV'=>'Nevada','NH'=>'New Hampshire','NJ'=>'New Jersey','NM'=>'New Mexico','NY'=>'New York','NC'=>'North Carolina','ND'=>'North Dakota','OH'=>'Ohio','OK'=>'Oklahoma','OR'=>'Oregon','PA'=>'Pennsylvania','RI'=>'Rhode Island','SC'=>'South Carolina','SD'=>'South Dakota','TN'=>'Tennessee','TX'=>'Texas','UT'=>'Utah','VT'=>'Vermont','VA'=>'Virginia','WA'=>'Washington','WV'=>'West Virginia','WI'=>'Wisconsin','WY'=>'Wyoming' );
 
-	$meta = wp_parse_args( $meta, array(
+	$value = wp_parse_args( $value, array(
 		'address-1' => '',
 		'address-2' => '',
-		'city' => '',
-		'state' => '',
-		'zip' => '',
+		'city'      => '',
+		'state'     => '',
+		'zip'       => '',
 	) );
 
-	echo
-	'<div><p><label for="', $field['id'], '-address-1">Address 1</label></p>',
-		'<input type="text" class="regular-text" name="', $field['id'] ,'[address-1]" id="', $field['id'], '-address-1" value="', cmb_Meta_Box_types::esc( $meta['address-1'] ), '" /></div>',
-	'<div><p><label for="', $field['id'], '-address-2">Address 2</label></p>',
-		'<input type="text" class="regular-text" name="', $field['id'] ,'[address-2]" id="', $field['id'], '-address-2" value="', cmb_Meta_Box_types::esc( $meta['address-2'] ), '" /></div>',
-	'<div class="alignleft"><p><label for="', $field['id'], '-city">City</label></p>',
-		'<input type="text" class="cmb_text_small" name="', $field['id'] ,'[city]" id="', $field['id'], '-city" value="', cmb_Meta_Box_types::esc( $meta['city'] ), '" /></div>',
+	$state_options = '';
+	foreach ( $state_list as $abrev => $state ) {
+		$state_options .= '<option value="'. $abrev .'" '. selected( $value['state'], $abrev, false ) .'>'. $state .'</option>';
+	}
 
-	'<div class="alignleft"><p><label for="', $field['id'], '-state">State</label></p>',
-		'<select name="', $field['id'] ,'[state]" id="', $field['id'], '-state">';
-		foreach ( $state_list as $abrev => $state ) {
-			echo '<option value="', $abrev, '" ', selected( $meta['state'], $abrev ) ,'>', $state, '</option>';
-		}
-		echo '
-		</select></div>',
-	'<div class="alignleft"><p><label for="', $field['id'], '-zip">Zip</label></p>',
-		'<input type="text" class="cmb_text_small" name="', $field['id'] ,'[zip]" id="', $field['id'], '-zip', '" value="', cmb_Meta_Box_types::esc( $meta['zip'] ), '" /></div>',
-	'<p class="cmb_metabox_description" style="clear:both;">'. $field['desc'] .'</p>';
+	?>
+	<div><p><label for="<?php echo $field_type->_id( '_address_1' ); ?>">Address 1</label></p>
+		<?php echo $field_type->input( array(
+			'name'  => $field_type->_name( '[address-1]' ),
+			'id'    => $field_type->_id( '_address_1' ),
+			'value' => $value['address-1'],
+			'desc'  => '',
+		) ); ?>
+	</div>
+	<div><p><label for="<?php echo $field_type->_id( '_address_2' ); ?>'">Address 2</label></p>
+		<?php echo $field_type->input( array(
+			'name'  => $field_type->_name( '[address-2]' ),
+			'id'    => $field_type->_id( '_address_2' ),
+			'value' => $value['address-2'],
+			'desc'  => '',
+		) ); ?>
+	</div>
+	<div class="alignleft"><p><label for="<?php echo $field_type->_id( '_city' ); ?>'">City</label></p>
+		<?php echo $field_type->input( array(
+			'class' => 'cmb_text_small',
+			'name'  => $field_type->_name( '[city]' ),
+			'id'    => $field_type->_id( '_city' ),
+			'value' => $value['city'],
+			'desc'  => '',
+		) ); ?>
+	</div>
+	<div class="alignleft"><p><label for="<?php echo $field_type->_id( '_state' ); ?>'">State</label></p>
+		<?php echo $field_type->select( array(
+			'name'    => $field_type->_name( '[state]' ),
+			'id'      => $field_type->_id( '_state' ),
+			'desc'    => '',
+			'options' => $state_options,
+		) ); ?>
+	</div>
+	<div class="alignleft"><p><label for="<?php echo $field_type->_id( '_zip' ); ?>'">Zip</label></p>
+		<?php echo $field_type->input( array(
+			'class' => 'cmb_text_small',
+			'name'  => $field_type->_name( '[zip]' ),
+			'id'    => $field_type->_id( '_zip' ),
+			'value' => $value['zip'],
+			'desc'  => '',
+		) ); ?>
+	</div>
+	<?php
+	echo $field_type->_desc( true );
 
 }
 ```
+
 We can then retrieve the address later in our theme or plugin like so:
 
 ```php
@@ -282,11 +322,15 @@ $address = wp_parse_args( $address, array(
 	'zip' => '',
 ) );
 
-echo '<p><strong>Address:</strong> '. esc_html( $address['address-1'] ) .'</p>';
-if ( $address['address-2'] ) echo '<p><strong>Address 2:</strong> '. esc_html( $address['address-2'] ) .'</p>';
-echo '<p><strong>City:</strong> '. esc_html( $address['city'] ) .'</p>';
-echo '<p><strong>State:</strong> '. esc_html( $address['state'] ) .'</p>';
-echo '<p><strong>Zip:</strong> '. esc_html( $address['zip'] ) .'</p>';
+?>
+<p><strong>Address:</strong> <?php echo esc_html( $address['address-1'] ); ?></p>
+<?php if ( $address['address-2'] ) : ?>
+	<p><strong>Address 2:</strong> <?php echo esc_html( $address['address-2'] ); ?></p>
+<?php endif; ?>
+<p><strong>City:</strong> <?php echo esc_html( $address['city'] ); ?></p>
+<p><strong>State:</strong> <?php echo esc_html( $address['state'] ); ?></p>
+<p><strong>Zip:</strong> <?php echo esc_html( $address['zip'] ); ?></p>
+<?php
 
 ```
 
@@ -301,18 +345,17 @@ Sometimes you only want a number in your input.
 
 ```php
 // render numbers
-add_action( 'cmb_render_text_number', 'sm_cmb_render_text_number', 10, 2 );
-
-function sm_cmb_render_text_number( $field, $meta ) {
-	echo '<input class="cmb_text_small" type="number" name="', $field['id'], '" id="', $field['id'], '" value="', '' !== $meta ? $meta : $field['std'], '" /><span class="cmb_metabox_description">', $field['desc'], '</span>';
+add_action( 'cmb_render_text_number', 'sm_cmb_render_text_number', 10, 5 );
+function sm_cmb_render_text_number( $field_args, $escaped_value, $object_id, $object_type, $field_type ) {
+	echo $field_type->input( array( 'class' => 'cmb_text_small', 'type' => 'number' ) );
 }
 
 // validate the field
 add_filter( 'cmb_validate_text_number', 'sm_cmb_validate_text_number' );
 function sm_cmb_validate_text_number( $new ) {
-	$new = preg_replace("/[^0-9]/","",$new);
+	$new = preg_replace( "/[^0-9]/", "", $new );
 
-    return $new;
+	return $new;
 }
 ```
 
@@ -324,12 +367,12 @@ function sm_cmb_validate_text_number( $new ) {
 This is useful if you would like to display a URL in a template by pulling it from the post meta. Using this will make sure the link works if the user doesn't put the "http://" before the domain name.
 
 ```php
-add_action( 'cmb_render_text_url', 'jt_cmb_render_text_url', 10, 2 );
+add_action( 'cmb_render_text_url', 'jt_cmb_render_text_url', 10, 5 );
 /**
  * Outputs the markup for the text_url field
  */
-function jt_cmb_render_text_url( $field, $meta ) {
-    echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" style="width:97%" />','<p class="cmb_metabox_description">', $field['desc'], '</p>';
+function jt_cmb_render_text_url( $field_args, $escaped_value, $object_id, $object_type, $field_type ) {
+	echo $field_type->input( array( 'class' => 'cmb_text_small' ) );
 }
 
 add_filter( 'cmb_validate_text_url', 'jt_cmb_validate_text_url' );
@@ -341,9 +384,11 @@ add_filter( 'cmb_validate_text_url', 'jt_cmb_validate_text_url' );
  * @author Justin Tallant
  */
 function jt_cmb_validate_text_url( $new ) {
-    if ( '' == $new ) { return; }
+    if ( '' == $new ) {
+    	return;
+    }
 
-    if ( !preg_match('/http:\/\//', $new) ) {
+    if ( ! preg_match('/http:\/\//', $new) ) {
         $new = 'http://' . $new;
     }
 
