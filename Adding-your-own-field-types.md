@@ -30,7 +30,7 @@ This snippet has a few things going on:
 * `cmb_render_text_email` -- By adding an action to this hook, we are essentially creating the new field type. This action defines what code gets executed when you instantiate a field type called `text_email` in the library. This first parameter, the hook name, must be `cmb_render_` followed by the field type name.
 * `rrh_cmb_render_text_email` -- This is the name of your custom function that gets executed when you instantiate a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
 * `10` -- This is the priority for this action, the order in which it is executed. (The exact number matter should not matter unless you have multiple action on this hook.)
-* `5` -- This is the number of parameters your custom function will receive. We've set this to 5 so that we  can access the `$field_type` object. This allows us to use CMB's built in input method.
+* `5` -- This is the number of parameters your custom function will receive. We've set this to 5 so that we  can access the `$field_type_object` object. This allows us to use CMB's built in input method.
 
 In this example, our custom field type will display an input box, with the proper `name` attribute of `$field['id']` so that it will save to the database the way the built-in field types do. It displays the value previously specified for the field, if there is one. The only difference we've specified from the built in text input is that the input should have a type of `email`, which is a new type attribute introduced with html5. 
 
@@ -241,7 +241,7 @@ add_action( 'cmb_render_address', 'cmb_render_address_field', 10, 5 );
 /**
  * Render Address Field
  */
-function cmb_render_address_field( $field_args, $value, $object_id, $object_type, $field_type ) {
+function cmb_render_address_field( $field_args, $value, $object_id, $object_type, $field_type_object ) {
 
 	$state_list = array( 'AL'=>'Alabama','AK'=>'Alaska','AZ'=>'Arizona','AR'=>'Arkansas','CA'=>'California','CO'=>'Colorado','CT'=>'Connecticut','DE'=>'Delaware','DC'=>'District Of Columbia','FL'=>'Florida','GA'=>'Georgia','HI'=>'Hawaii','ID'=>'Idaho','IL'=>'Illinois','IN'=>'Indiana','IA'=>'Iowa','KS'=>'Kansas','KY'=>'Kentucky','LA'=>'Louisiana','ME'=>'Maine','MD'=>'Maryland','MA'=>'Massachusetts','MI'=>'Michigan','MN'=>'Minnesota','MS'=>'Mississippi','MO'=>'Missouri','MT'=>'Montana','NE'=>'Nebraska','NV'=>'Nevada','NH'=>'New Hampshire','NJ'=>'New Jersey','NM'=>'New Mexico','NY'=>'New York','NC'=>'North Carolina','ND'=>'North Dakota','OH'=>'Ohio','OK'=>'Oklahoma','OR'=>'Oregon','PA'=>'Pennsylvania','RI'=>'Rhode Island','SC'=>'South Carolina','SD'=>'South Dakota','TN'=>'Tennessee','TX'=>'Texas','UT'=>'Utah','VT'=>'Vermont','VA'=>'Virginia','WA'=>'Washington','WV'=>'West Virginia','WI'=>'Wisconsin','WY'=>'Wyoming' );
 
@@ -259,50 +259,50 @@ function cmb_render_address_field( $field_args, $value, $object_id, $object_type
 	}
 
 	?>
-	<div><p><label for="<?php echo $field_type->_id( '_address_1' ); ?>">Address 1</label></p>
-		<?php echo $field_type->input( array(
-			'name'  => $field_type->_name( '[address-1]' ),
-			'id'    => $field_type->_id( '_address_1' ),
+	<div><p><label for="<?php echo $field_type_object->_id( '_address_1' ); ?>">Address 1</label></p>
+		<?php echo $field_type_object->input( array(
+			'name'  => $field_type_object->_name( '[address-1]' ),
+			'id'    => $field_type_object->_id( '_address_1' ),
 			'value' => $value['address-1'],
 			'desc'  => '',
 		) ); ?>
 	</div>
-	<div><p><label for="<?php echo $field_type->_id( '_address_2' ); ?>'">Address 2</label></p>
-		<?php echo $field_type->input( array(
-			'name'  => $field_type->_name( '[address-2]' ),
-			'id'    => $field_type->_id( '_address_2' ),
+	<div><p><label for="<?php echo $field_type_object->_id( '_address_2' ); ?>'">Address 2</label></p>
+		<?php echo $field_type_object->input( array(
+			'name'  => $field_type_object->_name( '[address-2]' ),
+			'id'    => $field_type_object->_id( '_address_2' ),
 			'value' => $value['address-2'],
 			'desc'  => '',
 		) ); ?>
 	</div>
-	<div class="alignleft"><p><label for="<?php echo $field_type->_id( '_city' ); ?>'">City</label></p>
-		<?php echo $field_type->input( array(
+	<div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_city' ); ?>'">City</label></p>
+		<?php echo $field_type_object->input( array(
 			'class' => 'cmb_text_small',
-			'name'  => $field_type->_name( '[city]' ),
-			'id'    => $field_type->_id( '_city' ),
+			'name'  => $field_type_object->_name( '[city]' ),
+			'id'    => $field_type_object->_id( '_city' ),
 			'value' => $value['city'],
 			'desc'  => '',
 		) ); ?>
 	</div>
-	<div class="alignleft"><p><label for="<?php echo $field_type->_id( '_state' ); ?>'">State</label></p>
-		<?php echo $field_type->select( array(
-			'name'    => $field_type->_name( '[state]' ),
-			'id'      => $field_type->_id( '_state' ),
+	<div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_state' ); ?>'">State</label></p>
+		<?php echo $field_type_object->select( array(
+			'name'    => $field_type_object->_name( '[state]' ),
+			'id'      => $field_type_object->_id( '_state' ),
 			'desc'    => '',
 			'options' => $state_options,
 		) ); ?>
 	</div>
-	<div class="alignleft"><p><label for="<?php echo $field_type->_id( '_zip' ); ?>'">Zip</label></p>
-		<?php echo $field_type->input( array(
+	<div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_zip' ); ?>'">Zip</label></p>
+		<?php echo $field_type_object->input( array(
 			'class' => 'cmb_text_small',
-			'name'  => $field_type->_name( '[zip]' ),
-			'id'    => $field_type->_id( '_zip' ),
+			'name'  => $field_type_object->_name( '[zip]' ),
+			'id'    => $field_type_object->_id( '_zip' ),
 			'value' => $value['zip'],
 			'desc'  => '',
 		) ); ?>
 	</div>
 	<?php
-	echo $field_type->_desc( true );
+	echo $field_type_object->_desc( true );
 
 }
 ```
@@ -346,8 +346,8 @@ Sometimes you only want a number in your input.
 ```php
 // render numbers
 add_action( 'cmb_render_text_number', 'sm_cmb_render_text_number', 10, 5 );
-function sm_cmb_render_text_number( $field_args, $escaped_value, $object_id, $object_type, $field_type ) {
-	echo $field_type->input( array( 'class' => 'cmb_text_small', 'type' => 'number' ) );
+function sm_cmb_render_text_number( $field_args, $escaped_value, $object_id, $object_type, $field_type_object ) {
+	echo $field_type_object->input( array( 'class' => 'cmb_text_small', 'type' => 'number' ) );
 }
 
 // validate the field
@@ -371,8 +371,8 @@ add_action( 'cmb_render_text_url', 'jt_cmb_render_text_url', 10, 5 );
 /**
  * Outputs the markup for the text_url field
  */
-function jt_cmb_render_text_url( $field_args, $escaped_value, $object_id, $object_type, $field_type ) {
-	echo $field_type->input( array( 'class' => 'cmb_text_small' ) );
+function jt_cmb_render_text_url( $field_args, $escaped_value, $object_id, $object_type, $field_type_object ) {
+	echo $field_type_object->input( array( 'class' => 'cmb_text_small' ) );
 }
 
 add_filter( 'cmb_validate_text_url', 'jt_cmb_validate_text_url' );
