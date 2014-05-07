@@ -30,7 +30,13 @@ This snippet has a few things going on:
 * `cmb_render_text_email` -- By adding an action to this hook, we are essentially creating the new field type. This action defines what code gets executed when you instantiate a field type called `text_email` in the library. This first parameter, the hook name, must be `cmb_render_` followed by the field type name.
 * `rrh_cmb_render_text_email` -- This is the name of your custom function that gets executed when you instantiate a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
 * `10` -- This is the priority for this action, the order in which it is executed. (The exact number matter should not matter unless you have multiple action on this hook.)
-* `5` -- This is the number of parameters your custom function will receive. We've set this to 5 so that we  can access the `$field_type_object` object. This allows us to use CMB's built in input method.
+* `5` -- This is the number of parameters your custom function will receive. This hook can accept up to 5 parameters:
+	* `field_args`: {{Parameter|field_args|array|The Metabox field config array.}}
+	* `$escaped_value`: 
+	* `$object_id`: 
+	* `$object_type`: 
+	* `$field_type_object`: 
+We've set this to 5 so that we  can access the `$field_type_object` object. This allows us to use CMB's built in input method.
 
 In this example, our custom field type will display an input box, with the proper `name` attribute of `$field['id']` so that it will save to the database the way the built-in field types do. It displays the value previously specified for the field, if there is one. The only difference we've specified from the built in text input is that the input should have a type of `email`, which is a new type attribute introduced with html5. 
 
