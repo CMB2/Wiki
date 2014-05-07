@@ -32,7 +32,7 @@ This snippet has a few things going on:
 * `10` -- This is the priority for this action, the order in which it is executed. (The exact number matter should not matter unless you have multiple action on this hook.)
 * `5` -- This is the number of parameters your custom function will receive. This hook can accept up to 5 parameters:
 	* `field_args`: The array of this field's arguments. It will contain all the arguments that you passed to it as well as some default arguments filled in.
-	* `$escaped_value`: The value of this field passed through the escaping filter. It defaults to `sanitize_text_field`. If you prefer the unescaped value, you can access it via `$field_type_object->value()`.
+	* `$escaped_value`: The value of this field passed through the escaping filter. It defaults to `sanitize_text_field`. If you need the unescaped value, you can access it via `$field_type_object->value()`.
 	* `$object_id`: The id of the object you are working with. Most commonly, the post id.
 	* `$object_type`: The type of object you are working with. Most commonly, `post` (this applies to all post-types), but could also be `comment`, `user` or `options-page`.
 	* `$field_type_object`: This is an instance of the `cmb_Meta_Box_types` object and gives you access to all of the methods that CMB uses to build its field types.
