@@ -63,11 +63,11 @@ What's going on:
 * `rrh_cmb_validate_text_email` -- This is the name of your custom function that gets executed when the user attempts to save a value in a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
 
 The `cmb_validate_{field-type}` hook can accept up to 5 parameters:
-	* `$override_value`: Sanitization/Validation override value to return. It is passed in as `null`, and is what we will modify to short-circuit CMB's saving mechanism.
-	* `$value`: The value being passed
-	* `$object_id`: The id of the object you are working with. Most commonly, the post id.
-	* `field_args`: The array of this field's arguments. It will contain all the arguments that you passed to it as well as some default arguments filled in.
-	* `$sanitizer`: This is an instance of the `cmb_Meta_Box_Sanitize` object and gives you access to all of the methods that CMB uses to sanitize its field values.
+* `$override_value`: Sanitization/Validation override value to return. It is passed in as `null`, and is what we will modify to short-circuit CMB's saving mechanism.
+* `$value`: The value being passed
+* `$object_id`: The id of the object you are working with. Most commonly, the post id.
+* `field_args`: The array of this field's arguments. It will contain all the arguments that you passed to it as well as some default arguments filled in.
+* `$sanitizer`: This is an instance of the `cmb_Meta_Box_Sanitize` object and gives you access to all of the methods that CMB uses to sanitize its field values.
 
 
 When the user attempts to save a value in the field, we will check if the new value is a valid email address. If not, we will remove it. We will then return the possibly-modified value back to the library to do the saving.
