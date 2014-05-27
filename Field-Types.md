@@ -188,8 +188,13 @@ array(
 	'name' => 'Test Date Picker',
 	'id' => $prefix . 'test_texttime',
 	'type' => 'text_time'
+	// 'time_format' => 'h:i:s A',
 ),
 ```
+##### Extra Parameters:
+
+* `time_format`, defaults to 'h:i A'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php). 
+
 
 #### `select_timezone`
 Timezone field. Example:
@@ -202,6 +207,7 @@ array(
 ),
 ```
 
+
 #### `text_date_timestamp`
 Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
 
@@ -210,10 +216,15 @@ array(
 	'name' => 'Test Date Picker (UNIX timestamp)',
 	'id'   => $prefix . 'test_textdate_timestamp',
 	'type' => 'text_date_timestamp',
-	// 'timezone_meta_key' => $prefix . 'timezone', // Optionally make this field honor the timezone selected in the [`select_timezone`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#select_timezone) field specified above
-	'repeatable' => true,
+	// 'timezone_meta_key' => $prefix . 'timezone',
+	// 'date_format' => 'l jS \of F Y',
 ),
 ```
+##### Extra Parameters:
+
+* `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#select_timezone) field specified above.  
+* `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).  
+
 
 #### `text_datetime_timestamp`
 Date and time field, stored as UNIX timestamp. Example:
@@ -447,6 +458,9 @@ array(
 	// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 ),
 ```
+##### Extra Parameters:
+
+* `preview_size` Changes the size of the preview images in the field. Default: array( 50, 50 ).
 
 #### `oembed`
 Displays embedded media inline using WordPress' built-in oEmbed support. See [codex.wordpress.org/Embeds](http://codex.wordpress.org/Embeds) for more info and for a list of embed services supported. (added in 0.9.1)
