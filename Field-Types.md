@@ -39,7 +39,7 @@ Not all built-in fields have been documented, so please see the example file for
 1. [`group`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#group)
 
 #### More Info
-* [Create your own field type](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#Custom)
+* [Create your own field type](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types)
 * [Common field parameters shared by all fields](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#common-field-parameters)
 
 #### `title`
