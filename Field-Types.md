@@ -599,5 +599,5 @@ Most (if not all) fields support these parameters:
 		return 1 === get_current_user_id();
 	}
 	```
-* `escape_cb`: Bypass the CMB escaping (escapes before display) methods with your own callback.
-* `sanitization_cb`: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback.
+* `escape_cb`: Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
+* `sanitization_cb`: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback. Set to `false` if you do not want any sanitization (not recommended).
