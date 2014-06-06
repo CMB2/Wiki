@@ -140,6 +140,9 @@ class Example_Front_End_Form {
 
 		// Setup and sanitize data
 		if ( isset( $_POST[ $this->prefix . 'memorial_first_name' ] ) ) {
+
+			add_filter( 'user_has_cap', array( $this, 'grant_publish_caps' ), 0,  3);
+
 			$this->new_submission = wp_insert_post( array(
 				'post_title'            => sanitize_text_field( $_POST[ $this->prefix . 'memorial_first_name' ] . ' ' . $_POST[ $this->prefix . 'memorial_last_name' ] ),
 				'post_author'           => get_current_user_id(),
@@ -158,6 +161,17 @@ class Example_Front_End_Form {
 		return false;
 	}
 
+	/**
+	 * Grant temporary permissions to subscribers.
+	 */
+	public function grant_publish_caps( $caps, $cap, $args ) {
+
+		if ( 'edit_post'  == $args[0] ) {
+			$caps[$cap[0]] = true;
+		}
+
+		return $caps;
+	}
 
 	/**
 	 * Save featured image.
