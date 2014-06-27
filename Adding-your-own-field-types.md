@@ -235,8 +235,8 @@ Then, in our fields array, we would add the `select` type and pass the `cmb_get_
 ...
         'fields' => array(
 			array(
-				'name'    => 'Select Posts',
-				'desc'    => 'field description (optional)',
+				'name'    => __( 'Select Posts', 'cmb' ),
+				'desc'    => __( 'field description (optional)', 'cmb' ),
 				'id'      => $prefix . 'post_multicheckbox',
 				'type'    => 'multicheck',
 				'options' => cmb_get_post_options( array( 'post_type' => 'your_post_type', 'numberposts' => 5 ) ),
