@@ -476,7 +476,8 @@ array(
 **Note:** Text added in a `oembed` field will not automatically display the embed in your theme. To generate the embed in your theme, this is a method you could use:
 
 ```
-echo apply_filters( 'the_content', get_post_meta( get_the_ID(), $prefix . 'test_embed', true ) );
+$url = esc_html( cmb_get_option( 'cmb_options', 'video_url_option_id' ) );
+echo wp_oembed_get( $url );
 ```
 
 #### `group`
