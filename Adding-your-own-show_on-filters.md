@@ -257,7 +257,7 @@ function be_metabox_show_on_slug( $display, $meta_box ) {
 	$meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
 
 	// See if there's a match
-	return in_array( $slug, $meta_box['show_on']['value'] ) );
+	return in_array( $slug, $meta_box['show_on']['value']);
 }
 add_filter( 'cmb_show_on', 'be_metabox_show_on_slug', 10, 2 );
 
