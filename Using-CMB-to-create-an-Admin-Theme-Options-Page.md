@@ -11,19 +11,25 @@ class myprefix_Admin {
  	 * Option key, and option page slug
  	 * @var string
  	 */
-	protected static $key = 'myprefix_options';
+	private $key = 'myprefix_options';
 
 	/**
 	 * Array of metaboxes/fields
 	 * @var array
 	 */
-	protected static $theme_options = array();
+	protected $option_metabox = array();
 
 	/**
 	 * Options Page title
 	 * @var string
 	 */
 	protected $title = '';
+
+	/**
+	 * Options Page hook
+	 * @var string
+	 */
+	protected $options_page = '';
 
 	/**
 	 * Constructor
@@ -48,7 +54,7 @@ class myprefix_Admin {
 	 * @since  0.1.0
 	 */
 	public function init() {
-		register_setting( self::$key, self::$key );
+		register_setting( $this->key, $this->key );
 	}
 
 	/**
@@ -56,7 +62,7 @@ class myprefix_Admin {
 	 * @since 0.1.0
 	 */
 	public function add_options_page() {
-		$this->options_page = add_menu_page( $this->title, $this->title, 'manage_options', self::$key, array( $this, 'admin_page_display' ) );
+		$this->options_page = add_menu_page( $this->title, $this->title, 'manage_options', $this->key, array( $this, 'admin_page_display' ) );
 	}
 
 	/**
@@ -65,9 +71,9 @@ class myprefix_Admin {
 	 */
 	public function admin_page_display() {
 		?>
-		<div class="wrap cmb_options_page <?php echo self::$key; ?>">
+		<div class="wrap cmb_options_page <?php echo $this->key; ?>">
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
-			<?php cmb_metabox_form( self::option_fields(), self::$key ); ?>
+			<?php cmb_metabox_form( self::option_fields(), $this->key ); ?>
 		</div>
 		<?php
 	}
@@ -77,42 +83,56 @@ class myprefix_Admin {
 	 * @since  0.1.0
 	 * @return array
 	 */
-	public static function option_fields() {
+	public function option_fields() {
 
 		// Only need to initiate the array once per page-load
-		if ( ! empty( self::$theme_options ) )
-			return self::$theme_options;
+		if ( ! empty( $this->option_metabox ) ) {
+			return $this->option_metabox;
+		}
 
-		self::$theme_options = array(
-			'id'         => 'theme_options',
-			'show_on'    => array( 'key' => 'options-page', 'value' => array( self::$key, ), ),
-			'show_names' => true,
-			'fields'     => array(
-				array(
-					'name' => __( 'Test Text', 'myprefix' ),
-					'desc' => __( 'field description (optional)', 'myprefix' ),
-					'id'   => 'test_text',
-					'type' => 'text',
-				),
-				array(
-					'name'    => __( 'Test Color Picker', 'myprefix' ),
-					'desc'    => __( 'field description (optional)', 'myprefix' ),
-					'id'      => 'test_colorpicker',
-					'type'    => 'colorpicker',
-					'default' => '#ffffff'
-				),
+		$this->fields = array(
+			array(
+				'name' => __( 'Test Text', 'myprefix' ),
+				'desc' => __( 'field description (optional)', 'myprefix' ),
+				'id'   => 'test_text',
+				'type' => 'text',
+			),
+			array(
+				'name'    => __( 'Test Color Picker', 'myprefix' ),
+				'desc'    => __( 'field description (optional)', 'myprefix' ),
+				'id'      => 'test_colorpicker',
+				'type'    => 'colorpicker',
+				'default' => '#ffffff'
 			),
 		);
-		return self::$theme_options;
+
+		$this->option_metabox = array(
+			'id'         => 'option_metabox',
+			'show_on'    => array( 'key' => 'options-page', 'value' => array( $this->key, ), ),
+			'show_names' => true,
+			'fields'     => $this->fields,
+		);
+
+		return $this->option_metabox;
 	}
 
 	/**
-	 * Make public the protected $key variable.
+	 * Public getter method for retrieving protected/private variables
 	 * @since  0.1.0
-	 * @return string  Option key
+	 * @param  string  $field Field to retrieve
+	 * @return mixed          Field value or exception is thrown
 	 */
-	public static function key() {
-		return self::$key;
+	public function __get( $field ) {
+
+		// Allowed fields to retrieve
+		if ( in_array( $field, array( 'key', 'fields', 'title', 'options_page' ), true ) ) {
+			return $this->{$field};
+		}
+		if ( 'option_metabox' === $field ) {
+			return $this->option_fields();
+		}
+
+		throw new Exception( 'Invalid property: ' . $field );
 	}
 
 }
@@ -128,7 +148,8 @@ $myprefix_Admin->hooks();
  * @return mixed        Option value
  */
 function myprefix_get_option( $key = '' ) {
-	return cmb_get_option( myprefix_Admin::key(), $key );
+	global $myprefix_Admin;
+	return cmb_get_option( $myprefix_Admin->key, $key );
 }
 ```
 
