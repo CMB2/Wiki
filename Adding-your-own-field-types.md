@@ -122,7 +122,7 @@ function imag_render_imag_select_taxonomy( $field_args, $value ) {
 	) );
 
 	if ( ! empty( $field_args['desc'] ) ) {
-		echo '<p class="cmb_metabox_description">' . $field['desc'] . '</p>';
+		echo '<p class="cmb_metabox_description">' . $field_args['desc'] . '</p>';
 	}
 
 }
