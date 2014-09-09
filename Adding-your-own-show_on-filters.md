@@ -184,7 +184,7 @@ add_filter( 'cmb_show_on', 'be_taxonomy_show_on_filter', 10, 2 );
 ### Example: Child page show_on filter
 This allows you to specify one or more parent page ids and the metabox will only appear on the children of those pages.
 
-```
+```php
 <?php
 /**
  * Metabox for Children of Parent ID
@@ -229,7 +229,7 @@ add_filter( 'cmb_show_on', 'be_metabox_show_on_child_of', 10, 2 );
 ### Example: Page Slug show_on filter
 This is similar to the built-in 'id' show_on filter, but it lets you specify the page slug instead.
 
-```
+```php
 <?php
 
 /**
@@ -267,7 +267,7 @@ add_filter( 'cmb_show_on', 'be_metabox_show_on_slug', 10, 2 );
 ### Example: Front Page show_on filter
 This shows only if a static page is set and you're editing it.
 'show_on' => array( 'key' => 'front-page', 'value' => ''  ),
-```
+```php
 <?php
 
 /**
@@ -309,7 +309,7 @@ add_filter( 'cmb_show_on', 'ed_metabox_include_front_page', 10, 2 );
 ### Example: By Capability show_on filter
 Metaboxes show based on user capability.
 'show_on' => array( 'key' => 'user-type'),
-```
+```php
 <?php
 /**
  * Show metaboxes to users with specified capabilities
