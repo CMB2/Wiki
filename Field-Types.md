@@ -575,6 +575,7 @@ Most (if not all) fields support these parameters:
 		'attributes'  => array(
 			'placeholder' => 'A small amount of text',
 			'rows'        => 3,
+			'required'    => 'required',
 		),
 	),
 	```
