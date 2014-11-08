@@ -38,6 +38,23 @@ class myprefix_Admin {
 	public function __construct() {
 		// Set our title
 		$this->title = __( 'Site Options', 'myprefix' );
+
+		// Set our CMB fields
+		$this->fields = array(
+			array(
+				'name' => __( 'Test Text', 'myprefix' ),
+				'desc' => __( 'field description (optional)', 'myprefix' ),
+				'id'   => 'test_text',
+				'type' => 'text',
+			),
+			array(
+				'name'    => __( 'Test Color Picker', 'myprefix' ),
+				'desc'    => __( 'field description (optional)', 'myprefix' ),
+				'id'      => 'test_colorpicker',
+				'type'    => 'colorpicker',
+				'default' => '#ffffff'
+			),
+		);
  	}
 
 	/**
@@ -73,7 +90,7 @@ class myprefix_Admin {
 		?>
 		<div class="wrap cmb_options_page <?php echo $this->key; ?>">
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
-			<?php cmb_metabox_form( self::option_fields(), $this->key ); ?>
+			<?php cmb2_metabox_form( $this->option_metabox(), $this->key ); ?>
 		</div>
 		<?php
 	}
@@ -83,37 +100,13 @@ class myprefix_Admin {
 	 * @since  0.1.0
 	 * @return array
 	 */
-	public function option_fields() {
-
-		// Only need to initiate the array once per page-load
-		if ( ! empty( $this->option_metabox ) ) {
-			return $this->option_metabox;
-		}
-
-		$this->fields = array(
-			array(
-				'name' => __( 'Test Text', 'myprefix' ),
-				'desc' => __( 'field description (optional)', 'myprefix' ),
-				'id'   => 'test_text',
-				'type' => 'text',
-			),
-			array(
-				'name'    => __( 'Test Color Picker', 'myprefix' ),
-				'desc'    => __( 'field description (optional)', 'myprefix' ),
-				'id'      => 'test_colorpicker',
-				'type'    => 'colorpicker',
-				'default' => '#ffffff'
-			),
-		);
-
-		$this->option_metabox = array(
+	public function option_metabox() {
+		return array(
 			'id'         => 'option_metabox',
 			'show_on'    => array( 'key' => 'options-page', 'value' => array( $this->key, ), ),
 			'show_names' => true,
 			'fields'     => $this->fields,
 		);
-
-		return $this->option_metabox;
 	}
 
 	/**
@@ -129,7 +122,7 @@ class myprefix_Admin {
 			return $this->{$field};
 		}
 		if ( 'option_metabox' === $field ) {
-			return $this->option_fields();
+			return $this->option_metabox();
 		}
 
 		throw new Exception( 'Invalid property: ' . $field );
