@@ -1,9 +1,12 @@
-Welcome to the CMB2 wiki! This is a code library for WordPress themes and plugins that makes it easy to add metaboxes and fields to WordPress.
-
-****
 ### DISCLAIMER: This is an outdated wiki pulled directly from the original CMB wiki. IT IS OUT OF DATE and is a work in progress.
 
 **It is a wiki, so feel free to edit and bring things up-to-date if you have used and are familiar with CMB2.**
+
+****
+
+Welcome to the CMB2 wiki! This is a code library for WordPress themes and plugins that makes it easy to add metaboxes and fields to WordPress.
+
+****
 
 Tutorials:
 
