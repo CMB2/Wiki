@@ -617,7 +617,7 @@ Most (if not all) fields support these parameters:
 		),
 	),
 	```
-* `show_on_cb`: (since version 1.1.4) A callback to conditionally display a field. Callback funciton should return a boolean (true/false) value. Function passes in the current field object. Example:
+* `show_on_cb`: A callback to conditionally display a field. Callback funciton should return a boolean (true/false) value. Function passes in the current field object. Example:
 
 	```php
 	array(
