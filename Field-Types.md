@@ -1,46 +1,48 @@
-Here's the built-in fields you can include in your metabox. You can also [add your own field types](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types).
+**Updated for CMB2**  
+
+Here's the built-in fields you can include in your metabox. You can also [add your own field types](/WebDevStudios/CMB2/wiki/Adding-your-own-field-types).
 
 Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php) to see how you define the prefix. 
 
-Not all built-in fields have been documented, so please see the example file for more types.
+Not all built-in fields have been 100% documented, so please see the example file for more types.
 
 #### Types:
-1. [`title`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#title)
-1. [`text`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text)
-1. [`text_small`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text_small)
-1. [`text_medium`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text_medium)
-1. [`text_email`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text_email)
-1. [`text_url`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text_url)
-1. [`text_money`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text_money)
-1. [`textarea`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#textarea)
-1. [`textarea_small`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#textarea_small)
-1. [`textarea_code`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#textarea_code)
-1. [`text_date`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text_date)
-1. [`text_time`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text_time)
-1. [`select_timezone`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#select_timezone)
-1. [`text_date_timestamp`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text_date_timestamp)
-1. [`text_datetime_timestamp`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text_datetime_timestamp)
-1. [`text_datetime_timestamp_timezone`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#text_datetime_timestamp_timezone)
-1. [`colorpicker`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#colorpicker)
-1. [`radio`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#radio)
-1. [`radio_inline`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#radio_inline)
-1. [`taxonomy_radio`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#taxonomy_radio)
-1. [`taxonomy_radio_inline`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#taxonomy_radio_inline)
-1. [`select`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#select)
-1. [`taxonomy_select`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#taxonomy_select)
-1. [`checkbox`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#checkbox)
-1. [`multicheck`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#multicheck)
-1. [`taxonomy_multicheck`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#taxonomy_multicheck)
-1. [`taxonomy_multicheck_inline`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#taxonomy_multicheck_inline)
-1. [`wysiwyg`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#wysiwyg)
-1. [`file`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#file)
-1. [`file_list`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#file_list)
-1. [`oembed`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#oembed)
-1. [`group`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#group)
+1. [`title`](/WebDevStudios/CMB2/wiki/Field-Types#title)
+1. [`text`](/WebDevStudios/CMB2/wiki/Field-Types#text)
+1. [`text_small`](/WebDevStudios/CMB2/wiki/Field-Types#text_small)
+1. [`text_medium`](/WebDevStudios/CMB2/wiki/Field-Types#text_medium)
+1. [`text_email`](/WebDevStudios/CMB2/wiki/Field-Types#text_email)
+1. [`text_url`](/WebDevStudios/CMB2/wiki/Field-Types#text_url)
+1. [`text_money`](/WebDevStudios/CMB2/wiki/Field-Types#text_money)
+1. [`textarea`](/WebDevStudios/CMB2/wiki/Field-Types#textarea)
+1. [`textarea_small`](/WebDevStudios/CMB2/wiki/Field-Types#textarea_small)
+1. [`textarea_code`](/WebDevStudios/CMB2/wiki/Field-Types#textarea_code)
+1. [`text_date`](/WebDevStudios/CMB2/wiki/Field-Types#text_date)
+1. [`text_time`](/WebDevStudios/CMB2/wiki/Field-Types#text_time)
+1. [`select_timezone`](/WebDevStudios/CMB2/wiki/Field-Types#select_timezone)
+1. [`text_date_timestamp`](/WebDevStudios/CMB2/wiki/Field-Types#text_date_timestamp)
+1. [`text_datetime_timestamp`](/WebDevStudios/CMB2/wiki/Field-Types#text_datetime_timestamp)
+1. [`text_datetime_timestamp_timezone`](/WebDevStudios/CMB2/wiki/Field-Types#text_datetime_timestamp_timezone)
+1. [`colorpicker`](/WebDevStudios/CMB2/wiki/Field-Types#colorpicker)
+1. [`radio`](/WebDevStudios/CMB2/wiki/Field-Types#radio)
+1. [`radio_inline`](/WebDevStudios/CMB2/wiki/Field-Types#radio_inline)
+1. [`taxonomy_radio`](/WebDevStudios/CMB2/wiki/Field-Types#taxonomy_radio)
+1. [`taxonomy_radio_inline`](/WebDevStudios/CMB2/wiki/Field-Types#taxonomy_radio_inline)
+1. [`select`](/WebDevStudios/CMB2/wiki/Field-Types#select)
+1. [`taxonomy_select`](/WebDevStudios/CMB2/wiki/Field-Types#taxonomy_select)
+1. [`checkbox`](/WebDevStudios/CMB2/wiki/Field-Types#checkbox)
+1. [`multicheck`](/WebDevStudios/CMB2/wiki/Field-Types#multicheck)
+1. [`taxonomy_multicheck`](/WebDevStudios/CMB2/wiki/Field-Types#taxonomy_multicheck)
+1. [`taxonomy_multicheck_inline`](/WebDevStudios/CMB2/wiki/Field-Types#taxonomy_multicheck_inline)
+1. [`wysiwyg`](/WebDevStudios/CMB2/wiki/Field-Types#wysiwyg)
+1. [`file`](/WebDevStudios/CMB2/wiki/Field-Types#file)
+1. [`file_list`](/WebDevStudios/CMB2/wiki/Field-Types#file_list)
+1. [`oembed`](/WebDevStudios/CMB2/wiki/Field-Types#oembed)
+1. [`group`](/WebDevStudios/CMB2/wiki/Field-Types#group)
 
 #### More Info
-* [Create your own field type](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types)
-* [Common field parameters shared by all fields](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#common-field-parameters)
+* [Create your own field type](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)
+* [Common field parameters shared by all fields](/WebDevStudios/CMB2/wiki/Field-Types#common-field-parameters)
 
 #### `title`
 A large title (useful for breaking up sections of fields in metabox). Example:
@@ -125,7 +127,7 @@ array(
 	'desc' => 'field description (optional)',
 	'id' => $prefix . 'test_textmoney',
 	'type' => 'text_money',
-	// 'before' => '£', // Replaces default '$'
+	// 'before_field' => '£', // Replaces default '$'
 ),
 ```
 
@@ -177,8 +179,13 @@ array(
 	'desc' => 'field description (optional)',
 	'id' => $prefix . 'test_textdate',
 	'type' => 'text_date'
+	// 'date_format' => __( 'd-m-Y', 'cmb2' ), // use European date format
 ),
 ```
+##### Extra Parameters:
+
+* `date_format `, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php). 
+
 
 #### `text_time`
 Time picker field. Example:
@@ -222,7 +229,7 @@ array(
 ```
 ##### Extra Parameters:
 
-* `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Field-Types#select_timezone) field specified above.  
+* `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/WebDevStudios/CMB2/wiki/Field-Types#select_timezone) field specified above.  
 * `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).  
 
 
@@ -261,6 +268,36 @@ array(
 ),
 ```
 
+#### `checkbox`
+Standard checkbox. Example:
+
+```php
+array(
+	'name' => 'Test Checkbox',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_checkbox',
+	'type' => 'checkbox'
+),
+```
+
+#### `multicheck`
+A field with multiple checkboxes (and multiple can be selected). Example:
+
+```php
+
+array(
+	'name' => 'Test Multi Checkbox',
+	'desc' => 'field description (optional)',
+	'id' => $prefix . 'test_multicheckbox',
+	'type' => 'multicheck',
+	'options' => array(
+		'check1' => 'Check One',
+		'check2' => 'Check Two',
+		'check3' => 'Check Three',
+	)
+),
+```
+
 #### `radio`
 Standard radio buttons. Example: 
 
@@ -293,22 +330,6 @@ array(
 ),
 ```
 
-#### `taxonomy_radio`
-Radio buttons pre-populated with taxonomy terms. Example:
-
-```php
-array(
-	'name' => 'Test Taxonomy Radio',
-	'desc' => 'Description Goes Here',
-	'id' => $prefix . 'text_taxonomy_radio',
-	'taxonomy' => '', //Enter Taxonomy Slug
-	'type' => 'taxonomy_radio',	
-),
-```
-
-#### `taxonomy_radio_inline`
-Inline radio buttons pre-populated with taxonomy terms.
-
 #### `select`
 Standard select dropdown. Example:
 
@@ -326,6 +347,51 @@ array(
 	'default' => 'custom',
 ),
 ```
+##### Optional:
+
+* All the types that take an `options` parameter can accept a callback. This callback will recieive the field object which you can use to check the object ID (`$field->object_id`). This can be handy if you need to build options based on the current post or context. The callback should return an array of options in the format displayed in these examples.
+**Example** 
+```php
+// in the field array..
+	...
+	'options' => 'show_cat_or_dog_options',
+	...
+
+// Callback function
+function show_cat_or_dog_options( $field ) {
+	
+	if ( has_tag( 'cats', $field->object_id ) ) {
+		return array(
+			'tabby'   => __( 'Tabby', 'cmb' ),
+			'siamese' => __( 'Siamese', 'cmb' ),
+			'calico'  => __( 'Calico', 'cmb' ),
+		);
+	} else {
+		return array(
+			'german-shepherd' => __( 'German Shepherd', 'cmb' ),
+			'bulldog'         => __( 'Bulldog', 'cmb' ),
+			'poodle'          => __( 'Poodle', 'cmb' ),
+		);
+	}
+}
+```
+
+
+#### `taxonomy_radio`
+Radio buttons pre-populated with taxonomy terms. Example:
+
+```php
+array(
+	'name' => 'Test Taxonomy Radio',
+	'desc' => 'Description Goes Here',
+	'id' => $prefix . 'text_taxonomy_radio',
+	'taxonomy' => '', //Enter Taxonomy Slug
+	'type' => 'taxonomy_radio',	
+),
+```
+
+#### `taxonomy_radio_inline`
+Inline radio buttons pre-populated with taxonomy terms.
 
 #### `taxonomy_select`
 A select field pre-populated with taxonomy terms. Example:
@@ -337,36 +403,6 @@ array(
 	'id' => $prefix . 'text_taxonomy_select',
 	'taxonomy' => 'category', //Enter Taxonomy Slug
 	'type' => 'taxonomy_select',	
-),
-```
-
-#### `checkbox`
-Standard checkbox. Example:
-
-```php
-array(
-	'name' => 'Test Checkbox',
-	'desc' => 'field description (optional)',
-	'id' => $prefix . 'test_checkbox',
-	'type' => 'checkbox'
-),
-```
-
-#### `multicheck`
-A field with multiple checkboxes (and multiple can be selected). Example:
-
-```php
-
-array(
-	'name' => 'Test Multi Checkbox',
-	'desc' => 'field description (optional)',
-	'id' => $prefix . 'test_multicheckbox',
-	'type' => 'multicheck',
-	'options' => array(
-		'check1' => 'Check One',
-		'check2' => 'Check Two',
-		'check3' => 'Check Three',
-	)
 ),
 ```
 
@@ -385,6 +421,8 @@ array(
 #### `taxonomy_multicheck_inline`
 Inline checkboxes with taxonomy terms.
 
+**Note:** To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_post_meta`, etc.
+
 
 #### `wysiwyg`
 A metabox with TinyMCE editor (same as WordPress' visual editor). Example:
@@ -398,7 +436,7 @@ array(
 	'options' => array(),
 ),
 ```
-**Note:** Text added in a wysiwyg field will not have paragraph tags automatically added, the same is true of  standard WordPress post content editing with the WYSIWYG. When outputting formatted text, wrap your get_post_meta() call with wpautop to generate the paragraph tags.
+**Note:** Text added in a wysiwyg field will not have paragraph tags automatically added, the same is true of standard WordPress post content editing with the WYSIWYG. When outputting formatted text, wrap your get_post_meta() call with wpautop to generate the paragraph tags.
 
 ```
 echo wpautop( get_post_meta( get_the_ID(), $prefix . 'test_wysiwyg', true ) );
@@ -438,7 +476,7 @@ array(
 	'desc' => 'Upload an image or enter an URL.',
 	'id' => $prefix . 'test_image',
 	'type' => 'file',
-	'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
+	// 'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
 ),
 ```
 Example using the `test_image_id` to retrieve a medium image:
@@ -447,7 +485,7 @@ $image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'test_image_id', 
 ```
 
 #### `file_list`
-A file uploader that allows you to add as many files as you want. This is a repeatable field, and will store its data in an array. Example:
+A file uploader that allows you to add as many files as you want. This is a repeatable field, and will store its data in an array, with the attachment ID as the array key and the attachment url as the value. Example:
 
 ```php
 array(
@@ -549,7 +587,7 @@ foreach ( (array) $entries as $key => $entry ) {
 
 #### Custom Field Types
 
-You can [define your own field types](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-field-types) as well.
+You can [define your own field types](/WebDevStudios/CMB2/wiki/Adding-your-own-field-types) as well.
 
 #### Common Field Parameters
 
@@ -562,8 +600,8 @@ Most (if not all) fields support these parameters:
 * `repeatable`: [Supported by most](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress#field-types), and will make the individual field a repeatable one.
 * `default`: Specify a default value for the field.
 * `show_names`: Hide label for the field.
-* `options`: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`.
-* `before` and `after`: These allow you to add arbitrary text/markup before and after the field just inside the `td` tag.
+* `options`: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Can also accept a callback.
+* `before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`: These allow you to add arbitrary text/markup at different points in the field markup. These also accept a callback.
 * `on_front`: If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`.
 * <a name="attributes">`attributes`</a>: Will modify default attributes (class, input type, rows, etc), or add your own (placeholder, data attributes). Example:
 
