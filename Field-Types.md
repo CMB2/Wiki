@@ -2,7 +2,7 @@
 
 Here's the built-in fields you can include in your metabox. You can also [add your own field types](/WebDevStudios/CMB2/wiki/Adding-your-own-field-types).
 
-Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php) to see how you define the prefix. 
+Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](/WebDevStudios/CMB2/blob/master/example-functions.php) to see how you define the prefix. 
 
 Not all built-in fields have been 100% documented, so please see the example file for more types.
 
@@ -597,7 +597,7 @@ Most (if not all) fields support these parameters:
 * `desc`: Field description. Usually under or adjacent to the field input.
 * `id`: The data key. If using for posts, will be the post-meta key. If using for an options page, will be the array key.
 * `type`: What makes the whole thing work.
-* `repeatable`: [Supported by most](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress#field-types), and will make the individual field a repeatable one.
+* `repeatable`: [Supported by most](https://github.com/WebDevStudios/CMB2#field-types), and will make the individual field a repeatable one.
 * `default`: Specify a default value for the field.
 * `show_names`: Hide label for the field.
 * `options`: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Can also accept a callback.
