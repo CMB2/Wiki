@@ -7,7 +7,7 @@ Using CMB we can create a front-end form that will allow visitors to create new 
  *
  * @package  Custom Metaboxes and Fields for WordPress
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
- * @link     https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
+ * @link     https://github.com/WebDevStudios/CMB2
  */
 
 class Example_Front_End_Form {

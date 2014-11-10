@@ -1,4 +1,4 @@
-A 'show_on' filter is any arbitrary filter that limits where the metabox is shown. As described in [Display Options](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Display-Options), there's currently two built-in. You can limit a metabox to certain page IDs, or to certain page templates.
+A 'show_on' filter is any arbitrary filter that limits where the metabox is shown. As described in [Display Options](https://github.com/WebDevStudios/CMB2/wiki/Display-Options), there's currently two built-in. You can limit a metabox to certain page IDs, or to certain page templates.
 
 If you'd like to create your own show_on filter, all you have to do is hook into `cmb_show_on`. If you look in init.php and search for "Show On Filters", you'll find the code that creates those two. They can serve as a guide.
 
@@ -10,16 +10,16 @@ The filter passes two parameters:
 Make sure you check early on to see if this filter should be running (check `$meta_box['show_on']['key']` ). Since this runs on every metabox, you'll want to return `$display` (the default) instead of true so you don't override the other show_on filters. At the end, either return true to display it or false to not display it.
 
 #### Examples:
-1. [Exclude on IDs](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wiki-example-exclude-on-ids)
-1. [Exclude on New Post Screens](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wiki-example-exclude-on-new-post-screens)
-1. [Exclude on non top level posts](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wiki-example-exclude-on-non-top-level-posts)
-1. [taxonomy show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wiki-example-taxonomy-show_on-filter)
-1. [Child page show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wiki-example-child-page-show_on-filter)
-1. [Page Slug show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wiki-example-page-slug-show_on-filter)
-1. [Front Page show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wiki-example-front-page-show_on-filter)
-1. [By Capability show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wiki-example-by-capability-show_on-filter)
-1. [Page Template show_on filter](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wiki-example-page-template-show_on-filter)
-1. [Show metabox for certain user-roles](/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters#wiki-example-show-metabox-for-certain-user-roles)
+1. [Exclude on IDs](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-exclude-on-ids)
+1. [Exclude on New Post Screens](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-exclude-on-new-post-screens)
+1. [Exclude on non top level posts](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-exclude-on-non-top-level-posts)
+1. [taxonomy show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-taxonomy-show_on-filter)
+1. [Child page show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-child-page-show_on-filter)
+1. [Page Slug show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-page-slug-show_on-filter)
+1. [Front Page show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-front-page-show_on-filter)
+1. [By Capability show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-by-capability-show_on-filter)
+1. [Page Template show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-page-template-show_on-filter)
+1. [Show metabox for certain user-roles](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-show-metabox-for-certain-user-roles)
 
 _Have you made some useful show_on filters? List them as examples here so others can use them._
 
@@ -32,7 +32,7 @@ Let's say you wanted to build a filter that allowed a metabox to show up everywh
 /**
  * Exclude metabox on specific IDs
  * @author Bill Erickson
- * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
@@ -42,7 +42,7 @@ function be_metabox_exclude_for_id( $display, $meta_box ) {
 	if ( 'exclude_id' !== $meta_box['show_on']['key'] )
 		return $display;
 
-	// If we're showing it based on ID, get the current ID					
+	// If we're showing it based on ID, get the current ID
 	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
 	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
 	if( !isset( $post_id ) )
@@ -76,17 +76,17 @@ add_filter( 'cmb_show_on', 'tgm_exclude_from_new', 10, 2 );
  * @return bool $display True on success, false on failure
  */
 function tgm_exclude_from_new( $display, $meta_box ) {
-	
+
 	global $pagenow;
-	
+
 	if ( ! isset( $meta_box['show_on']['alt_key'] ) )
 		return $display; // If the key isn't set, return
-	
+
 	if ( 'exclude_new' !== $meta_box['show_on']['alt_key'] )
 		return $display; // If the key is set but not the one we want, return
-		
+
 	$meta_box['show_on']['alt_value'] = ! is_array( $meta_box['show_on']['alt_value'] ) ? array( $meta_box['show_on']['alt_value'] ) : $meta_box['show_on']['alt_value']; // Force to be an array
-	
+
 	if ( 'post-new.php' == $pagenow && in_array( 'post-new.php', $meta_box['show_on']['alt_value'] ) )
 		return false; // Don't display this on any new post areas
 	else
@@ -95,7 +95,7 @@ function tgm_exclude_from_new( $display, $meta_box ) {
 }
 ```
 
-Now all you need to do is specify this in the 'show_on' option, like this: 
+Now all you need to do is specify this in the 'show_on' option, like this:
 
 `'show_on' => array( 'key' => 'id', 'value' => '$post_ID', 'alt_key' => 'exclude_new', 'alt_value' => 'post-new.php' )`
 
@@ -124,7 +124,7 @@ function ba_metabox_add_for_top_level_posts_only( $display, $meta_box ) {
 	if ( 'parent-id' !== $meta_box['show_on']['key'] )
 		return $display;
 
-	// Get the post's ID so we can see if it has ancestors					
+	// Get the post's ID so we can see if it has ancestors
 	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
 	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
 	if( !isset( $post_id ) )
@@ -141,14 +141,14 @@ function ba_metabox_add_for_top_level_posts_only( $display, $meta_box ) {
 
 ### Example: taxonomy show_on filter
 
-This allows you to specify one or more taxonomies, and for each taxonomy one or more terms. If a post is tagged one of those terms, this metabox shows up on its Edit screen. [Here's an example of it in use](https://gist.github.com/070476e584b04a20c770). 
+This allows you to specify one or more taxonomies, and for each taxonomy one or more terms. If a post is tagged one of those terms, this metabox shows up on its Edit screen. [Here's an example of it in use](https://gist.github.com/070476e584b04a20c770).
 
 ```php
 <?php
 /**
- * Taxonomy show_on filter 
+ * Taxonomy show_on filter
  * @author Bill Erickson
- * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $metabox
@@ -163,20 +163,20 @@ function be_taxonomy_show_on_filter( $display, $meta_box ) {
 	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
 	if( !isset( $post_id ) )
 		return $display;
-	
+
 	foreach( $meta_box['show_on']['value'] as $taxonomy => $slugs ) {
 		if( !is_array( $slugs ) )
 			$slugs = array( $slugs );
-		
-		$display = false;			
+
+		$display = false;
 		$terms = wp_get_object_terms( $post_id, $taxonomy );
 		foreach( $terms as $term )
 			if( in_array( $term->slug, $slugs ) )
 				$display = true;
 	}
-	
+
 	return $display;
-	
+
 }
 add_filter( 'cmb_show_on', 'be_taxonomy_show_on_filter', 10, 2 );
 ```
@@ -189,7 +189,7 @@ This allows you to specify one or more parent page ids and the metabox will only
 /**
  * Metabox for Children of Parent ID
  * @author Kenneth White (GitHub: sprclldr)
- * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
@@ -199,7 +199,7 @@ function be_metabox_show_on_child_of( $display, $meta_box ) {
 	if ( 'child_of' !== $meta_box['show_on']['key'] )
 		return $display;
 
-	// If we're showing it based on ID, get the current ID					
+	// If we're showing it based on ID, get the current ID
 	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
 	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
 	if( !isset( $post_id ) )
@@ -234,8 +234,8 @@ This is similar to the built-in 'id' show_on filter, but it lets you specify the
 
 /**
  * Metabox for Page Slug
- * @author Tom Morton 
- * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ * @author Tom Morton
+ * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
@@ -273,7 +273,7 @@ This shows only if a static page is set and you're editing it.
 /**
  * Include metabox on front page
  * @author Ed Townend
- * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
@@ -314,13 +314,13 @@ Metaboxes show based on user capability.
 /**
  * Show metaboxes to users with specified capabilities
  * @author Missy Cook
- * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
  * @return bool display metabox
  */
- 
+
  // Don't show metaboxes to users who can't publish posts
 add_filter( 'cmb_show_on', 'show_meta_to_chosen_users', 10, 2 );
 function show_meta_to_chosen_users( $display, $meta_box ) {
@@ -343,8 +343,8 @@ Shows up on a page using a specific template. Use the template's slug. (e.g. tem
 <?php
 /**
  * Metabox for Page Template
- * @author Kenneth White 
- * @link https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ * @author Kenneth White
+ * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
@@ -373,14 +373,14 @@ add_filter( 'cmb_show_on', 'be_metabox_show_on_template', 10, 2 );
 ```
 
 ### Example: Show metabox for certain user roles
-Will display if the current logged-in user's user-role is whitelisted. Props [@Mte90].(https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/issues/418)
+Will display if the current logged-in user's user-role is whitelisted. Props [@Mte90].(https://github.com/WebDevStudios/CMB2/issues/418)
 ```php
 <?php
 
 /**
  * Display metabox for only certain user roles.
  * @author @Mte90
- * @link   https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters
+ * @link   https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param  bool  $display  Whether metabox should be displayed or not.
  * @param  array $meta_box Metabox config array

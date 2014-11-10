@@ -9,13 +9,13 @@ You can add actions and filters to these hooks (using WordPress's native add_act
 
 ## Example 1: Email field
 
-> **Update: This field is now [in CMB core](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php#L72), so consider this tutorial as an example.**
+> **Update: This field is now [in CMB core](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php#L72), so consider this tutorial as an example.**
 
 A simple example would be a `text_email` field that only allowed users to enter a valid email address.
 
 ![Screenshot](images/screenshot_text_email.jpg)
 
-### Step 1: `cmb_render_{field-type}`  
+### Step 1: `cmb_render_{field-type}`
 The first step is to write the code for *rendering the field* within the WordPress administrative area:
 
 ```php
@@ -36,13 +36,13 @@ This snippet has a few things going on:
 	* `$object_id`: The id of the object you are working with. Most commonly, the post id.
 	* `$object_type`: The type of object you are working with. Most commonly, `post` (this applies to all post-types), but could also be `comment`, `user` or `options-page`.
 	* `$field_type_object`: This is an instance of the `cmb_Meta_Box_types` object and gives you access to all of the methods that CMB uses to build its field types.
-	
+
 	We've set this to 5 so that we  can access the `$field_type_object` object. This allows us to use CMB's built in input method.
 
-In this example, our custom field type will display an input box, with the proper `name` attribute of `$field['id']` so that it will save to the database the way the built-in field types do. It displays the value previously specified for the field, if there is one. The only difference we've specified from the built in text input is that the input should have a type of `email`, which is a new type attribute introduced with html5. 
+In this example, our custom field type will display an input box, with the proper `name` attribute of `$field['id']` so that it will save to the database the way the built-in field types do. It displays the value previously specified for the field, if there is one. The only difference we've specified from the built in text input is that the input should have a type of `email`, which is a new type attribute introduced with html5.
 
 ### Step 2: `cmb_validate_{field-type}`
-You can optionally add code that validates or modifies the entered value before it is saved. In our example, we only want to allow valid email addresses; we can remove any invalid values before they are saved to the database.  
+You can optionally add code that validates or modifies the entered value before it is saved. In our example, we only want to allow valid email addresses; we can remove any invalid values before they are saved to the database.
 **Note:** in most modern browsers, the field will not be allowed to submit if using the `email` attribute and the value is not an email, but we're including the validation filter as a fallback for older browsers.
 
 ```php
@@ -52,7 +52,7 @@ function rrh_cmb_validate_text_email( $override_value, $value ) {
 	if ( ! is_email( $value ) ) {
 		// Empty the value
 		$value = '';
-	}   
+	}
 	return $value;
 }
 ```
@@ -94,7 +94,7 @@ function rrh_person_meta_boxes( $meta_boxes ) {
 				'desc' => 'Invalid email addresses will be wiped out.'
 			)
 		)
-	);	
+	);
 	return $meta_boxes;
 }
 ```
@@ -115,10 +115,10 @@ function imag_render_imag_select_taxonomy( $field_args, $value ) {
 		'show_option_none' => '&#8212; Select &#8212;',
 		'hierarchical'     => 1,
 		'taxonomy'         => $field_args['taxonomy'],
-		'orderby'          => 'name', 
-		'hide_empty'       => 0, 
+		'orderby'          => 'name',
+		'hide_empty'       => 0,
 		'name'             => $field_args['id'],
-		'selected'         => $value  
+		'selected'         => $value
 	) );
 
 	if ( ! empty( $field_args['desc'] ) ) {
@@ -356,7 +356,7 @@ The possibilities are endless. If you create custom field types that you think o
 
 ### text_number - adds a text number input
 
-Sometimes you only want a number in your input. 
+Sometimes you only want a number in your input.
 
 ```php
 // render numbers
@@ -377,7 +377,7 @@ function sm_cmb_validate_text_number( $new ) {
 ### text_url - adds http:// to the beginning of the meta value if it is not present.
 
 
-> **Update: This field is now [in CMB core](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php#L64), so consider this tutorial as an example.**
+> **Update: This field is now [in CMB core](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php#L64), so consider this tutorial as an example.**
 
 This is useful if you would like to display a URL in a template by pulling it from the post meta. Using this will make sure the link works if the user doesn't put the "http://" before the domain name.
 

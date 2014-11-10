@@ -1,7 +1,7 @@
 Metaboxes should be context-specific, and only show up when relevant. There's two tools you can use to limit their display:
 
 * pages - limits the post types it applies to
-* show_on - can limit to specific page/post IDs, page templates, or [any other show_on filter you define](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters)
+* show_on - can limit to specific page/post IDs, page templates, or [any other show_on filter you define](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters)
 
 Both of these are used when you define your metabox.
 
@@ -72,4 +72,4 @@ This will limit it to the page template with the file name `template-contact.php
 
 ### More Show On Filters
 
-You can also [Add your own show_on filters](https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki/Adding-your-own-show_on-filters), and that page lists some examples.
+You can also [Add your own show_on filters](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters), and that page lists some examples.
