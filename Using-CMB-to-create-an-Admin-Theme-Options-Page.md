@@ -1,8 +1,11 @@
-This class is an example of how you can use CMB to create an Admin Theme Options Page. Keep in mind that the `self::$theme_options` array can be added to and extended the same way you would in the [`cmb_meta_boxes` filter](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php). If you want to retrieve an option, use `myprefix_get_option( 'test_text' )`. Obviously replace all instances of `myprefix` with your own custom prefix.
+**Updated for CMB2**  
+
+This class is an example of how you can use CMB2 to create an Admin Theme Options Page. `$this->fields` can be modified to hold your fields array and extended the same way you would in the [`cmb_meta_boxes` filter](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/blob/master/example-functions.php). If you want to retrieve an option, use `myprefix_get_option( 'test_text' )`. Obviously replace all instances of `myprefix` with your own custom prefix.
+
 ```php
 <?php
 /**
- * CMB Theme Options
+ * CMB2 Theme Options
  * @version 0.1.0
  */
 class myprefix_Admin {
@@ -39,7 +42,7 @@ class myprefix_Admin {
 		// Set our title
 		$this->title = __( 'Site Options', 'myprefix' );
 
-		// Set our CMB fields
+		// Set our CMB2 fields
 		$this->fields = array(
 			array(
 				'name' => __( 'Test Text', 'myprefix' ),
@@ -83,12 +86,12 @@ class myprefix_Admin {
 	}
 
 	/**
-	 * Admin page markup. Mostly handled by CMB
+	 * Admin page markup. Mostly handled by CMB2
 	 * @since  0.1.0
 	 */
 	public function admin_page_display() {
 		?>
-		<div class="wrap cmb_options_page <?php echo $this->key; ?>">
+		<div class="wrap cmb2_options_page <?php echo $this->key; ?>">
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 			<?php cmb2_metabox_form( $this->option_metabox(), $this->key ); ?>
 		</div>
@@ -135,15 +138,15 @@ $myprefix_Admin = new myprefix_Admin();
 $myprefix_Admin->hooks();
 
 /**
- * Wrapper function around cmb_get_option
+ * Wrapper function around cmb2_get_option
  * @since  0.1.0
  * @param  string  $key Options array key
  * @return mixed        Option value
  */
 function myprefix_get_option( $key = '' ) {
 	global $myprefix_Admin;
-	return cmb_get_option( $myprefix_Admin->key, $key );
+	return cmb2_get_option( $myprefix_Admin->key, $key );
 }
 ```
 
-Link to gist: https://gist.github.com/jtsternberg/8601075
+Link to gist: [https://gist.github.com/jtsternberg/8601075](https://gist.github.com/jtsternberg/8601075)
