@@ -438,8 +438,8 @@ array(
 ```
 **Note:** Text added in a wysiwyg field will not have paragraph tags automatically added, the same is true of standard WordPress post content editing with the WYSIWYG. When outputting formatted text, wrap your get_post_meta() call with wpautop to generate the paragraph tags.
 
-```
-echo wpautop( get_post_meta( get_the_ID(), $prefix . 'test_wysiwyg', true ) );
+```php
+<?php echo wpautop( get_post_meta( get_the_ID(), $prefix . 'test_wysiwyg', true ) ); ?>
 ```
 
 The options array allows you to customize the settings of the wysiwyg. Here's an example with all the options:
