@@ -31,7 +31,7 @@ This snippet has a few things going on:
 * `rrh_cmb_render_text_email` -- This is the name of your custom function that gets executed when you instantiate a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
 * `10` -- This is the priority for this action, the order in which it is executed. (The exact number matter should not matter unless you have multiple action on this hook.)
 * `5` -- This is the number of parameters your custom function will receive. This hook can accept up to 5 parameters:
-	* `field_args`: The array of this field's arguments. It will contain all the arguments that you passed to it as well as some default arguments filled in.
+	* `$field_object`: `CMB2_Field` object.
 	* `$escaped_value`: The value of this field passed through the escaping filter. It defaults to `sanitize_text_field`. If you need the unescaped value, you can access it via `$field_type_object->value()`.
 	* `$object_id`: The id of the object you are working with. Most commonly, the post id.
 	* `$object_type`: The type of object you are working with. Most commonly, `post` (this applies to all post-types), but could also be `comment`, `user` or `options-page`.
@@ -66,7 +66,7 @@ The `cmb_validate_{field-type}` hook can accept up to 5 parameters:
 * `$override_value`: Sanitization/Validation override value to return. It is passed in as `null`, and is what we will modify to short-circuit CMB's saving mechanism.
 * `$value`: The value being passed
 * `$object_id`: The id of the object you are working with. Most commonly, the post id.
-* `field_args`: The array of this field's arguments. It will contain all the arguments that you passed to it as well as some default arguments filled in.
+* `$field_object`: `CMB2_Field` object.
 * `$sanitizer`: This is an instance of the `cmb_Meta_Box_Sanitize` object and gives you access to all of the methods that CMB uses to sanitize its field values.
 
 
@@ -256,7 +256,7 @@ add_action( 'cmb_render_address', 'cmb_render_address_field', 10, 5 );
 /**
  * Render Address Field
  */
-function cmb_render_address_field( $field_args, $value, $object_id, $object_type, $field_type_object ) {
+function cmb_render_address_field( $field_object, $value, $object_id, $object_type, $field_type_object ) {
 
 	$state_list = array( 'AL'=>'Alabama','AK'=>'Alaska','AZ'=>'Arizona','AR'=>'Arkansas','CA'=>'California','CO'=>'Colorado','CT'=>'Connecticut','DE'=>'Delaware','DC'=>'District Of Columbia','FL'=>'Florida','GA'=>'Georgia','HI'=>'Hawaii','ID'=>'Idaho','IL'=>'Illinois','IN'=>'Indiana','IA'=>'Iowa','KS'=>'Kansas','KY'=>'Kentucky','LA'=>'Louisiana','ME'=>'Maine','MD'=>'Maryland','MA'=>'Massachusetts','MI'=>'Michigan','MN'=>'Minnesota','MS'=>'Mississippi','MO'=>'Missouri','MT'=>'Montana','NE'=>'Nebraska','NV'=>'Nevada','NH'=>'New Hampshire','NJ'=>'New Jersey','NM'=>'New Mexico','NY'=>'New York','NC'=>'North Carolina','ND'=>'North Dakota','OH'=>'Ohio','OK'=>'Oklahoma','OR'=>'Oregon','PA'=>'Pennsylvania','RI'=>'Rhode Island','SC'=>'South Carolina','SD'=>'South Dakota','TN'=>'Tennessee','TX'=>'Texas','UT'=>'Utah','VT'=>'Vermont','VA'=>'Virginia','WA'=>'Washington','WV'=>'West Virginia','WI'=>'Wisconsin','WY'=>'Wyoming' );
 
@@ -361,7 +361,7 @@ Sometimes you only want a number in your input.
 ```php
 // render numbers
 add_action( 'cmb_render_text_number', 'sm_cmb_render_text_number', 10, 5 );
-function sm_cmb_render_text_number( $field_args, $escaped_value, $object_id, $object_type, $field_type_object ) {
+function sm_cmb_render_text_number( $field_object, $escaped_value, $object_id, $object_type, $field_type_object ) {
 	echo $field_type_object->input( array( 'class' => 'cmb_text_small', 'type' => 'number' ) );
 }
 
@@ -386,7 +386,7 @@ add_action( 'cmb_render_text_url', 'jt_cmb_render_text_url', 10, 5 );
 /**
  * Outputs the markup for the text_url field
  */
-function jt_cmb_render_text_url( $field_args, $escaped_value, $object_id, $object_type, $field_type_object ) {
+function jt_cmb_render_text_url( $field_object, $escaped_value, $object_id, $object_type, $field_type_object ) {
 	echo $field_type_object->input( array( 'class' => 'cmb_text_small' ) );
 }
 
