@@ -264,7 +264,6 @@ array(
 	'id'   => $prefix . 'test_colorpicker',
 	'type' => 'colorpicker',
 	'default'  => '#ffffff',
-	'repeatable' => true,
 ),
 ```
 
