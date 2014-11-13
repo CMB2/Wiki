@@ -1,3 +1,5 @@
+**INFO MAY BE INACCURATE FOR CMB2**
+
 This library contains a couple of hooks that make it possible for you to create your own field types:
 
 ```php
