@@ -20,7 +20,7 @@ The first step is to write the code for *rendering the field* within the WordPre
 
 ```php
 add_action( 'cmb_render_text_email', 'rrh_cmb_render_text_email', 10, 5 );
-function rrh_cmb_render_text_email( $field_args, $escaped_value, $object_id, $object_type, $field_type_object ) {
+function rrh_cmb_render_text_email( $field_object, $escaped_value, $object_id, $object_type, $field_type_object ) {
 	echo $field_type_object->input( array( 'type' => 'email' ) );
 }
 ```
