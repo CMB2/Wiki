@@ -4,7 +4,7 @@ This library contains a couple of hooks that make it possible for you to create 
 
 ```php
 cmb2_render_{field-type}
-cmb2_validate_{field-type}
+cmb2_sanitize_{field-type}
 ```
 
 You can add actions and filters to these hooks (using WordPress's native add_action() function) that enable the custom field types.
@@ -43,13 +43,13 @@ This snippet has a few things going on:
 
 In this example, our custom field type will display an input box, with the proper `name` attribute of `$field['id']` so that it will save to the database the way the built-in field types do. It displays the value previously specified for the field, if there is one. The only difference we've specified from the built in text input is that the input should have a type of `email`, which is a new type attribute introduced with html5.
 
-### Step 2: `cmb2_validate_{field-type}`
-You can optionally add code that validates or modifies the entered value before it is saved. In our example, we only want to allow valid email addresses; we can remove any invalid values before they are saved to the database.
+### Step 2: `cmb2_sanitize_{field-type}`
+You can optionally add code that sanitizes or modifies the entered value before it is saved. In our example, we only want to allow valid email addresses; we can remove any invalid values before they are saved to the database.
 **Note:** in most modern browsers, the field will not be allowed to submit if using the `email` attribute and the value is not an email, but we're including the validation filter as a fallback for older browsers.
 
 ```php
-add_filter( 'cmb2_validate_text_email', 'rrh_cmb_validate_text_email' );
-function rrh_cmb_validate_text_email( $override_value, $value ) {
+add_filter( 'cmb2_sanitize_text_email', 'rrh_cmb2_sanitize_text_email' );
+function rrh_cmb2_sanitize_text_email( $override_value, $value ) {
 	// not an email?
 	if ( ! is_email( $value ) ) {
 		// Empty the value
@@ -61,10 +61,10 @@ function rrh_cmb_validate_text_email( $override_value, $value ) {
 
 What's going on:
 
-* `cmb2_validate_text_email` -- This filter defines what code gets executed when the user attempts to save a value in a field type called `text_email` in the library. This first parameter, the hook name, must be `cmb2_validate_` followed by the field type name.
-* `rrh_cmb_validate_text_email` -- This is the name of your custom function that gets executed when the user attempts to save a value in a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
+* `cmb2_sanitize_text_email` -- This filter defines what code gets executed when the user attempts to save a value in a field type called `text_email` in the library. This first parameter, the hook name, must be `cmb2_sanitize_` followed by the field type name.
+* `rrh_cmb2_sanitize_text_email` -- This is the name of your custom function that gets executed when the user attempts to save a value in a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
 
-The `cmb2_validate_{field-type}` hook can accept up to 5 parameters:
+The `cmb2_sanitize_{field-type}` hook can accept up to 5 parameters:
 * `$override_value`: Sanitization/Validation override value to return. It is passed in as `null`, and is what we will modify to short-circuit CMB's saving mechanism.
 * `$value`: The value being passed
 * `$object_id`: The id of the object you are working with. Most commonly, the post id.
@@ -367,9 +367,9 @@ function sm_cmb_render_text_number( $field_object, $escaped_value, $object_id, $
 	echo $field_type_object->input( array( 'class' => 'cmb_text_small', 'type' => 'number' ) );
 }
 
-// validate the field
-add_filter( 'cmb_validate_text_number', 'sm_cmb_validate_text_number' );
-function sm_cmb_validate_text_number( $new ) {
+// sanitize the field
+add_filter( 'cmb2_sanitize_text_number', 'sm_cmb2_sanitize_text_number' );
+function sm_cmb2_sanitize_text_number( $new ) {
 	$new = preg_replace( "/[^0-9]/", "", $new );
 
 	return $new;
@@ -392,7 +392,7 @@ function jt_cmb_render_text_url( $field_object, $escaped_value, $object_id, $obj
 	echo $field_type_object->input( array( 'class' => 'cmb_text_small' ) );
 }
 
-add_filter( 'cmb_validate_text_url', 'jt_cmb_validate_text_url' );
+add_filter( 'cmb2_sanitize_text_url', 'jt_cmb2_sanitize_text_url' );
 /**
  * Adds the http:// to the beginning of the url if it is not present
  *
@@ -400,7 +400,7 @@ add_filter( 'cmb_validate_text_url', 'jt_cmb_validate_text_url' );
  *
  * @author Justin Tallant
  */
-function jt_cmb_validate_text_url( $new ) {
+function jt_cmb2_sanitize_text_url( $new ) {
     if ( '' == $new ) {
     	return;
     }
