@@ -45,7 +45,7 @@ In this example, our custom field type will display an input box, with the prope
 
 ### Step 2: `cmb2_sanitize_{field-type}`
 You can optionally add code that sanitizes or modifies the entered value before it is saved. In our example, we only want to allow valid email addresses; we can remove any invalid values before they are saved to the database.
-**Note:** in most modern browsers, the field will not be allowed to submit if using the `email` attribute and the value is not an email, but we're including the validation filter as a fallback for older browsers.
+**Note:** in most modern browsers, the field will not be allowed to submit if using the `email` attribute and the value is not an email, but we're including the sanitization filter as a fallback for older browsers.
 
 ```php
 add_filter( 'cmb2_sanitize_text_email', 'rrh_cmb2_sanitize_text_email' );
@@ -65,7 +65,7 @@ What's going on:
 * `rrh_cmb2_sanitize_text_email` -- This is the name of your custom function that gets executed when the user attempts to save a value in a field type called `text_email`. It can be called whatever you want, but it must match a function you define elsewhere in your code.
 
 The `cmb2_sanitize_{field-type}` hook can accept up to 5 parameters:
-* `$override_value`: Sanitization/Validation override value to return. It is passed in as `null`, and is what we will modify to short-circuit CMB's saving mechanism.
+* `$override_value`: Sanitization override value to return. It is passed in as `null`, and is what we will modify to short-circuit CMB's saving mechanism.
 * `$value`: The value being passed
 * `$object_id`: The id of the object you are working with. Most commonly, the post id.
 * `$field_object`: `CMB2_Field` object.
