@@ -82,16 +82,16 @@ With the action (and optionally the filter) added, we can now use the field type
 add_filter( 'cmb2_meta_boxes', 'rrh_person_meta_boxes' );
 function rrh_person_meta_boxes( $meta_boxes ) {
 	$meta_boxes[] = array(
-		'id' => 'rrh_person_metabox',
-		'title' => 'Person Information',
-		'pages' => array('rrh_person'),
-		'context' => 'normal',
-		'priority' => 'high',
+		'id'         => 'rrh_person_metabox',
+		'title'      => 'Person Information',
+		'pages'      => array('rrh_person'),
+		'context'    => 'normal',
+		'priority'   => 'high',
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
 			array(
 				'name' => 'Email',
-				'id' => 'rrh_person_email',
+				'id'   => 'rrh_person_email',
 				'type' => 'text_email',
 				'desc' => 'Invalid email addresses will be wiped out.'
 			)
@@ -136,10 +136,10 @@ This code instantiates the field type within your meta box:
 ...
         'fields' => array(
             array(
-                'name' => 'Featured Theme',
-                'desc' => 'Select the featured theme',
-                'id' => 'featured_theme',
-                'type' => 'imag_select_taxonomy',
+                'name'     => 'Featured Theme',
+                'desc'     => 'Select the featured theme',
+                'id'       => 'featured_theme',
+                'type'     => 'imag_select_taxonomy',
                 'taxonomy' => 'imag_theme',
             ),
         )
@@ -186,10 +186,10 @@ Then, in our fields array, we would add the `select` type and pass the `cmb_get_
 ...
         'fields' => array(
             array(
-                'name' => 'Featured Theme',
-                'desc' => 'Select the featured theme',
-                'id' => 'featured_theme',
-                'type' => 'select',
+                'name'    => 'Featured Theme',
+                'desc'    => 'Select the featured theme',
+                'id'      => 'featured_theme',
+                'type'    => 'select',
                 'options' => cmb_get_term_options( 'imag_theme' ),
             ),
         )
@@ -212,7 +212,7 @@ Like the terms field above, we would pass an array of posts to the `select` fiel
 function cmb_get_post_options( $query_args ) {
 
 	$args = wp_parse_args( $query_args, array(
-		'post_type' => 'post',
+		'post_type'   => 'post',
 		'numberposts' => 10,
 	) );
 
@@ -222,7 +222,7 @@ function cmb_get_post_options( $query_args ) {
 	if ( $posts ) {
 		foreach ( $posts as $post ) {
                    $post_options[] = array(
-            	       'name' => $post->post_title,
+            	       'name'  => $post->post_title,
             	       'value' => $post->ID
                    );
 		}
@@ -334,9 +334,9 @@ $address = get_post_meta( $post_id, $prefix . 'address', 1 );
 $address = wp_parse_args( $address, array(
 	'address-1' => '',
 	'address-2' => '',
-	'city' => '',
-	'state' => '',
-	'zip' => '',
+	'city'      => '',
+	'state'     => '',
+	'zip'       => '',
 ) );
 
 ?>
