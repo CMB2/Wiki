@@ -52,7 +52,7 @@ array(
 	'name' => 'Test Title',
 	'desc' => 'This is a title description',
 	'type' => 'title',
-	'id' => $prefix . 'test_title'
+	'id'   => $prefix . 'test_title'
 ),
 ```
 
@@ -61,11 +61,11 @@ Standard text field (large). Example:
 
 ```php
 array(
-	'name' => 'Test Text',
-	'desc' => 'field description (optional)',
+	'name'    => 'Test Text',
+	'desc'    => 'field description (optional)',
 	'default' => 'standard value (optional)',
-	'id' => $prefix . 'test_text',
-	'type' => 'text'
+	'id'      => $prefix . 'test_text',
+	'type'    => 'text'
 ),
 ```
 
@@ -74,11 +74,11 @@ Small text field. Example:
 
 ```php
 array(
-	'name' => 'Test Text Small',
-	'desc' => 'field description (optional)',
+	'name'    => 'Test Text Small',
+	'desc'    => 'field description (optional)',
 	'default' => 'standard value (optional)',
-	'id' => $prefix . 'test_textsmall',
-	'type' => 'text_small'
+	'id'      => $prefix . 'test_textsmall',
+	'type'    => 'text_small'
 ),
 ```
 
@@ -87,11 +87,11 @@ Medium text field. Example:
 
 ```php
 array(
-	'name' => 'Test Text Medium',
-	'desc' => 'field description (optional)',
+	'name'    => 'Test Text Medium',
+	'desc'    => 'field description (optional)',
 	'default' => 'standard value (optional)',
-	'id' => $prefix . 'test_textmedium',
-	'type' => 'text_medium'
+	'id'      => $prefix . 'test_textmedium',
+	'type'    => 'text_medium'
 ),
 ```
 
