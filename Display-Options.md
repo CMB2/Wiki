@@ -11,13 +11,13 @@ For every metabox you create, you should specify the post types to which it appl
 
 ```php
 	$meta_boxes[] = array(
-		'id' => 'test_metabox',
-		'title' => 'Test Metabox',
+		'id'           => 'test_metabox',
+		'title'        => 'Test Metabox',
 		'object_types' => array('page'), // post type
-		'context' => 'normal', //  'normal', 'advanced', or 'side'
-		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
-		'show_names' => true, // Show field names on the left
-		'fields' => array( ...
+		'context'      => 'normal', //  'normal', 'advanced', or 'side'
+		'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+		'show_names'   => true, // Show field names on the left
+		'fields'       => array( ...
 ```
 
 Here's an example that displays on posts and events:
@@ -25,13 +25,13 @@ Here's an example that displays on posts and events:
 ```php
 
 	$meta_boxes[] = array(
-		'id' => 'test_metabox',
-		'title' => 'Test Metabox',
+		'id'           => 'test_metabox',
+		'title'        => 'Test Metabox',
 		'object_types' => array('post', 'event'), // post type
-		'context' => 'normal', //  'normal', 'advanced', or 'side'
-		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
-		'show_names' => true, // Show field names on the left
-		'fields' => array(
+		'context'      => 'normal', //  'normal', 'advanced', or 'side'
+		'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+		'show_names'   => true, // Show field names on the left
+		'fields'       => array(
 ```
 
 ### Limit to specific IDs
@@ -41,14 +41,14 @@ Let's say you have two pages, About Us (page ID - 50) and Contact Us (page ID - 
 ```php
 
 	$meta_boxes[] = array(
-		'id' => 'contact-information',
-		'title' => 'Contact Information',
+		'id'           => 'contact-information',
+		'title'        => 'Contact Information',
 		'object_types' => array('page'), // post type
-		'show_on' => array( 'key' => 'id', 'value' => array( 50, 24 ) ),
-		'context' => 'normal', //  'normal', 'advanced', or 'side'
-		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
-		'show_names' => true, // Show field names on the left
-		'fields' => array(
+		'show_on'      => array( 'key' => 'id', 'value' => array( 50, 24 ) ),
+		'context'      => 'normal', //  'normal', 'advanced', or 'side'
+		'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+		'show_names'   => true, // Show field names on the left
+		'fields'       => array(
 ```
 
 The type of show_on filter (key) is "id" and the value for that filter is an array of your IDs. If you only wanted it on the About page you could use 'value' => 50 instead of putting it in an array.
@@ -60,14 +60,14 @@ This will limit it to the page template with the file name `template-contact.php
 ```php
 
 	$meta_boxes[] = array(
-		'id' => 'contact-information',
-		'title' => 'Contact Information',
+		'id'           => 'contact-information',
+		'title'        => 'Contact Information',
 		'object_types' => array('page'), // post type
-		'show_on' => array( 'key' => 'page-template', 'value' => 'template-contact.php' ),
-		'context' => 'normal', //  'normal', 'advanced', or 'side'
-		'priority' => 'high',  //  'high', 'core', 'default' or 'low'
-		'show_names' => true, // Show field names on the left
-		'fields' => array(
+		'show_on'      => array( 'key' => 'page-template', 'value' => 'template-contact.php' ),
+		'context'      => 'normal', //  'normal', 'advanced', or 'side'
+		'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+		'show_names'   => true, // Show field names on the left
+		'fields'       => array(
 ```
 
 ### More Show On Filters
