@@ -1,6 +1,6 @@
 Metaboxes should be context-specific, and only show up when relevant. There's two tools you can use to limit their display:
 
-* pages - limits the post types it applies to
+* object_types - limits the post types it applies to
 * show_on - can limit to specific page/post IDs, page templates, or [any other show_on filter you define](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters)
 
 Both of these are used when you define your metabox.
