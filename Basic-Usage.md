@@ -91,6 +91,8 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 }
 ```
 
+Note: For more metabox examples, see [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
+
 ### Display the Metadata
 
 In your theme file use the [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) function to display your metadata within the loop:
