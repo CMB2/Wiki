@@ -12,7 +12,7 @@ Welcome to the CMB2 wiki! This is a code library for WordPress themes and plugin
 
 Tutorials:
 
-1. [Basic Usage](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage)
+1. [Basic Usage](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage) (Updated for CMB2)
 
 1. [Field Types](https://github.com/WebDevStudios/CMB2/wiki/Field-Types)
 
