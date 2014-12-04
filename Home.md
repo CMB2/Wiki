@@ -1,5 +1,7 @@
 ### DISCLAIMER: This is an outdated wiki pulled directly from the original CMB wiki. IT IS OUT OF DATE and is a work in progress.
 
+The BEST way to get started is look at `example-functions.php`
+
 **It is a wiki, so feel free to edit and bring things up-to-date if you have used and are familiar with CMB2.**
 
 ****
