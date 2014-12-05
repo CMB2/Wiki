@@ -1,21 +1,23 @@
 This code is designed to be run inside themes and plugins. Proper structure would look like:
 
 ```
-/my-plugin
+/my-theme
   /cmb2
-  cmb-init.php
+  functions.php
+  index.php
+  screenshot.png
+  styles.css
 ```
 
 ### Quick Start
 
-Open [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) and copy/paste all of the code into `cmb-init.php` (be sure to require the `cmb-init.php` file in your theme or plugin!) You should see all the example metaboxes in the post editor. Use [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) to get/use the data.
+Open [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) and copy/paste all of the code into `functions.php`. You should see all the example metaboxes in the post editor. Use [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) to get/use the data.
 
 ### Getting Started
 
-First, you need to get the bootstrap and start the engine. To do so, create a file named `cmb-init.php` and place the following into it:
+First, you need to get the bootstrap and start the engine. To do so, add the following code to `functions.php`:
 
 ```php
-<?php
 /**
  * Get the bootstrap!
  */
@@ -28,10 +30,9 @@ if ( file_exists(  __DIR__ . '/cmb2/init.php' ) ) {
 
 ### Create a metabox
 
-Now that you've included the CMB2 engine, you can create metaboxes using the following function:
+Now that you've included the CMB2 engine, you can start adding metaboxes with the following function inside `functions.php`:
 
 ```php
-<?php
 add_filter( 'cmb2_meta_boxes', 'cmb2_sample_metaboxes' );
 /**
  * Define the metabox and field configurations.
@@ -95,7 +96,7 @@ Note: For more metabox examples, see [example-functions.php](https://github.com/
 
 ### Display the Metadata
 
-In your theme file use the [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) function to display your metadata within the loop:
+Finally, you need to be able to extract the metadata and put it to work. In your theme or plugin file, use the [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) function to display your metadata. Remember, you *must* pass the post ID!
 
 ```php
 <?php
@@ -151,4 +152,4 @@ get_header(); ?>
 <?php get_footer(); ?>
 ```
 
-For more information, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta)
+For more information, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) and [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) 
