@@ -1,13 +1,9 @@
-### DISCLAIMER: This is an outdated wiki pulled directly from the original CMB wiki. IT IS OUT OF DATE and is a work in progress.
+### DISCLAIMER: This is an outdated wiki pulled directly from the original CMB. Some of the content is out-of-date, and should be considered "under construction". Contributions are welcome.
 
-The BEST way to get started is look at `example-functions.php`
-
-**It is a wiki, so feel free to edit and bring things up-to-date if you have used and are familiar with CMB2.**
+The best way to get started is look at [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) and read the [Basic Usage](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage) tutorial.
 
 ****
-
 Welcome to the CMB2 wiki! This is a code library for WordPress themes and plugins that makes it easy to add metaboxes and fields to WordPress.
-
 ****
 
 Tutorials:
