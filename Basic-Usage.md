@@ -84,7 +84,7 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 				// 'repeatable' => true,
 			),
 		),
-	)
+	);
 
 	// Add other metaboxes as needed
 
