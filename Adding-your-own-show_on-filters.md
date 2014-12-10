@@ -1,6 +1,6 @@
 A 'show_on' filter is any arbitrary filter that limits where the metabox is shown. As described in [Display Options](https://github.com/WebDevStudios/CMB2/wiki/Display-Options), there's currently two built-in. You can limit a metabox to certain page IDs, or to certain page templates.
 
-If you'd like to create your own show_on filter, all you have to do is hook into `cmb_show_on`. If you look in init.php and search for "Show On Filters", you'll find the code that creates those two. They can serve as a guide.
+If you'd like to create your own show_on filter, all you have to do is hook into `cmb2_show_on`. If you look in init.php and search for "Show On Filters", you'll find the code that creates those two. They can serve as a guide.
 
 The filter passes two parameters:
 
@@ -55,7 +55,7 @@ function be_metabox_exclude_for_id( $display, $meta_box ) {
 	else
 		return true;
 }
-add_filter( 'cmb_show_on', 'be_metabox_exclude_for_id', 10, 2 );
+add_filter( 'cmb2_show_on', 'be_metabox_exclude_for_id', 10, 2 );
 ```
 
 ### Example: Exclude on New Post Screens
@@ -64,7 +64,7 @@ Excluding by ID works once the post type and ID has been set, but the metaboxes 
 
 ```php
 <?php
-add_filter( 'cmb_show_on', 'tgm_exclude_from_new', 10, 2 );
+add_filter( 'cmb2_show_on', 'tgm_exclude_from_new', 10, 2 );
 /**
  * Removes metabox from appearing on post new screens before the post
  * ID has been set.
@@ -119,7 +119,7 @@ This will only show the metabox if the post is a top level post, by checking if 
  * @return bool display metabox
  */
 
-add_filter( 'cmb_show_on', 'ba_metabox_add_for_top_level_posts_only', 10, 2 );
+add_filter( 'cmb2_show_on', 'ba_metabox_add_for_top_level_posts_only', 10, 2 );
 function ba_metabox_add_for_top_level_posts_only( $display, $meta_box ) {
 	if ( 'parent-id' !== $meta_box['show_on']['key'] )
 		return $display;
@@ -178,7 +178,7 @@ function be_taxonomy_show_on_filter( $display, $meta_box ) {
 	return $display;
 
 }
-add_filter( 'cmb_show_on', 'be_taxonomy_show_on_filter', 10, 2 );
+add_filter( 'cmb2_show_on', 'be_taxonomy_show_on_filter', 10, 2 );
 ```
 
 ### Example: Child page show_on filter
@@ -223,7 +223,7 @@ function be_metabox_show_on_child_of( $display, $meta_box ) {
 	else
 		return false;
 }
-add_filter( 'cmb_show_on', 'be_metabox_show_on_child_of', 10, 2 );
+add_filter( 'cmb2_show_on', 'be_metabox_show_on_child_of', 10, 2 );
 ```
 
 ### Example: Page Slug show_on filter
@@ -259,7 +259,7 @@ function be_metabox_show_on_slug( $display, $meta_box ) {
 	// See if there's a match
 	return in_array( $slug, $meta_box['show_on']['value']);
 }
-add_filter( 'cmb_show_on', 'be_metabox_show_on_slug', 10, 2 );
+add_filter( 'cmb2_show_on', 'be_metabox_show_on_slug', 10, 2 );
 
 
 ```
@@ -302,7 +302,7 @@ function ed_metabox_include_front_page( $display, $meta_box ) {
 	}
 
 }
-add_filter( 'cmb_show_on', 'ed_metabox_include_front_page', 10, 2 );
+add_filter( 'cmb2_show_on', 'ed_metabox_include_front_page', 10, 2 );
 
 ```
 
@@ -322,7 +322,7 @@ Metaboxes show based on user capability.
  */
 
  // Don't show metaboxes to users who can't publish posts
-add_filter( 'cmb_show_on', 'show_meta_to_chosen_users', 10, 2 );
+add_filter( 'cmb2_show_on', 'show_meta_to_chosen_users', 10, 2 );
 function show_meta_to_chosen_users( $display, $meta_box ) {
 	if ( 'user-type' !== $meta_box['show_on']['key'] )
 		return $display;
@@ -369,7 +369,7 @@ function be_metabox_show_on_template( $display, $meta_box ) {
 	// See if there's a match
 	return in_array( $template_name, $meta_box['show_on']['value'] );
 }
-add_filter( 'cmb_show_on', 'be_metabox_show_on_template', 10, 2 );
+add_filter( 'cmb2_show_on', 'be_metabox_show_on_template', 10, 2 );
 ```
 
 ### Example: Show metabox for certain user roles
@@ -415,5 +415,5 @@ function cmb_show_meta_to_chosen_roles( $display, $meta_box ) {
 
     return false;
 }
-add_filter( 'cmb_show_on', 'cmb_show_meta_to_chosen_roles', 10, 2 );
+add_filter( 'cmb2_show_on', 'cmb_show_meta_to_chosen_roles', 10, 2 );
 ```
