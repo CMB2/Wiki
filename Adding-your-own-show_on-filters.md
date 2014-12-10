@@ -1,11 +1,12 @@
 A 'show_on' filter is any arbitrary filter that limits where the metabox is shown. As described in [Display Options](https://github.com/WebDevStudios/CMB2/wiki/Display-Options), there's currently two built-in. You can limit a metabox to certain page IDs, or to certain page templates.
 
-If you'd like to create your own show_on filter, all you have to do is hook into `cmb2_show_on`. If you look in init.php and search for "Show On Filters", you'll find the code that creates those two. They can serve as a guide.
+If you'd like to create your own show_on filter, all you have to do is hook into `cmb2_show_on`.
 
-The filter passes two parameters:
+The filter passes three parameters:
 
 * $display - either true or false, default is true
 * $metabox - array of metabox parameters
+* $cmb - The CMB object for the current metabox
 
 Make sure you check early on to see if this filter should be running (check `$meta_box['show_on']['key']` ). Since this runs on every metabox, you'll want to return `$display` (the default) instead of true so you don't override the other show_on filters. At the end, either return true to display it or false to not display it.
 
