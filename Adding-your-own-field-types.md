@@ -315,6 +315,7 @@ function cmb_render_address_field( $field_object, $value, $object_id, $object_ty
 			'name'  => $field_type_object->_name( '[zip]' ),
 			'id'    => $field_type_object->_id( '_zip' ),
 			'value' => $value['zip'],
+			'type'  => 'number',
 			'desc'  => '',
 		) ); ?>
 	</div>
