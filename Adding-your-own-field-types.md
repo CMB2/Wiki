@@ -350,7 +350,7 @@ $address = wp_parse_args( $address, array(
 <?php
 
 ```
-
+**Note:** It was asked how to make this field repeatable. It's [not impossible, but it's also not super simple](https://github.com/WebDevStudios/CMB2/issues/116#issuecomment-66845137).
 
 ## Add Your Own Examples
 
