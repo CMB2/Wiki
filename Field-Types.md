@@ -499,6 +499,35 @@ array(
 
 * `preview_size` Changes the size of the preview images in the field. Default: array( 50, 50 ).
 
+##### Sample function for getting and outputting `file_list` images 
+
+```php
+/**
+ * Sample template tag function for outputting a cmb2 file_list
+ *
+ * @param  string  $file_list_meta_key The field meta key. ($prefix . 'file_list')
+ * @param  string  $img_size           Size of image to show
+ */
+function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
+
+	// Get the list of files
+	$files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );
+
+	echo '<div class="file-list-wrap">';
+	// Loop through them and output an image
+	foreach ( (array) $files as $attachment_id => $attachment_url ) {
+		echo '<div class="file-list-image">';
+		echo wp_get_attachment_image( $attachment_id, $img_size );
+		echo '</div>';
+	}
+	echo '</div>';
+}
+```
+##### To use in your template (in the loop):
+```php
+<?php cmb2_output_file_list( 'myprefix_file_list', 'small' ); ?>
+```
+
 #### `oembed`
 Displays embedded media inline using WordPress' built-in oEmbed support. See [codex.wordpress.org/Embeds](http://codex.wordpress.org/Embeds) for more info and for a list of embed services supported. (added in 0.9.1)
 
