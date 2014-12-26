@@ -150,3 +150,5 @@ function myprefix_get_option( $key = '' ) {
 ```
 
 Link to gist: [https://gist.github.com/jtsternberg/8601075](https://gist.github.com/jtsternberg/8601075)
+
+[Check these instructions out](https://github.com/WebDevStudios/CMB2/issues/130#issuecomment-68160722) if you're looking to modify the form output of the `cmb2_metabox_form` function.
