@@ -56,6 +56,7 @@ function cmb2_sample_metaboxes( array $meta_boxes ) {
 		'priority'      => 'high',
 		'show_names'    => true, // Show field names on the left
 		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // Keep the metabox closed by default
 		'fields'        => array(
 			array(
 				'name'       => __( 'Test Text', 'cmb2' ),
@@ -152,4 +153,4 @@ get_header(); ?>
 <?php get_footer(); ?>
 ```
 
-For more information, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) and [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) 
+For more information, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) and [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
