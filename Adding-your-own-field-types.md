@@ -291,7 +291,7 @@ function cmb2_render_address_field( $field_object, $value, $object_id, $object_t
 	</div>
 	<div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_city' ); ?>'">City</label></p>
 		<?php echo $field_type_object->input( array(
-			'class' => 'cmb2_text_small',
+			'class' => 'cmb2-text-small',
 			'name'  => $field_type_object->_name( '[city]' ),
 			'id'    => $field_type_object->_id( '_city' ),
 			'value' => $value['city'],
@@ -308,7 +308,7 @@ function cmb2_render_address_field( $field_object, $value, $object_id, $object_t
 	</div>
 	<div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_zip' ); ?>'">Zip</label></p>
 		<?php echo $field_type_object->input( array(
-			'class' => 'cmb2_text_small',
+			'class' => 'cmb2-text-small',
 			'name'  => $field_type_object->_name( '[zip]' ),
 			'id'    => $field_type_object->_id( '_zip' ),
 			'value' => $value['zip'],
@@ -362,7 +362,7 @@ Sometimes you only want a number in your input.
 // render numbers
 add_action( 'cmb2_render_text_number', 'sm_cmb_render_text_number', 10, 5 );
 function sm_cmb_render_text_number( $field_object, $escaped_value, $object_id, $object_type, $field_type_object ) {
-	echo $field_type_object->input( array( 'class' => 'cmb2_text_small', 'type' => 'number' ) );
+	echo $field_type_object->input( array( 'class' => 'cmb2-text-small', 'type' => 'number' ) );
 }
 
 // sanitize the field
@@ -387,7 +387,7 @@ add_action( 'cmb2_render_text_url', 'jt_cmb_render_text_url', 10, 5 );
  * Outputs the markup for the text_url field
  */
 function jt_cmb_render_text_url( $field_object, $escaped_value, $object_id, $object_type, $field_type_object ) {
-	echo $field_type_object->input( array( 'class' => 'cmb2_text_small' ) );
+	echo $field_type_object->input( array( 'class' => 'cmb2-text-small' ) );
 }
 
 add_filter( 'cmb2_sanitize_text_url', 'jt_cmb2_sanitize_text_url' );
