@@ -20,10 +20,10 @@ class Example_Front_End_Form {
 	 * Construct the class.
 	 */
 	public function __construct() {
-		add_filter( 'cmb_meta_boxes', array( $this, 'cmb_metaboxes' ) );
+		add_filter( 'cmb2_meta_boxes', array( $this, 'cmb_metaboxes' ) );
 		add_shortcode( 'cmb-form', array( $this, 'do_frontend_form' ) );
 		add_action( 'init', array( $this, 'initialize_cmb_meta_boxes' ), 9 );
-		add_action( 'cmb_save_post_fields', array( $this, 'save_featured_image' ), 10, 4 );
+		add_action( 'cmb2_save_post_fields', array( $this, 'save_featured_image' ), 10, 4 );
 	}
 
 
