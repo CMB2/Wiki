@@ -36,13 +36,13 @@ class Example_Front_End_Form {
 		 * Metabox for the "Memorials" front-end submission form
 		 */
 		$meta_boxes['memorials_metabox'] = array(
-			'id'         => 'memorials',
-			'title'      => __( 'Memorial Information', 'cmb' ),
-			'pages'      => array( 'memorials' ), // Post type
-			'context'    => 'normal',
-			'priority'   => 'high',
-			'show_names' => true, // Show field names on the left
-			'fields'     => array(
+			'id'           => 'memorials',
+			'title'        => __( 'Memorial Information', 'cmb' ),
+			'object_types' => array( 'memorials' ), // Post type
+			'context'      => 'normal',
+			'priority'     => 'high',
+			'show_names'   => true, // Show field names on the left
+			'fields'       => array(
 				array(
 					'name' => __( 'First Name', 'cmb' ),
 					'desc' => __( '', 'cmb' ),
