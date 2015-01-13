@@ -190,7 +190,7 @@ class Example_Front_End_Form {
 	 */
 	public function initialize_cmb_meta_boxes() {
 
-		if ( ! class_exists( 'cmb_Meta_Box' ) ) {
+		if ( ! class_exists( 'CMB2' ) ) {
 			require_once 'init.php';
 		}
 
