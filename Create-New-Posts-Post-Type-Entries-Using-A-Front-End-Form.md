@@ -98,7 +98,7 @@ class Example_Front_End_Form {
 		$metabox_id = 'memorials_metabox';
 
 		// Get all metaboxes
-		$meta_boxes = apply_filters( 'cmb_meta_boxes', array() );
+		$meta_boxes = apply_filters( 'cmb2_meta_boxes', array() );
 
 		// If the metabox specified doesn't exist, yell about it.
 		if ( ! isset( $meta_boxes[ $metabox_id ] ) ) {
@@ -117,7 +117,7 @@ class Example_Front_End_Form {
 		$echo = false;
 
 		// Get our form
-		$form = cmb_metabox_form( $meta_boxes[ $metabox_id ], $post_id, $echo );
+		$form = cmb2_metabox_form( $meta_boxes[ $metabox_id ], $post_id, $echo );
 
 		return $form;
 	}
@@ -134,7 +134,7 @@ class Example_Front_End_Form {
 		}
 
 		// Check nonce
-		if ( ! ( isset( $_POST['submit-cmb'], $_POST['wp_meta_box_nonce'] ) && wp_verify_nonce( $_POST['wp_meta_box_nonce'], cmb_Meta_Box::nonce() ) ) ) {
+		if ( ! ( isset( $_POST['submit-cmb'], $_POST['wp_meta_box_nonce'] ) && wp_verify_nonce( $_POST['wp_meta_box_nonce'], CMB2::nonce() ) ) ) {
 			return;
 		}
 
