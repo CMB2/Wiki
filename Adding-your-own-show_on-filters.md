@@ -157,7 +157,7 @@ This allows you to specify one or more taxonomies, and for each taxonomy one or 
  */
 function be_taxonomy_show_on_filter( $display, $meta_box ) {
 
-	if ( 'taxonomy' !== $meta_box['show_on']['key'] )
+	if ( !isset( $meta_box['show_on']['key'] ) || 'taxonomy' !== $meta_box['show_on']['key'] )
 		return $display;
 
 	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
