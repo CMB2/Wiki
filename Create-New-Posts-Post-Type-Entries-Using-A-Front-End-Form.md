@@ -1,4 +1,4 @@
-Folder structure would be like this
+This code is designed to be run inside themes and plugins. Proper structure would look like:
 ```
 /my-theme
   /cmb2
