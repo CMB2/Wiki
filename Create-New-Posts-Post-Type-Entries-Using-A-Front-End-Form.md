@@ -1,4 +1,13 @@
 Using CMB we can create a front-end form that will allow visitors to create new posts or post-type entries. For this example, we'll create a front-end form that allows visitors to submit an obituary.
+Folder structure would be like this
+`
+/my-theme
+  /cmb2
+  functions.php
+  index.php
+  screenshot.png
+  styles.css
+`
 
 ```php
 <?php
