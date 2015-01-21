@@ -418,3 +418,41 @@ function cmb_show_meta_to_chosen_roles( $display, $meta_box ) {
 }
 add_filter( 'cmb2_show_on', 'cmb_show_meta_to_chosen_roles', 10, 2 );
 ```
+
+### Example: Show metabox by post meta
+Will show the metabox if the post meta matches the provided value.
+$meta_boxes['show_on'] = array( 'meta' => 'is_registration_page', 'meta_value' => true, ),
+````php
+/**
+ * Show metabox if post meta equals provided value
+ * @author Tanner Moushey
+ * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
+ *
+ * @param bool $display
+ * @param array $meta_box
+ * @return bool display metabox
+ */
+function ntnlr_show_on_registration( $display, $meta_box ) {
+
+	// Get the current ID
+	if ( isset( $_GET['post'] ) ) {
+		$post_id = $_GET['post'];
+	} elseif ( isset( $_POST['post_ID'] ) ) {
+		$post_id = $_POST['post_ID'];
+	}
+
+	if ( ! isset( $post_id, $meta_box['show_on']['meta'], $meta_box['show_on']['meta_value'] ) ) {
+		return $display;
+	}
+
+	$value = get_post_meta( $post_id, $meta_box['show_on']['meta'], true );
+
+	if ( $value == $meta_box['show_on']['meta_value'] ) {
+		return $display;
+	} else {
+		return false;
+	}
+
+}
+add_filter( 'cmb2_show_on', 'ntnlr_show_on_registration', 10, 2 );
+```
