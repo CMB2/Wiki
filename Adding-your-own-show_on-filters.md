@@ -421,8 +421,9 @@ add_filter( 'cmb2_show_on', 'cmb_show_meta_to_chosen_roles', 10, 2 );
 
 ### Example: Show metabox by post meta
 Will show the metabox if the post meta matches the provided value.
-$meta_boxes['show_on'] = array( 'meta' => [enter-meta-key], 'meta_value' => [enter-meta-value], ),
 ````php
+$meta_boxes['show_on'] = array( 'meta' => [enter-meta-key], 'meta_value' => [enter-meta-value], );
+
 /**
  * Show metabox if post meta equals provided value
  * @author Tanner Moushey
