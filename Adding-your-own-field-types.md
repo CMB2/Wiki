@@ -410,3 +410,67 @@ function jt_cmb2_sanitize_text_url( $new ) {
     return $new;
 }
 ```
+Here's an autocomplete type:
+
+function na_meta_render_autocomplete($field_object, $escaped_value, $object_id, $object_type, $field_type_object) {
+
+  // Store the ID in a hidden field.
+  echo $field_type_object->hidden();
+
+  $options = $field_object->args['options'];
+  $id = $field_object->args['id'];
+
+  // Find out which one of the group it is.
+  for ($i = 0; $i < count($field_object->value); ++$i) {
+    if ($field_object->escaped_value === $field_object->value[$i]) {
+      break;
+    }
+  }
+
+  if (empty($field_object->escaped_value)) {
+    $option = array('name' => '', 'value' => '');
+  } else {
+    foreach ($options as $option) {
+      if ($option['value'] == $field_object->escaped_value) {
+        break;
+      }
+    }
+  }
+
+  $id = $field_object->args['id'] .'-'.$i;
+
+  echo '<input size="50" id="'.$id.'" value="'.$option['name'].'"/>';
+
+  ?>
+  <script>
+    var options = [];
+    var nameToValue = [];
+    <?php
+
+    foreach ($options as $option) {
+      echo "options.push('".addcslashes($option['name'], "'")."');\r\n";
+      echo "nameToValue['".addcslashes($option['name'], "'")."'] = '".$option['value']."';\r\n";
+    }
+
+    ?>
+    jQuery(document).ready(function($) {
+      $('#<?php echo $id; ?>').autocomplete({
+        source: options,
+        select: function(event, ui) {
+          $('#<?php echo $field_object->args['id'].'_'.$i; ?>').val(nameToValue[ui.item.value]);
+        }
+      });
+    });
+  </script>
+  <?php
+}
+
+/**
+ * Gets the jQuery autocomplete widget ready.
+ */
+function na_meta_admin_enqueue_scripts() {
+  wp_enqueue_script('jquery-ui-autocomplete');
+}
+
+add_action('cmb2_render_autocomplete', 'na_meta_render_autocomplete', 10, 5);
+add_action('wp_admin_enqueue_scripts', 'na_meta_admin_enqueue_scripts');
