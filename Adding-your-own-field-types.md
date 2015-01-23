@@ -411,9 +411,9 @@ function jt_cmb2_sanitize_text_url( $new ) {
 }
 ```
 
-```php
 Here's an autocomplete type:
 
+```php
 /**
  * Renders the autocomplete type
  *
