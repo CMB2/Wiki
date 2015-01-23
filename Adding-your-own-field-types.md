@@ -410,6 +410,8 @@ function jt_cmb2_sanitize_text_url( $new ) {
     return $new;
 }
 ```
+
+```php
 Here's an autocomplete type:
 
 function na_meta_render_autocomplete($field_object, $escaped_value, $object_id, $object_type, $field_type_object) {
@@ -474,3 +476,4 @@ function na_meta_admin_enqueue_scripts() {
 
 add_action('cmb2_render_autocomplete', 'na_meta_render_autocomplete', 10, 5);
 add_action('wp_admin_enqueue_scripts', 'na_meta_admin_enqueue_scripts');
+```
