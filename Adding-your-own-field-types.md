@@ -414,64 +414,75 @@ function jt_cmb2_sanitize_text_url( $new ) {
 ```php
 Here's an autocomplete type:
 
+/**
+ * Renders the autocomplete type
+ *
+ * @param CMB2_Field object $field_object
+ * @param string $escaped_value The value of this field passed through the escaping filter. It defaults to sanitize_text_field. 
+ *                              If you need the unescaped value, you can access it via $field_type_object->value().
+ * @param string $object_id The id of the object you are working with. Most commonly, the post id.
+ * @param string $object_type The type of object you are working with. Most commonly, post (this applies to all post-types), 
+ *                             but could also be comment, user or options-page.
+ * @param CMB2_Object $field_type_object This is an instance of the CMB2 object and gives you access to all of the methods that CMB2 uses to build its field types.
+ */
 function na_meta_render_autocomplete($field_object, $escaped_value, $object_id, $object_type, $field_type_object) {
 
-  // Store the ID in a hidden field.
-  echo $field_type_object->hidden();
+	// Store the ID in a hidden field.
+	echo $field_type_object->hidden();
 
-  $options = $field_object->args['options'];
-  $id = $field_object->args['id'];
+	$options = $field_object->args['options'];
+	$id = $field_object->args['id'];
 
-  // Find out which one of the group it is.
-  for ($i = 0; $i < count($field_object->value); ++$i) {
-    if ($field_object->escaped_value === $field_object->value[$i]) {
-      break;
-    }
-  }
+	// Find out which one of the group it is.
+	for ($i = 0; $i < count($field_object->value); ++$i) {
+		if ($field_object->escaped_value === $field_object->value[$i]) {
+			break;
+		}
+	}
 
-  if (empty($field_object->escaped_value)) {
-    $option = array('name' => '', 'value' => '');
-  } else {
-    foreach ($options as $option) {
-      if ($option['value'] == $field_object->escaped_value) {
-        break;
-      }
-    }
-  }
+	if (empty($field_object->escaped_value)) {
+		$option = array('name' => '', 'value' => '');
+	} else {
+		foreach ($options as $option) {
+			if ($option['value'] == $field_object->escaped_value) {
+				break;
+			}
+		}
+	}
 
-  $id = $field_object->args['id'] .'-'.$i;
+	$id = $field_object->args['id'] .'-'.$i;
 
-  echo '<input size="50" id="'.$id.'" value="'.$option['name'].'"/>';
+	echo '<input size="50" id="'.$id.'" value="'.$option['name'].'"/>';
 
-  ?>
-  <script>
-    var options = [];
-    var nameToValue = [];
-    <?php
+	?>
+	<script>
+		var options = [];
+		var nameToValue = [];
+		<?php
 
-    foreach ($options as $option) {
-      echo "options.push('".addcslashes($option['name'], "'")."');\r\n";
-      echo "nameToValue['".addcslashes($option['name'], "'")."'] = '".$option['value']."';\r\n";
-    }
+		foreach ($options as $option) {
+			echo "options.push('".addcslashes($option['name'], "'")."');\r\n";
+			echo "nameToValue['".addcslashes($option['name'], "'")."'] = '".$option['value']."';\r\n";
+		}
 
-    ?>
-    jQuery(document).ready(function($) {
-      $('#<?php echo $id; ?>').autocomplete({
-        source: options,
-        select: function(event, ui) {
-          $('#<?php echo $field_object->args['id'].'_'.$i; ?>').val(nameToValue[ui.item.value]);
-        }
-      });
-    });
-  </script>
-  <?php
+		?>
+		jQuery(document).ready(function($) {
+			$('#<?php echo $id; ?>').autocomplete({
+				source: options,
+				select: function(event, ui) {
+					$('#<?php echo $field_object->args['id'].'_'.$i; ?>').val(nameToValue[ui.item.value]);
+				}
+			});
+		});
+	</script>
+	<?php
 }
 
 /**
  * Gets the jQuery autocomplete widget ready.
  */
 function na_meta_admin_enqueue_scripts() {
-  wp_enqueue_script('jquery-ui-autocomplete');
+	wp_enqueue_script('jquery-ui-autocomplete');
 }
 
 add_action('cmb2_render_autocomplete', 'na_meta_render_autocomplete', 10, 5);
