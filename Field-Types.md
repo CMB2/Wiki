@@ -7,7 +7,7 @@ Note that all the id's have $prefix in them. It's a good practice to create a un
 Not all built-in fields have been 100% documented, so please see the example file for more types.
 
 #### Types:
-1. [`title`](/WebDevStudios/CMB2/wiki/Field-Types#title)
+1. [`title`](#title)
 1. [`text`](/WebDevStudios/CMB2/wiki/Field-Types#text)
 1. [`text_small`](/WebDevStudios/CMB2/wiki/Field-Types#text_small)
 1. [`text_medium`](/WebDevStudios/CMB2/wiki/Field-Types#text_medium)
