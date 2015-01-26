@@ -6,7 +6,7 @@ The best way to get started is look at [example-functions.php](https://github.co
 Welcome to the CMB2 wiki! This is a code library for WordPress themes and plugins that makes it easy to add metaboxes and fields to WordPress.
 ****
 
-Tutorials:
+Documentation:
 
 1. [Basic Usage](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage) (Updated for CMB2)
 
