@@ -16,6 +16,8 @@ Documentation:
 
 1. [Troubleshooting](https://github.com/WebDevStudios/CMB2/wiki/Troubleshooting)
 
+1. [Notable Changes in CMB2 (from original CMB)](https://github.com/WebDevStudios/CMB2/wiki/Notable-Changes-in-CMB2)
+
 Advanced tutorials:
 
 1. [Adding your own field types](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)
@@ -29,5 +31,3 @@ Advanced tutorials:
 4. [Using CMB to create an Admin Theme Options Page](https://github.com/WebDevStudios/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)
 
 5. [Create new posts/post-type entries using a front-end form](https://github.com/WebDevStudios/CMB2/wiki/Create-New-Posts-Post-Type-Entries-Using-A-Front-End-Form)
-
-6. [Notable Changes in CMB2 (from original CMB)](https://github.com/WebDevStudios/CMB2/wiki/Notable-Changes-in-CMB2)
