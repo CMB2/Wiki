@@ -8,7 +8,7 @@ Welcome to the CMB2 wiki! This is a code library for WordPress themes and plugin
 
 Documentation:
 
-1. [Basic Usage](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage) (Updated for CMB2)
+1. [Basic Usage](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage)
 
 1. [Field Types](https://github.com/WebDevStudios/CMB2/wiki/Field-Types)
 
@@ -29,3 +29,5 @@ Advanced tutorials:
 4. [Using CMB to create an Admin Theme Options Page](https://github.com/WebDevStudios/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)
 
 5. [Create new posts/post-type entries using a front-end form](https://github.com/WebDevStudios/CMB2/wiki/Create-New-Posts-Post-Type-Entries-Using-A-Front-End-Form)
+
+6. [Notable Changes in CMB2 (from original CMB)](https://github.com/WebDevStudios/CMB2/wiki/Notable-Changes-in-CMB2)
