@@ -1,48 +1,51 @@
-**Updated for CMB2**  
+**Updated for CMB2**
 
 Here's the built-in fields you can include in your metabox. You can also [add your own field types](/WebDevStudios/CMB2/wiki/Adding-your-own-field-types).
 
-Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](/WebDevStudios/CMB2/blob/master/example-functions.php) to see how you define the prefix. 
+Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](/WebDevStudios/CMB2/blob/master/example-functions.php) to see how you define the prefix.
 
 Not all built-in fields have been 100% documented, so please see the example file for more types.
 
 #### Types:
-1. [`title`](#title)
-1. [`text`](/WebDevStudios/CMB2/wiki/Field-Types#text)
-1. [`text_small`](/WebDevStudios/CMB2/wiki/Field-Types#text_small)
-1. [`text_medium`](/WebDevStudios/CMB2/wiki/Field-Types#text_medium)
-1. [`text_email`](/WebDevStudios/CMB2/wiki/Field-Types#text_email)
-1. [`text_url`](/WebDevStudios/CMB2/wiki/Field-Types#text_url)
-1. [`text_money`](/WebDevStudios/CMB2/wiki/Field-Types#text_money)
-1. [`textarea`](/WebDevStudios/CMB2/wiki/Field-Types#textarea)
-1. [`textarea_small`](/WebDevStudios/CMB2/wiki/Field-Types#textarea_small)
-1. [`textarea_code`](/WebDevStudios/CMB2/wiki/Field-Types#textarea_code)
-1. [`text_date`](/WebDevStudios/CMB2/wiki/Field-Types#text_date)
-1. [`text_time`](/WebDevStudios/CMB2/wiki/Field-Types#text_time)
-1. [`select_timezone`](/WebDevStudios/CMB2/wiki/Field-Types#select_timezone)
-1. [`text_date_timestamp`](/WebDevStudios/CMB2/wiki/Field-Types#text_date_timestamp)
-1. [`text_datetime_timestamp`](/WebDevStudios/CMB2/wiki/Field-Types#text_datetime_timestamp)
-1. [`text_datetime_timestamp_timezone`](/WebDevStudios/CMB2/wiki/Field-Types#text_datetime_timestamp_timezone)
-1. [`colorpicker`](/WebDevStudios/CMB2/wiki/Field-Types#colorpicker)
-1. [`radio`](/WebDevStudios/CMB2/wiki/Field-Types#radio)
-1. [`radio_inline`](/WebDevStudios/CMB2/wiki/Field-Types#radio_inline)
-1. [`taxonomy_radio`](/WebDevStudios/CMB2/wiki/Field-Types#taxonomy_radio)
-1. [`taxonomy_radio_inline`](/WebDevStudios/CMB2/wiki/Field-Types#taxonomy_radio_inline)
-1. [`select`](/WebDevStudios/CMB2/wiki/Field-Types#select)
-1. [`taxonomy_select`](/WebDevStudios/CMB2/wiki/Field-Types#taxonomy_select)
-1. [`checkbox`](/WebDevStudios/CMB2/wiki/Field-Types#checkbox)
-1. [`multicheck`](/WebDevStudios/CMB2/wiki/Field-Types#multicheck)
-1. [`taxonomy_multicheck`](/WebDevStudios/CMB2/wiki/Field-Types#taxonomy_multicheck)
-1. [`taxonomy_multicheck_inline`](/WebDevStudios/CMB2/wiki/Field-Types#taxonomy_multicheck_inline)
-1. [`wysiwyg`](/WebDevStudios/CMB2/wiki/Field-Types#wysiwyg)
-1. [`file`](/WebDevStudios/CMB2/wiki/Field-Types#file)
-1. [`file_list`](/WebDevStudios/CMB2/wiki/Field-Types#file_list)
-1. [`oembed`](/WebDevStudios/CMB2/wiki/Field-Types#oembed)
-1. [`group`](/WebDevStudios/CMB2/wiki/Field-Types#group)
+1. [`title`](#title) An arbitrary title field *
+1. [`text`](#text)
+1. [`text_small`](#text_small)
+1. [`text_medium`](#text_medium)
+1. [`text_email`](#text_email)
+1. [`text_url`](#text_url)
+1. [`text_money`](#text_money)
+1. [`textarea`](#textarea)
+1. [`textarea_small`](#textarea_small)
+1. [`textarea_code`](#textarea_code)
+1. [`text_date`](#text_date) Date Picker
+1. [`text_time`](#text_time) Time picker
+1. [`select_timezone`](#select_timezone) Time zone dropdown
+1. [`text_date_timestamp`](#text_date_timestamp) Date Picker (UNIX timestamp)
+1. [`text_datetime_timestamp`](#text_datetime_timestamp) Test Date/Time Picker Combo (UNIX timestamp)
+1. [`text_datetime_timestamp_timezone`](#text_datetime_timestamp_timezone) Test Date/Time Picker/Time zone Combo (serialized DateTime object)
+1. [`colorpicker`](#colorpicker) Color picker
+1. [`radio`](#radio) *
+1. [`radio_inline`](#radio_inline) *
+1. [`taxonomy_radio`](#taxonomy_radio) *
+1. [`taxonomy_radio_inline`](#taxonomy_radio_inline) *
+1. [`select`](#select)
+1. [`taxonomy_select`](#taxonomy_select) *
+1. [`checkbox`](#checkbox) *
+1. [`multicheck`](#multicheck)
+1. [`taxonomy_multicheck`](#taxonomy_multicheck) *
+1. [`taxonomy_multicheck_inline`](#taxonomy_multicheck_inline)
+1. [`wysiwyg`](#wysiwyg) (TinyMCE) *
+1. [`file`](#file) Image/File upload *†
+1. [`file_list`](#file_list) Image/File list upload
+1. [`oembed`](#oembed) Converts oembed urls (instagram, twitter, youtube, etc. [oEmbed in the Codex](https://codex.wordpress.org/Embeds))
+1. [`group`](#group) Hybrid field that supports adding other fields as a repeatable group. *
 
 #### More Info
 * [Create your own field type](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)
-* [Common field parameters shared by all fields](/WebDevStudios/CMB2/wiki/Field-Types#common-field-parameters)
+* [Common field parameters shared by all fields](#common-field-parameters)
+
+\* Not available as a repeatable field  
+† Use `file_list` for repeatable  
 
 #### `title`
 A large title (useful for breaking up sections of fields in metabox). Example:
@@ -184,7 +187,7 @@ array(
 ```
 ##### Extra Parameters:
 
-* `date_format `, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php). 
+* `date_format `, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
 
 
 #### `text_time`
@@ -200,7 +203,7 @@ array(
 ```
 ##### Extra Parameters:
 
-* `time_format`, defaults to 'h:i A'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php). 
+* `time_format`, defaults to 'h:i A'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
 
 
 #### `select_timezone`
@@ -229,8 +232,8 @@ array(
 ```
 ##### Extra Parameters:
 
-* `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/WebDevStudios/CMB2/wiki/Field-Types#select_timezone) field specified above.  
-* `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).  
+* `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/WebDevStudios/CMB2/wiki/Field-Types#select_timezone) field specified above.
+* `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
 
 
 #### `text_datetime_timestamp`
@@ -298,7 +301,7 @@ array(
 ```
 
 #### `radio`
-Standard radio buttons. Example: 
+Standard radio buttons. Example:
 
 ```php
 array(
@@ -349,7 +352,7 @@ array(
 ##### Optional:
 
 * All the types that take an `options` parameter can accept a callback. This callback will recieive the field object which you can use to check the object ID (`$field->object_id`). This can be handy if you need to build options based on the current post or context. The callback should return an array of options in the format displayed in these examples.
-**Example** 
+**Example**
 ```php
 // in the field array..
 	...
@@ -358,7 +361,7 @@ array(
 
 // Callback function
 function show_cat_or_dog_options( $field ) {
-	
+
 	if ( has_tag( 'cats', $field->object_id ) ) {
 		return array(
 			'tabby'   => __( 'Tabby', 'cmb' ),
@@ -385,7 +388,7 @@ array(
 	'desc' => 'Description Goes Here',
 	'id' => $prefix . 'text_taxonomy_radio',
 	'taxonomy' => '', //Enter Taxonomy Slug
-	'type' => 'taxonomy_radio',	
+	'type' => 'taxonomy_radio',
 ),
 ```
 
@@ -401,7 +404,7 @@ array(
 	'desc' => 'Description Goes Here',
 	'id' => $prefix . 'text_taxonomy_select',
 	'taxonomy' => 'category', //Enter Taxonomy Slug
-	'type' => 'taxonomy_select',	
+	'type' => 'taxonomy_select',
 ),
 ```
 
@@ -414,7 +417,7 @@ array(
 	'desc' => 'Description Goes Here',
 	'id' => $prefix . 'text_taxonomy_multicheck',
 	'taxonomy' => '', //Enter Taxonomy Slug
-	'type' => 'taxonomy_multicheck',	
+	'type' => 'taxonomy_multicheck',
 ),
 ```
 #### `taxonomy_multicheck_inline`
@@ -460,7 +463,7 @@ array(
 	    'teeny' => false, // output the minimal editor config used in Press This
 	    'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
 	    'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
-	    'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()	
+	    'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
 	),
 ),
 
@@ -499,7 +502,7 @@ array(
 
 * `preview_size` Changes the size of the preview images in the field. Default: array( 50, 50 ).
 
-##### Sample function for getting and outputting `file_list` images 
+##### Sample function for getting and outputting `file_list` images
 
 ```php
 /**
@@ -602,7 +605,7 @@ foreach ( (array) $entries as $key => $entry ) {
 	if ( isset( $entry['description'] ) )
 		$desc = wpautop( $entry['description'] );
 
-	if ( isset( $entry['image_id'] ) ) {			
+	if ( isset( $entry['image_id'] ) ) {
 		$img = wp_get_attachment_image( $entry['image_id'], 'share-pick', null, array(
 			'class' => 'thumb',
 		) );
@@ -619,7 +622,7 @@ You can [define your own field types](/WebDevStudios/CMB2/wiki/Adding-your-own-f
 
 #### Common Field Parameters
 
-Most (if not all) fields support these parameters:  
+Most (if not all) fields support these parameters:
 
 * `name`: The field label
 * `desc`: Field description. Usually under or adjacent to the field input.
