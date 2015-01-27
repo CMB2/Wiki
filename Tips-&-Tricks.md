@@ -1,5 +1,3 @@
-# Tips & Tricks
-
 ## Override text strings in field
 Several of the CMB2 field types have text strings in them, and CMB2 provides a way to override each of them.
 The `file` field type has a button with the text, "Add or Upload File." Here is how you would override that text during your field configuration:
