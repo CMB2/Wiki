@@ -6,6 +6,7 @@
 - [Inject static content in a field](#inject-static-content-in-a-field)
 - [Inject dynamic content in a field via a callback](#inject-dynamic-content-in-a-field-via-a-callback)
 - [Using the dynamic before/after form hooks](#using-the-dynamic-beforeafter-form-hooks)
+- [Setting a metabox to 'closed' by default](#setting-a-metabox-to-closed-by-default)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ___
@@ -126,4 +127,20 @@ function cmb2_test_before_form( $post_id, $cmb ) {
 	echo $cmb->prop( 'title' );
 }
 add_action( 'cmb2_before_post_form_test_metabox', 'cmb2_test_before_form', 10, 2 );
+```
+
+## Setting a metabox to 'closed' by default
+
+If you prefer a particular metabox to be closed by default, you can do it via the `closed` metabox parameter:
+
+```php
+$meta_boxes[] = array(
+	'id'           => 'test_metabox',
+	'title'        => __( 'Test Metabox', 'cmb2' ),
+	'object_types' => array( 'page', ),
+	'closed'       => true, // true to keep the metabox closed by default
+	'fields'       => array(
+		...
+	),
+);
 ```
