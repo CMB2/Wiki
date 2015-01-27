@@ -1,11 +1,14 @@
-##### Table of Contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-* [Override text strings in field](#override-text-strings-in-field)
-* [Inject static content in a field](#inject-static-content-in-a-field)
-* [Inject dynamic content in a field via a callback](#inject-dynamic-content-in-a-field-via-a-callback)
-* [Using the dynamic before/after form hooks](#using-the-dynamic-beforeafter-form-hooks)
+- [Override text strings in field](#override-text-strings-in-field)
+- [Inject static content in a field](#inject-static-content-in-a-field)
+- [Inject dynamic content in a field via a callback](#inject-dynamic-content-in-a-field-via-a-callback)
+- [Using the dynamic before/after form hooks](#using-the-dynamic-beforeafter-form-hooks)
 
----
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+___
 ## Override text strings in field
 
 Several of the CMB2 field types have text strings in them, and CMB2 provides a way to override each of them.
