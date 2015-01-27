@@ -7,6 +7,7 @@
 - [Inject dynamic content in a field via a callback](#inject-dynamic-content-in-a-field-via-a-callback)
 - [Using the dynamic before/after form hooks](#using-the-dynamic-beforeafter-form-hooks)
 - [Setting a metabox to 'closed' by default](#setting-a-metabox-to-closed-by-default)
+- [Using CMB2 helper functions and cmb2_init](#using-cmb2-helper-functions-and-cmb2_init)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ___
@@ -143,4 +144,17 @@ $meta_boxes[] = array(
 		...
 	),
 );
+```
+
+## Using CMB2 helper functions and cmb2_init
+
+Since CMB2 init is included/setup on init, the CMB2 helper functions will not be available until then. Rather than trying to determine which hook priority CMB2 is loaded on init, you can use the 'cmb2_init' hook. This is the earliest hook where you can safely use the CMB2 helper functions.
+
+```php
+function cmb2_init_check_field_value() {
+	$radio_value = cmb2_get_field_value( 'test_metabox', '_cmb2_test_radio', get_queried_object_id() );
+
+	// Perform additional logic based on $radio_value
+}
+add_action( 'cmb2_init', 'cmb2_init_check_field_value' );
 ```
