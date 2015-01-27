@@ -42,4 +42,39 @@ array(
 	'after_row'    => '<p>Testing <b>"after_row"</b> parameter</p>',
 ),
 ```
+And that field would look like:  
+![Screenshot](images/testing-parameters.png)
 
+## Inject static content in a field via a callback
+
+Those same parameters can accept a callback to be called at runtime, and get passed two parameters, `$field_args` and `$field`. The `$field` object will have some handy parameters to help us add some conditional logic to our callbacks.
+
+Let's say, for example, that you only want to show text in front of your field if the `$post_id` is 2. First you will need to create your callback function:
+
+```php
+/**
+ * Conditionally displays a message if the $post_id is 2
+ *
+ * @param  array             $field_args Array of field parameters
+ * @param  CMB2_Field object $field      Field object
+ */
+function cmb2_before_row_if_2( $field_args, $field ) {
+	if ( 2 == $field->object_id ) {
+		echo '<p>Testing <b>"before_row"</b> parameter (on $post_id 2)</p>';
+	} else {
+		echo '<p>Testing <b>"before_row"</b> parameter (<b>NOT</b> on $post_id 2)</p>';
+	}
+}
+
+```
+
+Then you can specifiy that callback in your field parameter:
+
+```php
+array(
+	'name'       => 'Testing Field Parameters',
+	'id'         => $prefix . 'test_parameters',
+	'type'       => 'text',
+	'before_row' => 'cmb2_before_row_if_2', // callback
+),
+```
