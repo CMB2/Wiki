@@ -45,7 +45,7 @@ array(
 And that field would look like:  
 ![Screenshot](images/testing-parameters.png)
 
-## Inject static content in a field via a callback
+## Inject dynamic content in a field via a callback
 
 Those same parameters can accept a callback to be called at runtime, and get passed two parameters, `$field_args` and `$field`. The `$field` object will have some handy parameters to help us add some conditional logic to our callbacks.
 
