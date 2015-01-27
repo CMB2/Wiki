@@ -1,3 +1,10 @@
+##### Table of Contents
+
+* [Limit to specific post types](#limit-to-specific-post-types)
+* [Limit to specific IDs](#limit-to-specific-ids)
+* [Limit to specific page templates](#limit-to-specific-page-templates)
+* [More Show On Filters](#more-show-on-filters)
+      
 Metaboxes should be context-specific, and only show up when relevant. There's two tools you can use to limit their display:
 
 * object_types - limits the post types it applies to
