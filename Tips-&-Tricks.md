@@ -78,3 +78,41 @@ array(
 	'before_row' => 'cmb2_before_row_if_2', // callback
 ),
 ```
+
+## Using the dynamic before/after form hooks
+
+If we wanted to hook in before or after our `test_metabox` metabox form from [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php), our best option would be to use the dynamic action hooks. If you look in the source code, you will see this hook before the form begins:
+
+```php
+do_action( "cmb2_before_{$object_type}_form_{$this->cmb_id}", $object_id, $this );
+```
+and this hook after the form:
+```php
+do_action( "cmb2_after_{$object_type}_form_{$this->cmb_id}", $object_id, $this );
+```
+
+The first dynamic portion of the hook name, $object_type, is the type of object you are working with. Usually `post` (this applies to all post-types). This could also be `comment`, `user` or `options-page`.
+
+The second dynamic portion of the hook name, `$this->cmb_id`, is the meta_box id.
+
+The parameters passed into the hook are:
+
+* `$object_id`: The ID of the current object
+* `$cmb`: This CMB2 object
+
+So to accomplish our goal for hooking in before our `test_metabox` metabox form, we would do something like this:
+
+```php
+function cmb2_test_before_form() {
+	echo 'This is some text before the form.';
+}
+add_action( 'cmb2_before_post_form_test_metabox', 'cmb2_test_before_form' );
+```
+
+If we wanted access to the CMB2 object, we could request 2 parameters when we do our `add_action`:
+```php
+function cmb2_test_before_form( $post_id, $cmb ) {
+	echo $cmb->prop( 'title' );
+}
+add_action( 'cmb2_before_post_form_test_metabox', 'cmb2_test_before_form', 10, 2 );
+```
