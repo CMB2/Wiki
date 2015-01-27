@@ -4,7 +4,7 @@ Here's the built-in fields you can include in your metabox. You can also [add yo
 
 Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](/WebDevStudios/CMB2/blob/master/example-functions.php) to see how you define the prefix.
 
-Not all built-in fields have been 100% documented, so please see the example file for more types.
+Not all built-in fields have been 100% documented, so please see the example file for additional details.
 
 #### Types:
 1. [`title`](#title) An arbitrary title field *
