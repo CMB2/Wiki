@@ -5,7 +5,7 @@
 * [Inject dynamic content in a field via a callback](#inject-dynamic-content-in-a-field-via-a-callback)
 * [Using the dynamic before/after form hooks](#using-the-dynamic-beforeafter-form-hooks)
 
-    
+---
 ## Override text strings in field
 
 Several of the CMB2 field types have text strings in them, and CMB2 provides a way to override each of them.
