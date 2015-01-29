@@ -8,6 +8,7 @@
 - [Using the dynamic before/after form hooks](#using-the-dynamic-beforeafter-form-hooks)
 - [Setting a metabox to 'closed' by default](#setting-a-metabox-to-closed-by-default)
 - [Using CMB2 helper functions and cmb2_init](#using-cmb2-helper-functions-and-cmb2_init)
+- [Setting a default value for a checkbox](#setting-a-default-value-for-a-checkbox)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ___
@@ -55,7 +56,7 @@ array(
 	'after_row'    => '<p>Testing <b>"after_row"</b> parameter</p>',
 ),
 ```
-And that field would look like:  
+And that field would look like:
 ![Screenshot](images/testing-parameters.png)
 
 ## Inject dynamic content in a field via a callback
@@ -157,4 +158,54 @@ function cmb2_init_check_field_value() {
 	// Perform additional logic based on $radio_value
 }
 add_action( 'cmb2_init', 'cmb2_init_check_field_value' );
+```
+
+## Setting a default value for a checkbox
+
+Setting a default value for a checkbox is tricky. A checkbox is basically an on/off (empty) value.. So if you set a default for 'on', and they set it to 'off' (which toggles it to empty again), the default will kick in (default is 'on', remember?). You now have a checkbox which can only have a value of 'on'.
+
+One way to get around that is to only set your default if you're on the `post-new` screen. Then, once the post is saved, the default no longer applies. How can we accomplish that? With a simple function like:
+
+```php
+/**
+ * Only return default value if we don't have a post ID (in the 'post' query variable)
+ *
+ * @param  bool  $default On/Off (true/false)
+ * @return mixed          Returns true or '', the blank default
+ */
+function cmb2_set_checkbox_default_for_new_post( $default ) {
+	return isset( $_GET['post'] ) ? '' : ( $default ? (string) $default : '' );
+}
+```
+
+What this function does is to check if we're on the `post-new` page, and if so, set the default value for the checkbox. It's a little bit silly, because if you pass it `false`, it will operate the exact same as not setting a default at all, but it gets the job done.
+
+If we're NOT on the `post-new` screen, the value `''` will be returned, which again, is the same value if we hadn't set a default at all. This ensures that once they save the post, the value they saved will stick.
+
+To see it in action, here's a sample metabox and field:
+
+```php
+function cmb2_checkbox_default_metabox_test( array $meta_boxes ) {
+	/**
+	 * Sample metabox to demonstrate setting a checkbox default value
+	 */
+	$meta_boxes[] = array(
+		'id' => 'checkbox_default',
+		'title'        => 'Set Checkbox Default',
+		'object_types' => array( 'post' ),
+		'context'      => 'side',
+		'fields'       => array(
+			array(
+				'desc'    => 'Click Me',
+				'type'    => 'checkbox',
+				'id'      => '_test_checkbox_default',
+				'default' => cmb2_set_checkbox_default_for_new_post( true ),
+			),
+		),
+	);
+
+	return $meta_boxes;
+}
+
+add_filter( 'cmb2_meta_boxes', 'cmb2_checkbox_default_metabox_test' );
 ```
