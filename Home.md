@@ -18,6 +18,8 @@ Documentation:
 
 1. [Notable Changes in CMB2 (from original CMB)](https://github.com/WebDevStudios/CMB2/wiki/Notable-Changes-in-CMB2)
 
+1. [Tips & Tricks](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks)
+
 Advanced tutorials:
 
 1. [Adding your own field types](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)
