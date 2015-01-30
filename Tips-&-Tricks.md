@@ -9,6 +9,7 @@
 - [Setting a metabox to 'closed' by default](#setting-a-metabox-to-closed-by-default)
 - [Using CMB2 helper functions and cmb2_init](#using-cmb2-helper-functions-and-cmb2_init)
 - [Setting a default value for a checkbox](#setting-a-default-value-for-a-checkbox)
+- [A dropdown for taxonomy terms which does NOT set the term on the post](#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ___
@@ -208,4 +209,53 @@ function cmb2_checkbox_default_metabox_test( array $meta_boxes ) {
 }
 
 add_filter( 'cmb2_meta_boxes', 'cmb2_checkbox_default_metabox_test' );
+```
+
+## A dropdown for taxonomy terms which does NOT set the term on the post
+
+I have often been asked why the `taxonomy_select` field doesn't return a term_id. The reason is that the `taxonomy_select` field is not meant for that purpose. it is meant to set a term for a post and to be a replacement for the built-in WordPress term-setting UI.
+
+However, there are some cases where you may want to save an arbitrary term_id. Maybe you have an options page and want to set the featured category. Or maybe you want to set the featured category for a post. In either of those cases, being able to save a term_id is desireable. 
+
+This can be accomplished with the help of a function:
+
+```php
+/**
+ * Gets a number of terms and displays them as options
+ * @param  string       $taxonomy Taxonomy terms to retrieve. Default is category.
+ * @param  string|array $args     Optional. get_terms optional arguments
+ * @return array                  An array of options that matches the CMB2 options array
+ */
+function cmb2_get_term_options( $taxonomy = 'category', $args = array() ) {
+
+	$args['taxonomy'] = $taxonomy;
+	// $defaults = array( 'taxonomy' => 'category' );
+	$args = wp_parse_args( $args, array( 'taxonomy' => 'category' ) );
+
+	$taxonomy = $args['taxonomy'];
+
+	$terms = (array) get_terms( $taxonomy, $args );
+
+	// Initate an empty array
+	$term_options = array();
+	if ( ! empty( $terms ) ) {
+		foreach ( $terms as $term ) {
+			$term_options[ $term->term_id ] = $term->name;
+		}
+	}
+
+	return $term_options;
+}
+```
+
+Now you can use this function to set the options for a CMB2 `select`, `radio`, or `multicheck` field:
+
+```php
+array(
+	'name'    => 'Featured Term',
+	'desc'    => 'Set a featured term for this post.',
+	'id'      => '_cmb2_featured_term',
+	'type'    => 'select',
+	'options' => cmb2_get_term_options(),
+),
 ```
