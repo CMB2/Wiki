@@ -1,5 +1,3 @@
-**INFO MAY BE INACCURATE FOR CMB2**
-
 This library contains a couple of hooks that make it possible for you to create and properly save your own field types:
 
 * `cmb2_render_{field-type}`
