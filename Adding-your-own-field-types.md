@@ -27,7 +27,7 @@ This snippet has a few things going on:
 
 * `cmb2_render_text_email` -- By adding an action to this hook, we are essentially creating the new field type. This action defines what code gets executed when you add the `text_email` field type in your field configuration. This first parameter, the hook name, must be `cmb2_render_` followed by the field type name.
 * `cmb2_render_callback_for_text_email` -- This is the name of your custom function that gets executed when you use the `text_email` field type. It can be called whatever you want, but it must match a function you define elsewhere in your code.
-* `10` -- This is the priority for this action, the order in which it is executed. 10 should be your default unles you have a very good reason for changing it.
+* `10` -- This is the priority for this action, the order in which it is executed. 10 should be your default unless you have a very good reason for changing it.
 * `5` -- This is the number of arguments your custom function will receive. It is required to specify the priority parameter as well as this parameter if you want the callback function to receive more than 1 argument (which is the default). This hook can pass up to 5 arguments:
 	* `$field`: The current `CMB2_Field` object.
 	* `$escaped_value`: The value of this field passed through the escaping filter. It defaults to `sanitize_text_field`. **If you need the unescaped value, you can access it via `$field_type_object->value()`**.
