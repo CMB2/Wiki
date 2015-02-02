@@ -1,5 +1,3 @@
-### DISCLAIMER: This is an outdated wiki pulled directly from the original CMB. Some of the content is out-of-date, and should be considered "under construction". Contributions are welcome.
-
 The best way to get started is look at [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) and read the [Basic Usage](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage) tutorial.
 
 ****
