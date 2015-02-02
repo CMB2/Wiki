@@ -1,5 +1,5 @@
 ****
-Welcome to the CMB2 wiki! This is a code library for WordPress themes and plugins that makes it easy to add metaboxes, fields and forms to WordPress.
+Welcome to the CMB2 wiki! This is a code library for WordPress themes and plugins that makes it easy to add metaboxes, fields, and forms to WordPress.
 
 The best way to get started is look at [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) and read the [Basic Usage](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage) tutorial.
 ****
