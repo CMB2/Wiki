@@ -443,6 +443,27 @@ array(
 ```php
 <?php echo wpautop( get_post_meta( get_the_ID(), $prefix . 'test_wysiwyg', true ) ); ?>
 ```
+If you want oembed filters to apply to the wysiwyg content, add this helper function to your theme or plugin:
+
+```php
+function yourprefix_get_wysiwyg_output( $meta_key, $post_id = 0 ) {
+	global $wp_embed;
+
+	$post_id = $post_id ? $post_id : get_the_id();
+
+	$content = get_post_meta( 2, $meta_key, 1 );
+	$content = $wp_embed->autoembed( $content );
+	$content = $wp_embed->run_shortcode( $content );
+	$content = do_shortcode( $content );
+	$content = wpautop( $content );
+
+	return $content;
+}
+
+...
+
+echo yourprefix_get_wysiwyg_output( get_post_meta( get_the_ID(), $prefix . 'test_wysiwyg', true ) );
+```
 
 The options array allows you to customize the settings of the wysiwyg. Here's an example with all the options:
 ```php
