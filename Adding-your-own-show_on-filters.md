@@ -374,7 +374,8 @@ add_filter( 'cmb2_show_on', 'be_metabox_show_on_template', 10, 2 );
 ```
 
 ### Example: Show metabox for certain user roles
-Will display if the current logged-in user's user-role is whitelisted. Props [@Mte90].(https://github.com/WebDevStudios/CMB2/issues/418)
+Will display if the current logged-in user's user-role is whitelisted. Props [@Mte90].
+
 ```php
 <?php
 
