@@ -145,7 +145,7 @@ Then, in our fields array, we would add the `select` type and pass the `cmb2_get
 ```
 **Alternatively**, you could use the `multicheck`, or `radio` field types as well.
 
-if you're looking for a similar solution for saving a term_id (or term_ids), [read about it on the Tips & Trips page](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
+if you're looking for a similar solution for saving a term_id (or term_ids), [read about it on the Tips & Tricks page](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
 
 ## Example 4: Multiple Inputs, One Field. Let's Create an Address Field.
 
