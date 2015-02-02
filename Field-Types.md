@@ -1,5 +1,3 @@
-**Updated for CMB2**
-
 Here's the built-in fields you can include in your metabox. You can also [add your own field types](/WebDevStudios/CMB2/wiki/Adding-your-own-field-types).
 
 Note that all the id's have $prefix in them. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](/WebDevStudios/CMB2/blob/master/example-functions.php) to see how you define the prefix.
