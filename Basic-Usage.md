@@ -15,7 +15,7 @@ Open [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/e
 
 ### Getting Started
 
-First, you need to get the bootstrap and start the engine. To do so, add the following code to `functions.php`:
+First, you need to get the bootstrap and start the engine. To do so, add the following code to `functions.php`. If you are installing the plugin from WordPress.org, you can skip this step as it is handled by the plugin.
 
 ```php
 /**
