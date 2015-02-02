@@ -153,4 +153,4 @@ get_header(); ?>
 <?php get_footer(); ?>
 ```
 
-For more information, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) and [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
+For more information, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta), [Post-meta Bootcamp](http://dsgnwrks.pro/how-to/post-meta-bootcamp/) and [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
