@@ -1,5 +1,3 @@
-**Updated for CMB2**  
-
 With CMB2, we have a few helper functions that allow us to display metabox forms on the front-end of our site (or anywhere, really).
 
 ```php
