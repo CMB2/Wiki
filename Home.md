@@ -41,3 +41,5 @@ Advanced tutorials:
 External Resources:
 
 1. [Adding interactivity in metaboxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/)
+
+2. [CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library)
