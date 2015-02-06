@@ -1,4 +1,6 @@
-This class is an example of how you can use CMB2 to create an Admin Theme Options Page. `$this->fields` can be modified to hold your fields array and extended the same way you would in the [`cmb_meta_boxes` filter](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php). If you want to retrieve an option, use `myprefix_get_option( 'test_text' )`. Obviously replace all instances of `myprefix` with your own custom prefix.
+This class is an example of how you can use CMB2 to create an Admin Theme Options Page. `$this->fields` can be modified to hold your fields array and extended the same way you would in the [`cmb_meta_boxes` filter](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php). If you want to retrieve an option, use `myprefix_get_option( 'test_text' )`. 
+
+Obviously replace all instances of `myprefix` with your own custom prefix.
 
 ```php
 <?php
@@ -8,11 +10,17 @@ This class is an example of how you can use CMB2 to create an Admin Theme Option
  */
 class myprefix_Admin {
 
- 	/**
+	/**
  	 * Option key, and option page slug
  	 * @var string
  	 */
 	private $key = 'myprefix_options';
+
+	/**
+ 	 * Options page metabox id
+ 	 * @var string
+ 	 */
+	private $metabox_id = 'myprefix_option_metabox';
 
 	/**
 	 * Array of metaboxes/fields
@@ -56,7 +64,7 @@ class myprefix_Admin {
 				'default' => '#ffffff'
 			),
 		);
- 	}
+	}
 
 	/**
 	 * Initiate our hooks
@@ -65,7 +73,9 @@ class myprefix_Admin {
 	public function hooks() {
 		add_action( 'admin_init', array( $this, 'init' ) );
 		add_action( 'admin_menu', array( $this, 'add_options_page' ) );
+		add_filter( 'cmb2_meta_boxes', array( $this, 'add_options_page_metabox' ) );
 	}
+
 
 	/**
 	 * Register our setting to WP
@@ -91,9 +101,21 @@ class myprefix_Admin {
 		?>
 		<div class="wrap cmb2_options_page <?php echo $this->key; ?>">
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
-			<?php cmb2_metabox_form( $this->option_metabox(), $this->key ); ?>
+			<?php cmb2_metabox_form( $this->metabox_id, $this->key ); ?>
 		</div>
 		<?php
+	}
+
+	/**
+	 * Add the options metabox to the array of metaboxes
+	 * @since  0.1.0
+	 * @param  array $meta_boxes
+	 * @return array $meta_boxes
+	 */
+	function add_options_page_metabox( array $meta_boxes ) {
+		$meta_boxes[] = $this->option_metabox();
+
+		return $meta_boxes;
 	}
 
 	/**
@@ -103,10 +125,14 @@ class myprefix_Admin {
 	 */
 	public function option_metabox() {
 		return array(
-			'id'         => 'option_metabox',
-			'show_on'    => array( 'key' => 'options-page', 'value' => array( $this->key, ), ),
-			'show_names' => true,
-			'fields'     => $this->fields,
+			'id'      => $this->metabox_id,
+			'fields'  => $this->fields,
+			'hookup'  => false,
+			'show_on' => array(
+				// These are important, don't remove
+				'key'   => 'options-page',
+				'value' => array( $this->key, )
+			),
 		);
 	}
 
@@ -117,11 +143,11 @@ class myprefix_Admin {
 	 * @return mixed          Field value or exception is thrown
 	 */
 	public function __get( $field ) {
-
 		// Allowed fields to retrieve
-		if ( in_array( $field, array( 'key', 'fields', 'title', 'options_page' ), true ) ) {
+		if ( in_array( $field, array( 'key', 'metabox_id', 'fields', 'title', 'options_page' ), true ) ) {
 			return $this->{$field};
 		}
+
 		if ( 'option_metabox' === $field ) {
 			return $this->option_metabox();
 		}
@@ -132,8 +158,8 @@ class myprefix_Admin {
 }
 
 // Get it started
-$myprefix_Admin = new myprefix_Admin();
-$myprefix_Admin->hooks();
+$GLOBALS['myprefix_Admin'] = new myprefix_Admin();
+$GLOBALS['myprefix_Admin']->hooks();
 
 /**
  * Wrapper function around cmb2_get_option
