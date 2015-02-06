@@ -19,7 +19,7 @@ Documentation:
 	Some common issues and how to deal with them
 
 1. [Notable Changes in CMB2 (from original CMB)](https://github.com/WebDevStudios/CMB2/wiki/Notable-Changes-in-CMB2)  
-	CMB2 is a complate re-write
+	CMB2 is a complete re-write
 
 1. [Tips & Tricks](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks)  
 	10x your CMB2 skills.
