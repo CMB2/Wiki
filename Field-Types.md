@@ -653,7 +653,7 @@ Most (if not all) fields support these parameters:
 * `options`: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Can also accept a callback.
 * `before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`: These allow you to add arbitrary text/markup at different points in the field markup. These also accept a callback.
 * `on_front`: If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`.
-* <a name="attributes">`attributes`</a>: Will modify default attributes (class, input type, rows, etc), or add your own (placeholder, data attributes). Example:
+* <a name="attributes"></a>`attributes`: Will modify default attributes (class, input type, rows, etc), or add your own (placeholder, data attributes). Example:
 
 	```php
 	array(
