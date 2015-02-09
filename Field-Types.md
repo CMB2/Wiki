@@ -650,10 +650,11 @@ Most (if not all) fields support these parameters:
 * `repeatable`: [Supported by most](https://github.com/WebDevStudios/CMB2#field-types), and will make the individual field a repeatable one.
 * `default`: Specify a default value for the field.
 * `show_names`: Hide label for the field.
-* `options`: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Can also accept a callback.
-* `before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`: These allow you to add arbitrary text/markup at different points in the field markup. These also accept a callback.
+* <a name="options"></a>`options`: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Can also accept a callback. The callback will receive the CMB2_Field `$field` object as an argument.
+* <a name="before-after-callbacks"></a>`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`: These allow you to add arbitrary text/markup at different points in the field markup. These also accept a callback. The callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
+* <a name="row_classes"></a>`row_classes`: This parameter allows you to add additional classes to the cmb-row wrap. This parameter can take a string, or array, or can take a callback that returns a string or array. Like above, the callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
 * `on_front`: If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`.
-* <a name="attributes">`attributes`</a>: Will modify default attributes (class, input type, rows, etc), or add your own (placeholder, data attributes). Example:
+* <a name="attributes"></a>`attributes`: Will modify default attributes (class, input type, rows, etc), or add your own (placeholder, data attributes). Example:
 
 	```php
 	array(
@@ -667,7 +668,7 @@ Most (if not all) fields support these parameters:
 		),
 	),
 	```
-* `show_on_cb`: A callback to conditionally display a field. Callback funciton should return a boolean (true/false) value. Function passes in the current field object. Example:
+* <a name="show_on_cb"></a>`show_on_cb`: A callback to conditionally display a field. Callback funciton should return a boolean (true/false) value. Function passes in the current field object. Example:
 
 	```php
 	array(
@@ -689,5 +690,5 @@ Most (if not all) fields support these parameters:
 		return 1 === get_current_user_id();
 	}
 	```
-* `escape_cb`: Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
-* `sanitization_cb`: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback. Set to `false` if you do not want any sanitization (not recommended).
+* <a name="escape_cb"></a>`escape_cb`: Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
+* <a name="sanitization_cb"></a>`sanitization_cb`: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback. Set to `false` if you do not want any sanitization (not recommended).
