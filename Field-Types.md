@@ -19,8 +19,8 @@ Not all built-in fields have been 100% documented, so please see the example fil
 1. [`text_time`](#text_time) Time picker
 1. [`select_timezone`](#select_timezone) Time zone dropdown
 1. [`text_date_timestamp`](#text_date_timestamp) Date Picker (UNIX timestamp)
-1. [`text_datetime_timestamp`](#text_datetime_timestamp) Test Date/Time Picker Combo (UNIX timestamp)
-1. [`text_datetime_timestamp_timezone`](#text_datetime_timestamp_timezone) Test Date/Time Picker/Time zone Combo (serialized DateTime object)
+1. [`text_datetime_timestamp`](#text_datetime_timestamp) Text Date/Time Picker Combo (UNIX timestamp)
+1. [`text_datetime_timestamp_timezone`](#text_datetime_timestamp_timezone) Text Date/Time Picker/Time zone Combo (serialized DateTime object)
 1. [`colorpicker`](#colorpicker) Color picker
 1. [`radio`](#radio) *
 1. [`radio_inline`](#radio_inline) *
