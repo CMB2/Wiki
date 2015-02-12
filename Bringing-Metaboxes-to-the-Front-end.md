@@ -34,14 +34,14 @@ add_shortcode( 'cmb-form', 'cmb2_do_frontend_form_shortcode' );
 function cmb2_do_frontend_form_shortcode( $atts = array() ) {
 	global $post;
 
-        /**
-         * Depending on your setup, check if the user has permissions to edit_posts
-         */
-        global $current_user;
-        get_currentuserinfo();
-        if (!current_user_can( 'edit_posts' )) {
-            return _e('You do not have permissions to edit this post.', 'lang_domain');
-        }
+      /**
+       * Depending on your setup, check if the user has permissions to edit_posts
+       */
+      global $current_user;
+      get_currentuserinfo();
+      if (!current_user_can( 'edit_posts' )) {
+          return _e('You do not have permissions to edit this post.', 'lang_domain');
+      }
 
 	/**
 	 * Make sure a WordPress post ID is set.
