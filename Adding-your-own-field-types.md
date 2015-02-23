@@ -149,6 +149,8 @@ if you're looking for a similar solution for saving a term_id (or term_ids), [re
 
 ## Example 4: Multiple Inputs, One Field. Let's Create an Address Field.
 
+**Update** This is now available as a [plugin in the CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/custom-field-types/address-field-type.php)
+
 You may want to create your own field type that stores multiple inputs. Here's how you could create an address field type:
 
 ```php
