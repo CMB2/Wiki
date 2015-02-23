@@ -225,7 +225,7 @@ function cmb2_render_address_field_callback( $field_object, $value, $object_id, 
 	echo $field_type_object->_desc( true );
 
 }
-add_filter( 'cmb2_render_address', 'cmb2_render_address_field_callback', 10, 5 );
+add_filter( 'cmb2_render_address_field', 'cmb2_render_address_field_callback', 10, 5 );
 ```
 If you use the built-in `$field_type_object` field-type functionality, it is much more likely your custom field type will work with other CMB2 features, and often can save you some hassle.
 
