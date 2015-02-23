@@ -1,3 +1,20 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Example 1: Email field](#example-1-email-field)
+  - [Step 1: `cmb2_render_{field-type}`](#step-1-cmb2_render_field-type)
+  - [Step 2: `cmb2_sanitize_{field-type}`](#step-2-cmb2_sanitize_field-type)
+  - [Step 3: Use the field type](#step-3-use-the-field-type)
+- [Example 2: Posts (or other post_type) Dropdown, store post_id](#example-2-posts-or-other-post_type-dropdown-store-post_id)
+- [Example 4: Multiple Inputs, One Field. Let's Create an Address Field.](#example-4-multiple-inputs-one-field-lets-create-an-address-field)
+    - [Setup the field](#setup-the-field)
+    - [Use the field in your template](#use-the-field-in-your-template)
+- [Add Your Own Examples](#add-your-own-examples)
+  - [text_number - adds a text number input](#text_number---adds-a-text-number-input)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 This library contains a couple of hooks that make it possible for you to create and properly save your own field types:
 
 * `cmb2_render_{field-type}`
@@ -231,6 +248,23 @@ add_filter( 'cmb2_render_address', 'cmb2_render_address_field_callback', 10, 5 )
 ```
 If you use the built-in `$field_type_object` field-type functionality, it is much more likely your custom field type will work with other CMB2 features, and often can save you some hassle.
 
+#### Setup the field
+To register this new field type:
+```php
+...
+	'fields' => array(
+		array(
+			'name' => 'Address',
+			'desc' => 'Custom Address Field',
+			'id'   => '_cmb2_person_address',
+			'type' => 'address',
+		),
+	),
+...
+
+```
+
+#### Use the field in your template
 If you wanted to display this address in your theme or plugin, you could do it like:
 
 ```php
@@ -257,6 +291,7 @@ $address = wp_parse_args( $address, array(
 <?php
 
 ```
+
 **Note:** It was asked how to make this field repeatable. It's [not impossible, but it's also not super simple](https://github.com/WebDevStudios/CMB2/issues/116#issuecomment-66845137).
 
 ## Add Your Own Examples
