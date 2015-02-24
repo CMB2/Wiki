@@ -497,7 +497,11 @@ array(
 	'desc' => 'Upload an image or enter an URL.',
 	'id' => $prefix . 'test_image',
 	'type' => 'file',
-	// 'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
+	// Optionally allow only attachments and not any URL (this hides the text input for the url):
+	"options" => array(
+		"url" => false
+	)
+
 ),
 ```
 Example using the `test_image_id` to retrieve a medium image:
