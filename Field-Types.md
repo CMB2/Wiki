@@ -56,6 +56,8 @@ array(
 	'id'   => $prefix . 'test_title'
 ),
 ```
+**CMB2 Metabox Field Class:**
+`cmb-type-title`
 
 #### `text`
 Standard text field (large). Example:
@@ -70,6 +72,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-text`
+
 #### `text_small`
 Small text field. Example:
 
@@ -82,6 +87,9 @@ array(
 	'type'    => 'text_small'
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-text-small`
 
 #### `text_medium`
 Medium text field. Example:
@@ -96,6 +104,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-text-medium`
+
 #### `text_email`
 Standard text field which enforces an email address. Example:
 
@@ -106,6 +117,9 @@ array(
 	'type' => 'text_email',
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-text-email`
 
 #### `text_url`
 Standard text field which enforces a url. Example:
@@ -118,6 +132,9 @@ array(
 	// 'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-text-url`
 
 #### `text_money`
 Standard text field with dollar sign in front of it (useful to prevent users from adding a dollar sign to input). Example:
@@ -132,6 +149,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-text-money`
+
 #### `textarea`
 Standard textarea. Example:
 
@@ -144,6 +164,9 @@ array(
 	'type' => 'textarea'
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-textarea`
 
 #### `textarea_small`
 Smaller textarea. Example:
@@ -158,6 +181,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-textarea-small`
+
 #### `textarea_code`
 Code textarea. Example:
 
@@ -171,6 +197,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-textarea-code`
+
 #### `text_date`
 Date field. Stored in m/d/Y format (ex: 09/01/2011). Example:
 
@@ -183,6 +212,10 @@ array(
 	// 'date_format' => __( 'd-m-Y', 'cmb2' ), // use European date format
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-text-date`
+
 ##### Extra Parameters:
 
 * `date_format `, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
@@ -199,6 +232,10 @@ array(
 	// 'time_format' => 'h:i:s A',
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-text-time`
+
 ##### Extra Parameters:
 
 * `time_format`, defaults to 'h:i A'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
@@ -215,6 +252,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-select-timezone`
+
 
 #### `text_date_timestamp`
 Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
@@ -228,6 +268,10 @@ array(
 	// 'date_format' => 'l jS \of F Y',
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-text-date-timestamp`
+
 ##### Extra Parameters:
 
 * `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/WebDevStudios/CMB2/wiki/Field-Types#select_timezone) field specified above.
@@ -245,6 +289,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-text-datetime-timestamp`
+
 #### `text_datetime_timestamp_timezone`
 Date, time and timezone field, stored as UNIX timestamp. Example:
 
@@ -255,6 +302,9 @@ array(
 	'type' => 'text_datetime_timestamp_timezone',
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-datetime-timestamp-timezone`
 
 #### `colorpicker`
 A colorpicker field. Example:
@@ -268,6 +318,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-colorpicker`
+
 #### `checkbox`
 Standard checkbox. Example:
 
@@ -279,6 +332,9 @@ array(
 	'type' => 'checkbox'
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-checkbox`
 
 #### `multicheck`
 A field with multiple checkboxes (and multiple can be selected). Example:
@@ -298,6 +354,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-multicheck`
+
 #### `radio`
 Standard radio buttons. Example:
 
@@ -314,6 +373,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-radio`
+
 #### `radio_inline`
 Inline radio buttons. Example:
 
@@ -329,6 +391,9 @@ array(
 	),
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-radio-inline`
 
 #### `select`
 Standard select dropdown. Example:
@@ -347,6 +412,10 @@ array(
 	'default' => 'custom',
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-select`
+
 ##### Optional:
 
 * All the types that take an `options` parameter can accept a callback. This callback will recieive the field object which you can use to check the object ID (`$field->object_id`). This can be handy if you need to build options based on the current post or context. The callback should return an array of options in the format displayed in these examples.
@@ -390,8 +459,14 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-taxonomy-radio`
+
 #### `taxonomy_radio_inline`
 Inline radio buttons pre-populated with taxonomy terms.
+
+**CMB2 Metabox Field Class:**
+`cmb-type-taxonomy-radio-inline`
 
 #### `taxonomy_select`
 A select field pre-populated with taxonomy terms. Example:
@@ -406,6 +481,9 @@ array(
 ),
 ```
 
+**CMB2 Metabox Field Class:**
+`cmb-type-taxonomy-select`
+
 #### `taxonomy_multicheck`
 A field with checkboxes with taxonomy terms, and multiple terms can be selected
 
@@ -418,8 +496,15 @@ array(
 	'type' => 'taxonomy_multicheck',
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-taxonomy-multicheck`
+
 #### `taxonomy_multicheck_inline`
 Inline checkboxes with taxonomy terms.
+
+**CMB2 Metabox Field Class:**
+`cmb-type-taxonomy-multicheck-inline`
 
 **Note:** To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_post_meta`, etc.
 
@@ -436,6 +521,10 @@ array(
 	'options' => array(),
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-wysiwyg`
+
 **Note:** Text added in a wysiwyg field will not have paragraph tags automatically added, the same is true of standard WordPress post content editing with the WYSIWYG. When outputting formatted text, wrap your get_post_meta() call with wpautop to generate the paragraph tags.
 
 ```php
@@ -504,6 +593,10 @@ array(
 
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-file`
+
 Example using the `test_image_id` to retrieve a medium image:
 ```php
 $image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'test_image_id', 1 ), 'medium' );
@@ -521,6 +614,10 @@ array(
 	// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-file-list`
+
 ##### Extra Parameters:
 
 * `preview_size` Changes the size of the preview images in the field. Default: array( 50, 50 ).
@@ -565,6 +662,10 @@ array(
 	'type' => 'oembed',
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-type-oembed`
+
 **Note:** Text added in a `oembed` field will not automatically display the embed in your theme. To generate the embed in your theme, this is a method you could use:
 
 ```php
@@ -613,6 +714,10 @@ array(
 	),
 ),
 ```
+
+**CMB2 Metabox Field Class:**
+`cmb-field-list`
+
 All repeatable group entries will be saved as an array to that meta-key. Example usage to pull data back:
 
 ```php
