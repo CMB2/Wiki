@@ -293,7 +293,7 @@ array(
 `cmb-type-text-datetime-timestamp`
 
 #### `text_datetime_timestamp_timezone`
-Date, time and timezone field, stored as UNIX timestamp. Example:
+Date, time and timezone field, stored as serialized DateTime object. Example:
 
 ```php
 array(
