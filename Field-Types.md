@@ -538,7 +538,7 @@ function yourprefix_get_wysiwyg_output( $meta_key, $post_id = 0 ) {
 
 	$post_id = $post_id ? $post_id : get_the_id();
 
-	$content = get_post_meta( 2, $meta_key, 1 );
+	$content = get_post_meta( $post_id, $meta_key, 1 );
 	$content = $wp_embed->autoembed( $content );
 	$content = $wp_embed->run_shortcode( $content );
 	$content = do_shortcode( $content );
@@ -549,7 +549,7 @@ function yourprefix_get_wysiwyg_output( $meta_key, $post_id = 0 ) {
 
 ...
 
-echo yourprefix_get_wysiwyg_output( get_post_meta( get_the_ID(), $prefix . 'test_wysiwyg', true ) );
+echo yourprefix_get_wysiwyg_output( $prefix . 'test_wysiwyg', get_the_ID() );
 ```
 
 The options array allows you to customize the settings of the wysiwyg. Here's an example with all the options:
@@ -578,7 +578,7 @@ array(
 ```
 
 #### `file`
-A file uploader. By default it will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `test_image` the ID is stored in `test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
+A file uploader. By default onit will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `test_image` the ID is stored in `test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
 
 ```php
 array(
@@ -586,10 +586,10 @@ array(
 	'desc' => 'Upload an image or enter an URL.',
 	'id' => $prefix . 'test_image',
 	'type' => 'file',
-	// Optionally allow only attachments and not any URL (this hides the text input for the url):
-	"options" => array(
-		"url" => false
-	)
+	// Optionally hide the text input for the url:
+	'options' => array(
+		'url' => false,
+	),
 
 ),
 ```
