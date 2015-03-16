@@ -42,8 +42,8 @@ Not all built-in fields have been 100% documented, so please see the example fil
 * [Create your own field type](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)
 * [Common field parameters shared by all fields](#common-field-parameters)
 
-\* Not available as a repeatable field  
-† Use `file_list` for repeatable  
+\* Not available as a repeatable field
+† Use `file_list` for repeatable
 
 #### `title`
 A large title (useful for breaking up sections of fields in metabox). Example:
@@ -362,16 +362,18 @@ Standard radio buttons. Example:
 
 ```php
 array(
-	'name'    => 'Test Radio',
-	'id'      => $prefix . 'test_radio',
-	'type'    => 'radio',
-	'options' => array(
+	'name'             => 'Test Radio',
+	'id'               => $prefix . 'test_radio',
+	'type'             => 'radio',
+	'show_option_none' => true,
+	'options'          => array(
 		'standard' => __( 'Option One', 'cmb' ),
 		'custom'   => __( 'Option Two', 'cmb' ),
 		'none'     => __( 'Option Three', 'cmb' ),
 	),
 ),
 ```
+Set the optional paremter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
 
 **CMB2 Metabox Field Class:**
 `cmb-type-radio`
@@ -400,11 +402,12 @@ Standard select dropdown. Example:
 
 ```php
 array(
-	'name'    => 'Test Select',
-	'desc'    => 'Select an option',
-	'id'      => $prefix . 'test_select',
-	'type'    => 'select',
-	'options' => array(
+	'name'             => 'Test Select',
+	'desc'             => 'Select an option',
+	'id'               => $prefix . 'test_select',
+	'type'             => 'select',
+	'show_option_none' => true,
+	'options'          => array(
 		'standard' => __( 'Option One', 'cmb' ),
 		'custom'   => __( 'Option Two', 'cmb' ),
 		'none'     => __( 'Option Three', 'cmb' ),
@@ -412,6 +415,7 @@ array(
 	'default' => 'custom',
 ),
 ```
+Set the optional paremter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
 
 **CMB2 Metabox Field Class:**
 `cmb-type-select`
