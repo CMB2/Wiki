@@ -215,7 +215,7 @@ add_filter( 'cmb2_meta_boxes', 'cmb2_checkbox_default_metabox_test' );
 
 I have often been asked why the `taxonomy_select` field doesn't return a term_id. The reason is that the `taxonomy_select` field is not meant for that purpose. it is meant to set a term for a post and to be a replacement for the built-in WordPress term-setting UI.
 
-However, there are some cases where you may want to save an arbitrary term_id. Maybe you have an options page and want to set the featured category. Or maybe you want to set the featured category for a post. In either of those cases, being able to save a term_id is desireable. 
+However, there are some cases where you may want to save an arbitrary term_id. Maybe you have an options page and want to set the featured category. Or maybe you want to set the featured category for a post. In either of those cases, being able to save a term_id is desireable.
 
 This can be accomplished with the help of a function:
 
@@ -259,3 +259,49 @@ array(
 	'options' => cmb2_get_term_options(),
 ),
 ```
+
+## Setting a default field value via a callback
+
+CMB2 fields have a 'default' parameter, but did you know that same parameter can accept a callback? This allows you to use things like the `$field->object_id` (the `$post` ID) to dynamically set your default value.
+
+field config:
+```php
+$cmb->add_field( array(
+	'name'    => __( 'Test', 'cmb2' ),
+	'id'      => $prefix . 'test',
+	'type'    => 'text',
+	'default' => 'prefix_set_test_default',
+) );
+```
+
+callback:
+```php
+function prefix_set_test_default( $field_args, $field ) {
+	return 'Post ID: '. $field->object_id
+}
+```
+[#256 for reference](https://github.com/WebDevStudios/CMB2/issues/256#issuecomment-84023325)
+
+## Setting dynamic attributes that may use post data, like the post ID
+
+There are [several callback hooks](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#common-field-parameters) in the lifecycle of a field display. These are meant to provide you with a hook to output arbitrary or dynamic data. BUT, you can also use these hooks to modify the `CMB2_Field` `$field` object. In this example, we're going to use a callback on the `'before'` parameter which we'll use to modify that `$field` object's `'attributes'` array. We're going to do this so we can add a custom data attribute with the post ID as the value.
+
+field config:
+```php
+$cmb->add_field( array(
+	'name'   => __( 'Test', 'cmb2' ),
+	'id'     => $prefix . 'test',
+	'type'   => 'text',
+	'before' => 'prefix_set_field_data_attr',
+) );
+```
+callback:
+```php
+function prefix_set_field_data_attr( $args, $field ) {
+	$field->args['attributes']['data-postid'] = $field->object_id;
+}
+```
+
+![Screenshot](images/post-id-data-attribute.png)
+
+[#256 for reference](https://github.com/WebDevStudios/CMB2/issues/256#issuecomment-84023325)
