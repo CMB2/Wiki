@@ -6,7 +6,7 @@
 
 **Change 4:** The `'options'` field parameter for radio and select fields is now created with a id => label key value pairing. i.e.
 ```php
-array(
+$cmb->add_field( array(
 	'name'    => __( 'Test Select', 'cmb2' ),
 	'id'      => $prefix . 'test_select',
 	'type'    => 'select',
@@ -15,5 +15,5 @@ array(
 		'custom'   => __( 'Option Two', 'cmb2' ),
 		'none'     => __( 'Option Three', 'cmb2' ),
 	),
-),
+) ),
 ```
