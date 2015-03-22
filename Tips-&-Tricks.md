@@ -21,14 +21,14 @@ Several of the CMB2 field types have text strings in them, and CMB2 provides a w
 The `file` field type has a button with the text, "Add or Upload File." Here is how you would override that text during your field configuration:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name'    => 'PDF',
 	'id'      => $prefix . 'pdf',
 	'type'    => 'file',
 	'options' => array(
 		'add_upload_file_text' => 'Upload PDF',
 	),
-),
+) );
 ```
 
 To find a particular string, search for it in the [`CMB2_Types` class](https://github.com/WebDevStudios/CMB2/blob/master/includes/CMB2_Types.php), or search for `'$this->_text('`. The first parameter passed to the `CMB2_Types::_text()` method is the key you will use in the field options parameter array.
@@ -47,7 +47,7 @@ There are several field properties you can use to inject text or content in your
 To use them in your field, it would look something like this:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name'         => 'Testing Field Parameters',
 	'id'           => $prefix . 'test_parameters',
 	'type'         => 'text',
@@ -57,7 +57,7 @@ array(
 	'after_field'  => '<p>Testing <b>"after_field"</b> parameter</p>',
 	'after'        => '<p>Testing <b>"after"</b> parameter</p>',
 	'after_row'    => '<p>Testing <b>"after_row"</b> parameter</p>',
-),
+) );
 ```
 And that field would look like:
 ![Screenshot](images/testing-parameters.png)
@@ -88,12 +88,12 @@ function cmb2_before_row_if_2( $field_args, $field ) {
 Then you can specifiy that callback in your field parameter:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name'       => 'Testing Field Parameters',
 	'id'         => $prefix . 'test_parameters',
 	'type'       => 'text',
 	'before_row' => 'cmb2_before_row_if_2', // callback
-),
+) );
 ```
 
 ## Using the dynamic before/after form hooks
@@ -139,15 +139,12 @@ add_action( 'cmb2_before_post_form_test_metabox', 'cmb2_test_before_form', 10, 2
 If you prefer a particular metabox to be closed by default, you can do it via the `closed` metabox parameter:
 
 ```php
-$meta_boxes[] = array(
+$cmb = new_cmb2_box( array(
 	'id'           => 'test_metabox',
 	'title'        => __( 'Test Metabox', 'cmb2' ),
 	'object_types' => array( 'page', ),
 	'closed'       => true, // true to keep the metabox closed by default
-	'fields'       => array(
-		...
-	),
-);
+) );
 ```
 
 ## Using CMB2 helper functions and cmb2_init
@@ -188,29 +185,25 @@ If we're NOT on the `post-new` screen, the value `''` will be returned, which ag
 To see it in action, here's a sample metabox and field:
 
 ```php
-function cmb2_checkbox_default_metabox_test( array $meta_boxes ) {
+function cmb2_checkbox_default_metabox_test() {
 	/**
 	 * Sample metabox to demonstrate setting a checkbox default value
 	 */
-	$meta_boxes[] = array(
+	$cmb = new_cmb2_box( array(
 		'id' => 'checkbox_default',
 		'title'        => 'Set Checkbox Default',
 		'object_types' => array( 'post' ),
 		'context'      => 'side',
-		'fields'       => array(
-			array(
-				'desc'    => 'Click Me',
-				'type'    => 'checkbox',
-				'id'      => '_test_checkbox_default',
-				'default' => cmb2_set_checkbox_default_for_new_post( true ),
-			),
-		),
-	);
+	) );
 
-	return $meta_boxes;
+	$cmb->add_field( array(
+		'desc'    => 'Click Me',
+		'type'    => 'checkbox',
+		'id'      => '_test_checkbox_default',
+		'default' => cmb2_set_checkbox_default_for_new_post( true ),
+	) );
 }
-
-add_filter( 'cmb2_meta_boxes', 'cmb2_checkbox_default_metabox_test' );
+add_action( 'cmb2_init', 'cmb2_checkbox_default_metabox_test' );
 ```
 
 ## A dropdown for taxonomy terms which does NOT set the term on the post
@@ -253,13 +246,13 @@ function cmb2_get_term_options( $taxonomy = 'category', $args = array() ) {
 Now you can use this function to set the options for a CMB2 `select`, `radio`, or `multicheck` field:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name'    => 'Featured Term',
 	'desc'    => 'Set a featured term for this post.',
 	'id'      => '_cmb2_featured_term',
 	'type'    => 'select',
 	'options' => cmb2_get_term_options(),
-),
+) );
 ```
 
 ## Setting a default field value via a callback

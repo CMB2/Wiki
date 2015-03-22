@@ -92,23 +92,23 @@ When the user attempts to save a value in the field, we will check if the new va
 With the action (and optionally the filter) added, we can now use the field type in our code just like we would use the built-in field types.
 
 ```php
-function cmb2_text_email_metabox( $meta_boxes ) {
-	$meta_boxes[] = array(
+function cmb2_text_email_metabox() {
+
+	$cmb = new_cmb2_box( array(
 		'id'           => 'cmb2_text_email_metabox',
 		'title'        => 'Person Information',
 		'object_types' => array( 'post' ),
-		'fields'       => array(
-			array(
-				'name' => 'Email',
-				'id'   => '_cmb2_person_email',
-				'type' => 'text_email',
-				'desc' => 'Invalid email addresses will be wiped out.',
-			),
-		),
-	);
-	return $meta_boxes;
+	) );
+
+	$cmb->add_field( array(
+		'name' => 'Email',
+		'id'   => '_cmb2_person_email',
+		'type' => 'text_email',
+		'desc' => 'Invalid email addresses will be wiped out.',
+	) );
+
 }
-add_filter( 'cmb2_meta_boxes', 'cmb2_text_email_metabox' );
+add_action( 'cmb2_init', 'cmb2_text_email_metabox' );
 ```
 
 ![Screenshot](images/screenshot_text_email.jpg)

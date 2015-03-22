@@ -49,12 +49,12 @@ Not all built-in fields have been 100% documented, so please see the example fil
 A large title (useful for breaking up sections of fields in metabox). Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Title',
 	'desc' => 'This is a title description',
 	'type' => 'title',
 	'id'   => $prefix . 'test_title'
-),
+) );
 ```
 **CMB2 Metabox Field Class:**
 `cmb-type-title`
@@ -63,13 +63,13 @@ array(
 Standard text field (large). Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name'    => 'Test Text',
 	'desc'    => 'field description (optional)',
 	'default' => 'standard value (optional)',
 	'id'      => $prefix . 'test_text',
 	'type'    => 'text'
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -79,13 +79,13 @@ array(
 Small text field. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name'    => 'Test Text Small',
 	'desc'    => 'field description (optional)',
 	'default' => 'standard value (optional)',
 	'id'      => $prefix . 'test_textsmall',
 	'type'    => 'text_small'
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -95,13 +95,13 @@ array(
 Medium text field. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name'    => 'Test Text Medium',
 	'desc'    => 'field description (optional)',
 	'default' => 'standard value (optional)',
 	'id'      => $prefix . 'test_textmedium',
 	'type'    => 'text_medium'
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -111,11 +111,11 @@ array(
 Standard text field which enforces an email address. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Text Email',
 	'id'   => $prefix . 'email',
 	'type' => 'text_email',
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -125,12 +125,12 @@ array(
 Standard text field which enforces a url. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => __( 'Website URL', 'cmb' ),
 	'id'   => $prefix . 'facebookurl',
 	'type' => 'text_url',
 	// 'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -140,13 +140,13 @@ array(
 Standard text field with dollar sign in front of it (useful to prevent users from adding a dollar sign to input). Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Money',
 	'desc' => 'field description (optional)',
 	'id' => $prefix . 'test_textmoney',
 	'type' => 'text_money',
 	// 'before_field' => '£', // Replaces default '$'
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -156,13 +156,13 @@ array(
 Standard textarea. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Text Area',
 	'desc' => 'field description (optional)',
 	'default' => 'standard value (optional)',
 	'id' => $prefix . 'test_textarea',
 	'type' => 'textarea'
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -172,13 +172,13 @@ array(
 Smaller textarea. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Text Area Small',
 	'desc' => 'field description (optional)',
 	'default' => 'standard value (optional)',
 	'id' => $prefix . 'test_textareasmall',
 	'type' => 'textarea_small'
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -188,13 +188,13 @@ array(
 Code textarea. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Text Area Code',
 	'desc' => 'field description (optional)',
 	'default' => 'standard value (optional)',
 	'id' => $prefix . 'test_textareacode',
 	'type' => 'textarea_code'
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -204,13 +204,13 @@ array(
 Date field. Stored in m/d/Y format (ex: 09/01/2011). Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Date Picker',
 	'desc' => 'field description (optional)',
 	'id' => $prefix . 'test_textdate',
 	'type' => 'text_date'
 	// 'date_format' => __( 'd-m-Y', 'cmb2' ), // use European date format
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -225,12 +225,12 @@ array(
 Time picker field. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Date Picker',
 	'id' => $prefix . 'test_texttime',
 	'type' => 'text_time'
 	// 'time_format' => 'h:i:s A',
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -245,11 +245,11 @@ array(
 Timezone field. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Time zone',
 	'id'   => $prefix . 'timezone',
 	'type' => 'select_timezone',
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -260,13 +260,13 @@ array(
 Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Date Picker (UNIX timestamp)',
 	'id'   => $prefix . 'test_textdate_timestamp',
 	'type' => 'text_date_timestamp',
 	// 'timezone_meta_key' => $prefix . 'timezone',
 	// 'date_format' => 'l jS \of F Y',
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -282,11 +282,11 @@ array(
 Date and time field, stored as UNIX timestamp. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Date/Time Picker Combo (UNIX timestamp)',
 	'id'   => $prefix . 'test_datetime_timestamp',
 	'type' => 'text_datetime_timestamp',
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -296,11 +296,11 @@ array(
 Date, time and timezone field, stored as serialized DateTime object. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Date/Time Picker/Time zone Combo (serialized DateTime object)',
 	'id'   => $prefix . 'test_datetime_timestamp_timezone',
 	'type' => 'text_datetime_timestamp_timezone',
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -310,12 +310,12 @@ array(
 A colorpicker field. Example:
 
 ```php
-array(
-	'name' => 'Test Color Picker',
-	'id'   => $prefix . 'test_colorpicker',
-	'type' => 'colorpicker',
-	'default'  => '#ffffff',
-),
+$cmb->add_field( array(
+	'name'    => 'Test Color Picker',
+	'id'      => $prefix . 'test_colorpicker',
+	'type'    => 'colorpicker',
+	'default' => '#ffffff',
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -325,12 +325,12 @@ array(
 Standard checkbox. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test Checkbox',
 	'desc' => 'field description (optional)',
-	'id' => $prefix . 'test_checkbox',
+	'id'   => $prefix . 'test_checkbox',
 	'type' => 'checkbox'
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -340,18 +340,17 @@ array(
 A field with multiple checkboxes (and multiple can be selected). Example:
 
 ```php
-
-array(
-	'name' => 'Test Multi Checkbox',
-	'desc' => 'field description (optional)',
-	'id' => $prefix . 'test_multicheckbox',
-	'type' => 'multicheck',
+$cmb->add_field( array(
+	'name'    => 'Test Multi Checkbox',
+	'desc'    => 'field description (optional)',
+	'id'      => $prefix . 'test_multicheckbox',
+	'type'    => 'multicheck',
 	'options' => array(
 		'check1' => 'Check One',
 		'check2' => 'Check Two',
 		'check3' => 'Check Three',
 	)
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -361,7 +360,7 @@ array(
 Standard radio buttons. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name'             => 'Test Radio',
 	'id'               => $prefix . 'test_radio',
 	'type'             => 'radio',
@@ -371,7 +370,7 @@ array(
 		'custom'   => __( 'Option Two', 'cmb' ),
 		'none'     => __( 'Option Three', 'cmb' ),
 	),
-),
+) );
 ```
 Set the optional paremter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
 
@@ -382,7 +381,7 @@ Set the optional paremter, `show_option_none`, to `true` to use the default text
 Inline radio buttons. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name'    => 'Test Radio inline',
 	'id'      => $prefix . 'test_radio_inline',
 	'type'    => 'radio_inline',
@@ -391,7 +390,7 @@ array(
 		'custom'   => __( 'Option Two', 'cmb' ),
 		'none'     => __( 'Option Three', 'cmb' ),
 	),
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -401,19 +400,19 @@ array(
 Standard select dropdown. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name'             => 'Test Select',
 	'desc'             => 'Select an option',
 	'id'               => $prefix . 'test_select',
 	'type'             => 'select',
 	'show_option_none' => true,
+	'default'          => 'custom',
 	'options'          => array(
 		'standard' => __( 'Option One', 'cmb' ),
 		'custom'   => __( 'Option Two', 'cmb' ),
 		'none'     => __( 'Option Three', 'cmb' ),
 	),
-	'default' => 'custom',
-),
+) );
 ```
 Set the optional paremter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
 
@@ -454,13 +453,13 @@ function show_cat_or_dog_options( $field ) {
 Radio buttons pre-populated with taxonomy terms. Example:
 
 ```php
-array(
-	'name' => 'Test Taxonomy Radio',
-	'desc' => 'Description Goes Here',
-	'id' => $prefix . 'text_taxonomy_radio',
+$cmb->add_field( array(
+	'name'     => 'Test Taxonomy Radio',
+	'desc'     => 'Description Goes Here',
+	'id'       => $prefix . 'text_taxonomy_radio',
 	'taxonomy' => '', //Enter Taxonomy Slug
-	'type' => 'taxonomy_radio',
-),
+	'type'     => 'taxonomy_radio',
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -476,13 +475,13 @@ Inline radio buttons pre-populated with taxonomy terms.
 A select field pre-populated with taxonomy terms. Example:
 
 ```php
-array(
-	'name' => 'Test Taxonomy Select',
-	'desc' => 'Description Goes Here',
-	'id' => $prefix . 'text_taxonomy_select',
+$cmb->add_field( array(
+	'name'     => 'Test Taxonomy Select',
+	'desc'     => 'Description Goes Here',
+	'id'       => $prefix . 'text_taxonomy_select',
 	'taxonomy' => 'category', //Enter Taxonomy Slug
-	'type' => 'taxonomy_select',
-),
+	'type'     => 'taxonomy_select',
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -492,13 +491,13 @@ array(
 A field with checkboxes with taxonomy terms, and multiple terms can be selected
 
 ```php
-array(
-	'name' => 'Test Taxonomy Multicheck',
-	'desc' => 'Description Goes Here',
-	'id' => $prefix . 'text_taxonomy_multicheck',
+$cmb->add_field( array(
+	'name'     => 'Test Taxonomy Multicheck',
+	'desc'     => 'Description Goes Here',
+	'id'       => $prefix . 'text_taxonomy_multicheck',
 	'taxonomy' => '', //Enter Taxonomy Slug
-	'type' => 'taxonomy_multicheck',
-),
+	'type'     => 'taxonomy_multicheck',
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -517,13 +516,13 @@ Inline checkboxes with taxonomy terms.
 A metabox with TinyMCE editor (same as WordPress' visual editor). Example:
 
 ```php
-array(
-	'name' => 'Test wysiwyg',
-	'desc' => 'field description (optional)',
-	'id' => $prefix . 'test_wysiwyg',
-	'type' => 'wysiwyg',
+$cmb->add_field( array(
+	'name'    => 'Test wysiwyg',
+	'desc'    => 'field description (optional)',
+	'id'      => $prefix . 'test_wysiwyg',
+	'type'    => 'wysiwyg',
 	'options' => array(),
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -560,10 +559,10 @@ The options array allows you to customize the settings of the wysiwyg. Here's an
 ```php
 
 array(
-	'name' => 'Test wysiwyg',
-	'desc' => 'field description (optional)',
-	'id' => $prefix . 'test_wysiwyg',
-	'type' => 'wysiwyg',
+	'name'    => 'Test wysiwyg',
+	'desc'    => 'field description (optional)',
+	'id'      => $prefix . 'test_wysiwyg',
+	'type'    => 'wysiwyg',
 	'options' => array(
 	    'wpautop' => true, // use wpautop?
 	    'media_buttons' => true, // show insert/upload button(s)
@@ -585,17 +584,16 @@ array(
 A file uploader. By default onit will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `test_image` the ID is stored in `test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
 
 ```php
-array(
-	'name' => 'Test File',
-	'desc' => 'Upload an image or enter an URL.',
-	'id' => $prefix . 'test_image',
-	'type' => 'file',
+$cmb->add_field( array(
+	'name'    => 'Test File',
+	'desc'    => 'Upload an image or enter an URL.',
+	'id'      => $prefix . 'test_image',
+	'type'    => 'file',
 	// Optionally hide the text input for the url:
 	'options' => array(
 		'url' => false,
 	),
-
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -610,13 +608,13 @@ $image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'test_image_id', 
 A file uploader that allows you to add as many files as you want. This is a repeatable field, and will store its data in an array, with the attachment ID as the array key and the attachment url as the value. Example:
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'Test File List',
 	'desc' => '',
-	'id' => $prefix . 'file_list',
+	'id'   => $prefix . 'file_list',
 	'type' => 'file_list',
 	// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -659,12 +657,12 @@ function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
 Displays embedded media inline using WordPress' built-in oEmbed support. See [codex.wordpress.org/Embeds](http://codex.wordpress.org/Embeds) for more info and for a list of embed services supported. (added in 0.9.1)
 
 ```php
-array(
+$cmb->add_field( array(
 	'name' => 'oEmbed',
 	'desc' => 'Enter a youtube, twitter, or instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.',
-	'id' => $prefix . 'test_embed',
+	'id'   => $prefix . 'test_embed',
 	'type' => 'oembed',
-),
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -681,7 +679,7 @@ echo wp_oembed_get( $url );
 Hybrid field that supports adding other fields as a repeatable group. Example:
 
 ```php
-array(
+$group_field_id = $cmb->add_field( array(
 	'id'          => $prefix . 'repeat_group',
 	'type'        => 'group',
 	'description' => __( 'Generates reusable form entries', 'cmb' ),
@@ -691,32 +689,34 @@ array(
 		'remove_button' => __( 'Remove Entry', 'cmb' ),
 		'sortable'      => true, // beta
 	),
-	// Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
-	'fields'      => array(
-		array(
-			'name' => 'Entry Title',
-			'id'   => 'title',
-			'type' => 'text',
-			// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
-		),
-		array(
-			'name' => 'Description',
-			'description' => 'Write a short description for this entry',
-			'id'   => 'description',
-			'type' => 'textarea_small',
-		),
-		array(
-			'name' => 'Entry Image',
-			'id'   => 'image',
-			'type' => 'file',
-		),
-		array(
-			'name' => 'Image Caption',
-			'id'   => 'image_caption',
-			'type' => 'text',
-		),
-	),
-),
+) );
+
+// Id's for group's fields only need to be unique for the group. Prefix is not needed.
+$cmb->add_group_field( $group_field_id, array(
+	'name' => 'Entry Title',
+	'id'   => 'title',
+	'type' => 'text',
+	// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+) );
+
+$cmb->add_group_field( $group_field_id, array(
+	'name' => 'Description',
+	'description' => 'Write a short description for this entry',
+	'id'   => 'description',
+	'type' => 'textarea_small',
+) );
+
+$cmb->add_group_field( $group_field_id, array(
+	'name' => 'Entry Image',
+	'id'   => 'image',
+	'type' => 'file',
+) );
+
+$cmb->add_group_field( $group_field_id, array(
+	'name' => 'Image Caption',
+	'id'   => 'image_caption',
+	'type' => 'text',
+) );
 ```
 
 **CMB2 Metabox Field Class:**
@@ -770,7 +770,7 @@ Most (if not all) fields support these parameters:
 * <a name="attributes"></a>`attributes`: Will modify default attributes (class, input type, rows, etc), or add your own (placeholder, data attributes). Example:
 
 	```php
-	array(
+	$cmb->add_field( array(
 		'name'        => 'Extra Small Textarea',
 		'id'          => $prefix .'xtra_small_textarea',
 		'type'        => 'textarea_small',
@@ -779,17 +779,17 @@ Most (if not all) fields support these parameters:
 			'rows'        => 3,
 			'required'    => 'required',
 		),
-	),
+	) );
 	```
 * <a name="show_on_cb"></a>`show_on_cb`: A callback to conditionally display a field. Callback funciton should return a boolean (true/false) value. Function passes in the current field object. Example:
 
 	```php
-	array(
+	$cmb->add_field( array(
 		'name'       => __( 'Test Text', 'cmb' ),
 		'id'         => $prefix . 'test_text',
 		'type'       => 'text',
 		'show_on_cb' => 'cmb_only_show_for_user_1', // function should return a bool value
-	),
+	) );
 
 	...
 
