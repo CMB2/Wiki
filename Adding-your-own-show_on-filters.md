@@ -339,7 +339,7 @@ function show_meta_to_chosen_users( $display, $meta_box ) {
 ```
 
 ### Example: Page Template show_on filter
-Shows up on a page using a specific template. Use the template's slug. (e.g. template-name.php would be 'template-name')
+Shows up on a page using a specific template. Use the template's slug. (e.g. template-name.php would be 'template-name'). Pass empty string `''` to target only default page template.
 ```php
 <?php
 /**
@@ -352,23 +352,26 @@ Shows up on a page using a specific template. Use the template's slug. (e.g. tem
  * @return bool display metabox
  */
 function be_metabox_show_on_template( $display, $meta_box ) {
-
+    if ( isset( $meta_box['show_on']['key'] ) && isset( $meta_box['show_on']['key'] ) ) :
 	if( 'template' !== $meta_box['show_on']['key'] )
-		return $display;
+	    return $display;
 
 	// Get the current ID
 	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
-	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
+	    elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
 	if( !isset( $post_id ) ) return false;
 
 	$template_name = get_page_template_slug( $post_id );
-	$template_name = substr($template_name, 0, -4);
+	if ( !empty( $template_name ) ) $template_name = substr($template_name, 0, -4);
 
 	// If value isn't an array, turn it into one
 	$meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
 
 	// See if there's a match
 	return in_array( $template_name, $meta_box['show_on']['value'] );
+    else:
+        return $display;
+    endif;
 }
 add_filter( 'cmb2_show_on', 'be_metabox_show_on_template', 10, 2 );
 ```
