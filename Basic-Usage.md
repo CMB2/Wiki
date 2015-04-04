@@ -37,7 +37,7 @@ add_action( 'cmb2_init', 'cmb2_sample_metaboxes' );
 /**
  * Define the metabox and field configurations.
  */
-function cmb2_sample_metaboxes( array $meta_boxes ) {
+function cmb2_sample_metaboxes() {
 
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_yourprefix_';
