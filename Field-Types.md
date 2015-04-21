@@ -448,6 +448,7 @@ function show_cat_or_dog_options( $field ) {
 }
 ```
 
+> The taxonomy fields are not intended to provide an arbitrary list of terms to pick from, but are intended to be a replacement for the default taxonomy meta-boxes. I.e. they are meant to set the taxonomy terms on an object, and will not save as a meta value. Any other use of these types will be hacky and/or buggy. Suggest looking at building a custom field type instead - [Example](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
 
 #### `taxonomy_radio`
 Radio buttons pre-populated with taxonomy terms. Example:
