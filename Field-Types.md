@@ -336,6 +336,7 @@ $cmb->add_field( array(
 ```
 
 _CSS Field Class:_ `cmb-type-multicheck`
+
 _Custom Field Attributes:_
 
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
@@ -478,6 +479,7 @@ $cmb->add_field( array(
 ```
 
 _CSS Field Class:_ `cmb-type-taxonomy-multicheck`
+
 _Custom Field Attributes:_
 
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
@@ -486,6 +488,7 @@ _Custom Field Attributes:_
 Inline checkboxes with taxonomy terms.
 
 _CSS Field Class:_ `cmb-type-taxonomy-multicheck-inline`
+
 _Custom Field Attributes:_
 
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
