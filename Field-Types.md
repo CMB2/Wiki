@@ -46,6 +46,7 @@ Not all built-in fields have been 100% documented, so please see the example fil
 † Use `file_list` for repeatable
 
 #### `title`
+____
 A large title (useful for breaking up sections of fields in metabox). Example:
 
 ```php
@@ -59,6 +60,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-title`
 
 #### `text`
+____
 Standard text field (large). Example:
 
 ```php
@@ -74,6 +76,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-text`
 
 #### `text_small`
+____
 Small text field. Example:
 
 ```php
@@ -89,6 +92,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-text-small`
 
 #### `text_medium`
+____
 Medium text field. Example:
 
 ```php
@@ -104,6 +108,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-text-medium`
 
 #### `text_email`
+____
 Standard text field which enforces an email address. Example:
 
 ```php
@@ -117,6 +122,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-text-email`
 
 #### `text_url`
+____
 Standard text field which enforces a url. Example:
 
 ```php
@@ -131,6 +137,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-text-url`
 
 #### `text_money`
+____
 Standard text field with dollar sign in front of it (useful to prevent users from adding a dollar sign to input). Example:
 
 ```php
@@ -146,6 +153,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-text-money`
 
 #### `textarea`
+____
 Standard textarea. Example:
 
 ```php
@@ -161,6 +169,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-textarea`
 
 #### `textarea_small`
+____
 Smaller textarea. Example:
 
 ```php
@@ -176,6 +185,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-textarea-small`
 
 #### `textarea_code`
+____
 Code textarea. Example:
 
 ```php
@@ -191,6 +201,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-textarea-code`
 
 #### `text_date`
+____
 Date field. Stored in m/d/Y format (ex: 09/01/2011). Example:
 
 ```php
@@ -211,6 +222,7 @@ _CSS Field Class:_ `cmb-type-text-date`
 
 
 #### `text_time`
+____
 Time picker field. Example:
 
 ```php
@@ -230,6 +242,7 @@ _CSS Field Class:_ `cmb-type-text-time`
 
 
 #### `select_timezone`
+____
 Timezone field. Example:
 
 ```php
@@ -244,6 +257,7 @@ _CSS Field Class:_ `cmb-type-select-timezone`
 
 
 #### `text_date_timestamp`
+____
 Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
 
 ```php
@@ -265,6 +279,7 @@ _CSS Field Class:_ `cmb-type-text-date-timestamp`
 
 
 #### `text_datetime_timestamp`
+____
 Date and time field, stored as UNIX timestamp. Example:
 
 ```php
@@ -278,6 +293,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-text-datetime-timestamp`
 
 #### `text_datetime_timestamp_timezone`
+____
 Date, time and timezone field, stored as serialized DateTime object. Example:
 
 ```php
@@ -291,6 +307,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-datetime-timestamp-timezone`
 
 #### `colorpicker`
+____
 A colorpicker field. Example:
 
 ```php
@@ -305,6 +322,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-colorpicker`
 
 #### `checkbox`
+____
 Standard checkbox. Example:
 
 ```php
@@ -319,6 +337,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-checkbox`
 
 #### `multicheck` and `multicheck_inline`
+____
 A field with multiple checkboxes (and multiple can be selected). Example:
 
 ```php
@@ -342,6 +361,7 @@ _Custom Field Attributes:_
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
 #### `radio`
+____
 Standard radio buttons. Example:
 
 ```php
@@ -362,6 +382,7 @@ Set the optional paremter, `show_option_none`, to `true` to use the default text
 _CSS Field Class:_ `cmb-type-radio`
 
 #### `radio_inline`
+____
 Inline radio buttons. Example:
 
 ```php
@@ -380,6 +401,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-radio-inline`
 
 #### `select`
+____
 Standard select dropdown. Example:
 
 ```php
@@ -431,6 +453,7 @@ function show_cat_or_dog_options( $field ) {
 ```
 
 #### `taxonomy_radio`
+____
 Radio buttons pre-populated with taxonomy terms. Example:
 
 ```php
@@ -446,11 +469,13 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-taxonomy-radio`
 
 #### `taxonomy_radio_inline`
+____
 Inline radio buttons pre-populated with taxonomy terms.
 
 _CSS Field Class:_ `cmb-type-taxonomy-radio-inline`
 
 #### `taxonomy_select`
+____
 A select field pre-populated with taxonomy terms. Example:
 
 ```php
@@ -466,6 +491,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-taxonomy-select`
 
 #### `taxonomy_multicheck`
+____
 A field with checkboxes with taxonomy terms, and multiple terms can be selected
 
 ```php
@@ -485,6 +511,7 @@ _Custom Field Attributes:_
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
 #### `taxonomy_multicheck_inline`
+____
 Inline checkboxes with taxonomy terms.
 
 _CSS Field Class:_ `cmb-type-taxonomy-multicheck-inline`
@@ -499,6 +526,7 @@ _Custom Field Attributes:_
 
 
 #### `wysiwyg`
+____
 A metabox with TinyMCE editor (same as WordPress' visual editor). Example:
 
 ```php
@@ -566,6 +594,7 @@ array(
 ```
 
 #### `file`
+____
 A file uploader. By default onit will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `test_image` the ID is stored in `test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
 
 ```php
@@ -589,6 +618,7 @@ $image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'test_image_id', 
 ```
 
 #### `file_list`
+____
 A file uploader that allows you to add as many files as you want. This is a repeatable field, and will store its data in an array, with the attachment ID as the array key and the attachment url as the value. Example:
 
 ```php
@@ -637,6 +667,7 @@ function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
 ```
 
 #### `oembed`
+____
 Displays embedded media inline using WordPress' built-in oEmbed support. See [codex.wordpress.org/Embeds](http://codex.wordpress.org/Embeds) for more info and for a list of embed services supported. (added in 0.9.1)
 
 ```php
@@ -658,6 +689,7 @@ echo wp_oembed_get( $url );
 ```
 
 #### `group`
+____
 Hybrid field that supports adding other fields as a repeatable group. Example:
 
 ```php
