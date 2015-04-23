@@ -338,7 +338,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-multicheck`
 _Custom Field Attributes:_
 
-	* `'select_all_button' => false`, Setting to false disables the 'Select All' button
+* `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
 #### `radio`
 Standard radio buttons. Example:
@@ -480,7 +480,7 @@ $cmb->add_field( array(
 _CSS Field Class:_ `cmb-type-taxonomy-multicheck`
 _Custom Field Attributes:_
 
-	* `'select_all_button' => false`, Setting to false disables the 'Select All' button
+* `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
 #### `taxonomy_multicheck_inline`
 Inline checkboxes with taxonomy terms.
@@ -488,7 +488,7 @@ Inline checkboxes with taxonomy terms.
 _CSS Field Class:_ `cmb-type-taxonomy-multicheck-inline`
 _Custom Field Attributes:_
 
-	* `'select_all_button' => false`, Setting to false disables the 'Select All' button
+* `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
 **Note:** To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_post_meta`, etc.
 
