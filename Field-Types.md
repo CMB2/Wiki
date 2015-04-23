@@ -29,7 +29,7 @@ Not all built-in fields have been 100% documented, so please see the example fil
 1. [`select`](#select)
 1. [`taxonomy_select`](#taxonomy_select) *
 1. [`checkbox`](#checkbox) *
-1. [`multicheck` and `multicheck_inline`](#multicheck)
+1. [`multicheck` and `multicheck_inline`](#multicheck-and-multicheck_inline)
 1. [`taxonomy_multicheck`](#taxonomy_multicheck) *
 1. [`taxonomy_multicheck_inline`](#taxonomy_multicheck_inline)
 1. [`wysiwyg`](#wysiwyg) (TinyMCE) *
