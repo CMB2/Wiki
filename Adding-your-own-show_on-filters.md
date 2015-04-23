@@ -40,21 +40,33 @@ Let's say you wanted to build a filter that allowed a metabox to show up everywh
  * @return bool display metabox
  */
 function be_metabox_exclude_for_id( $display, $meta_box ) {
-	if ( 'exclude_id' !== $meta_box['show_on']['key'] )
+	if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) ) {
 		return $display;
+	}
+
+	if ( 'exclude_id' !== $meta_box['show_on']['key'] ) {
+		return $display;
+	}
+
+	$post_id = 0;
 
 	// If we're showing it based on ID, get the current ID
-	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
-	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
-	if( !isset( $post_id ) )
+	if ( isset( $_GET['post'] ) ) {
+		$post_id = $_GET['post'];
+	} elseif ( isset( $_POST['post_ID'] ) ) {
+		$post_id = $_POST['post_ID'];
+	}
+
+	if ( ! $post_id ) {
 		return $display;
+	}
 
 	// If current page id is in the included array, do not display the metabox
-	$meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
-	if ( in_array( $post_id, $meta_box['show_on']['value'] ) )
-		return false;
-	else
-		return true;
+	$ids_to_exclude = ! is_array( $meta_box['show_on']['value'] )
+		? array( $meta_box['show_on']['value'] )
+		: $meta_box['show_on']['value'];
+
+	return ! in_array( $post_id, $ids_to_exclude );
 }
 add_filter( 'cmb2_show_on', 'be_metabox_exclude_for_id', 10, 2 );
 ```
@@ -65,7 +77,6 @@ Excluding by ID works once the post type and ID has been set, but the metaboxes 
 
 ```php
 <?php
-add_filter( 'cmb2_show_on', 'tgm_exclude_from_new', 10, 2 );
 /**
  * Removes metabox from appearing on post new screens before the post
  * ID has been set.
@@ -77,23 +88,22 @@ add_filter( 'cmb2_show_on', 'tgm_exclude_from_new', 10, 2 );
  * @return bool $display True on success, false on failure
  */
 function tgm_exclude_from_new( $display, $meta_box ) {
+	if ( ! isset( $meta_box['show_on']['alt_key'], $meta_box['show_on']['alt_value'] ) ) {
+		return $display;
+	}
 
 	global $pagenow;
 
-	if ( ! isset( $meta_box['show_on']['alt_key'] ) )
-		return $display; // If the key isn't set, return
+	// Force to be an array
+	$to_exclude = ! is_array( $meta_box['show_on']['alt_value'] )
+		? array( $meta_box['show_on']['alt_value'] )
+		: $meta_box['show_on']['alt_value'];
 
-	if ( 'exclude_new' !== $meta_box['show_on']['alt_key'] )
-		return $display; // If the key is set but not the one we want, return
+	$is_new_post = 'post-new.php' == $pagenow && in_array( 'post-new.php', $to_exclude );
 
-	$meta_box['show_on']['alt_value'] = ! is_array( $meta_box['show_on']['alt_value'] ) ? array( $meta_box['show_on']['alt_value'] ) : $meta_box['show_on']['alt_value']; // Force to be an array
-
-	if ( 'post-new.php' == $pagenow && in_array( 'post-new.php', $meta_box['show_on']['alt_value'] ) )
-		return false; // Don't display this on any new post areas
-	else
-		return true;
-
+	return ! $is_new_post;
 }
+add_filter( 'cmb2_show_on', 'tgm_exclude_from_new', 10, 2 );
 ```
 
 Now all you need to do is specify this in the 'show_on' option, like this:
@@ -109,7 +119,6 @@ This will only show the metabox if the post is a top level post, by checking if 
 
 ```php
 <?php
-
 /**
  * Exclude metabox on non top level posts
  * @author Travis Northcutt
@@ -119,25 +128,33 @@ This will only show the metabox if the post is a top level post, by checking if 
  * @param array $meta_box
  * @return bool display metabox
  */
-
-add_filter( 'cmb2_show_on', 'ba_metabox_add_for_top_level_posts_only', 10, 2 );
 function ba_metabox_add_for_top_level_posts_only( $display, $meta_box ) {
-	if ( 'parent-id' !== $meta_box['show_on']['key'] )
+	if ( ! isset( $meta_box['show_on']['key'] ) || 'parent-id' !== $meta_box['show_on']['key'] ) {
 		return $display;
+	}
 
-	// Get the post's ID so we can see if it has ancestors
-	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
-	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
-	if( !isset( $post_id ) )
-		return false;
+	$post_id = 0;
+
+	// If we're showing it based on ID, get the current ID
+	if ( isset( $_GET['post'] ) ) {
+		$post_id = $_GET['post'];
+	} elseif ( isset( $_POST['post_ID'] ) ) {
+		$post_id = $_POST['post_ID'];
+	}
+
+	if ( ! $post_id ) {
+		return $display;
+	}
 
 	// If the post doesn't have ancestors, show the box
-	if ( !get_post_ancestors( $post_id ) )
+	if ( ! get_post_ancestors( $post_id ) ) {
 		return $display;
-        // Otherwise, it's not a top level post, so don't show it
-	else
-		return false;
+	}
+
+	// Otherwise, it's not a top level post, so don't show it
+	return false;
 }
+add_filter( 'cmb2_show_on', 'ba_metabox_add_for_top_level_posts_only', 10, 2 );
 ```
 
 ### Example: taxonomy show_on filter
@@ -156,28 +173,47 @@ This allows you to specify one or more taxonomies, and for each taxonomy one or 
  * @return bool display metabox
  */
 function be_taxonomy_show_on_filter( $display, $meta_box ) {
-
-	if ( !isset( $meta_box['show_on']['key'] ) || 'taxonomy' !== $meta_box['show_on']['key'] )
+	if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) ) {
 		return $display;
+	}
 
-	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
-	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
-	if( !isset( $post_id ) )
+	if ( 'taxonomy' !== $meta_box['show_on']['key'] ) {
 		return $display;
+	}
 
-	foreach( $meta_box['show_on']['value'] as $taxonomy => $slugs ) {
-		if( !is_array( $slugs ) )
+	$post_id = 0;
+
+	// If we're showing it based on ID, get the current ID
+	if ( isset( $_GET['post'] ) ) {
+		$post_id = $_GET['post'];
+	} elseif ( isset( $_POST['post_ID'] ) ) {
+		$post_id = $_POST['post_ID'];
+	}
+
+	if ( ! $post_id ) {
+		return $display;
+	}
+
+	foreach( (array) $meta_box['show_on']['value'] as $taxonomy => $slugs ) {
+		if ( ! is_array( $slugs ) ) {
 			$slugs = array( $slugs );
+		}
 
 		$display = false;
 		$terms = wp_get_object_terms( $post_id, $taxonomy );
-		foreach( $terms as $term )
-			if( in_array( $term->slug, $slugs ) )
+		foreach( $terms as $term ) {
+			if ( in_array( $term->slug, $slugs ) ) {
 				$display = true;
+				break;
+			}
+		}
+
+		if ( $display ) {
+			break;
+		}
 	}
 
 	return $display;
-
 }
 add_filter( 'cmb2_show_on', 'be_taxonomy_show_on_filter', 10, 2 );
 ```
@@ -197,32 +233,43 @@ This allows you to specify one or more parent page ids and the metabox will only
  * @return bool display metabox
  */
 function be_metabox_show_on_child_of( $display, $meta_box ) {
-	if ( 'child_of' !== $meta_box['show_on']['key'] )
+	if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) ) {
 		return $display;
+	}
+
+	if ( 'child_of' !== $meta_box['show_on']['key'] ) {
+		return $display;
+	}
+
+	$post_id = 0;
 
 	// If we're showing it based on ID, get the current ID
-	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
-	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
-	if( !isset( $post_id ) )
-		return $display;
+	if ( isset( $_GET['post'] ) ) {
+		$post_id = $_GET['post'];
+	} elseif ( isset( $_POST['post_ID'] ) ) {
+		$post_id = $_POST['post_ID'];
+	}
 
-	// If current page id is in the included array, do not display the metabox
-	$meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
-        $pageids = array();
-        foreach ($meta_box['show_on']['value'] as $parent_id) {
-           $pages = get_pages(array(
-   	     'child_of' => $parent_id,
-   	     'post_status' => 'publish,draft,pending'
-   	   ));
-           foreach($pages as $page){
-              $pageids[] = $page->ID;
-           }
-        }
-	$pageids_unique = array_unique($pageids);
-	if ( in_array( $post_id, $pageids_unique ) )
-		return true;
-	else
-		return false;
+	if ( ! $post_id ) {
+		return $display;
+	}
+
+	$pageids = array();
+	foreach( (array) $meta_box['show_on']['value'] as $parent_id ) {
+		$pages = get_pages( array(
+			'child_of'    => $parent_id,
+			'post_status' => 'publish,draft,pending',
+		) );
+
+		if ( $pages ) {
+			foreach( $pages as $page ){
+				$pageids[] = $page->ID;
+			}
+		}
+	}
+	$pageids_unique = array_unique( $pageids );
+
+	return in_array( $post_id, $pageids_unique );
 }
 add_filter( 'cmb2_show_on', 'be_metabox_show_on_child_of', 10, 2 );
 ```
@@ -243,22 +290,31 @@ This is similar to the built-in 'id' show_on filter, but it lets you specify the
  * @return bool display metabox
  */
 function be_metabox_show_on_slug( $display, $meta_box ) {
-
-	if( 'slug' !== $meta_box['show_on']['key'] )
+	if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) ) {
 		return $display;
+	}
 
-	// Get the current ID
-	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
-	elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
-	if( !( isset( $post_id ) || is_page() ) ) return false;
+	if ( 'slug' !== $meta_box['show_on']['key'] ) {
+		return $display;
+	}
 
-	$slug = get_post($post_id)->post_name;
+	$post_id = 0;
 
-	// If value isn't an array, turn it into one
-	$meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
+	// If we're showing it based on ID, get the current ID
+	if ( isset( $_GET['post'] ) ) {
+		$post_id = $_GET['post'];
+	} elseif ( isset( $_POST['post_ID'] ) ) {
+		$post_id = $_POST['post_ID'];
+	}
+
+	if ( ! $post_id ) {
+		return $display;
+	}
+
+	$slug = get_post( $post_id )->post_name;
 
 	// See if there's a match
-	return in_array( $slug, $meta_box['show_on']['value']);
+	return in_array( $slug, (array) $meta_box['show_on']['value']);
 }
 add_filter( 'cmb2_show_on', 'be_metabox_show_on_slug', 10, 2 );
 
@@ -281,28 +337,32 @@ This shows only if a static page is set and you're editing it.
  * @return bool display metabox
  */
 function ed_metabox_include_front_page( $display, $meta_box ) {
-	if ( ! isset( $meta_box['show_on']['key'] ) || 'front-page' !== $meta_box['show_on']['key'] ) {
+	if ( ! isset( $meta_box['show_on']['key'] ) ) {
 		return $display;
 	}
 
-	// Get the current ID
+	if ( 'front-page' !== $meta_box['show_on']['key'] ) {
+		return $display;
+	}
+
+	$post_id = 0;
+
+	// If we're showing it based on ID, get the current ID
 	if ( isset( $_GET['post'] ) ) {
 		$post_id = $_GET['post'];
 	} elseif ( isset( $_POST['post_ID'] ) ) {
 		$post_id = $_POST['post_ID'];
 	}
 
-	//return false early if there is no ID
-	if( !isset( $post_id ) ) return false;
-
-	//Get ID of page set as front page, 0 if there isn't one
-	$front_page = get_option('page_on_front');
-
-	if ( $post_id == $front_page ) {
-		//there is a front page set and we're on it!
+	if ( ! $post_id ) {
 		return $display;
 	}
 
+	// Get ID of page set as front page, 0 if there isn't one
+	$front_page = get_option( 'page_on_front' );
+
+	// there is a front page set and we're on it!
+	return $post_id == $front_page;
 }
 add_filter( 'cmb2_show_on', 'ed_metabox_include_front_page', 10, 2 );
 
@@ -310,7 +370,7 @@ add_filter( 'cmb2_show_on', 'ed_metabox_include_front_page', 10, 2 );
 
 ### Example: By Capability show_on filter
 Metaboxes show based on user capability.
-`'show_on' => array( 'key' => 'user-type'),`
+`'show_on' => array( 'key' => 'user-type', 'value' => 'publish_posts' ),`
 ```php
 <?php
 /**
@@ -324,19 +384,19 @@ Metaboxes show based on user capability.
  */
 
  // Don't show metaboxes to users who can't publish posts
-add_filter( 'cmb2_show_on', 'show_meta_to_chosen_users', 10, 2 );
-function show_meta_to_chosen_users( $display, $meta_box ) {
-	if ( 'user-type' !== $meta_box['show_on']['key'] )
+function show_meta_to_chosen_user_types( $display, $meta_box ) {
+	if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) ) {
 		return $display;
+	}
 
+	if ( 'user-type' !== $meta_box['show_on']['key'] ) {
+		return $display;
+	}
 
 	// If the current user can publish posts show metaboxes(can be adjusted by capability)
-	if ( current_user_can( 'publish_posts' ) )
-		return $display;
-        // Otherwise, they can't, so don't show the metaboxes
-	else
-		return false;
+	return current_user_can( $meta_box['show_on']['value'] );
 }
+add_filter( 'cmb2_show_on', 'show_meta_to_chosen_user_types', 10, 2 );
 ```
 
 ### Example: Page Template show_on filter
@@ -353,26 +413,32 @@ Shows up on a page using a specific template. Use the template's slug. (e.g. tem
  * @return bool display metabox
  */
 function be_metabox_show_on_template( $display, $meta_box ) {
-    if ( isset( $meta_box['show_on']['key'] ) && isset( $meta_box['show_on']['key'] ) ) :
-	if( 'template' !== $meta_box['show_on']['key'] )
-	    return $display;
+	if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) ) {
+		return $display;
+	}
 
-	// Get the current ID
-	if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
-	    elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
-	if( !isset( $post_id ) ) return false;
+	if ( 'template' !== $meta_box['show_on']['key'] ) {
+		return $display;
+	}
+
+	$post_id = 0;
+
+	// If we're showing it based on ID, get the current ID
+	if ( isset( $_GET['post'] ) ) {
+		$post_id = $_GET['post'];
+	} elseif ( isset( $_POST['post_ID'] ) ) {
+		$post_id = $_POST['post_ID'];
+	}
+
+	if ( ! $post_id ) {
+		return false;
+	}
 
 	$template_name = get_page_template_slug( $post_id );
-	if ( !empty( $template_name ) ) $template_name = substr($template_name, 0, -4);
-
-	// If value isn't an array, turn it into one
-	$meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
+	$template_name = ! empty( $template_name ) ? substr( $template_name, 0, -4 ) : '';
 
 	// See if there's a match
-	return in_array( $template_name, $meta_box['show_on']['value'] );
-    else:
-        return $display;
-    endif;
+	return in_array( $template_name, (array) $meta_box['show_on']['value'] );
 }
 add_filter( 'cmb2_show_on', 'be_metabox_show_on_template', 10, 2 );
 ```
@@ -382,7 +448,6 @@ Will display if the current logged-in user's user-role is whitelisted. Props [@M
 
 ```php
 <?php
-
 /**
  * Display metabox for only certain user roles.
  * @author @Mte90
@@ -393,31 +458,29 @@ Will display if the current logged-in user's user-role is whitelisted. Props [@M
  * @return bool            (Modified) Whether metabox should be displayed or not.
  */
 function cmb_show_meta_to_chosen_roles( $display, $meta_box ) {
-    if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) )
-        return $display;
+	if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) ) {
+		return $display;
+	}
 
-    if ( 'role' !== $meta_box['show_on']['key'] )
-        return $display;
+	if ( 'role' !== $meta_box['show_on']['key'] ) {
+		return $display;
+	}
 
-    $user = wp_get_current_user();
+	$user = wp_get_current_user();
 
-    // No user found, return
-    if ( empty( $user ) )
-        return false;
+	// No user found, return
+	if ( empty( $user ) ) {
+		return false;
+	}
 
-    $roles = $meta_box['show_on']['value'];
-    $is_array = is_array( $roles );
+	$roles = (array) $meta_box['show_on']['value'];
 
-    foreach ( $user->roles as $role ) {
-        // Does user have role.. check if array
-        if ( $is_array && in_array( $role, $roles ) ) {
-            return $display;
-        }
-        // Does user have role.. check if just a string
-        if ( ! $is_array && $role === $roles ) {
-            return $display;
-        }
-    }
+	foreach ( $user->roles as $role ) {
+		// Does user have role.. check if array
+		if ( $is_array && in_array( $role, $roles ) ) {
+			return true;
+		}
+	}
 
     return false;
 }
@@ -426,9 +489,9 @@ add_filter( 'cmb2_show_on', 'cmb_show_meta_to_chosen_roles', 10, 2 );
 
 ### Example: Show metabox by post meta
 Will show the metabox if the post meta matches the provided value.
-````php
-$meta_boxes['show_on'] = array( 'meta' => [enter-meta-key], 'meta_value' => [enter-meta-value], );
+`$meta_boxes['show_on'] = array( 'meta' => [enter-meta-key], 'meta_value' => [enter-meta-value], );`
 
+```php
 /**
  * Show metabox if post meta equals provided value
  * @author Tanner Moushey
@@ -439,26 +502,26 @@ $meta_boxes['show_on'] = array( 'meta' => [enter-meta-key], 'meta_value' => [ent
  * @return bool display metabox
  */
 function ntnlr_show_on_registration( $display, $meta_box ) {
+	if ( ! isset( $meta_box['show_on']['meta'], $meta_box['show_on']['meta_value'] ) ) {
+		return $display;
+	}
 
-	// Get the current ID
+	$post_id = 0;
+
+	// If we're showing it based on ID, get the current ID
 	if ( isset( $_GET['post'] ) ) {
 		$post_id = $_GET['post'];
 	} elseif ( isset( $_POST['post_ID'] ) ) {
 		$post_id = $_POST['post_ID'];
 	}
 
-	if ( ! isset( $post_id, $meta_box['show_on']['meta'], $meta_box['show_on']['meta_value'] ) ) {
+	if ( ! $post_id ) {
 		return $display;
 	}
 
 	$value = get_post_meta( $post_id, $meta_box['show_on']['meta'], true );
 
-	if ( $value == $meta_box['show_on']['meta_value'] ) {
-		return $display;
-	} else {
-		return false;
-	}
-
+	return $value == $meta_box['show_on']['meta_value'];
 }
 add_filter( 'cmb2_show_on', 'ntnlr_show_on_registration', 10, 2 );
 ```
