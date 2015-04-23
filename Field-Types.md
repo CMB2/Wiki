@@ -29,7 +29,7 @@ Not all built-in fields have been 100% documented, so please see the example fil
 1. [`select`](#select)
 1. [`taxonomy_select`](#taxonomy_select) *
 1. [`checkbox`](#checkbox) *
-1. [`multicheck`](#multicheck)
+1. [`multicheck` and `multicheck_inline`](#multicheck)
 1. [`taxonomy_multicheck`](#taxonomy_multicheck) *
 1. [`taxonomy_multicheck_inline`](#taxonomy_multicheck_inline)
 1. [`wysiwyg`](#wysiwyg) (TinyMCE) *
@@ -56,8 +56,7 @@ $cmb->add_field( array(
 	'id'   => $prefix . 'test_title'
 ) );
 ```
-**CMB2 Metabox Field Class:**
-`cmb-type-title`
+_CSS Field Class:_ `cmb-type-title`
 
 #### `text`
 Standard text field (large). Example:
@@ -72,8 +71,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-text`
+_CSS Field Class:_ `cmb-type-text`
 
 #### `text_small`
 Small text field. Example:
@@ -88,8 +86,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-text-small`
+_CSS Field Class:_ `cmb-type-text-small`
 
 #### `text_medium`
 Medium text field. Example:
@@ -104,8 +101,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-text-medium`
+_CSS Field Class:_ `cmb-type-text-medium`
 
 #### `text_email`
 Standard text field which enforces an email address. Example:
@@ -118,8 +114,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-text-email`
+_CSS Field Class:_ `cmb-type-text-email`
 
 #### `text_url`
 Standard text field which enforces a url. Example:
@@ -133,8 +128,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-text-url`
+_CSS Field Class:_ `cmb-type-text-url`
 
 #### `text_money`
 Standard text field with dollar sign in front of it (useful to prevent users from adding a dollar sign to input). Example:
@@ -149,8 +143,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-text-money`
+_CSS Field Class:_ `cmb-type-text-money`
 
 #### `textarea`
 Standard textarea. Example:
@@ -165,8 +158,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-textarea`
+_CSS Field Class:_ `cmb-type-textarea`
 
 #### `textarea_small`
 Smaller textarea. Example:
@@ -181,8 +173,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-textarea-small`
+_CSS Field Class:_ `cmb-type-textarea-small`
 
 #### `textarea_code`
 Code textarea. Example:
@@ -197,8 +188,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-textarea-code`
+_CSS Field Class:_ `cmb-type-textarea-code`
 
 #### `text_date`
 Date field. Stored in m/d/Y format (ex: 09/01/2011). Example:
@@ -213,8 +203,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-text-date`
+_CSS Field Class:_ `cmb-type-text-date`
 
 ##### Extra Parameters:
 
@@ -233,8 +222,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-text-time`
+_CSS Field Class:_ `cmb-type-text-time`
 
 ##### Extra Parameters:
 
@@ -252,8 +240,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-select-timezone`
+_CSS Field Class:_ `cmb-type-select-timezone`
 
 
 #### `text_date_timestamp`
@@ -269,8 +256,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-text-date-timestamp`
+_CSS Field Class:_ `cmb-type-text-date-timestamp`
 
 ##### Extra Parameters:
 
@@ -289,8 +275,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-text-datetime-timestamp`
+_CSS Field Class:_ `cmb-type-text-datetime-timestamp`
 
 #### `text_datetime_timestamp_timezone`
 Date, time and timezone field, stored as serialized DateTime object. Example:
@@ -303,8 +288,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-datetime-timestamp-timezone`
+_CSS Field Class:_ `cmb-type-datetime-timestamp-timezone`
 
 #### `colorpicker`
 A colorpicker field. Example:
@@ -318,8 +302,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-colorpicker`
+_CSS Field Class:_ `cmb-type-colorpicker`
 
 #### `checkbox`
 Standard checkbox. Example:
@@ -333,10 +316,9 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-checkbox`
+_CSS Field Class:_ `cmb-type-checkbox`
 
-#### `multicheck`
+#### `multicheck` and `multicheck_inline`
 A field with multiple checkboxes (and multiple can be selected). Example:
 
 ```php
@@ -353,8 +335,10 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-multicheck`
+_CSS Field Class:_ `cmb-type-multicheck`
+_Custom Field Attributes:_
+
+	* `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
 #### `radio`
 Standard radio buttons. Example:
@@ -374,8 +358,7 @@ $cmb->add_field( array(
 ```
 Set the optional paremter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
 
-**CMB2 Metabox Field Class:**
-`cmb-type-radio`
+_CSS Field Class:_ `cmb-type-radio`
 
 #### `radio_inline`
 Inline radio buttons. Example:
@@ -393,8 +376,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-radio-inline`
+_CSS Field Class:_ `cmb-type-radio-inline`
 
 #### `select`
 Standard select dropdown. Example:
@@ -416,8 +398,7 @@ $cmb->add_field( array(
 ```
 Set the optional paremter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
 
-**CMB2 Metabox Field Class:**
-`cmb-type-select`
+_CSS Field Class:_ `cmb-type-select`
 
 ##### Optional:
 
@@ -461,14 +442,12 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-taxonomy-radio`
+_CSS Field Class:_ `cmb-type-taxonomy-radio`
 
 #### `taxonomy_radio_inline`
 Inline radio buttons pre-populated with taxonomy terms.
 
-**CMB2 Metabox Field Class:**
-`cmb-type-taxonomy-radio-inline`
+_CSS Field Class:_ `cmb-type-taxonomy-radio-inline`
 
 #### `taxonomy_select`
 A select field pre-populated with taxonomy terms. Example:
@@ -483,8 +462,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-taxonomy-select`
+_CSS Field Class:_ `cmb-type-taxonomy-select`
 
 #### `taxonomy_multicheck`
 A field with checkboxes with taxonomy terms, and multiple terms can be selected
@@ -499,14 +477,18 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-taxonomy-multicheck`
+_CSS Field Class:_ `cmb-type-taxonomy-multicheck`
+_Custom Field Attributes:_
+
+	* `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
 #### `taxonomy_multicheck_inline`
 Inline checkboxes with taxonomy terms.
 
-**CMB2 Metabox Field Class:**
-`cmb-type-taxonomy-multicheck-inline`
+_CSS Field Class:_ `cmb-type-taxonomy-multicheck-inline`
+_Custom Field Attributes:_
+
+	* `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
 **Note:** To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_post_meta`, etc.
 
@@ -526,8 +508,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-wysiwyg`
+_CSS Field Class:_ `cmb-type-wysiwyg`
 
 **Note:** Text added in a wysiwyg field will not have paragraph tags automatically added, the same is true of standard WordPress post content editing with the WYSIWYG. When outputting formatted text, wrap your get_post_meta() call with wpautop to generate the paragraph tags.
 
@@ -597,8 +578,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-file`
+_CSS Field Class:_ `cmb-type-file`
 
 Example using the `test_image_id` to retrieve a medium image:
 ```php
@@ -618,8 +598,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-file-list`
+_CSS Field Class:_ `cmb-type-file-list`
 
 ##### Extra Parameters:
 
@@ -666,8 +645,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-type-oembed`
+_CSS Field Class:_ `cmb-type-oembed`
 
 **Note:** Text added in a `oembed` field will not automatically display the embed in your theme. To generate the embed in your theme, this is a method you could use:
 
@@ -720,8 +698,7 @@ $cmb->add_group_field( $group_field_id, array(
 ) );
 ```
 
-**CMB2 Metabox Field Class:**
-`cmb-field-list`
+_CSS Field Class:_ `cmb-field-list`
 
 All repeatable group entries will be saved as an array to that meta-key. Example usage to pull data back:
 
