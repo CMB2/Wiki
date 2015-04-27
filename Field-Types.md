@@ -762,11 +762,9 @@ foreach ( (array) $entries as $key => $entry ) {
 ```
 
 ## Custom Field Types
-____
 You can [define your own field types](/WebDevStudios/CMB2/wiki/Adding-your-own-field-types) as well.
 
 ## Common Field Parameters
-____
 Most (if not all) fields support these parameters:
 
 * `name`: The field label
