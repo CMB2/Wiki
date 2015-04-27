@@ -42,8 +42,8 @@ Not all built-in fields have been 100% documented, so please see the example fil
 * [Create your own field type](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)
 * [Common field parameters shared by all fields](#common-field-parameters)
 
-\* Not available as a repeatable field
-† Use `file_list` for repeatable
+\* Not available as a repeatable field  
+† Use `file_list` for repeatable  
 
 ### `title`
 ____
@@ -57,7 +57,8 @@ $cmb->add_field( array(
 	'id'   => $prefix . 'test_title'
 ) );
 ```
-_CSS Field Class:_ `cmb-type-title`
+##### CSS Field Class:
+`cmb-type-title`
 
 ### `text`
 ____
@@ -73,7 +74,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-text`
+##### CSS Field Class:
+`cmb-type-text`
 
 ### `text_small`
 ____
@@ -89,7 +91,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-text-small`
+##### CSS Field Class:
+`cmb-type-text-small`
 
 ### `text_medium`
 ____
@@ -105,7 +108,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-text-medium`
+##### CSS Field Class:
+`cmb-type-text-medium`
 
 ### `text_email`
 ____
@@ -119,7 +123,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-text-email`
+##### CSS Field Class:
+`cmb-type-text-email`
 
 ### `text_url`
 ____
@@ -134,7 +139,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-text-url`
+##### CSS Field Class:
+`cmb-type-text-url`
 
 ### `text_money`
 ____
@@ -150,7 +156,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-text-money`
+##### CSS Field Class:
+`cmb-type-text-money`
 
 ### `textarea`
 ____
@@ -166,7 +173,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-textarea`
+##### CSS Field Class:
+`cmb-type-textarea`
 
 ### `textarea_small`
 ____
@@ -182,7 +190,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-textarea-small`
+##### CSS Field Class:
+`cmb-type-textarea-small`
 
 ### `textarea_code`
 ____
@@ -198,7 +207,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-textarea-code`
+##### CSS Field Class:
+`cmb-type-textarea-code`
 
 ### `text_date`
 ____
@@ -214,9 +224,10 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-text-date`
+##### CSS Field Class:
+`cmb-type-text-date`
 
-##### Extra Parameters:
+##### Custom Field Attributes:
 
 * `date_format `, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
 
@@ -234,9 +245,10 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-text-time`
+##### CSS Field Class:
+`cmb-type-text-time`
 
-##### Extra Parameters:
+##### Custom Field Attributes:
 
 * `time_format`, defaults to 'h:i A'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
 
@@ -253,7 +265,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-select-timezone`
+##### CSS Field Class:
+`cmb-type-select-timezone`
 
 
 ### `text_date_timestamp`
@@ -270,9 +283,10 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-text-date-timestamp`
+##### CSS Field Class:
+`cmb-type-text-date-timestamp`
 
-##### Extra Parameters:
+##### Custom Field Attributes:
 
 * `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/WebDevStudios/CMB2/wiki/Field-Types#select_timezone) field specified above.
 * `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
@@ -290,7 +304,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-text-datetime-timestamp`
+##### CSS Field Class:
+`cmb-type-text-datetime-timestamp`
 
 ### `text_datetime_timestamp_timezone`
 ____
@@ -304,7 +319,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-datetime-timestamp-timezone`
+##### CSS Field Class:
+`cmb-type-datetime-timestamp-timezone`
 
 ### `colorpicker`
 ____
@@ -319,7 +335,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-colorpicker`
+##### CSS Field Class:
+`cmb-type-colorpicker`
 
 ### `checkbox`
 ____
@@ -334,7 +351,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-checkbox`
+##### CSS Field Class:
+`cmb-type-checkbox`
 
 ### `multicheck` and `multicheck_inline`
 ____
@@ -354,9 +372,10 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-multicheck`
+##### CSS Field Class:
+`cmb-type-multicheck`
 
-_Custom Field Attributes:_
+##### Custom Field Attributes:
 
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
@@ -379,7 +398,8 @@ $cmb->add_field( array(
 ```
 Set the optional paremter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
 
-_CSS Field Class:_ `cmb-type-radio`
+##### CSS Field Class:
+`cmb-type-radio`
 
 ### `radio_inline`
 ____
@@ -398,7 +418,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-radio-inline`
+##### CSS Field Class:
+`cmb-type-radio-inline`
 
 ### `select`
 ____
@@ -421,18 +442,19 @@ $cmb->add_field( array(
 ```
 Set the optional paremter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
 
-_CSS Field Class:_ `cmb-type-select`
+##### CSS Field Class:
+`cmb-type-select`
 
 ##### Optional:
 
 * All the types that take an `options` parameter can accept a callback. This callback will recieive the field object which you can use to check the object ID (`$field->object_id`). This can be handy if you need to build options based on the current post or context. The callback should return an array of options in the format displayed in these examples.
-**Example**
-```php
-// in the field array..
-	...
-	'options' => 'show_cat_or_dog_options',
-	...
 
+**Example:**
+```php
+	// in the field array..
+	'options' => 'show_cat_or_dog_options',
+```
+```php
 // Callback function
 function show_cat_or_dog_options( $field ) {
 
@@ -466,13 +488,15 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-taxonomy-radio`
+##### CSS Field Class:
+`cmb-type-taxonomy-radio`
 
 ### `taxonomy_radio_inline`
 ____
 Inline radio buttons pre-populated with taxonomy terms.
 
-_CSS Field Class:_ `cmb-type-taxonomy-radio-inline`
+##### CSS Field Class:
+`cmb-type-taxonomy-radio-inline`
 
 ### `taxonomy_select`
 ____
@@ -488,7 +512,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-taxonomy-select`
+##### CSS Field Class:
+`cmb-type-taxonomy-select`
 
 ### `taxonomy_multicheck`
 ____
@@ -504,9 +529,10 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-taxonomy-multicheck`
+##### CSS Field Class:
+`cmb-type-taxonomy-multicheck`
 
-_Custom Field Attributes:_
+##### Custom Field Attributes:
 
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
@@ -514,15 +540,15 @@ _Custom Field Attributes:_
 ____
 Inline checkboxes with taxonomy terms.
 
-_CSS Field Class:_ `cmb-type-taxonomy-multicheck-inline`
+##### CSS Field Class:
+`cmb-type-taxonomy-multicheck-inline`
 
-_Custom Field Attributes:_
+##### Custom Field Attributes:
 
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
-**Note:** To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_post_meta`, etc.
-
-> The taxonomy fields are not intended to provide an arbitrary list of terms to pick from, but are intended to be a replacement for the default taxonomy meta-boxes. I.e. they are meant to set the taxonomy terms on an object, and will not save as a meta value. Any other use of these types will be hacky and/or buggy. Suggest looking at building a custom field type instead - [Example](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
+##### Notes
+To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_post_meta`, etc. The taxonomy fields are not intended to provide an arbitrary list of terms to pick from, but are intended to be a replacement for the default taxonomy meta-boxes. I.e. they are meant to set the taxonomy terms on an object, and will not save as a meta value. Any other use of these types will be hacky and/or buggy. Suggest looking at building a custom field type instead - [Example](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
 
 
 ### `wysiwyg`
@@ -539,9 +565,11 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-wysiwyg`
+##### CSS Field Class:
+`cmb-type-wysiwyg`
 
-**Note:** Text added in a wysiwyg field will not have paragraph tags automatically added, the same is true of standard WordPress post content editing with the WYSIWYG. When outputting formatted text, wrap your get_post_meta() call with wpautop to generate the paragraph tags.
+##### Notes
+Text added in a wysiwyg field will not have paragraph tags automatically added, the same is true of standard WordPress post content editing with the WYSIWYG. When outputting formatted text, wrap your get_post_meta() call with wpautop to generate the paragraph tags.
 
 ```php
 <?php echo wpautop( get_post_meta( get_the_ID(), $prefix . 'test_wysiwyg', true ) ); ?>
@@ -610,7 +638,8 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-file`
+##### CSS Field Class:
+`cmb-type-file`
 
 Example using the `test_image_id` to retrieve a medium image:
 ```php
@@ -631,9 +660,10 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-file-list`
+##### CSS Field Class:
+`cmb-type-file-list`
 
-##### Extra Parameters:
+##### Custom Field Attributes:
 
 * `preview_size` Changes the size of the preview images in the field. Default: array( 50, 50 ).
 
@@ -679,9 +709,11 @@ $cmb->add_field( array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-type-oembed`
+##### CSS Field Class:
+`cmb-type-oembed`
 
-**Note:** Text added in a `oembed` field will not automatically display the embed in your theme. To generate the embed in your theme, this is a method you could use:
+##### Notes
+Text added in a `oembed` field will not automatically display the embed in your theme. To generate the embed in your theme, this is a method you could use:
 
 ```php
 $url = esc_html( cmb_get_option( 'cmb_options', 'video_url_option_id' ) );
@@ -733,7 +765,8 @@ $cmb->add_group_field( $group_field_id, array(
 ) );
 ```
 
-_CSS Field Class:_ `cmb-field-list`
+##### CSS Field Class:
+`cmb-field-list`
 
 All repeatable group entries will be saved as an array to that meta-key. Example usage to pull data back:
 
