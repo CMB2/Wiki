@@ -623,13 +623,13 @@ array(
 
 ### `file`
 ____
-A file uploader. By default it will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `test_image` the ID is stored in `test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
+A file uploader. By default it will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `_wiki_test_image` the ID is stored in `_wiki_test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
 
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test File',
 	'desc'    => 'Upload an image or enter an URL.',
-	'id'      => 'test_image',
+	'id'      => '_wiki_test_image',
 	'type'    => 'file',
 	// Optionally hide the text input for the url:
 	'options' => array(
@@ -641,9 +641,9 @@ $cmb->add_field( array(
 ##### CSS Field Class:
 `cmb-type-file`
 
-Example using the `test_image_id` to retrieve a medium image:
+Example using the `_wiki_test_image_id` to retrieve a medium image:
 ```php
-$image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'test_image_id', 1 ), 'medium' );
+$image = wp_get_attachment_image( get_post_meta( get_the_ID(), '_wiki_test_image_id', 1 ), 'medium' );
 ```
 
 ### `file_list`
