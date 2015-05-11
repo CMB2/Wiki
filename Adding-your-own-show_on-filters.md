@@ -477,7 +477,7 @@ function cmb_show_meta_to_chosen_roles( $display, $meta_box ) {
 
 	foreach ( $user->roles as $role ) {
 		// Does user have role.. check if array
-		if ( $is_array && in_array( $role, $roles ) ) {
+		if ( is_array && in_array( $role, $roles ) ) {
 			return true;
 		}
 	}
