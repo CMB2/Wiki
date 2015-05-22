@@ -21,6 +21,7 @@ Make sure you check early on to see if this filter should be running (check `$me
 1. [By Capability show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-by-capability-show_on-filter)
 1. [Page Template show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-page-template-show_on-filter)
 1. [Show metabox for certain user-roles](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-show-metabox-for-certain-user-roles)
+1. [Show metabox by post_meta](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-show-metabox-by-post-meta)
 
 _Have you made some useful show_on filters? List them as examples here so others can use them._
 
