@@ -502,8 +502,8 @@ Will show the metabox if the post meta matches the provided value.
  * @param array $meta_box
  * @return bool display metabox
  */
-function ntnlr_show_on_registration( $display, $meta_box ) {
-	if ( ! isset( $meta_box['show_on']['meta'], $meta_box['show_on']['meta_value'] ) ) {
+function cmb_show_on_meta_value( $display, $meta_box ) {
+	if ( ! isset( $meta_box['show_on']['meta_key'] ) ) {
 		return $display;
 	}
 
@@ -520,9 +520,13 @@ function ntnlr_show_on_registration( $display, $meta_box ) {
 		return $display;
 	}
 
-	$value = get_post_meta( $post_id, $meta_box['show_on']['meta'], true );
+	$value = get_post_meta( $post_id, $meta_box['show_on']['meta_key'], true );
+
+	if ( empty( $meta_box['show_on']['meta_value'] ) ) {
+		return (bool) $value;
+	}
 
 	return $value == $meta_box['show_on']['meta_value'];
 }
-add_filter( 'cmb2_show_on', 'ntnlr_show_on_registration', 10, 2 );
+add_filter( 'cmb2_show_on', 'cmb_show_on_meta_value', 10, 2 );
 ```
