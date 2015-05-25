@@ -716,7 +716,7 @@ $cmb->add_field( array(
 Text added in a `oembed` field will not automatically display the embed in your theme. To generate the embed in your theme, this is a method you could use:
 
 ```php
-$url = esc_html( cmb_get_option( 'cmb_options', 'video_url_option_id' ) );
+$url = esc_url( get_post_meta( get_the_ID(), '_wiki_test_embed', 1 ) );
 echo wp_oembed_get( $url );
 ```
 
