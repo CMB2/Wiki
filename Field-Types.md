@@ -54,7 +54,7 @@ $cmb->add_field( array(
 	'name' => 'Test Title',
 	'desc' => 'This is a title description',
 	'type' => 'title',
-	'id'   => '_wiki_test_title'
+	'id'   => 'wiki_test_title'
 ) );
 ```
 ##### CSS Field Class:
@@ -69,7 +69,7 @@ $cmb->add_field( array(
 	'name'    => 'Test Text',
 	'desc'    => 'field description (optional)',
 	'default' => 'standard value (optional)',
-	'id'      => '_wiki_test_text',
+	'id'      => 'wiki_test_text',
 	'type'    => 'text'
 ) );
 ```
@@ -86,7 +86,7 @@ $cmb->add_field( array(
 	'name'    => 'Test Text Small',
 	'desc'    => 'field description (optional)',
 	'default' => 'standard value (optional)',
-	'id'      => '_wiki_test_textsmall',
+	'id'      => 'wiki_test_textsmall',
 	'type'    => 'text_small'
 ) );
 ```
@@ -103,7 +103,7 @@ $cmb->add_field( array(
 	'name'    => 'Test Text Medium',
 	'desc'    => 'field description (optional)',
 	'default' => 'standard value (optional)',
-	'id'      => '_wiki_test_textmedium',
+	'id'      => 'wiki_test_textmedium',
 	'type'    => 'text_medium'
 ) );
 ```
@@ -118,7 +118,7 @@ Standard text field which enforces an email address. Example:
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Email',
-	'id'   => '_wiki_test_email',
+	'id'   => 'wiki_test_email',
 	'type' => 'text_email',
 ) );
 ```
@@ -133,7 +133,7 @@ Standard text field which enforces a url. Example:
 ```php
 $cmb->add_field( array(
 	'name' => __( 'Website URL', 'cmb' ),
-	'id'   => '_wiki_test_facebookurl',
+	'id'   => 'wiki_test_facebookurl',
 	'type' => 'text_url',
 	// 'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
 ) );
@@ -150,7 +150,7 @@ Standard text field with dollar sign in front of it (useful to prevent users fro
 $cmb->add_field( array(
 	'name' => 'Test Money',
 	'desc' => 'field description (optional)',
-	'id' => '_wiki_test_textmoney',
+	'id' => 'wiki_test_textmoney',
 	'type' => 'text_money',
 	// 'before_field' => '£', // Replaces default '$'
 ) );
@@ -168,7 +168,7 @@ $cmb->add_field( array(
 	'name' => 'Test Text Area',
 	'desc' => 'field description (optional)',
 	'default' => 'standard value (optional)',
-	'id' => '_wiki_test_textarea',
+	'id' => 'wiki_test_textarea',
 	'type' => 'textarea'
 ) );
 ```
@@ -185,7 +185,7 @@ $cmb->add_field( array(
 	'name' => 'Test Text Area Small',
 	'desc' => 'field description (optional)',
 	'default' => 'standard value (optional)',
-	'id' => '_wiki_test_textareasmall',
+	'id' => 'wiki_test_textareasmall',
 	'type' => 'textarea_small'
 ) );
 ```
@@ -202,7 +202,7 @@ $cmb->add_field( array(
 	'name' => 'Test Text Area Code',
 	'desc' => 'field description (optional)',
 	'default' => 'standard value (optional)',
-	'id' => '_wiki_test_textareacode',
+	'id' => 'wiki_test_textareacode',
 	'type' => 'textarea_code'
 ) );
 ```
@@ -218,7 +218,7 @@ Date field. Stored in m/d/Y format (ex: 09/01/2011). Example:
 $cmb->add_field( array(
 	'name' => 'Test Date Picker',
 	'desc' => 'field description (optional)',
-	'id' => '_wiki_test_textdate',
+	'id' => 'wiki_test_textdate',
 	'type' => 'text_date'
 	// 'date_format' => __( 'd-m-Y', 'cmb2' ), // use European date format
 ) );
@@ -239,7 +239,7 @@ Time picker field. Example:
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Date Picker',
-	'id' => '_wiki_test_texttime',
+	'id' => 'wiki_test_texttime',
 	'type' => 'text_time'
 	// 'time_format' => 'h:i:s A',
 ) );
@@ -260,7 +260,7 @@ Timezone field. Example:
 ```php
 $cmb->add_field( array(
 	'name' => 'Time zone',
-	'id'   => '_wiki_test_timezone',
+	'id'   => 'wiki_test_timezone',
 	'type' => 'select_timezone',
 ) );
 ```
@@ -276,9 +276,9 @@ Date field, stored as UNIX timestamp. Useful if you plan to query based on it (e
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Date Picker (UNIX timestamp)',
-	'id'   => '_wiki_test_textdate_timestamp',
+	'id'   => 'wiki_test_textdate_timestamp',
 	'type' => 'text_date_timestamp',
-	// 'timezone_meta_key' => '_wiki_test_timezone',
+	// 'timezone_meta_key' => 'wiki_test_timezone',
 	// 'date_format' => 'l jS \of F Y',
 ) );
 ```
@@ -299,7 +299,7 @@ Date and time field, stored as UNIX timestamp. Example:
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Date/Time Picker Combo (UNIX timestamp)',
-	'id'   => '_wiki_test_datetime_timestamp',
+	'id'   => 'wiki_test_datetime_timestamp',
 	'type' => 'text_datetime_timestamp',
 ) );
 ```
@@ -314,7 +314,7 @@ Date, time and timezone field, stored as serialized DateTime object. Example:
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Date/Time Picker/Time zone Combo (serialized DateTime object)',
-	'id'   => '_wiki_test_datetime_timestamp_timezone',
+	'id'   => 'wiki_test_datetime_timestamp_timezone',
 	'type' => 'text_datetime_timestamp_timezone',
 ) );
 ```
@@ -329,7 +329,7 @@ A colorpicker field. Example:
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Color Picker',
-	'id'      => '_wiki_test_colorpicker',
+	'id'      => 'wiki_test_colorpicker',
 	'type'    => 'colorpicker',
 	'default' => '#ffffff',
 ) );
@@ -346,7 +346,7 @@ Standard checkbox. Example:
 $cmb->add_field( array(
 	'name' => 'Test Checkbox',
 	'desc' => 'field description (optional)',
-	'id'   => '_wiki_test_checkbox',
+	'id'   => 'wiki_test_checkbox',
 	'type' => 'checkbox'
 ) );
 ```
@@ -362,7 +362,7 @@ A field with multiple checkboxes (and multiple can be selected). Example:
 $cmb->add_field( array(
 	'name'    => 'Test Multi Checkbox',
 	'desc'    => 'field description (optional)',
-	'id'      => '_wiki_test_multicheckbox',
+	'id'      => 'wiki_test_multicheckbox',
 	'type'    => 'multicheck',
 	'options' => array(
 		'check1' => 'Check One',
@@ -386,7 +386,7 @@ Standard radio buttons. Example:
 ```php
 $cmb->add_field( array(
 	'name'             => 'Test Radio',
-	'id'               => '_wiki_test_radio',
+	'id'               => 'wiki_test_radio',
 	'type'             => 'radio',
 	'show_option_none' => true,
 	'options'          => array(
@@ -408,7 +408,7 @@ Inline radio buttons. Example:
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Radio inline',
-	'id'      => '_wiki_test_radio_inline',
+	'id'      => 'wiki_test_radio_inline',
 	'type'    => 'radio_inline',
 	'options' => array(
 		'standard' => __( 'Option One', 'cmb' ),
@@ -429,7 +429,7 @@ Standard select dropdown. Example:
 $cmb->add_field( array(
 	'name'             => 'Test Select',
 	'desc'             => 'Select an option',
-	'id'               => '_wiki_test_select',
+	'id'               => 'wiki_test_select',
 	'type'             => 'select',
 	'show_option_none' => true,
 	'default'          => 'custom',
@@ -482,7 +482,7 @@ Radio buttons pre-populated with taxonomy terms. Example:
 $cmb->add_field( array(
 	'name'     => 'Test Taxonomy Radio',
 	'desc'     => 'Description Goes Here',
-	'id'       => '_wiki_test_taxonomy_radio',
+	'id'       => 'wiki_test_taxonomy_radio',
 	'taxonomy' => '', //Enter Taxonomy Slug
 	'type'     => 'taxonomy_radio',
 ) );
@@ -506,7 +506,7 @@ A select field pre-populated with taxonomy terms. Example:
 $cmb->add_field( array(
 	'name'     => 'Test Taxonomy Select',
 	'desc'     => 'Description Goes Here',
-	'id'       => '_wiki_test_taxonomy_select',
+	'id'       => 'wiki_test_taxonomy_select',
 	'taxonomy' => 'category', //Enter Taxonomy Slug
 	'type'     => 'taxonomy_select',
 ) );
@@ -523,7 +523,7 @@ A field with checkboxes with taxonomy terms, and multiple terms can be selected
 $cmb->add_field( array(
 	'name'     => 'Test Taxonomy Multicheck',
 	'desc'     => 'Description Goes Here',
-	'id'       => '_wiki_test_taxonomy_multicheck',
+	'id'       => 'wiki_test_taxonomy_multicheck',
 	'taxonomy' => '', //Enter Taxonomy Slug
 	'type'     => 'taxonomy_multicheck',
 ) );
@@ -559,7 +559,7 @@ A metabox with TinyMCE editor (same as WordPress' visual editor). Example:
 $cmb->add_field( array(
 	'name'    => 'Test wysiwyg',
 	'desc'    => 'field description (optional)',
-	'id'      => '_wiki_test_wysiwyg',
+	'id'      => 'wiki_test_wysiwyg',
 	'type'    => 'wysiwyg',
 	'options' => array(),
 ) );
@@ -572,7 +572,7 @@ $cmb->add_field( array(
 Text added in a wysiwyg field will not have paragraph tags automatically added, the same is true of standard WordPress post content editing with the WYSIWYG. When outputting formatted text, wrap your get_post_meta() call with wpautop to generate the paragraph tags.
 
 ```php
-<?php echo wpautop( get_post_meta( get_the_ID(), '_wiki_test_wysiwyg', true ) ); ?>
+<?php echo wpautop( get_post_meta( get_the_ID(), 'wiki_test_wysiwyg', true ) ); ?>
 ```
 If you want oembed filters to apply to the wysiwyg content, add this helper function to your theme or plugin:
 
@@ -593,7 +593,7 @@ function yourprefix_get_wysiwyg_output( $meta_key, $post_id = 0 ) {
 
 ...
 
-echo yourprefix_get_wysiwyg_output( '_wiki_test_wysiwyg', get_the_ID() );
+echo yourprefix_get_wysiwyg_output( 'wiki_test_wysiwyg', get_the_ID() );
 ```
 
 The options array allows you to customize the settings of the wysiwyg. Here's an example with all the options:
@@ -602,7 +602,7 @@ The options array allows you to customize the settings of the wysiwyg. Here's an
 array(
 	'name'    => 'Test wysiwyg',
 	'desc'    => 'field description (optional)',
-	'id'      => '_wiki_test_wysiwyg',
+	'id'      => 'wiki_test_wysiwyg',
 	'type'    => 'wysiwyg',
 	'options' => array(
 	    'wpautop' => true, // use wpautop?
@@ -629,7 +629,7 @@ A file uploader. By default it will store the file url and allow either attachme
 $cmb->add_field( array(
 	'name'    => 'Test File',
 	'desc'    => 'Upload an image or enter an URL.',
-	'id'      => '_wiki_test_image',
+	'id'      => 'wiki_test_image',
 	'type'    => 'file',
 	// Optionally hide the text input for the url:
 	'options' => array(
@@ -643,7 +643,7 @@ $cmb->add_field( array(
 
 Example using the `_wiki_test_image_id` to retrieve a medium image:
 ```php
-$image = wp_get_attachment_image( get_post_meta( get_the_ID(), '_wiki_test_image_id', 1 ), 'medium' );
+$image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'wiki_test_image_id', 1 ), 'medium' );
 ```
 
 ### `file_list`
@@ -654,7 +654,7 @@ A file uploader that allows you to add as many files as you want. This is a repe
 $cmb->add_field( array(
 	'name' => 'Test File List',
 	'desc' => '',
-	'id'   => '_wiki_test_file_list',
+	'id'   => 'wiki_test_file_list',
 	'type' => 'file_list',
 	// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 ) );
@@ -673,7 +673,7 @@ $cmb->add_field( array(
 /**
  * Sample template tag function for outputting a cmb2 file_list
  *
- * @param  string  $file_list_meta_key The field meta key. ('_wiki_test_file_list')
+ * @param  string  $file_list_meta_key The field meta key. ('wiki_test_file_list')
  * @param  string  $img_size           Size of image to show
  */
 function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
@@ -693,7 +693,7 @@ function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
 ```
 ##### To use in your template (in the loop):
 ```php
-<?php cmb2_output_file_list( '_wiki_test_file_list', 'small' ); ?>
+<?php cmb2_output_file_list( 'wiki_test_file_list', 'small' ); ?>
 ```
 
 ### `oembed`
@@ -704,7 +704,7 @@ Displays embedded media inline using WordPress' built-in oEmbed support. See [co
 $cmb->add_field( array(
 	'name' => 'oEmbed',
 	'desc' => 'Enter a youtube, twitter, or instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.',
-	'id'   => '_wiki_test_embed',
+	'id'   => 'wiki_test_embed',
 	'type' => 'oembed',
 ) );
 ```
@@ -716,7 +716,7 @@ $cmb->add_field( array(
 Text added in a `oembed` field will not automatically display the embed in your theme. To generate the embed in your theme, this is a method you could use:
 
 ```php
-$url = esc_url( get_post_meta( get_the_ID(), '_wiki_test_embed', 1 ) );
+$url = esc_url( get_post_meta( get_the_ID(), 'wiki_test_embed', 1 ) );
 echo wp_oembed_get( $url );
 ```
 
@@ -726,7 +726,7 @@ Hybrid field that supports adding other fields as a repeatable group. Example:
 
 ```php
 $group_field_id = $cmb->add_field( array(
-	'id'          => '_wiki_test_repeat_group',
+	'id'          => 'wiki_test_repeat_group',
 	'type'        => 'group',
 	'description' => __( 'Generates reusable form entries', 'cmb' ),
 	'options'     => array(
@@ -771,7 +771,7 @@ $cmb->add_group_field( $group_field_id, array(
 All repeatable group entries will be saved as an array to that meta-key. Example usage to pull data back:
 
 ```php
-$entries = get_post_meta( get_the_ID(), '_wiki_test_repeat_group', true );
+$entries = get_post_meta( get_the_ID(), 'wiki_test_repeat_group', true );
 
 foreach ( (array) $entries as $key => $entry ) {
 
@@ -816,7 +816,7 @@ Most (if not all) fields support these parameters:
 	```php
 	$cmb->add_field( array(
 		'name'        => 'Extra Small Textarea',
-		'id'          => '_wiki_test_xtra_small_textarea',
+		'id'          => 'wiki_test_xtra_small_textarea',
 		'type'        => 'textarea_small',
 		'attributes'  => array(
 			'placeholder' => 'A small amount of text',
@@ -830,7 +830,7 @@ Most (if not all) fields support these parameters:
 	```php
 	$cmb->add_field( array(
 		'name'       => __( 'Test Text', 'cmb' ),
-		'id'         => '_wiki_test_text',
+		'id'         => 'wiki_test_text',
 		'type'       => 'text',
 		'show_on_cb' => 'cmb_only_show_for_user_1', // function should return a bool value
 	) );
