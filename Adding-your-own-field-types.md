@@ -190,7 +190,7 @@ function cmb2_get_state_options( $value = false ) {
 /**
  * Render Address Field
  */
-function cmb2_render_address_field_callback( $field_object, $value, $object_id, $object_type, $field_type_object ) {
+function cmb2_render_address_field_callback( $field, $value, $object_id, $object_type, $field_type ) {
 
 	// make sure we specify each part of the value we need.
 	$value = wp_parse_args( $value, array(
@@ -202,46 +202,52 @@ function cmb2_render_address_field_callback( $field_object, $value, $object_id, 
 	) );
 
 	?>
-	<div><p><label for="<?php echo $field_type_object->_id( '_address_1' ); ?>">Address 1</label></p>
-		<?php echo $field_type_object->input( array(
-			'name'  => $field_type_object->_name( '[address-1]' ),
-			'id'    => $field_type_object->_id( '_address_1' ),
+	<div><p><label for="<?php echo $field_type->_id( '_address_1' ); ?>">Address 1</label></p>
+		<?php echo $field_type->input( array(
+			'name'  => $field_type->_name( '[address-1]' ),
+			'id'    => $field_type->_id( '_address_1' ),
 			'value' => $value['address-1'],
+			'desc'  => '',
 		) ); ?>
 	</div>
-	<div><p><label for="<?php echo $field_type_object->_id( '_address_2' ); ?>'">Address 2</label></p>
-		<?php echo $field_type_object->input( array(
-			'name'  => $field_type_object->_name( '[address-2]' ),
-			'id'    => $field_type_object->_id( '_address_2' ),
+	<div><p><label for="<?php echo $field_type->_id( '_address_2' ); ?>'">Address 2</label></p>
+		<?php echo $field_type->input( array(
+			'name'  => $field_type->_name( '[address-2]' ),
+			'id'    => $field_type->_id( '_address_2' ),
 			'value' => $value['address-2'],
+			'desc'  => '',
 		) ); ?>
 	</div>
-	<div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_city' ); ?>'">City</label></p>
-		<?php echo $field_type_object->input( array(
+	<div class="alignleft"><p><label for="<?php echo $field_type->_id( '_city' ); ?>'">City</label></p>
+		<?php echo $field_type->input( array(
 			'class' => 'cmb_text_small',
-			'name'  => $field_type_object->_name( '[city]' ),
-			'id'    => $field_type_object->_id( '_city' ),
+			'name'  => $field_type->_name( '[city]' ),
+			'id'    => $field_type->_id( '_city' ),
 			'value' => $value['city'],
+			'desc'  => '',
 		) ); ?>
 	</div>
-	<div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_state' ); ?>'">State</label></p>
-		<?php echo $field_type_object->select( array(
-			'name'    => $field_type_object->_name( '[state]' ),
-			'id'      => $field_type_object->_id( '_state' ),
-			'options' => cmb2_get_state_options( $value['state'] )
+	<div class="alignleft"><p><label for="<?php echo $field_type->_id( '_state' ); ?>'">State</label></p>
+		<?php echo $field_type->select( array(
+			'name'    => $field_type->_name( '[state]' ),
+			'id'      => $field_type->_id( '_state' ),
+			'options' => cmb2_get_state_options( $value['state'] ),
+			'desc'    => '',
 		) ); ?>
 	</div>
-	<div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_zip' ); ?>'">Zip</label></p>
-		<?php echo $field_type_object->input( array(
+	<div class="alignleft"><p><label for="<?php echo $field_type->_id( '_zip' ); ?>'">Zip</label></p>
+		<?php echo $field_type->input( array(
 			'class' => 'cmb_text_small',
-			'name'  => $field_type_object->_name( '[zip]' ),
-			'id'    => $field_type_object->_id( '_zip' ),
+			'name'  => $field_type->_name( '[zip]' ),
+			'id'    => $field_type->_id( '_zip' ),
 			'value' => $value['zip'],
 			'type'  => 'number',
+			'desc'  => '',
 		) ); ?>
 	</div>
+	<br class="clear">
 	<?php
-	echo $field_type_object->_desc( true );
+	echo $field_type->_desc( true );
 
 }
 add_filter( 'cmb2_render_address', 'cmb2_render_address_field_callback', 10, 5 );
