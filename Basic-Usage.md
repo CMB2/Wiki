@@ -153,4 +153,6 @@ get_header(); ?>
 <?php get_footer(); ?>
 ```
 
-For more information on working with post meta, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta), or check out the [Post Meta Bootcamp](http://dsgnwrks.pro/how-to/post-meta-bootcamp/). For more example code, see [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
+For more information on working with post meta, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta), or check out the [Post Meta Bootcamp](http://dsgnwrks.pro/how-to/post-meta-bootcamp/). Remember, to *escape any and all data*! Using proper [data validation](http://codex.wordpress.org/Data_Validation) when working with post meta is the right thing to do. Trust no one! 
+
+For more example code, see [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
