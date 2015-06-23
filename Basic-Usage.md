@@ -105,7 +105,7 @@ Finally, you need to be able to extract the metadata and put it to work. In your
 $text = get_post_meta( get_the_ID(), '_yourprefix_text', true );
 
 // Echo the metadata
-echo $text;
+echo esc_html( $text );
 ?>
 ```
 Let's assume you created a metabox with the field outlined above, and want to display this on the single page template:
