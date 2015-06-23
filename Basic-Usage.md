@@ -138,9 +138,9 @@ get_header(); ?>
 					$text  = get_post_meta( get_the_ID(), '_yourprefix_text', true );
 					$email = get_post_meta( get_the_ID(), '_yourprefix_email', true );
 					$url   = get_post_meta( get_the_ID(), '_yourprefix_url', true );
-					echo $text;
-					echo $email;
-					echo $url;
+					echo esc_html( $text );
+					echo is_email( $email );
+					echo esc_url( $url );
 					?>
 
 					<?php comments_template( '', true ); ?>
