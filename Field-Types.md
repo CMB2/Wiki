@@ -21,6 +21,7 @@ Not all built-in fields have been 100% documented, so please see the example fil
 1. [`text_date_timestamp`](#text_date_timestamp) Date Picker (UNIX timestamp)
 1. [`text_datetime_timestamp`](#text_datetime_timestamp) Text Date/Time Picker Combo (UNIX timestamp)
 1. [`text_datetime_timestamp_timezone`](#text_datetime_timestamp_timezone) Text Date/Time Picker/Time zone Combo (serialized DateTime object)
+1. [`hidden`](#hidden) Hidden input type
 1. [`colorpicker`](#colorpicker) Color picker
 1. [`radio`](#radio) *
 1. [`radio_inline`](#radio_inline) *
@@ -321,6 +322,20 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-datetime-timestamp-timezone`
+
+### `hidden`
+____
+Adds a `hidden` input type to the bottom of the CMB2 output. Example:
+
+```php
+$cmb->add_field( array(
+	'id'   => 'wiki_test_hidden',
+	'type' => 'hidden',
+) );
+```
+
+##### CSS Field Class:
+not applicable to this field type.
 
 ### `colorpicker`
 ____
