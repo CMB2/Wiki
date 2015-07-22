@@ -585,7 +585,6 @@ $cmb->add_field( array(
 
 ##### Notes
 Text added in a wysiwyg field will not have paragraph tags automatically added, the same is true of standard WordPress post content editing with the WYSIWYG. When outputting formatted text, wrap your get_post_meta() call with wpautop to generate the paragraph tags.
-The id 'content' should not be used to avoid a broken editor.
 
 ```php
 <?php echo wpautop( get_post_meta( get_the_ID(), 'wiki_test_wysiwyg', true ) ); ?>
