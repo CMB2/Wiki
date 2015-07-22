@@ -636,6 +636,8 @@ array(
 
 ```
 
+The id should not be set to 'content' as the standard editor has this id and it will result in a non working editor.
+
 ### `file`
 ____
 A file uploader. By default it will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `_wiki_test_image` the ID is stored in `_wiki_test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
