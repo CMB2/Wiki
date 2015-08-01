@@ -648,9 +648,10 @@ $cmb->add_field( array(
 	'desc'    => 'Upload an image or enter an URL.',
 	'id'      => 'wiki_test_image',
 	'type'    => 'file',
-	// Optionally hide the text input for the url:
+	// Optional:
 	'options' => array(
-		'url' => false,
+		'url' 				=> false, // Hide the text input for the url
+		'add_upload_file_text' 		=> 'Add File' // Change upload button text
 	),
 ) );
 ```
