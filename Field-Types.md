@@ -67,11 +67,16 @@ Standard text field (large). Example:
 
 ```php
 $cmb->add_field( array(
-	'name'    => 'Test Text',
-	'desc'    => 'field description (optional)',
-	'default' => 'standard value (optional)',
-	'id'      => 'wiki_test_text',
-	'type'    => 'text'
+	'name'               => 'Test Text',
+	'desc'               => 'field description (optional)',
+	'default'            => 'standard value (optional)',
+	'id'                 => 'wiki_test_text',
+	'type'               => 'text',
+        'show_on_cb'         => 'yourprefix_hide_if_no_cats',
+        // 'sanitization_cb' => 'my_custom_sanitization',
+        // 'escape_cb'       => 'my_custom_escaping',
+        // 'on_front'        => false,
+        // 'repeatable'      => true,
 ) );
 ```
 
