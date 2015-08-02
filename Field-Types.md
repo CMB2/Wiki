@@ -67,11 +67,11 @@ Standard text field (large). Example:
 
 ```php
 $cmb->add_field( array(
-	'name'               => 'Test Text',
-	'desc'               => 'field description (optional)',
-	'default'            => 'standard value (optional)',
-	'id'                 => 'wiki_test_text',
-	'type'               => 'text',
+	'name'    => 'Test Text',
+	'desc'    => 'field description (optional)',
+	'default' => 'standard value (optional)',
+	'id'      => 'wiki_test_text',
+	'type'    => 'text',
 ) );
 ```
 
@@ -498,8 +498,12 @@ $cmb->add_field( array(
 	'name'     => 'Test Taxonomy Radio',
 	'desc'     => 'Description Goes Here',
 	'id'       => 'wiki_test_taxonomy_radio',
-	'taxonomy' => '', //Enter Taxonomy Slug
+	'taxonomy' => '', // Enter Taxonomy Slug
 	'type'     => 'taxonomy_radio',
+	// Optional:
+	'options' => array(
+		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text
+	),
 ) );
 ```
 
@@ -541,6 +545,10 @@ $cmb->add_field( array(
 	'id'       => 'wiki_test_taxonomy_multicheck',
 	'taxonomy' => '', //Enter Taxonomy Slug
 	'type'     => 'taxonomy_multicheck',
+	// Optional:
+	'options' => array(
+		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text
+	),
 ) );
 ```
 
@@ -636,7 +644,7 @@ array(
 
 ```
 
-The id should not be set to 'content' as the standard editor has this id and it will result in a non working editor.
+The `'id'` should not be set to 'content' as the standard editor has this id and it will result in a non working editor.
 
 ### `file`
 ____
@@ -650,8 +658,8 @@ $cmb->add_field( array(
 	'type'    => 'file',
 	// Optional:
 	'options' => array(
-		'url' 				=> false, // Hide the text input for the url
-		'add_upload_file_text' 		=> 'Add File' // Change upload button text
+		'url' => false, // Hide the text input for the url
+		'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
 	),
 ) );
 ```
@@ -675,6 +683,14 @@ $cmb->add_field( array(
 	'id'   => 'wiki_test_file_list',
 	'type' => 'file_list',
 	// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
+	// Optional, override default text strings
+	'options' => array(
+		'add_upload_files_text' => 'Replacement', // default: "Add or Upload Files"
+		'remove_image_text' => 'Replacement', // default: "Remove Image"
+		'file_text' => 'Replacement', // default: "File:"
+		'file_download_text' => 'Replacement', // default: "Download"
+		'remove_text' => 'Replacement', // default: "Remove"
+	),
 ) );
 ```
 
