@@ -356,7 +356,7 @@ function ed_metabox_include_front_page( $display, $meta_box ) {
 	}
 
 	if ( ! $post_id ) {
-		return !$display;
+		return false;
 	}
 
 	// Get ID of page set as front page, 0 if there isn't one
