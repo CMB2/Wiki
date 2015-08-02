@@ -502,7 +502,7 @@ $cmb->add_field( array(
 	'type'     => 'taxonomy_radio',
 	// Optional:
 	'options' => array(
-		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text
+		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
 ) );
 ```
@@ -547,7 +547,7 @@ $cmb->add_field( array(
 	'type'     => 'taxonomy_multicheck',
 	// Optional:
 	'options' => array(
-		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text
+		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
 ) );
 ```
