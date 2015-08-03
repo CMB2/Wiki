@@ -12,6 +12,7 @@
     - [Use the field in your template](#use-the-field-in-your-template)
 - [Add Your Own Examples](#add-your-own-examples)
   - [text_number - adds a text number input](#text_number---adds-a-text-number-input)
+  - [multicheck_posttype - adds a multicheck for post type](#multicheck_posttype---adds-a-multicheck-posttype)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -324,5 +325,41 @@ function sm_cmb2_sanitize_text_number( $null, $new ) {
 }
 ```
 
+### multicheck_posttype - adds a multicheck for post type
+
+```php
+//By Daniele Mte90 Scasciafratte
+// render multicheck-posttype
+add_action( 'cmb2_render_multicheck_posttype', 'cmb_render_multicheck_posttype', 10, 5 );
+
+function cmb_render_multicheck_posttype( $field, $escaped_value, $object_id, $object_type, $field_type_object ) {
+	$cpts = get_post_types();
+	unset( $cpts[ 'nav_menu_item' ] );
+	unset( $cpts[ 'revision' ] );
+	$options = '';
+	$i = 1;
+	$values = (array) $escaped_value;
+	
+	if ( $cpts ) {
+		foreach ( $cpts as $cpt ) {
+			$args = array(
+			    'value' => $cpt,
+			    'label' => $cpt,
+			    'type' => 'checkbox',
+			    'name' => $field->args['_name'] . '[]',
+			);
+
+			if ( in_array( $cpt, $values ) ) {
+				$args[ 'checked' ] = 'checked';
+			}
+			$options .= $field_type_object->list_input( $args, $i );
+			$i++;
+		}
+	}
+
+	$classes = false === $field->args( 'select_all_button' ) ? 'cmb2-checkbox-list no-select-all cmb2-list' : 'cmb2-checkbox-list cmb2-list';
+	echo $field_type_object->radio( array( 'class' => $classes, 'options' => $options ), 'multicheck_posttype' );
+}
+```
 _____
 **Autocomplete type removed as it did not work during testing.**
