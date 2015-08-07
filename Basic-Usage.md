@@ -11,7 +11,7 @@ This code is designed to be run inside themes and plugins. Proper structure woul
 
 ### Quick Start
 
-Open [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) and copy/paste all of the code into `functions.php`. You should see all the example metaboxes in the post editor. Use [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) to get/use the data.
+Open [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) and copy/paste all of the code into `functions.php`. Create a new page and you should see all the example metaboxes in the page editor. Use [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) to get/use the data.
 
 ### Getting Started
 
