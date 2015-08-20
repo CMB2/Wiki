@@ -13,6 +13,7 @@
 - [Add Your Own Examples](#add-your-own-examples)
   - [text_number - adds a text number input](#text_number---adds-a-text-number-input)
   - [multicheck_posttype - adds a multicheck for post type](#multicheck_posttype---adds-a-multicheck-posttype)
+- [Other Resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -363,3 +364,7 @@ function cmb_render_multicheck_posttype( $field, $escaped_value, $object_id, $ob
 ```
 _____
 **Autocomplete type removed as it did not work during testing.**
+
+## Other Resources
+
+* [How To Make a Custom Field For CMB2](http://webdevstudios.com/2015/08/20/make-custom-field-cmb2/)
