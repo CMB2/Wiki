@@ -15,13 +15,11 @@ When the Publish/update button is pressed, the code will look for any "required"
 
 The code has not been tested with all field types available in CMB2.
 
-Field types known to work with the plugin so far are:
+Field types known to work with the code so far are:
 
 * text
 * file
 * file_list
-
-The plugin may or may not work with other field types. Please let the OP know which other field types you use it with and the results. 
 
 Note that the code will enable JS validation on all metaboxes on your site.
 
