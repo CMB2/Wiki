@@ -7,7 +7,7 @@ This plugin adds JS validation to any field that has the 'data-validation' attri
 
 ### Functionality
 
-When the Publish/update button is pressed, the plugin will look for any "required" fields that have not been filled in. If there are one or more fields, the plugin will:
+When the Publish/update button is pressed, the plugin will look for any "required" fields that have not been filled in. If there is one or more such fields, the plugin will:
 * Cancel the Publish/update process
 * Pop-up an alert message saying "The following fields are required and highlighted below" with a list of the fields after it
 * Highlight all required fields that need to be filled in
