@@ -1,5 +1,5 @@
 ### Description
-This plugin code adds JS validation to any field that has the 'data-validation' attribute set to 'required':
+This sample plugin code adds JS validation to any field that has the 'data-validation' attribute set to 'required':
 
 		'attributes' => array(
 			'data-validation' => 'required',
@@ -13,7 +13,7 @@ When the Publish/update button is pressed, the code will look for any "required"
 * Highlight all required fields that need to be filled in
 * Center the first required field in the center of the browser so that the user sees it and can fill the field in
 
-The code has not been tested with all field types available in CMB2.
+This sample code has not been tested with all field types available in CMB2.
 
 Field types known to work with the code so far are:
 
@@ -25,7 +25,6 @@ Note that the code will enable JS validation on all metaboxes on your site.
 
 ### Credit
 Code provided by Justin Sternberg
-
 
 ### Plugin code
 
