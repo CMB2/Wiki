@@ -29,7 +29,7 @@ Code provided by Justin Sternberg
 
 ### Plugin code
 
-'''
+```
 <?php
 
 /*
@@ -104,7 +104,7 @@ function cmb2_after_form_do_js_validation( $post_id, $cmb ) {
 	<?php
 }
 add_action( 'cmb2_after_form', 'cmb2_after_form_do_js_validation', 10, 2 );
-'''
+```
 
 
 
