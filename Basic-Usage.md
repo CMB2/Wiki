@@ -97,6 +97,10 @@ function cmb2_sample_metaboxes() {
 
 Note: For more metabox examples, see [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
 
+### Creating the metabox using a plugin
+
+You can also create the metabox by creating a standard Wordpress plugin and simply pasting the above code below the header of the plugin.
+
 ### Display the Metadata
 
 Finally, you need to be able to extract the metadata and put it to work. In your theme or plugin file, use the [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) function to display your metadata. Remember, you *must* pass the post ID!
