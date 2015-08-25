@@ -23,7 +23,7 @@ Field types known to work with the plugin so far are:
 
 The plugin may or may not work with other field types. Please let the OP know which other field types you use it with and the results. 
 
-Note the code will enable JS validation on all metaboxes you have created.
+Note that the code will enable JS validation on all metaboxes on your site.
 
 ### Credit
 Code provided by Justin Sternberg
