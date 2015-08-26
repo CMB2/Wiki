@@ -300,3 +300,37 @@ function prefix_set_field_data_attr( $args, $field ) {
 ![Screenshot](images/post-id-data-attribute.png)
 
 [#256 for reference](https://github.com/WebDevStudios/CMB2/issues/256#issuecomment-84023325)
+
+## Modify Field Label Output
+
+In a recent [Github issue](https://github.com/WebDevStudios/CMB2/issues/435) a user asked if they could add tooltips next to the Field label. This snippet doesn't cover the CSS/JS side of things, but documents how you can easily modify the markup to accommodate tooltips, while leveraging some CMB2 methods to store your tooltip data to the field's options parameter.
+
+```php
+$cmb->add_field( array(
+	'name' => __( 'Test Text Area', 'cmb2' ),
+	'id'   => $prefix . 'textarea',
+	'type' => 'textarea',
+	'label_cb' => 'prefix_add_tooltip_to_label',
+	'options' => array(
+		'tooltip-class' => 'fa-info-circle',
+		'tooltip'       => 'This is info about this setting or field',
+	),
+) );
+```
+
+Then the callback function would look something like this:
+
+```php
+function prefix_add_tooltip_to_label( $field_args, $field ) {
+	// Get default label
+	if ( $label = $field->label() && $field->option( 'tooltip' ) ) {
+		// If label and tooltip exists, add it
+		$label .= sprintf( '<span class="tip"><i class="fa %s"></i>%s</span>', $field->option( 'tooltip-class' ), $field->option( 'tooltip' ) );
+	}
+
+	return $label;
+}
+```
+
+
+
