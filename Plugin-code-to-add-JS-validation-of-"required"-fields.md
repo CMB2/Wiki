@@ -1,5 +1,5 @@
 ### Description
-This sample plugin code adds JS validation to any field that has the 'data-validation' attribute set to 'required':
+[This sample plugin code](https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/javascript/cmb2-js-validation-required.php) adds JS validation to any field that has the 'data-validation' attribute set to 'required':
 
 		'attributes' => array(
 			'data-validation' => 'required',
