@@ -21,7 +21,7 @@ Field types known to work with the code so far are:
 * file
 * file_list
 
-Note that the code will enable JS validation on all metaboxes on your site.
+Note that the code will enable JS validation on all metaboxes on your site. It is not possible with this code to select particular metaboxes or fields for validation.
 
 ### Credit
 Code provided by Justin Sternberg
