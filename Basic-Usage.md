@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Quick Start](#quick-start)
+- [Getting Started](#getting-started)
+- [Create a metabox](#create-a-metabox)
+- [Creating the metabox using a plugin](#creating-the-metabox-using-a-plugin)
+- [Display the Metadata](#display-the-metadata)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 This code is designed to be run inside themes and plugins. Proper structure would look like:
 
 ```
