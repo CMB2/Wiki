@@ -12,7 +12,7 @@
     - [Use the field in your template](#use-the-field-in-your-template)
 - [Add Your Own Examples](#add-your-own-examples)
   - [text_number - adds a text number input](#text_number---adds-a-text-number-input)
-  - [multicheck_posttype - adds a multicheck for post type](#multicheck_posttype---adds-a-multicheck-posttype)
+  - [multicheck_posttype - adds a multicheck for post type](#multicheck_posttype---adds-a-multicheck-for-post-type)
 - [Other Resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
