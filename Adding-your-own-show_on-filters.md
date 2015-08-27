@@ -1,3 +1,27 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [How does it work?](#how-does-it-work)
+- [Examples](#examples)
+  - [Example: Exclude on IDs](#example-exclude-on-ids)
+  - [Example: Exclude on New Post Screens](#example-exclude-on-new-post-screens)
+  - [Example: Exclude on non top level posts](#example-exclude-on-non-top-level-posts)
+  - [Example: taxonomy show_on filter](#example-taxonomy-show_on-filter)
+  - [Example: Child page show_on filter](#example-child-page-show_on-filter)
+  - [Example: Page Slug show_on filter](#example-page-slug-show_on-filter)
+  - [Example: Front Page show_on filter](#example-front-page-show_on-filter)
+  - [Example: By Capability show_on filter](#example-by-capability-show_on-filter)
+  - [Example: Page Template show_on filter](#example-page-template-show_on-filter)
+  - [Example: Show metabox for certain user roles](#example-show-metabox-for-certain-user-roles)
+  - [Example: Show metabox by post meta](#example-show-metabox-by-post-meta)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## How does it work?
+
+> **Note:** When registering a metabox, you can now specify the `'show_on_cb'` param to register a "show on" callback which you can use to conditionally display your metabox (much like [the `'show_on_cb'` for individual fields](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#show_on_cb)). This approach is recommended over the `'show_on'` filter, because it only applies to the metabox that you have added it. This saves you from having to do the logic to rule out other metaboxes in the filter.
+
 A 'show_on' filter is any arbitrary filter that limits where the metabox is shown. As described in [Display Options](https://github.com/WebDevStudios/CMB2/wiki/Display-Options), there's currently two built-in. You can limit a metabox to certain page IDs, or to certain page templates.
 
 If you'd like to create your own show_on filter, all you have to do is hook into `cmb2_show_on`.
@@ -10,20 +34,10 @@ The filter passes three parameters:
 
 Make sure you check early on to see if this filter should be running (check `$meta_box['show_on']['key']` ). Since this runs on every metabox, you'll want to return `$display` (the default) instead of true so you don't override the other show_on filters. At the end, either return true to display it or false to not display it.
 
-#### Examples:
-1. [Exclude on IDs](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-exclude-on-ids)
-1. [Exclude on New Post Screens](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-exclude-on-new-post-screens)
-1. [Exclude on non top level posts](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-exclude-on-non-top-level-posts)
-1. [taxonomy show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-taxonomy-show_on-filter)
-1. [Child page show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-child-page-show_on-filter)
-1. [Page Slug show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-page-slug-show_on-filter)
-1. [Front Page show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-front-page-show_on-filter)
-1. [By Capability show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-by-capability-show_on-filter)
-1. [Page Template show_on filter](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-page-template-show_on-filter)
-1. [Show metabox for certain user-roles](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-show-metabox-for-certain-user-roles)
-1. [Show metabox by post_meta](/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#wiki-example-show-metabox-by-post-meta)
 
-_Have you made some useful show_on filters? List them as examples here so others can use them._
+## Examples
+
+_Have you made some useful `show_on` filters? List them as examples here so others can use them._
 
 ### Example: Exclude on IDs
 
