@@ -14,8 +14,7 @@ Not all built-in fields have been 100% documented, so please see the example fil
 1. [`text_money`](#text_money)
 1. [`textarea`](#textarea)
 1. [`textarea_small`](#textarea_small)
-1. [`textarea_code`](#textarea_code)
-1. [`text_date`](#text_date) Date Picker
+1. [`textarea_code`](#textarea_code) 
 1. [`text_time`](#text_time) Time picker
 1. [`select_timezone`](#select_timezone) Time zone dropdown
 1. [`text_date_timestamp`](#text_date_timestamp) Date Picker (UNIX timestamp)
@@ -211,27 +210,6 @@ $cmb->add_field( array(
 ##### CSS Field Class:
 `cmb-type-textarea-code`
 
-### `text_date`
-____
-Date field. Stored in m/d/Y format (ex: 09/01/2011). Example:
-
-```php
-$cmb->add_field( array(
-	'name' => 'Test Date Picker',
-	'desc' => 'field description (optional)',
-	'id' => 'wiki_test_textdate',
-	'type' => 'text_date'
-	// 'date_format' => __( 'd-m-Y', 'cmb2' ), // use European date format
-) );
-```
-
-##### CSS Field Class:
-`cmb-type-text-date`
-
-##### Custom Field Attributes:
-
-* `date_format `, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
-
 
 ### `text_time`
 ____
@@ -286,6 +264,9 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-text-date-timestamp`
+
+##### Alias:
+`text_date`
 
 ##### Custom Field Attributes:
 
