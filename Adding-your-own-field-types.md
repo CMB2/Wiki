@@ -123,14 +123,6 @@ Like the terms field above, we would pass an array of posts to the `select` fiel
 
 ```php
 /**
- * Gets 5 posts for your_post_type and displays them as options
- * @return array An array of options that matches the CMB2 options array
- */
-function cmb2_get_your_post_type_post_options() {
-	return cmb2_get_post_options( array( 'post_type' => 'your_post_type', 'numberposts' => 5 ) )
-}
-
-/**
  * Gets a number of posts and displays them as options
  * @param  array $query_args Optional. Overrides defaults.
  * @return array             An array of options that matches the CMB2 options array
@@ -152,6 +144,14 @@ function cmb2_get_post_options( $query_args ) {
 	}
 
 	return $post_options;
+}
+
+/**
+ * Gets 5 posts for your_post_type and displays them as options
+ * @return array An array of options that matches the CMB2 options array
+ */
+function cmb2_get_your_post_type_post_options() {
+	return cmb2_get_post_options( array( 'post_type' => 'your_post_type', 'numberposts' => 5 ) )
 }
 ```
 Then, when creating our field, we would add the `multicheck` type and use `cmb2_get_your_post_type_post_options` as a callback function to the `'options_cb'` field parameter. Using the callback this way ensures that the query ONLY happens when the field is called (rather than on every page-load).
