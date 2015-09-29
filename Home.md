@@ -45,3 +45,5 @@ External Resources:
 2. [Adding interactivity in metaboxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/)
 
 3. [CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library)
+
+4. Basic CMB2 qTranslate-X integration plugin https://wordpress.org/plugins/integration-cmb2-qtranslate/
