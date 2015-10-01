@@ -47,7 +47,7 @@ if ( file_exists(  __DIR__ . '/cmb2/init.php' ) ) {
 Now that you've included the CMB2 engine, you can start adding metaboxes with the following code inside `functions.php`:
 
 ```php
-add_action( 'cmb2_init', 'cmb2_sample_metaboxes' );
+add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
 /**
  * Define the metabox and field configurations.
  */

@@ -150,7 +150,7 @@ $cmb = new_cmb2_box( array(
 
 ## Using CMB2 helper functions and cmb2_init
 
-Since CMB2 init is included/setup on init, the CMB2 helper functions will not be available until then. Rather than trying to determine which hook priority CMB2 is loaded on init, you can use the 'cmb2_init' hook. This is the earliest hook where you can safely use the CMB2 helper functions.
+Since CMB2 init is included/setup on init, the CMB2 helper functions will not be available until then. Rather than trying to determine which hook priority CMB2 is loaded on init, you can use the 'cmb2_init' hook ('cmb2_admin_init' if you're working in the admin). This is the earliest hook where you can safely use the CMB2 helper functions.
 
 ```php
 function cmb2_init_check_field_value() {
@@ -204,7 +204,7 @@ function cmb2_checkbox_default_metabox_test() {
 		'default' => cmb2_set_checkbox_default_for_new_post( true ),
 	) );
 }
-add_action( 'cmb2_init', 'cmb2_checkbox_default_metabox_test' );
+add_action( 'cmb2_admin_init', 'cmb2_checkbox_default_metabox_test' );
 ```
 
 ## A dropdown for taxonomy terms which does NOT set the term on the post

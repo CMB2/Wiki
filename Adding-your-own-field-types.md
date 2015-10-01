@@ -110,7 +110,7 @@ function cmb2_text_email_metabox() {
 	) );
 
 }
-add_action( 'cmb2_init', 'cmb2_text_email_metabox' );
+add_action( 'cmb2_admin_init', 'cmb2_text_email_metabox' );
 ```
 
 ![Screenshot](images/screenshot_text_email.jpg)
