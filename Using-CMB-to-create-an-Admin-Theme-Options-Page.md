@@ -4,5 +4,5 @@ This snippet has been moved to the [CMB2 Snippet Library](https://github.com/Web
 Use the `myprefix_get_option` function included in the above snippets (obviously changing the prefix):
 
 ```php
-myprefix_get_option( 'field_id' );
+$field_value = myprefix_get_option( 'field_id' );
 ```
