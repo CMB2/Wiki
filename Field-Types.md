@@ -749,6 +749,7 @@ $group_field_id = $cmb->add_field( array(
 		'add_button'    => __( 'Add Another Entry', 'cmb' ),
 		'remove_button' => __( 'Remove Entry', 'cmb' ),
 		'sortable'      => true, // beta
+		// 'closed'     => true, // true to have the groups closed by default
 	),
 ) );
 
