@@ -5,7 +5,7 @@ With CMB2, we have a few helper functions that allow us to display metabox forms
 ```
 OR to return the form for use in your code:
 ```php
-<?php $form = cmb2_print_metabox_form( $meta_box, $object_id, $args ); ?>
+<?php $form = cmb2_get_metabox_form( $meta_box, $object_id, $args ); ?>
 ```
 
 
