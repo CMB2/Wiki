@@ -24,7 +24,7 @@ Documentation:
 1. [Tips & Tricks](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks)  
 	10x your CMB2 skills.
 
-1. [URL changes](https://github.com/WebDevStudios/CMB2/wiki/Wordpress-URL-changes)
+1. [URL changes](https://github.com/WebDevStudios/CMB2/wiki/Wordpress-URL-changes)  
         CMB2 data migration from dev to production
 
 Advanced tutorials:
