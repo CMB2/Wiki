@@ -544,3 +544,68 @@ function cmb_show_on_meta_value( $display, $meta_box ) {
 }
 add_filter( 'cmb2_show_on', 'cmb_show_on_meta_value', 10, 2 );
 ```
+
+### Example: Show metabox if post is root menu element
+Will show the metabox if menu item connected with that post is root menu element in any menu.
+
+`$meta_boxes['show_on'] = array( 'key' => 'is_root_menu_page' );`
+
+```php
+/**
+ * Show the metabox if menu item connected with that post is root menu element in any menu
+ * @author Jan Grzegorowski
+ *
+ * @param bool $display
+ * @param array $meta_box
+ * @return bool display metabox
+ */
+
+ function is_root_menu_page( $display, $meta_box ) {
+   if ( ! isset( $meta_box['show_on']['key'] ) ) {
+     return $display;
+   }
+
+   if ( 'is_root_menu_page' !== $meta_box['show_on']['key'] ) {
+     return $display;
+   }
+
+   $post_id = 0;
+
+   // If we're showing it based on ID, get the current ID
+   if ( isset( $_GET['post'] ) ) {
+     $post_id = $_GET['post'];
+   } elseif ( isset( $_POST['post_ID'] ) ) {
+     $post_id = $_POST['post_ID'];
+   }
+
+   if ( ! $post_id ) {
+     return $display;
+   }
+
+   $root_posts = $this->get_menus_root_pages();
+   return in_array( $post_id, $root_posts );
+  }
+
+  // return array of root menu items post IDs
+  function get_menus_root_pages() {
+    $locations = get_nav_menu_locations(); // get available menus list 
+    $data = array();
+    foreach ( $locations as $menu_name => $location ) {
+      $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+
+      $data = array_merge($data, array_map(
+        'is_root_menu_item',
+        wp_get_nav_menu_items( $menu->term_id)
+      ) );
+    }
+    return $data;
+  }
+
+  function is_root_menu_item($menu_item) {
+    if (empty($menu_item->menu_item_parent)) {
+      return $menu_item->object_id;
+    }
+    return false;
+  }
+add_filter( 'cmb2_show_on', 'is_root_menu_page', 10, 2 );
+```
