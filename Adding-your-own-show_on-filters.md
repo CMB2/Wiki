@@ -16,6 +16,7 @@
   - [Example: Page Template show_on filter](#example-page-template-show_on-filter)
   - [Example: Show metabox for certain user roles](#example-show-metabox-for-certain-user-roles)
   - [Example: Show metabox by post meta](#example-show-metabox-by-post-meta)
+  - [Example: Show metabox if post is root menu element](#example-show-metabox-if-post-is-root-menu-element)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -622,53 +623,53 @@ Will show the metabox if menu item connected with that post is root menu element
  * @param array $meta_box
  * @return bool display metabox
  */
+function is_root_menu_page( $display, $meta_box ) {
+	if ( ! isset( $meta_box['show_on']['key'] ) ) {
+		return $display;
+	}
 
- function is_root_menu_page( $display, $meta_box ) {
-   if ( ! isset( $meta_box['show_on']['key'] ) ) {
-     return $display;
-   }
+	if ( 'is_root_menu_page' !== $meta_box['show_on']['key'] ) {
+		return $display;
+	}
 
-   if ( 'is_root_menu_page' !== $meta_box['show_on']['key'] ) {
-     return $display;
-   }
+	$post_id = 0;
 
-   $post_id = 0;
+	// If we're showing it based on ID, get the current ID
+	if ( isset( $_GET['post'] ) ) {
+		$post_id = $_GET['post'];
+	} elseif ( isset( $_POST['post_ID'] ) ) {
+		$post_id = $_POST['post_ID'];
+	}
 
-   // If we're showing it based on ID, get the current ID
-   if ( isset( $_GET['post'] ) ) {
-     $post_id = $_GET['post'];
-   } elseif ( isset( $_POST['post_ID'] ) ) {
-     $post_id = $_POST['post_ID'];
-   }
+	if ( ! $post_id ) {
+		return $display;
+	}
 
-   if ( ! $post_id ) {
-     return $display;
-   }
-
-   $root_posts = $this->get_menus_root_pages();
-   return in_array( $post_id, $root_posts );
-  }
-
-  // return array of root menu items post IDs
-  function get_menus_root_pages() {
-    $locations = get_nav_menu_locations(); // get available menus list 
-    $data = array();
-    foreach ( $locations as $menu_name => $location ) {
-      $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-
-      $data = array_merge($data, array_map(
-        'is_root_menu_item',
-        wp_get_nav_menu_items( $menu->term_id)
-      ) );
-    }
-    return $data;
-  }
-
-  function is_root_menu_item($menu_item) {
-    if (empty($menu_item->menu_item_parent)) {
-      return $menu_item->object_id;
-    }
-    return false;
-  }
+	$root_posts = get_menus_root_pages();
+	return in_array( $post_id, $root_posts, true );
+}
 add_filter( 'cmb2_show_on', 'is_root_menu_page', 10, 2 );
+
+// return array of root menu items post IDs
+function get_menus_root_pages() {
+	$locations = get_nav_menu_locations(); // get available menus list 
+	$data = array();
+	foreach ( $locations as $menu_name => $location ) {
+		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+
+		$data = array_merge( $data, array_map(
+			'is_root_menu_item',
+			wp_get_nav_menu_items( $menu->term_id )
+		) );
+	}
+
+	return $data;
+}
+
+function is_root_menu_item( $menu_item ) {
+	if ( empty( $menu_item->menu_item_parent ) ) {
+		return $menu_item->object_id;
+	}
+	return false;
+}
 ```
