@@ -152,6 +152,8 @@ add_filter( 'cmb2_show_on', 'be_metabox_exclude_for_id', 10, 2 );
 
 ### Example: Exclude on New Post Screens
 
+> **Note:** As [mentioned above](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/conditional-display/hide-on-new-post-page.php).
+
 Excluding by ID works once the post type and ID has been set, but the metaboxes still display on new post type screens. This filter removes the metaboxes from the new post type screens so that they only appear on the one instance you specify in the show_on filter (like the example above):
 
 ```php
