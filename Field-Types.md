@@ -841,7 +841,7 @@ Most (if not all) fields support these parameters:
 		),
 	) );
 	```
-* <a name="show_on_cb"></a>`show_on_cb`: A callback to conditionally display a field. Callback funciton should return a boolean (true/false) value. Function passes in the current field object. Example:
+* <a name="show_on_cb"></a>`show_on_cb`: A callback to conditionally display a field. Callback function should return a boolean (true/false) value. Function passes in the current field object. Example:
 
 	```php
 	$cmb->add_field( array(
