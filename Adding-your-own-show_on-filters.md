@@ -242,6 +242,8 @@ add_filter( 'cmb2_show_on', 'ba_metabox_add_for_top_level_posts_only', 10, 2 );
 
 ### Example: taxonomy show_on filter
 
+> **Note:** As [mentioned above](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/conditional-display/show-for-taxonomy-terms.php).
+
 This allows you to specify one or more taxonomies, and for each taxonomy one or more terms. If a post is tagged one of those terms, this metabox shows up on its Edit screen. [Here's an example of it in use](https://gist.github.com/070476e584b04a20c770).
 
 ```php
