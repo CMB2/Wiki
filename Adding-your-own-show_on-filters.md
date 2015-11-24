@@ -196,6 +196,8 @@ where `$post_ID` is the ID of the post you are targeting with the metabox.
 
 ### Example: Exclude on non top level posts
 
+> **Note:** As [mentioned above](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/conditional-display/show-only-for-top-level-posts.php).
+
 This will only show the metabox if the post is a top level post, by checking if get_post_ancestors() returns a value for the current post ID
 
 ```php
