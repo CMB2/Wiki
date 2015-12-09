@@ -744,6 +744,7 @@ $group_field_id = $cmb->add_field( array(
 	'id'          => 'wiki_test_repeat_group',
 	'type'        => 'group',
 	'description' => __( 'Generates reusable form entries', 'cmb' ),
+        'repeatable'  => true, // use false if you want non-repeatable group
 	'options'     => array(
 		'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
 		'add_button'    => __( 'Add Another Entry', 'cmb' ),
