@@ -132,7 +132,7 @@ Standard text field which enforces a url. Example:
 
 ```php
 $cmb->add_field( array(
-	'name' => __( 'Website URL', 'cmb' ),
+	'name' => __( 'Website URL', 'cmb2' ),
 	'id'   => 'wiki_test_facebookurl',
 	'type' => 'text_url',
 	// 'protocols' => array( 'http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet' ), // Array of allowed protocols
@@ -386,9 +386,9 @@ $cmb->add_field( array(
 	'type'             => 'radio',
 	'show_option_none' => true,
 	'options'          => array(
-		'standard' => __( 'Option One', 'cmb' ),
-		'custom'   => __( 'Option Two', 'cmb' ),
-		'none'     => __( 'Option Three', 'cmb' ),
+		'standard' => __( 'Option One', 'cmb2' ),
+		'custom'   => __( 'Option Two', 'cmb2' ),
+		'none'     => __( 'Option Three', 'cmb2' ),
 	),
 ) );
 ```
@@ -407,9 +407,9 @@ $cmb->add_field( array(
 	'id'      => 'wiki_test_radio_inline',
 	'type'    => 'radio_inline',
 	'options' => array(
-		'standard' => __( 'Option One', 'cmb' ),
-		'custom'   => __( 'Option Two', 'cmb' ),
-		'none'     => __( 'Option Three', 'cmb' ),
+		'standard' => __( 'Option One', 'cmb2' ),
+		'custom'   => __( 'Option Two', 'cmb2' ),
+		'none'     => __( 'Option Three', 'cmb2' ),
 	),
 ) );
 ```
@@ -430,9 +430,9 @@ $cmb->add_field( array(
 	'show_option_none' => true,
 	'default'          => 'custom',
 	'options'          => array(
-		'standard' => __( 'Option One', 'cmb' ),
-		'custom'   => __( 'Option Two', 'cmb' ),
-		'none'     => __( 'Option Three', 'cmb' ),
+		'standard' => __( 'Option One', 'cmb2' ),
+		'custom'   => __( 'Option Two', 'cmb2' ),
+		'none'     => __( 'Option Three', 'cmb2' ),
 	),
 ) );
 ```
@@ -456,15 +456,15 @@ function show_cat_or_dog_options( $field ) {
 
 	if ( has_tag( 'cats', $field->object_id ) ) {
 		return array(
-			'tabby'   => __( 'Tabby', 'cmb' ),
-			'siamese' => __( 'Siamese', 'cmb' ),
-			'calico'  => __( 'Calico', 'cmb' ),
+			'tabby'   => __( 'Tabby', 'cmb2' ),
+			'siamese' => __( 'Siamese', 'cmb2' ),
+			'calico'  => __( 'Calico', 'cmb2' ),
 		);
 	} else {
 		return array(
-			'german-shepherd' => __( 'German Shepherd', 'cmb' ),
-			'bulldog'         => __( 'Bulldog', 'cmb' ),
-			'poodle'          => __( 'Poodle', 'cmb' ),
+			'german-shepherd' => __( 'German Shepherd', 'cmb2' ),
+			'bulldog'         => __( 'Bulldog', 'cmb2' ),
+			'poodle'          => __( 'Poodle', 'cmb2' ),
 		);
 	}
 }
@@ -743,12 +743,12 @@ Hybrid field that supports adding other fields as a repeatable group. Example:
 $group_field_id = $cmb->add_field( array(
 	'id'          => 'wiki_test_repeat_group',
 	'type'        => 'group',
-	'description' => __( 'Generates reusable form entries', 'cmb' ),
+	'description' => __( 'Generates reusable form entries', 'cmb2' ),
         'repeatable'  => true, // use false if you want non-repeatable group
 	'options'     => array(
-		'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
-		'add_button'    => __( 'Add Another Entry', 'cmb' ),
-		'remove_button' => __( 'Remove Entry', 'cmb' ),
+		'group_title'   => __( 'Entry {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+		'add_button'    => __( 'Add Another Entry', 'cmb2' ),
+		'remove_button' => __( 'Remove Entry', 'cmb2' ),
 		'sortable'      => true, // beta
 		// 'closed'     => true, // true to have the groups closed by default
 	),
@@ -846,7 +846,7 @@ Most (if not all) fields support these parameters:
 
 	```php
 	$cmb->add_field( array(
-		'name'       => __( 'Test Text', 'cmb' ),
+		'name'       => __( 'Test Text', 'cmb2' ),
 		'id'         => 'wiki_test_text',
 		'type'       => 'text',
 		'show_on_cb' => 'cmb_only_show_for_user_1', // function should return a bool value
