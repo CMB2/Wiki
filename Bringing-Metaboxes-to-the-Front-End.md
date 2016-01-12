@@ -20,6 +20,8 @@ cmb2_metabox_form( $metabox_id, $object_id );
 ?>
 ```
 
+Note: If you use `cmb2_admin_init`, like in the example_functions.php file, to register your metaboxes, they will not be available on the front end. Use `cmb2_init` instead.
+
 ## Metabox Shortcode
 
 Now, for real world usage, let's add this in the form of a shortcode:
