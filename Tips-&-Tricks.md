@@ -336,7 +336,7 @@ function prefix_add_tooltip_to_label( $field_args, $field ) {
 
 ## Change the year range for the date field types
 
-In this [Github issue](https://github.com/WebDevStudios/CMB2/issues/567) a user asked how to make the year range in the date picker go back further than 2006 (it happens to span 10 years before today and 10 years after). To change that range for a specific field, you would need to add 'data-datepicker' data attribute to the field being registered. (This feature was added in version 2.2.0. Previously you would have had to use the 'cmb2_localized_data' filter to override the defaults for ALL datepicker fields.) This will allow you to override the jQuery datepicker default value for this field with your own range. In this case, I have set the range to start in 1990 and to end 10 years after the current year (using php's date() function).
+In this [Github issue](https://github.com/WebDevStudios/CMB2/issues/567) a user asked how to make the year range in the date picker go back further than 2006 (it happens to span 10 years before today and 10 years after). To change that range for a specific field, you would need to add a `'data-datepicker'` data attribute to the field being registered. (This feature was added in version 2.2.0. Previously you would have had to use the `'cmb2_localized_data'` filter to override the defaults for ALL datepicker fields.) This will allow you to override the jQuery datepicker default value for this field with your own range. In this case, I have set the range to start in 1990 and to end 10 years after the current year (using php's date() function).
 
 ```php
 $cmb_demo->add_field( array(
