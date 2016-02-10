@@ -111,7 +111,7 @@ Note: For more metabox examples, see [example-functions.php](https://github.com/
 
 ### Creating the metabox using a plugin
 
-You can also create the metabox by creating a standard Wordpress plugin and simply pasting the above code below the header of the plugin.
+You can also create the metabox by creating a standard WordPress plugin and simply pasting the above code below the header of the plugin.
 
 ### Display the Metadata
 
