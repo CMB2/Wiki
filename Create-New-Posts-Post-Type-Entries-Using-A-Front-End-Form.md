@@ -1,0 +1,1 @@
+Markdown creates **blockquotes **email-style by prefixing each line with the >. This looks best if you decide to hard-wrap text and prefix each line with a > character, but Markdown supports just putting > before your paragraph.
