@@ -866,4 +866,4 @@ Most (if not all) fields support these parameters:
 	```
 * <a name="escape_cb"></a>`escape_cb`: Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
 * <a name="sanitization_cb"></a>`sanitization_cb`: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback. Set to `false` if you do not want any sanitization (not recommended).
-* <a name="render_row_cb"></a>`render_row_cb`: Bypass the CMB row rendering. You will completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object.
+* <a name="render_row_cb"></a>`render_row_cb`: Bypass the CMB row rendering. You will completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object. [More info](https://github.com/WebDevStudios/CMB2/issues/596#issuecomment-187941343).
