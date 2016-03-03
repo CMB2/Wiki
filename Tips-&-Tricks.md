@@ -14,6 +14,7 @@
 - [Setting dynamic attributes that may use post data, like the post ID](#setting-dynamic-attributes-that-may-use-post-data-like-the-post-id)
 - [Modify Field Label Output](#modify-field-label-output)
 - [Change the year range for the date field types](#change-the-year-range-for-the-date-field-types)
+- [Modify Field Row Output and Markup](#modify-field-row-output-and-markup)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ___
@@ -351,3 +352,63 @@ $cmb_demo->add_field( array(
 	),
 ) );
 ```
+
+## Modify Field Row Output and Markup
+When adding a field, you can pass a function to the `render_row_cb` option to modify the way a field row is rendered. This is mainly to edit the markup that surrounds each individual field, not to edit the field itself.
+
+```php
+$cmb->add_field( array(
+    'name' => 'Test Row Field Callback',
+    'type' => 'text',
+    'id'   => 'wiki_test_row_cb',
+    // Add the name of your function to override the default row render method
+    'render_row_cb' => 'override_render_field_callback'
+) );
+```
+
+Passing the name of a function to the `render_row_cb` option provides a callback with the field object and field arguments so you can add additional classes or markup surrounding a wrapped field. 
+
+```php
+/**
+ * Overrides the default render field method
+ * Allows you to add custom HTML before and after a rendered field
+ *
+ * @param  array             $field_args Array of field parameters
+ * @param  CMB2_Field object $field      Field object
+ */
+function override_render_field_callback( $field_args, $field ) {
+    // Ensures that this can only be seen on the admin. Remove if not necessary
+    if ( ! is_admin() && ! $field->args( 'on_front' ) ) {
+        return;
+    }
+    // If field is requesting to be conditionally shown
+    if ( ! $field->should_show() ) {
+        return;
+    }
+
+    $field->peform_param_callback( 'before_row' );
+    printf( '<div class="cmb-row custom-class %s">', $field->row_classes() );
+    if ( ! $field->args( 'show_names' ) ) {
+    // If the field is going to show a label output this
+        echo '<div class="cmb-td custom-label-class">';
+        $field->peform_param_callback( 'label_cb' );
+    } else {
+    // Otherwise output something different
+        if ( $field->get_param_callback_result( 'label_cb', false ) ) {
+            echo '<div class="cmb-th custom-label-field-class">', $field->peform_param_callback( 'label_cb' ), '</div>';
+        }
+        echo '<div class="cmb-td custom-label-field">';
+    }
+    $field->peform_param_callback( 'before' );
+    // The next two lines are key. This is what actually renders the input field
+    $field_type = new CMB2_Types( $field );
+    $field_type->render();
+    $field->peform_param_callback( 'after' );
+    echo '</div></div>';
+    $field->peform_param_callback( 'after_row' );
+    // For chaining
+    return $field;
+}
+```
+
+This example replicates the default render method with custom classes assigned to wrapping divs as an example. When writing your callback function make sure to create an instance of the CMB2_Types class, passing the field object, and calling the function on render() on this instance. This will actually render the fields HTML.
