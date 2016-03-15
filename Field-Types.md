@@ -817,18 +817,18 @@ You can [define your own field types](/WebDevStudios/CMB2/wiki/Adding-your-own-f
 ## Common Field Parameters
 Most (if not all) fields support these parameters:
 
-* `name`: The field label
-* `desc`: Field description. Usually under or adjacent to the field input.
-* `id`: The data key. If using for posts, will be the post-meta key. If using for an options page, will be the array key.
-* `type`: What makes the whole thing work.
-* `repeatable`: [Supported by most](https://github.com/WebDevStudios/CMB2#field-types), and will make the individual field a repeatable one.
-* `default`: Specify a default value for the field.
-* `show_names`: Hide label for the field.
-* <a name="options"></a>`options`: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Can also accept a callback. The callback will receive the CMB2_Field `$field` object as an argument.
-* <a name="before-after-callbacks"></a>`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`: These allow you to add arbitrary text/markup at different points in the field markup. These also accept a callback. The callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
-* <a name="row_classes"></a>`row_classes`: This parameter allows you to add additional classes to the cmb-row wrap. This parameter can take a string, or array, or can take a callback that returns a string or array. Like above, the callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
-* `on_front`: If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`.
-* <a name="attributes"></a>`attributes`: Will modify default attributes (class, input type, rows, etc), or add your own (placeholder, data attributes). Example:
+* <a name="param-name" href="#param-name">`name`</a>: The field label
+* <a name="param-desc" href="#param-desc">`desc`</a>: Field description. Usually under or adjacent to the field input.
+* <a name="param-id" href="#param-id">`id`</a>: The data key. If using for posts, will be the post-meta key. If using for an options page, will be the array key.
+* <a name="param-type" href="#param-type">`type`</a>: What makes the whole thing work.
+* <a name="param-repeatable" href="#param-repeatable">`repeatable`</a>: [Supported by most](https://github.com/WebDevStudios/CMB2#field-types), and will make the individual field a repeatable one.
+* <a name="param-default" href="#param-default">`default`</a>: Specify a default value for the field.
+* <a name="param-show_names" href="#param-show_names">`show_names`</a>: Hide label for the field.
+* <a name="options" href="#options">`options`</a>: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Can also accept a callback. The callback will receive the CMB2_Field `$field` object as an argument.
+* <a name="before-after-callbacks" href="#before-after-callbacks">`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`</a>: These allow you to add arbitrary text/markup at different points in the field markup. These also accept a callback. The callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
+* <a name="row_classes" href="#row_classes">`row_classes`</a>: This parameter allows you to add additional classes to the cmb-row wrap. This parameter can take a string, or array, or can take a callback that returns a string or array. Like above, the callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
+* <a name="on_front" href="#on_front">`on_front`</a>: If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`.
+* <a name="attributes" href="#attributes">`attributes`</a>: Will modify default attributes (class, input type, rows, etc), or add your own (placeholder, data attributes). Example:
 
 	```php
 	$cmb->add_field( array(
@@ -842,7 +842,7 @@ Most (if not all) fields support these parameters:
 		),
 	) );
 	```
-* <a name="show_on_cb"></a>`show_on_cb`: A callback to conditionally display a field. Callback function should return a boolean (true/false) value. Function passes in the current field object. Example:
+* <a name="show_on_cb" href="#show_on_cb">`show_on_cb`</a>: A callback to conditionally display a field. Callback function should return a boolean (true/false) value. Function passes in the current field object. Example:
 
 	```php
 	$cmb->add_field( array(
@@ -864,7 +864,7 @@ Most (if not all) fields support these parameters:
 		return 1 === get_current_user_id();
 	}
 	```
-* <a name="options_cb"></a>`options_cb`: A callback to load field options. Callback function should return an options array. The callback function gets passed the `$field` object. Example:
+* <a name="options_cb" href="#options_cb">`options_cb`</a>: A callback to load field options. Callback function should return an options array. The callback function gets passed the `$field` object. Example:
 
 	```php
 	$cmb->add_field( array(
@@ -902,7 +902,7 @@ Most (if not all) fields support these parameters:
 		return $options;
 	}
 	```
-* <a name="default_cb"></a>`default_cb`: A callback to set field default value. Callback function can return any value. The callback function gets passed the field `$args` array, and the `$field` object. Example:
+* <a name="default_cb" href="#default_cb">`default_cb`</a>: A callback to set field default value. Callback function can return any value. The callback function gets passed the field `$args` array, and the `$field` object. Example:
 
 	```php
 	$cmb->add_field( array(
@@ -925,6 +925,6 @@ Most (if not all) fields support these parameters:
 		return 'Post ID: '. $field->object_id
 	}
 	```
-* <a name="escape_cb"></a>`escape_cb`: Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
-* <a name="sanitization_cb"></a>`sanitization_cb`: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback. Set to `false` if you do not want any sanitization (not recommended).
-* <a name="render_row_cb"></a>`render_row_cb`: Bypass the CMB row rendering. You will completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object. [More info](https://github.com/WebDevStudios/CMB2/issues/596#issuecomment-187941343).
+* <a name="escape_cb" href="#escape_cb">`escape_cb`</a>: Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
+* <a name="sanitization_cb" href="#sanitization_cb">`sanitization_cb`</a>: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback. Set to `false` if you do not want any sanitization (not recommended).
+* <a name="render_row_cb" href="#render_row_cb">`render_row_cb`</a>: Bypass the CMB row rendering. You will completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object. [More info](https://github.com/WebDevStudios/CMB2/issues/596#issuecomment-187941343).
