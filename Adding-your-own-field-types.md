@@ -158,10 +158,10 @@ Then, when creating our field, we would add the `multicheck` type and use `cmb2_
 
 ```php
 $cmb_demo->add_field( array(
-	'name'    => __( 'Select your_post_type Posts', 'cmb2' ),
-	'desc'    => __( 'field description (optional)', 'cmb2' ),
-	'id'      => $prefix . 'post_multicheckbox',
-	'type'    => 'multicheck',
+	'name'       => __( 'Select your_post_type Posts', 'cmb2' ),
+	'desc'       => __( 'field description (optional)', 'cmb2' ),
+	'id'         => $prefix . 'post_multicheckbox',
+	'type'       => 'multicheck',
 	'options_cb' => 'cmb2_get_your_post_type_post_options',
 ) );
 

@@ -864,6 +864,67 @@ Most (if not all) fields support these parameters:
 		return 1 === get_current_user_id();
 	}
 	```
+* <a name="options_cb"></a>`options_cb`: A callback to load field options. Callback function should return an options array. The callback function gets passed the `$field` object. Example:
+
+	```php
+	$cmb->add_field( array(
+		'name'       => __( 'Select Color', 'cmb2' ),
+		'id'         => 'wiki_test_color',
+		'type'       => 'multicheck',
+		'options_cb' => 'cmb_color_options',
+	) );
+
+	...
+
+	/**
+	 * Display different options depending on post category
+	 * @param  object $field      Current field object
+	 * @return array              Array of field options
+	 */
+	function cmb_color_options( $field ) {
+		$options = array(
+			'sapphire' => 'Sapphire Blue',
+			'sky'      => 'Sky Blue',
+			'navy'     => 'Navy Blue',
+			'ruby'     => 'Ruby Red',
+			'purple'   => 'Amethyst Purple',
+		);
+
+		// If in the 'blue' category, only show blue options.
+		if ( has_category( 'blue', $field->object_id ) ) {
+			$options = array(
+				'sapphire' => 'Sapphire Blue',
+				'sky'      => 'Sky Blue',
+				'navy'     => 'Navy Blue',
+			);
+		}
+
+		return $options;
+	}
+	```
+* <a name="default_cb"></a>`default_cb`: A callback to set field default value. Callback function can return any value. The callback function gets passed the field `$args` array, and the `$field` object. Example:
+
+	```php
+	$cmb->add_field( array(
+		'name'       => __( 'Test', 'cmb2' ),
+		'id'         => 'wiki_test_default',
+		'type'       => 'text',
+		'default_cb' => 'cmb_set_test_default',
+	) );
+
+	...
+
+	/**
+	 * Display different options depending on post category
+	 * @param  array  $field_args Current field object args
+	 * @param  object $field      Current field object
+	 * @return array              Array of field options
+	 */
+	function cmb_set_test_default( $field_args, $field ) {
+		// Default for text value:
+		return 'Post ID: '. $field->object_id
+	}
+	```
 * <a name="escape_cb"></a>`escape_cb`: Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
 * <a name="sanitization_cb"></a>`sanitization_cb`: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback. Set to `false` if you do not want any sanitization (not recommended).
 * <a name="render_row_cb"></a>`render_row_cb`: Bypass the CMB row rendering. You will completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object. [More info](https://github.com/WebDevStudios/CMB2/issues/596#issuecomment-187941343).
