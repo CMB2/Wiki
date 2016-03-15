@@ -35,7 +35,7 @@ Notes from the CMB2 source code:
 
 ## "Callable" Field Parameters
 
-CMB2 supports many ["callable"](http://php.net/manual/en/function.is-callable.php) field parameters. There are several obvious ones, with the `_cb` suffix, but many of the other parameters can take a scalar value (string, integer, etc) **as well as** a callable value (callback function). This was mainly meant for convenience, but has become slightly problematic if you want to specify a value which just so happens to also be callable. _In the future, it is likely that using the `'default'` and `'options'` parameters with a callback will be deprecated. `'default_cb'` and `'options_cb'` should be used instead._
+CMB2 supports many ["callable"](http://php.net/manual/en/function.is-callable.php) field parameters. There are several obvious ones, with the `_cb` suffix, but many of the other parameters can take a scalar value (string, integer, etc) **as well as** a callable value (callback function). This was mainly meant for convenience, but can be problematic if you want to specify a value which just so happens to also be callable. 
 
 A simple (yet unlikely) example would be using the string 'print_r' as the value for the 'default' parameter:
 

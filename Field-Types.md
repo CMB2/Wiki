@@ -902,29 +902,6 @@ Most (if not all) fields support these parameters:
 		return $options;
 	}
 	```
-* <a name="default_cb" href="#default_cb">`default_cb`</a>: A callback to set field default value. Callback function can return any value. The callback function gets passed the field `$args` array, and the `$field` object. Example:
-
-	```php
-	$cmb->add_field( array(
-		'name'       => __( 'Test', 'cmb2' ),
-		'id'         => 'wiki_test_default',
-		'type'       => 'text',
-		'default_cb' => 'cmb_set_test_default',
-	) );
-
-	...
-
-	/**
-	 * Display different options depending on post category
-	 * @param  array  $field_args Current field object args
-	 * @param  object $field      Current field object
-	 * @return array              Array of field options
-	 */
-	function cmb_set_test_default( $field_args, $field ) {
-		// Default for text value:
-		return 'Post ID: '. $field->object_id
-	}
-	```
 * <a name="escape_cb" href="#escape_cb">`escape_cb`</a>: Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
 * <a name="sanitization_cb" href="#sanitization_cb">`sanitization_cb`</a>: Bypass the CMB sanitization (sanitizes before saving) methods with your own callback. Set to `false` if you do not want any sanitization (not recommended).
 * <a name="render_row_cb" href="#render_row_cb">`render_row_cb`</a>: Bypass the CMB row rendering. You will completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object. [More info](https://github.com/WebDevStudios/CMB2/issues/596#issuecomment-187941343).
