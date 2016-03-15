@@ -260,15 +260,15 @@ $cmb->add_field( array(
 
 ## Setting a default field value via a callback
 
-CMB2 fields have a 'default' parameter, but did you know that same parameter can accept a callback? This allows you to use things like the `$field->object_id` (the `$post` ID) to dynamically set your default value.
+CMB2 fields have a 'default' parameter, but did you know that you can use the 'default_cb' parameter to specify a callback for your default? This allows you to use things like the `$field->object_id` (the `$post` ID) to dynamically set your default value.
 
 field config:
 ```php
 $cmb->add_field( array(
-	'name'    => __( 'Test', 'cmb2' ),
-	'id'      => $prefix . 'test',
-	'type'    => 'text',
-	'default' => 'prefix_set_test_default',
+	'name'       => __( 'Test', 'cmb2' ),
+	'id'         => $prefix . 'test',
+	'type'       => 'text',
+	'default_cb' => 'prefix_set_test_default',
 ) );
 ```
 
