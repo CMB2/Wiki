@@ -53,7 +53,7 @@ function cmb2_do_frontend_form_shortcode( $atts = array() ) {
 
 	// If no metabox id is set, yell about it
 	if ( empty( $atts['id'] ) ) {
-		return __( "Please add an 'id' attribute to specify the CMB2 form to display.", 'lang-domain' );
+		return __( "Please add an 'id' attribute to specify the CMB2 form to display.", 'lang_domain' );
 	}
 
 	$metabox_id = esc_attr( $atts['id'] );
