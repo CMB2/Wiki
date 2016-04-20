@@ -19,7 +19,7 @@ function update_cmb2_meta_box_url( $url ) {
 }
 add_filter( 'cmb2_meta_box_url', 'update_cmb2_meta_box_url' );
 ```
-_Related Issue: [#432](https://github.com/WebDevStudios/CMB2/issues/432)_
+_Related Issues: [#432](https://github.com/WebDevStudios/CMB2/issues/432), [#27](https://github.com/WebDevStudios/CMB2/issues/27)_
 
 ## Metabox not appearing in WordPress edit page
 
