@@ -825,7 +825,29 @@ Most (if not all) fields support these parameters:
 * <a name="param-default" href="#param-default">`default`</a>: Specify a default value for the field.
 * <a name="param-show_names" href="#param-show_names">`show_names`</a>: Hide label for the field.
 * <a name="options" href="#options">`options`</a>: For fields that take an options array. These include: `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Can also accept a callback. The callback will receive the CMB2_Field `$field` object as an argument.
-* <a name="before-after-callbacks" href="#before-after-callbacks">`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`</a>: These allow you to add arbitrary text/markup at different points in the field markup. These also accept a callback. The callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
+* <a name="before-after-callbacks" href="#before-after-callbacks">`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`</a>: These allow you to add arbitrary text/markup at different points in the field markup. These also accept a callback. The callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument. Example:
+
+	```php
+	$cmb->add_field( array(
+		'name'      => __( 'Test After Row Callback', 'cmb2' ),
+		'id'        => 'wiki_test_text',
+		'type'      => 'text',
+		'after_row' => 'cmb_after_row_cb',
+	) );
+
+	...
+
+	/**
+	 * Output a message if the current page has the id of "2" (the about page)
+	 * @param  object $field_args Current field args
+	 * @param  object $field      Current field object
+	 */
+	function cmb_after_row_cb( $field_args, $field ) {
+		if ( 2 === $field->object_id ) {
+			echo 'This is the "About" page!';
+		}
+	}
+	```
 * <a name="row_classes" href="#row_classes">`row_classes`</a>: This parameter allows you to add additional classes to the cmb-row wrap. This parameter can take a string, or array, or can take a callback that returns a string or array. Like above, the callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
 * <a name="on_front" href="#on_front">`on_front`</a>: If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`.
 * <a name="attributes" href="#attributes">`attributes`</a>: Will modify default attributes (class, input type, rows, etc), or add your own (placeholder, data attributes). Example:
