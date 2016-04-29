@@ -1,8 +1,8 @@
 Here's the built-in fields you can include in your metabox. You can also [add your own field types](/WebDevStudios/CMB2/wiki/Adding-your-own-field-types).
 
-Note that all the id fields should have proper prefixes. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin. Take a look at [example-functions.php](/WebDevStudios/CMB2/blob/master/example-functions.php) to see how you can define the prefix.
+Note that all the id fields should have proper prefixes. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin.
 
-Not all built-in fields have been 100% documented, so please see the example file for additional details.
+To see examples for how to define your prefixes, as well as examples of the field-types in use, please review the [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) file. There is always a chance that the documentation is not 100% up-to-date, so reviewing this file is recommended.
 
 ## Types:
 1. [`title`](#title) An arbitrary title field *
@@ -343,7 +343,7 @@ $cmb->add_field( array(
 	'name' => 'Test Checkbox',
 	'desc' => 'field description (optional)',
 	'id'   => 'wiki_test_checkbox',
-	'type' => 'checkbox'
+	'type' => 'checkbox',
 ) );
 ```
 
@@ -364,7 +364,7 @@ $cmb->add_field( array(
 		'check1' => 'Check One',
 		'check2' => 'Check Two',
 		'check3' => 'Check Three',
-	)
+	),
 ) );
 ```
 
@@ -443,12 +443,12 @@ Set the optional paremter, `show_option_none`, to `true` to use the default text
 
 ##### Optional:
 
-* All the types that take an `options` parameter can accept a callback. This callback will recieive the field object which you can use to check the object ID (`$field->object_id`). This can be handy if you need to build options based on the current post or context. The callback should return an array of options in the format displayed in these examples.
+* All the types that take an `'options'` parameter can be replaced with an `'options_cb'` paramater that allows you to specify a callback. This callback will recieive the field object which you can use to check the object ID (`$field->object_id`). This can be handy if you need to build options based on the current post or context. The callback should return an array of options in the format displayed in these examples.
 
 **Example:**
 ```php
 	// in the field array..
-	'options' => 'show_cat_or_dog_options',
+	'options_cb' => 'show_cat_or_dog_options',
 ```
 ```php
 // Callback function
@@ -476,13 +476,13 @@ Radio buttons pre-populated with taxonomy terms. Example:
 
 ```php
 $cmb->add_field( array(
-	'name'     => 'Test Taxonomy Radio',
-	'desc'     => 'Description Goes Here',
-	'id'       => 'wiki_test_taxonomy_radio',
-	'taxonomy' => '', // Enter Taxonomy Slug
-	'type'     => 'taxonomy_radio',
-	// Optional:
-	'options' => array(
+	'name'      => 'Test Taxonomy Radio',
+	'desc'      => 'Description Goes Here',
+	'id'        => 'wiki_test_taxonomy_radio',
+	'taxonomy'  => '', // Enter Taxonomy Slug
+	'type'      => 'taxonomy_radio',
+	// Optional :
+	'text'      => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
 ) );
@@ -521,13 +521,13 @@ A field with checkboxes with taxonomy terms, and multiple terms can be selected
 
 ```php
 $cmb->add_field( array(
-	'name'     => 'Test Taxonomy Multicheck',
-	'desc'     => 'Description Goes Here',
-	'id'       => 'wiki_test_taxonomy_multicheck',
-	'taxonomy' => '', //Enter Taxonomy Slug
-	'type'     => 'taxonomy_multicheck',
-	// Optional:
-	'options' => array(
+	'name'      => 'Test Taxonomy Multicheck',
+	'desc'      => 'Description Goes Here',
+	'id'        => 'wiki_test_taxonomy_multicheck',
+	'taxonomy'  => '', //Enter Taxonomy Slug
+	'type'      => 'taxonomy_multicheck',
+	// Optional :
+	'text'      => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
 ) );
@@ -601,8 +601,8 @@ echo yourprefix_get_wysiwyg_output( 'wiki_test_wysiwyg', get_the_ID() );
 ```
 
 The options array allows you to customize the settings of the wysiwyg. Here's an example with all the options:
-```php
 
+```php
 array(
 	'name'    => 'Test wysiwyg',
 	'desc'    => 'field description (optional)',
@@ -622,7 +622,6 @@ array(
 	    'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
 	),
 ),
-
 ```
 
 The `'id'` should not be set to 'content' as the standard editor has this id and it will result in a non working editor.
@@ -640,6 +639,8 @@ $cmb->add_field( array(
 	// Optional:
 	'options' => array(
 		'url' => false, // Hide the text input for the url
+	),
+	'text'    => array(
 		'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
 	),
 ) );
@@ -665,7 +666,7 @@ $cmb->add_field( array(
 	'type' => 'file_list',
 	// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 	// Optional, override default text strings
-	'options' => array(
+	'text' => array(
 		'add_upload_files_text' => 'Replacement', // default: "Add or Upload Files"
 		'remove_image_text' => 'Replacement', // default: "Remove Image"
 		'file_text' => 'Replacement', // default: "File:"
@@ -810,6 +811,16 @@ foreach ( (array) $entries as $key => $entry ) {
 	// Do something with the data
 }
 ```
+##### Custom Field Attributes:
+
+The `group` field type supports several a few extra parameters:
+
+* `'before_group'`
+* `'after_group'`
+* `'before_group_row'`
+* `'after_group_row'`
+
+They are documented on the [Field Parameters page](/WebDevStudios/CMB2/wiki/Field-Parameters#before_group-after_group-before_group_row-after_group_row).
 
 ## Custom Field Types
 You can [define your own field types](/WebDevStudios/CMB2/wiki/Adding-your-own-field-types) as well.

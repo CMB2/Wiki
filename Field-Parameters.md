@@ -10,6 +10,7 @@
 - [`default`](#default)
 - [`show_names`](#show_names)
 - [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field)
+- [`before_group`, `after_group`, `before_group_row`, `after_group_row`](#before_group-after_group-before_group_row-after_group_row)
 - [`row_classes`](#row_classes)
 - [`on_front`](#on_front)
 - [`attributes`](#attributes)
@@ -22,7 +23,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-Most (if not all) fields support the parameters on this page. When a field type supports extra parameters, those parameters are [documented with the given field type](/WebDevStudios/CMB2/wiki/Field-Types).
+Most (if not all) fields support the parameters on this page. When a field type supports extra parameters, those parameters are [documented with the given field type](/WebDevStudios/CMB2/wiki/Field-Types). Also, please review the [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) file for examples/demonstration.
 
 ### `name`
 ____
@@ -84,6 +85,22 @@ function cmb_after_row_cb( $field_args, $field ) {
 		echo 'This is the "About" page!';
 	}
 }
+```
+
+### `before_group`, `after_group`, `before_group_row`, `after_group_row`
+____
+Like the [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field) parameters, but applies specifically to the `'group'` field type. Example:
+
+```php
+$group_field_id = $cmb_group->add_field( array(
+	'id'               => 'wiki_group_field',
+	'type'             => 'group',
+	'description'      => 'Generates reusable form entries',
+	'before_group'     => '<p>Testing <b>"before_group"</b> parameter</p>',
+	'after_group'      => '<p>Testing <b>"after_group"</b> parameter</p>',
+	'before_group_row' => '<p>Testing <b>"before_group_row"</b> parameter</p>',
+	'after_group_row'  => '<p>Testing <b>"after_group_row"</b> parameter</p>',
+) );
 ```
 
 ### `row_classes`
