@@ -10,7 +10,7 @@ Documentation:
 	Get up and running
 
 1. [Field Types](https://github.com/WebDevStudios/CMB2/wiki/Field-Types)  
-	A breakdown of each of the field types included with CMB2 as well as documentation for special field parameters.
+	A breakdown of each of the field types included with CMB2.
 
 1. [Field Parameters](https://github.com/WebDevStudios/CMB2/wiki/Field-Parameters)  
 	A breakdown of each of the common field parameters.
