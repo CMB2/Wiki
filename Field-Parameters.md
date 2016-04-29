@@ -327,7 +327,7 @@ $cmb->add_field( array(
  * @param  CMB2_Field $field      The field object
  */
 function cmb_test_render_row_cb( $field_args, $field ) {
-	$id          = $field->id();
+	$id          = $field->args( 'id' );
 	$label       = $field->args( 'name' );
 	$name        = $field->args( '_name' );
 	$value       = $field->escaped_value();
