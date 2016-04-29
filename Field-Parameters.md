@@ -108,6 +108,21 @@ $cmb->add_field( array(
 ) );
 ```
 
+<a name="attribute-example-2"></a>
+Another example which uses html5 attributes to validate that an input's value is greater than 100.
+
+```php
+$cmb_demo->add_field( array(
+	'name'       => 'Insert a number greater than 100',
+	'id'         => 'greater_than_100',
+	'type'       => 'text',
+	'attributes' => array(
+		'type' => 'number',
+		'min'  => '101',
+	),
+) );
+```
+
 ### `show_on_cb`
 ____
 A callback to conditionally display a field. Callback function should return a boolean (true/false) value. Function passes in the current field object. Example:
@@ -218,6 +233,8 @@ function sanitize_greater_than_100( $value, $field_args, $field ) {
 	return $sanitized_value;
 }
 ```
+
+**Note:** To validate that a number is greater than 100 BEFORE saving the field, check out [`the 2nd attributes example`](#attribute-example-2).
 
 ### `escape_cb`
 ____
