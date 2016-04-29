@@ -16,8 +16,8 @@
 - [`attributes`](#attributes)
 - [`show_on_cb`](#show_on_cb)
 - [`options_cb`](#options_cb)
-- [`escape_cb`](#escape_cb)
 - [`sanitization_cb`](#sanitization_cb)
+- [`escape_cb`](#escape_cb)
 - [`render_row_cb`](#render_row_cb)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
