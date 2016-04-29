@@ -156,11 +156,13 @@ function cmb_only_show_for_user_1( $field ) {
 ### `options`
 ____
 For fields that take an options array. These include `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Should be a an array where the keys are the option value, and the values are the option text.
-> `'options'          => array(
-	'standard' => __( 'Option One', 'cmb2' ),
-	'custom'   => __( 'Option Two', 'cmb2' ),
-	'none'     => __( 'Option Three', 'cmb2' ),
-),`
+> ```
+> 'options' => array(
+> 	'none'     => 'None',
+> 	'standard' => 'Standard',
+> 	'custom'   => 'Custom',
+> ),
+> ```
 
 ### `options_cb`
 ____
