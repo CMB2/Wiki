@@ -1,5 +1,4 @@
 # Add the validation script and your custom script
-`
 	/** 
 	 * Snippet Name: Add form validation script to custom post types
 	 * script download URL : http://www.javascript-coder.com/files/form-validation/javascript_form.zip
@@ -19,6 +18,5 @@
 		}  
 	}  
 	add_action( 'admin_enqueue_scripts', 'cmb2_validation_script_post_type', 10, 1 ); 
-`
 
 ## Typical validation using gen_validatorv4.js
