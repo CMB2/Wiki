@@ -109,7 +109,7 @@ These allow you to add arbitrary text/markup at different points in the field ma
 
 ```php
 $cmb->add_field( array(
-	'name'      => __( 'Test After Row Callback', 'cmb2' ),
+	'name'      => 'Test After Row Callback',
 	'id'        => 'wiki_test_text',
 	'type'      => 'text',
 	'after_row' => 'cmb_after_row_cb',
@@ -151,7 +151,7 @@ A callback to conditionally display a field. Callback function should return a b
 
 ```php
 $cmb->add_field( array(
-	'name'       => __( 'Test Text', 'cmb2' ),
+	'name'       => 'Test Text',
 	'id'         => 'wiki_test_text',
 	'type'       => 'text',
 	'show_on_cb' => 'cmb_only_show_for_user_1', // function should return a bool value
@@ -187,7 +187,7 @@ A callback to provide field options. Callback function should return an options 
 
 ```php
 $cmb->add_field( array(
-	'name'       => __( 'Select Color', 'cmb2' ),
+	'name'       => 'Select Color',
 	'id'         => 'wiki_test_color',
 	'type'       => 'multicheck',
 	'options_cb' => 'cmb_color_options',
@@ -228,7 +228,7 @@ Bypass the CMB sanitization (sanitizes before saving) methods with your own call
 
 ```php
 $cmb->add_field( array(
-	'name'            => __( 'Test Text', 'cmb2' ),
+	'name'            => 'Test Text',
 	'id'              => 'wiki_custom_escaping_and_sanitization',
 	'type'            => 'text',
 	'sanitization_cb' => 'sanitize_greater_than_100', // function should return a sanitized value
@@ -308,3 +308,36 @@ function escape_greater_than_100( $value, $field_args, $field ) {
 ### `render_row_cb`
 ____
 Bypass the CMB row rendering. You will be completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object. [More info](https://github.com/WebDevStudios/CMB2/issues/596#issuecomment-187941343).
+
+```php
+$cmb->add_field( array(
+	'name' => 'Test render_row_cb (manaully rendered)',
+	'desc' => 'field description (optional)',
+	'id'   => 'wiki_testrender_row_cb',
+	'type' => 'text',
+	'render_row_cb' => 'cmb_test_render_row_cb',
+) );
+
+...
+
+/**
+ * Manually render a field.
+ *
+ * @param  array      $field_args Array of field arguments.
+ * @param  CMB2_Field $field      The field object
+ */
+function cmb_test_render_row_cb( $field_args, $field ) {
+	$id          = $field->id();
+	$label       = $field->args( 'name' );
+	$name        = $field->args( '_name' );
+	$value       = $field->escaped_value();
+	$description = $field->args( 'description' );
+	?>
+	<div class="custom-field-row">
+		<p><label for="<?php echo $id; ?>"><?php echo $label; ?></label></p>
+		<p><input id="<?php echo $id; ?>" type="text" name="<?php echo $name; ?>" value="<?php echo $value; ?>"/></p>
+		<p class="description"><?php echo $description; ?></p>
+	</div>
+	<?php
+}
+```
