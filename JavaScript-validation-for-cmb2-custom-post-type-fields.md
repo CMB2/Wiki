@@ -1,4 +1,5 @@
 # Add the validation script and your custom script
+visit [JavaScript Coder](http://www.javascript-coder.com/html-form/javascript-form-validation.phtml) to see validation tutorials and details
 	/** 
 	 * Snippet Name: Add form validation script to custom post types
 	 * script download URL : http://www.javascript-coder.com/files/form-validation/javascript_form.zip
