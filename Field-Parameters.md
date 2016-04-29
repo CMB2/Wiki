@@ -28,29 +28,37 @@ Most (if not all) fields support the parameters on this page. When a field type 
 ____
 The field label
 
+> `'name' => 'First Name',`
+
 ### `desc`
 ____
 Field description. Usually under or adjacent to the field input.
+> `'desc' => 'Please enter your first name.',`
 
 ### `id`
 ____
-The data key. If using for posts, will be the post-meta key. If using for an options page, will be the array key.
+The data key. If using for posts, will be the post-meta key. If using for an options page, will be the array key. **Required**.
+> `'id' => 'yourprefix_first_name',`
 
 ### `type`
 ____
-What makes the whole thing work.
+What makes the whole thing work. **Required**.
+> `'type' => 'text_medium',`
 
 ### `repeatable`
 ____
-[Supported by most field types](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#types), and will make the individual field a repeatable one.
+[Supported by most field types](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#types), and will make the individual field a repeatable one. Default is `false`.
+> `'repeatable' => true,`
 
 ### `default`
 ____
 Specify a default value for the field.
+> `'default' => 'John',`
 
 ### `show_names`
 ____
-Hide label for the field.
+Whether to show the label for the field. Default is `true`.
+> `'show_names' => false,`
 
 ### `options`
 ____
@@ -86,10 +94,12 @@ function cmb_after_row_cb( $field_args, $field ) {
 ### `row_classes`
 ____
 This parameter allows you to add additional classes to the cmb-row wrap. This parameter can take a string, or array, or can take a callback that returns a string or array. Like above, the callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
+> `'row_classes' => 'additional-class',`
 
 ### `on_front`
 ____
-If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`.
+If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`. Default is `true`.
+> `'on_front' => false,`
 
 ### `attributes`
 ____
