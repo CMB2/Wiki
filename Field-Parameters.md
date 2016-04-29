@@ -9,12 +9,12 @@
 - [`repeatable`](#repeatable)
 - [`default`](#default)
 - [`show_names`](#show_names)
-- [`options`](#options)
 - [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field)
 - [`row_classes`](#row_classes)
 - [`on_front`](#on_front)
 - [`attributes`](#attributes)
 - [`show_on_cb`](#show_on_cb)
+- [`options`](#options)
 - [`options_cb`](#options_cb)
 - [`sanitization_cb`](#sanitization_cb)
 - [`escape_cb`](#escape_cb)
@@ -59,11 +59,6 @@ Specify a default value for the field.
 ____
 Whether to show the label for the field. Default is `true`.
 > `'show_names' => false,`
-
-### `options`
-____
-For fields that take an options array. These include
-`select`, `radio`, `multicheck`, `wysiwyg` and `group`. Can also accept a callback. The callback will receive the CMB2_Field `$field` object as an argument.
 
 ### `before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`
 ____
@@ -158,9 +153,18 @@ function cmb_only_show_for_user_1( $field ) {
 }
 ```
 
+### `options`
+____
+For fields that take an options array. These include `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Should be a an array where the keys are the option value, and the values are the option text.
+> `'options'          => array(
+	'standard' => __( 'Option One', 'cmb2' ),
+	'custom'   => __( 'Option Two', 'cmb2' ),
+	'none'     => __( 'Option Three', 'cmb2' ),
+),`
+
 ### `options_cb`
 ____
-A callback to load field options. Callback function should return an options array. The callback function gets passed the `$field` object. Example:
+A callback to provide field options. Callback function should return an options array. The callback function gets passed the `$field` object. Example:
 
 ```php
 $cmb->add_field( array(
