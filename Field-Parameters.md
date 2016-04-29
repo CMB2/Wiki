@@ -174,14 +174,87 @@ function cmb_color_options( $field ) {
 }
 ```
 
-### `escape_cb`
-____
-Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
-
 ### `sanitization_cb`
 ____
 Bypass the CMB sanitization (sanitizes before saving) methods with your own callback. Set to `false` if you do not want any sanitization (not recommended).
 
+```php
+$cmb->add_field( array(
+	'name'            => __( 'Test Text', 'cmb2' ),
+	'id'              => 'wiki_custom_escaping_and_sanitization',
+	'type'            => 'text',
+	'sanitization_cb' => 'sanitize_greater_than_100', // function should return a sanitized value
+	'escape_cb'       => 'escape_greater_than_100', // function should return a sanitized value
+) );
+
+...
+
+/**
+ * Handles sanitization for the wiki_custom_escaping_and_sanitization field.
+ * Ensures a field's value is greater than 100 or nothing.
+ *
+ * @param  mixed      $value      The unsanitized value from the form.
+ * @param  array      $field_args Array of field arguments.
+ * @param  CMB2_Field $field      The field object
+ *
+ * @return mixed                  Sanitized value to be stored.
+ */
+function sanitize_greater_than_100( $value, $field_args, $field ) {
+
+	/*
+	 * This is the default sanitization method for most field types
+	 * It handles sanitization for array values, in the case of repeatable fields.
+	 */
+	// $sanitized_value = is_array( $this->value ) ? array_map( 'sanitize_text_field', $this->value ) : sanitize_text_field( $this->value );
+
+	// Don't keep anything that's less than 100!
+	if ( ! is_numeric( $value ) || $value < 101 ) {
+		$sanitized_value = '';
+	} else {
+		// Ok, let's clean it up.
+		$sanitized_value = absint( $sanitized_value );
+	}
+
+	return $sanitized_value;
+}
+```
+
+### `escape_cb`
+____
+Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
+
+To use the example from [`sanitization_cb`](#sanitization_cb), we could add an escape callback like:
+
+```php
+/**
+ * Handles escaping for the wiki_custom_escaping_and_sanitization field for display.
+ * Ensures a field's value is greater than 100 or nothing.
+ *
+ * @param  mixed      $value      The unescaped value from the database.
+ * @param  array      $field_args Array of field arguments.
+ * @param  CMB2_Field $field      The field object
+ *
+ * @return mixed                  Escaped value to be displayed.
+ */
+function escape_greater_than_100( $value, $field_args, $field ) {
+
+	/*
+	 * `esc_attr()` is the default escaping for most field types.
+	 */
+	// $escaped_value = is_array( $this->value ) ? array_map( 'esc_attr', $this->value ) : esc_attr( $this->value );
+
+	// Don't keep anything that's less than 100!
+	if ( ! is_numeric( $value ) || $value < 101 ) {
+		$escaped_value = '';
+	} else {
+		// Ok, let's clean it up.
+		$escaped_value = absint( $sanitized_value );
+	}
+
+	return $escaped_value;
+}
+```
+
 ### `render_row_cb`
 ____
-Bypass the CMB row rendering. You will completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object. [More info](https://github.com/WebDevStudios/CMB2/issues/596#issuecomment-187941343).
+Bypass the CMB row rendering. You will be completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object. [More info](https://github.com/WebDevStudios/CMB2/issues/596#issuecomment-187941343).
