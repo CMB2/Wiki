@@ -9,11 +9,11 @@
 - [`repeatable`](#repeatable)
 - [`default`](#default)
 - [`show_names`](#show_names)
-- [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field)
-- [`before_group`, `after_group`, `before_group_row`, `after_group_row`](#before_group-after_group-before_group_row-after_group_row)
 - [`row_classes`](#row_classes)
 - [`on_front`](#on_front)
 - [`attributes`](#attributes)
+- [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field)
+- [`before_group`, `after_group`, `before_group_row`, `after_group_row`](#before_group-after_group-before_group_row-after_group_row)
 - [`show_on_cb`](#show_on_cb)
 - [`options`](#options)
 - [`options_cb`](#options_cb)
@@ -61,48 +61,6 @@ ____
 Whether to show the label for the field. Default is `true`.
 > `'show_names' => false,`
 
-### `before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`
-____
-These allow you to add arbitrary text/markup at different points in the field markup. These also accept a callback. The callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument. Example:
-
-```php
-$cmb->add_field( array(
-	'name'      => __( 'Test After Row Callback', 'cmb2' ),
-	'id'        => 'wiki_test_text',
-	'type'      => 'text',
-	'after_row' => 'cmb_after_row_cb',
-) );
-
-...
-
-/**
- * Output a message if the current page has the id of "2" (the about page)
- * @param  object $field_args Current field args
- * @param  object $field      Current field object
- */
-function cmb_after_row_cb( $field_args, $field ) {
-	if ( 2 === $field->object_id ) {
-		echo 'This is the "About" page!';
-	}
-}
-```
-
-### `before_group`, `after_group`, `before_group_row`, `after_group_row`
-____
-Like the [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field) parameters, but applies specifically to the `'group'` field type. Example:
-
-```php
-$group_field_id = $cmb_group->add_field( array(
-	'id'               => 'wiki_group_field',
-	'type'             => 'group',
-	'description'      => 'Generates reusable form entries',
-	'before_group'     => '<p>Testing <b>"before_group"</b> parameter</p>',
-	'after_group'      => '<p>Testing <b>"after_group"</b> parameter</p>',
-	'before_group_row' => '<p>Testing <b>"before_group_row"</b> parameter</p>',
-	'after_group_row'  => '<p>Testing <b>"after_group_row"</b> parameter</p>',
-) );
-```
-
 ### `row_classes`
 ____
 This parameter allows you to add additional classes to the cmb-row wrap. This parameter can take a string, or array, or can take a callback that returns a string or array. Like above, the callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
@@ -142,6 +100,48 @@ $cmb_demo->add_field( array(
 		'type' => 'number',
 		'min'  => '101',
 	),
+) );
+```
+
+### `before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`
+____
+These allow you to add arbitrary text/markup at different points in the field markup. These also accept a callback. The callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument. Example:
+
+```php
+$cmb->add_field( array(
+	'name'      => __( 'Test After Row Callback', 'cmb2' ),
+	'id'        => 'wiki_test_text',
+	'type'      => 'text',
+	'after_row' => 'cmb_after_row_cb',
+) );
+
+...
+
+/**
+ * Output a message if the current page has the id of "2" (the about page)
+ * @param  object $field_args Current field args
+ * @param  object $field      Current field object
+ */
+function cmb_after_row_cb( $field_args, $field ) {
+	if ( 2 === $field->object_id ) {
+		echo 'This is the "About" page!';
+	}
+}
+```
+
+### `before_group`, `after_group`, `before_group_row`, `after_group_row`
+____
+Like the [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field) parameters, but applies specifically to the `'group'` field type. Example:
+
+```php
+$group_field_id = $cmb_group->add_field( array(
+	'id'               => 'wiki_group_field',
+	'type'             => 'group',
+	'description'      => 'Generates reusable form entries',
+	'before_group'     => '<p>Testing <b>"before_group"</b> parameter</p>',
+	'after_group'      => '<p>Testing <b>"after_group"</b> parameter</p>',
+	'before_group_row' => '<p>Testing <b>"before_group_row"</b> parameter</p>',
+	'after_group_row'  => '<p>Testing <b>"after_group_row"</b> parameter</p>',
 ) );
 ```
 
