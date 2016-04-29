@@ -12,6 +12,9 @@ Documentation:
 1. [Field Types](https://github.com/WebDevStudios/CMB2/wiki/Field-Types)  
 	A breakdown of each of the field types included with CMB2 as well as documentation for special field parameters.
 
+1. [Field Parameters](https://github.com/WebDevStudios/CMB2/wiki/Field-Parameters)  
+	A breakdown of each of the common field parameters.
+
 1. [Display Options](https://github.com/WebDevStudios/CMB2/wiki/Display-Options)  
 	Limit the display of your metaboxes
 
