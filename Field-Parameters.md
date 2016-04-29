@@ -42,7 +42,7 @@ What makes the whole thing work.
 
 ### `repeatable`
 ____
-[Supported by most](https://github.com/WebDevStudios/CMB2#field-types), and will make the individual field a repeatable one.
+[Supported by most field types](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#types), and will make the individual field a repeatable one.
 
 ### `default`
 ____
