@@ -20,3 +20,26 @@
 	add_action( 'admin_enqueue_scripts', 'cmb2_validation_script_post_type', 10, 1 ); 
 
 ## Typical validation using gen_validatorv4.js
+	jQuery(document).ready(function(){
+		 //remove default html5 validation
+		var form = document.getElementById("post");
+		form.noValidate = true;
+
+		//start form validation
+		var frmvalidator  = new Validator("post");
+
+		/*enable error display inline you can use the 'before'=> '<div id="form-name_field-name_errorloc     
+		* class="error_strings"></div><br/>' in your cmb2 metabox field creation to show error messages 
+		* See http://www.javascript-coder.com/html-form/form-validation.phtml for tutorial and examples
+		*/
+		frmvalidator.EnableOnPageErrorDisplay();
+		frmvalidator.EnableMsgsTogether();
+
+	   
+		
+		   //typical text area field validations 
+		   frmvalidator.addValidation("field name","req","you need to say something about yourself");
+		   frmvalidator.addValidation("field name","maxlen=300","you can't add any more to your about field");
+		   frmvalidator.addValidation("field name","minlen=20","you need to add more text to your about field");
+
+	});
