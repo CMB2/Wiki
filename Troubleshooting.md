@@ -12,10 +12,23 @@
 
 If you're having issues with CMB not loading its CSS or JS files properly, you can modify the URL via the `cmb2_meta_box_url` filter.
 
+INSTEAD of completely replacing the URL, it is best to use `str_replace` to fix the URL. This ensures you only change the url if it's broken, and ensures that if another version of CMB2 is loaded (i.e. in a 3rd part plugin), that their correct URL will load, rather than forcing yours (and possibly breaking their implementation).
+
 ```php
 function update_cmb2_meta_box_url( $url ) {
-	// modify the url here
-	return $url;
+	/*
+	 * If you use a symlink, the css/js urls may have an odd path stuck in the middle, like:
+	 * http://SITEURL/wp-content/plugins/Users/jt/Sites/CMB2/cmb2/js/cmb2.js?ver=X.X.X
+	 * Or something like that.
+	 * 
+	 * INSTEAD of completely replacing the URL,
+	 * It is best to do a str_replace. This ensures you only change the url if it's 
+	 * pointing to the broken resource. This ensures that if another version of CMB2
+	 * is loaded (i.e. in a 3rd part plugin), that their correct URL will load,
+	 * rather than forcing yours.
+	 */
+	
+	return str_replace( '/Users/jt/Sites/CMB2', '', $url );
 }
 add_filter( 'cmb2_meta_box_url', 'update_cmb2_meta_box_url' );
 ```
