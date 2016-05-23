@@ -436,14 +436,14 @@ $cmb->add_field( array(
 	),
 ) );
 ```
-Set the optional paremter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
+Set the optional paremeter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
 
 ##### CSS Field Class:
 `cmb-type-select`
 
 ##### Optional:
 
-* All the types that take an `'options'` parameter can be replaced with an `'options_cb'` paramater that allows you to specify a callback. This callback will recieive the field object which you can use to check the object ID (`$field->object_id`). This can be handy if you need to build options based on the current post or context. The callback should return an array of options in the format displayed in these examples.
+* All the types that take an `'options'` parameter can be replaced with an `'options_cb'` parameter that allows you to specify a callback. This callback will receive the field object which you can use to check the object ID (`$field->object_id`). This can be handy if you need to build options based on the current post or context. The callback should return an array of options in the format displayed in these examples.
 
 **Example:**
 ```php
