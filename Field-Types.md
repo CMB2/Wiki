@@ -660,7 +660,9 @@ $image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'wiki_test_image_
 
 ### `file_list`
 ____
-A file uploader that allows you to add as many files as you want. This is a repeatable field, and will store its data in an array, with the attachment ID as the array key and the attachment url as the value. Example:
+A file uploader that allows you to add as many files as you want. Once added, files can be dragged and dropped to reorder.
+
+This is a repeatable field, and will store its data in an array, with the attachment ID as the array key and the attachment url as the value. Example:
 
 ```php
 $cmb->add_field( array(
