@@ -470,6 +470,10 @@ function show_cat_or_dog_options( $field ) {
 }
 ```
 
+##### Notes
+
+If you need the label value wherever you are using the select field's value (vs just the value), you can define your options in a function, and get the label by comparing the value against the array given by the function. [Example here](http://wordpress.stackexchange.com/a/220703/45740).
+
 ### `taxonomy_radio`
 ____
 Radio buttons pre-populated with taxonomy terms. Example:
