@@ -15,6 +15,7 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 1. [`textarea`](#textarea)
 1. [`textarea_small`](#textarea_small)
 1. [`textarea_code`](#textarea_code) 
+1. [`text_date`](#text_date) Date picker
 1. [`text_time`](#text_time) Time picker
 1. [`select_timezone`](#select_timezone) Time zone dropdown
 1. [`text_date_timestamp`](#text_date_timestamp) Date Picker (UNIX timestamp)
@@ -211,13 +212,34 @@ $cmb->add_field( array(
 `cmb-type-textarea-code`
 
 
+### `text_date`
+____
+Date picker field. Example:
+
+```php
+$cmb->add_field( array(
+	'name' => 'Test Date Picker',
+	'id' => 'wiki_test_textdate',
+	'type' => 'text_date'
+	// 'date_format' => 'Y-m-d',
+) );
+```
+
+##### CSS Field Class:
+`cmb-type-text-date`
+
+##### Custom Field Attributes:
+
+* `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
+
+
 ### `text_time`
 ____
 Time picker field. Example:
 
 ```php
 $cmb->add_field( array(
-	'name' => 'Test Date Picker',
+	'name' => 'Test Time Picker',
 	'id' => 'wiki_test_texttime',
 	'type' => 'text_time'
 	// 'time_format' => 'h:i:s A',
