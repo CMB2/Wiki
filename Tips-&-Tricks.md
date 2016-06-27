@@ -65,7 +65,7 @@ $cmb->add_field( array(
 ) );
 ```
 And that field would look like:
-![Screenshot](images/testing-parameters.png)
+[<img src="images/testing-parameters.png" alt="testing parameters screenshot">](images/testing-parameters.png)
 
 ## Inject dynamic content in a field via a callback
 
@@ -302,7 +302,7 @@ function prefix_set_field_data_attr( $args, $field ) {
 }
 ```
 
-![Screenshot](images/post-id-data-attribute.png)
+[<img src="images/post-id-data-attribute.png" alt="post id data attribute screenshot">](images/post-id-data-attribute.png)
 
 [#256 for reference](https://github.com/WebDevStudios/CMB2/issues/256#issuecomment-84023325)
 
