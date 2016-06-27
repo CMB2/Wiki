@@ -185,7 +185,7 @@ $cmb_demo->add_field( array(
 ) );
 ```
 
-[<img src="images/field-columns.png?v=2" alt="field columns screenshot">](images/field-columns.png?v=2)
+[<img src="images/field-columns.png?version=2" alt="field columns screenshot">](images/field-columns.png?version=2)
 
 ### `show_on_cb`
 ____
