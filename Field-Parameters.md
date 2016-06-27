@@ -165,7 +165,8 @@ $cmb_demo->add_field( array(
 	'after_display_wrap'  => '<p>Testing <b>after_display_wrap</b> parameter</p>'
 ) );
 ```
-![Screenshot](images/testing-display-parameters.png)
+
+[<img src="images/testing-display-parameters.png" alt="Display callbacks screenshot">](images/testing-display-parameters.png)
 
 ### `column`
 
