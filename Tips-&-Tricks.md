@@ -47,6 +47,8 @@ There are several field properties you can use to inject text or content in your
 * after_row
 * after_field
 
+_(view more in the [Field Parameters documentation](/WebDevStudios/CMB2/wiki/Field-Parameters#before-after-before_row-after_row-before_field-after_field))_
+
 To use them in your field, it would look something like this:
 
 ```php

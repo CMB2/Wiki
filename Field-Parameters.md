@@ -14,12 +14,15 @@
 - [`attributes`](#attributes)
 - [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field)
 - [`before_group`, `after_group`, `before_group_row`, `after_group_row`](#before_group-after_group-before_group_row-after_group_row)
+- [`before_display_wrap`, `before_display`, `after_display`, `after_display_wrap`](#before_display_wrap-before_display-after_display-after_display_wrap)
+- [`column`](#column)
 - [`show_on_cb`](#show_on_cb)
 - [`options`](#options)
 - [`options_cb`](#options_cb)
 - [`sanitization_cb`](#sanitization_cb)
 - [`escape_cb`](#escape_cb)
 - [`render_row_cb`](#render_row_cb)
+- [`display_cb`](#display_cb)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -144,6 +147,44 @@ $group_field_id = $cmb_group->add_field( array(
 	'after_group_row'  => '<p>Testing <b>"after_group_row"</b> parameter</p>',
 ) );
 ```
+
+### `before_display_wrap`, `before_display`, `after_display`, `after_display_wrap`
+____
+Like the [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field) parameters, but applies specifically to the display context (like in admin columns). Example:
+
+```php
+$cmb_demo->add_field( array(
+	'name'                => 'Test Text',
+	'desc'                => 'field description (optional)',
+	'id'                  => 'wiki_text',
+	'type'                => 'text',
+	'column'              => true, // Display field value in the admin post-listing columns
+	'before_display_wrap' => '<p>Testing <b>before_display_wrap</b> parameter</p>',
+	'before_display'      => '<p>Testing <b>before_display</b> parameter</p>',
+	'after_display'       => '<p>Testing <b>after_display</b> parameter</p>',
+	'after_display_wrap'  => '<p>Testing <b>after_display_wrap</b> parameter</p>'
+) );
+```
+![Screenshot](images/testing-display-parameters.png)
+
+### `column`
+
+As of version [2.2.2](https://github.com/WebDevStudios/CMB2/releases/tag/v2.2.2), you can now set admin post-listing columns with an extra field parameter, `'column' => true,`. If you want to dictate what position the column is, use `'column' => array( 'position' => 2 ),`. If you want to dictate the column title (instead of using the field `'name'` value), use `'column' => array( 'name' => 'My Column' ),`. If you need to specify the column display callback, set the `'display_cb'` parameter to [a callback function](#display_cb). Columns work for post (all post-types), comment, user, and term object types.
+
+```php
+$cmb_demo->add_field( array(
+	'name'   => 'Test Text',
+	'desc'   => 'field description (optional)',
+	'id'     => 'wiki_text',
+	'type'   => 'text',
+	'column' => array(
+		'position' => 2,
+		'name'     => 'CMB2 Custom Column',
+	),
+) );
+```
+
+![Screenshot](images/field-columns.png)
 
 ### `show_on_cb`
 ____
@@ -337,6 +378,38 @@ function cmb_test_render_row_cb( $field_args, $field ) {
 		<p><label for="<?php echo $id; ?>"><?php echo $label; ?></label></p>
 		<p><input id="<?php echo $id; ?>" type="text" name="<?php echo $name; ?>" value="<?php echo $value; ?>"/></p>
 		<p class="description"><?php echo $description; ?></p>
+	</div>
+	<?php
+}
+```
+
+### `display_cb`
+____
+With the addition of optional columns display output in [2.2.2](https://github.com/WebDevStudios/CMB2/releases/tag/v2.2.2), You can now set the field's `'display_cb'` to dictate how that field value should be displayed.
+
+```php
+$cmb_demo->add_field( array(
+	'name'       => 'Test Text',
+	'desc'       => 'field description (optional)',
+	'id'         => 'wiki_text',
+	'type'       => 'text',
+	'column'     => true,
+	'display_cb' => 'yourprefix_display_wiki_text', // Output the display of the column values through a callback.
+) );
+
+...
+
+/**
+ * Manually render a field column display.
+ *
+ * @param  array      $field_args Array of field arguments.
+ * @param  CMB2_Field $field      The field object
+ */
+function yourprefix_display_wiki_text( $field_args, $field ) {
+	?>
+	<div class="custom-column-display <?php echo $field->row_classes(); ?>">
+		<p><?php echo $field->escaped_value(); ?></p>
+		<p class="description"><?php echo $field->args( 'description' ); ?></p>
 	</div>
 	<?php
 }
