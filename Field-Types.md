@@ -15,10 +15,9 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 1. [`textarea`](#textarea)
 1. [`textarea_small`](#textarea_small)
 1. [`textarea_code`](#textarea_code) 
-1. [`text_date`](#text_date) Date picker
 1. [`text_time`](#text_time) Time picker
 1. [`select_timezone`](#select_timezone) Time zone dropdown
-1. [`text_date_timestamp`](#text_date_timestamp) Date Picker (UNIX timestamp)
+1. [`text_date`](#text_date) Date Picker (UNIX timestamp) (`text_date` is an alias)
 1. [`text_datetime_timestamp`](#text_datetime_timestamp) Text Date/Time Picker Combo (UNIX timestamp)
 1. [`text_datetime_timestamp_timezone`](#text_datetime_timestamp_timezone) Text Date/Time Picker/Time zone Combo (serialized DateTime object)
 1. [`hidden`](#hidden) Hidden input type
@@ -211,28 +210,6 @@ $cmb->add_field( array(
 ##### CSS Field Class:
 `cmb-type-textarea-code`
 
-
-### `text_date`
-____
-Date picker field. Example:
-
-```php
-$cmb->add_field( array(
-	'name' => 'Test Date Picker',
-	'id' => 'wiki_test_textdate',
-	'type' => 'text_date'
-	// 'date_format' => 'Y-m-d',
-) );
-```
-
-##### CSS Field Class:
-`cmb-type-text-date`
-
-##### Custom Field Attributes:
-
-* `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
-
-
 ### `text_time`
 ____
 Time picker field. Example:
@@ -270,7 +247,7 @@ $cmb->add_field( array(
 `cmb-type-select-timezone`
 
 
-### `text_date_timestamp`
+### `text_date`
 ____
 Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
 
@@ -278,7 +255,7 @@ Date field, stored as UNIX timestamp. Useful if you plan to query based on it (e
 $cmb->add_field( array(
 	'name' => 'Test Date Picker (UNIX timestamp)',
 	'id'   => 'wiki_test_textdate_timestamp',
-	'type' => 'text_date_timestamp',
+	'type' => 'text_date',
 	// 'timezone_meta_key' => 'wiki_test_timezone',
 	// 'date_format' => 'l jS \of F Y',
 ) );
@@ -288,7 +265,7 @@ $cmb->add_field( array(
 `cmb-type-text-date-timestamp`
 
 ##### Alias:
-`text_date`
+`text_date_timestamp`
 
 ##### Custom Field Attributes:
 
