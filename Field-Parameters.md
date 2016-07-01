@@ -312,6 +312,17 @@ function sanitize_greater_than_100( $value, $field_args, $field ) {
 
 **Note:** To validate that a number is greater than 100 BEFORE saving the field, check out [`the 2nd attributes example`](#attribute-example-2).
 
+To sanitize WYSIWYG fields the way WordPress sanitizes the post_content field (as of 4.6), you could use the `content_save_pre` filter (which itself applies the `convert_invalid_entities` and `balanceTags` filters, and also the `wp_filter_post_kses` filter for multisite networks) in your sanitization callback:
+
+```php
+/**
+ * Sanitizes WYSIWYG fields like WordPress does for post_content fields.
+ */
+function your_prefix_sanitize_wysiwyg( $content ) {
+	return apply_filters( 'content_save_pre', $content );
+}
+```
+
 ### `escape_cb`
 ____
 Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
