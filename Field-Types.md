@@ -842,7 +842,7 @@ Common field parameters are now [documented on this page](/WebDevStudios/CMB2/wi
 * <a name="param-show_names"></a>[`show_names`](/WebDevStudios/CMB2/wiki/Field-Parameters#show_names)
 * <a name="options"></a>[`options`](/WebDevStudios/CMB2/wiki/Field-Parameters#options)
 * <a name="before-after-callbacks"></a>[`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](/WebDevStudios/CMB2/wiki/Field-Parameters#before-after-before_row-after_row-before_field-after_field)
-* <a name="row_classes"></a>[`row_classes`](/WebDevStudios/CMB2/wiki/Field-Parameters#row_classes)
+* <a name="row_classes"></a>[`classes`](/WebDevStudios/CMB2/wiki/Field-Parameters#classes)
 * <a name="on_front"></a>[`on_front`](/WebDevStudios/CMB2/wiki/Field-Parameters#on_front)
 * <a name="attributes"></a>[`attributes`](/WebDevStudios/CMB2/wiki/Field-Parameters#attributes)
 * <a name="show_on_cb"></a>[`show_on_cb`](/WebDevStudios/CMB2/wiki/Field-Parameters#show_on_cb)

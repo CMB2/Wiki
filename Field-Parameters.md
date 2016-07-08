@@ -9,7 +9,7 @@
 - [`repeatable`](#repeatable)
 - [`default`](#default)
 - [`show_names`](#show_names)
-- [`row_classes`](#row_classes)
+- [`classes`](#classes)
 - [`on_front`](#on_front)
 - [`attributes`](#attributes)
 - [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field)
@@ -64,10 +64,10 @@ ____
 Whether to show the label for the field. Default is `true`.
 > `'show_names' => false,`
 
-### `row_classes`
+### `classes`
 ____
 This parameter allows you to add additional classes to the cmb-row wrap. This parameter can take a string, or array, or can take a callback that returns a string or array. Like above, the callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
-> `'row_classes' => 'additional-class',`
+> `'classes' => 'additional-class',`
 
 ### `on_front`
 ____

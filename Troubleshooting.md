@@ -71,7 +71,6 @@ A listing of all the field paramaters (besides the obvious `_cb` parameters) whi
 
 * `'default'`
 * `'options'`
-* `'row_classes'`
 * `'before_field'`
 * `'after_field'`
 * `'before_row'`
