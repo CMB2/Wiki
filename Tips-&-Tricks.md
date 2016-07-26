@@ -15,6 +15,7 @@
 - [Modify Field Label Output](#modify-field-label-output)
 - [Change the year range for the date field types](#change-the-year-range-for-the-date-field-types)
 - [Modify Field Row Output and Markup](#modify-field-row-output-and-markup)
+- [Limit text field to numbers only](#-limit-text-field-to-numbers-only)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ___
@@ -435,3 +436,18 @@ function override_render_field_callback( $field_args, $field ) {
 ```
 
 This example replicates the default render method with custom classes assigned to wrapping divs and the original cmb-row class removed as an example. When writing your callback function make sure to create an instance of the CMB2_Types class, passing the field object, and calling the function on render() on this instance. This will actually render the fields HTML. Also be sure to return the $field object to allow chaining.
+
+## Limit text field to numbers only
+
+```
+array(
+	'name' => __( 'My Number Field', 'theme-domain' ),
+	'desc' => __( 'Numbers only', 'msft-newscenter' ),
+	'id'   => $prefix . 'number',
+	'type' => 'text',
+	'attributes' => array(
+		'type' => 'number',
+		'pattern' => '\d*',
+	),
+),
+```
