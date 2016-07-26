@@ -15,7 +15,7 @@
 - [Modify Field Label Output](#modify-field-label-output)
 - [Change the year range for the date field types](#change-the-year-range-for-the-date-field-types)
 - [Modify Field Row Output and Markup](#modify-field-row-output-and-markup)
-- [Limit text field to numbers only](#-limit-text-field-to-numbers-only)
+- [Limit text field to numbers only](#limit-text-field-to-numbers-only)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ___
