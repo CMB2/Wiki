@@ -330,6 +330,48 @@ $cmb->add_field( array(
 ) );
 ```
 
+Additional Field Options:
+
+The CMB2 colorpicker uses the built in WordPress colorpicker, Iris [automattic.github.io/Iris/] (http://automattic.github.io/Iris/)
+
+All of the default options in Iris are configurable within the CMB2 colorpicker field.
+
+[Default Iris Options] (http://automattic.github.io/Iris/#options):
+
+```js
+options = {
+    color: false,
+    mode: 'hsl',
+    controls: {
+        horiz: 's', // horizontal defaults to saturation
+        vert: 'l', // vertical defaults to lightness
+        strip: 'h' // right strip defaults to hue
+    },
+    hide: true, // hide the color picker by default
+    border: true, // draw a border around the collection of UI elements
+    target: false, // a DOM element / jQuery selector that the element will be appended within. Only used when called on an input.
+    width: 200, // the width of the collection of UI elements
+    palettes: false // show a palette of basic colors beneath the square.
+}
+```
+
+Iris Option Example Usage:
+
+```php
+$cmb->add_field( array(
+    'name'    => 'Test Color Picker',
+    'id'      => 'wiki_test_colorpicker',
+    'type'    => 'colorpicker',
+    'default' => '#ffffff',
+    'attributes' => array(
+        'data-colorpicker' => json_encode( array(
+            // Iris Options set here as values in the 'data-colorpicker' array
+            'palettes' => array( '#3dd0cc', '#ff834c', '#4fa2c0', '#0bc991', ),
+        ) ),
+    ),
+) );
+```
+
 ##### CSS Field Class:
 `cmb-type-colorpicker`
 
