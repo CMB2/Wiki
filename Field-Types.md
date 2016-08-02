@@ -484,6 +484,7 @@ $cmb->add_field( array(
 	'id'        => 'wiki_test_taxonomy_radio',
 	'taxonomy'  => '', // Enter Taxonomy Slug
 	'type'      => 'taxonomy_radio',
+	// 'remove_default' => true,
 	// Optional :
 	'text'      => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
@@ -512,6 +513,7 @@ $cmb->add_field( array(
 	'id'       => 'wiki_test_taxonomy_select',
 	'taxonomy' => 'category', //Enter Taxonomy Slug
 	'type'     => 'taxonomy_select',
+	// 'remove_default' => true,
 ) );
 ```
 
@@ -529,6 +531,7 @@ $cmb->add_field( array(
 	'id'        => 'wiki_test_taxonomy_multicheck',
 	'taxonomy'  => '', //Enter Taxonomy Slug
 	'type'      => 'taxonomy_multicheck',
+	// 'remove_default' => true,
 	// Optional :
 	'text'      => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"

@@ -427,3 +427,17 @@ function yourprefix_display_wiki_text( $field_args, $field ) {
 	<?php
 }
 ```
+
+### `remove_default` (since 2.2.3)
+____
+New field parameter for taxonomy fields, `'remove_default'` which allows disabling the default taxonomy metabox.
+
+```php
+$cmb_demo->add_field( array(
+	'name'           => 'Test Taxonomy Radio',
+	'id'             => 'wiki_taxonomy_radio',
+	'type'           => 'taxonomy_radio',
+	'taxonomy'       => 'category',
+	'remove_default' => true,
+) );
+```
