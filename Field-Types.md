@@ -530,7 +530,7 @@ $cmb->add_field( array(
 	'text'           => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
-	'remove_default' => 'true' // Removes the default metabox provided by WP core.
+	'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
 ) );
 ```
 
@@ -555,7 +555,7 @@ $cmb->add_field( array(
 	'id'             => 'wiki_test_taxonomy_select',
 	'taxonomy'       => 'category', //Enter Taxonomy Slug
 	'type'           => 'taxonomy_select',
-	'remove_default' => 'true' // Removes the default metabox provided by WP core.
+	'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
 ) );
 ```
 
@@ -577,7 +577,7 @@ $cmb->add_field( array(
 	'text'           => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
-	'remove_default' => 'true' // Removes the default metabox provided by WP core.
+	'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
 ) );
 ```
 
