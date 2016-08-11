@@ -14,7 +14,7 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 1. [`text_money`](#text_money)
 1. [`textarea`](#textarea)
 1. [`textarea_small`](#textarea_small)
-1. [`textarea_code`](#textarea_code) 
+1. [`textarea_code`](#textarea_code)
 1. [`text_time`](#text_time) Time picker
 1. [`select_timezone`](#select_timezone) Time zone dropdown
 1. [`text_date`](#text_date) Date Picker (UNIX timestamp) (`text_date` is an alias)
@@ -42,8 +42,8 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 * [Create your own field type](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)
 * [Common field parameters shared by all fields](/WebDevStudios/CMB2/wiki/Field-Parameters)
 
-\* Not available as a repeatable field  
-† Use `file_list` for repeatable  
+\* Not available as a repeatable field
+† Use `file_list` for repeatable
 
 ### `title`
 ____
@@ -530,7 +530,6 @@ $cmb->add_field( array(
 	'text'           => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
-	'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
 ) );
 ```
 
@@ -555,7 +554,6 @@ $cmb->add_field( array(
 	'id'             => 'wiki_test_taxonomy_select',
 	'taxonomy'       => 'category', //Enter Taxonomy Slug
 	'type'           => 'taxonomy_select',
-	'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
 ) );
 ```
 
@@ -577,7 +575,6 @@ $cmb->add_field( array(
 	'text'           => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
-	'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
 ) );
 ```
 
