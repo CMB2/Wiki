@@ -24,14 +24,14 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 1. [`colorpicker`](#colorpicker) Color picker
 1. [`radio`](#radio) *
 1. [`radio_inline`](#radio_inline) *
-1. [`taxonomy_radio`](#taxonomy_radio) * Category/Tag/Taxonomy default metaboxes replacement.
-1. [`taxonomy_radio_inline`](#taxonomy_radio_inline) * Category/Tag/Taxonomy default metaboxes replacement.
+1. [`taxonomy_radio`](#taxonomy_radio) * Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_radio_inline`](#taxonomy_radio_inline) * Default Category/Tag/Taxonomy metaboxes replacement.
 1. [`select`](#select)
-1. [`taxonomy_select`](#taxonomy_select) * Category/Tag/Taxonomy default metaboxes replacement.
+1. [`taxonomy_select`](#taxonomy_select) * Default Category/Tag/Taxonomy metaboxes replacement.
 1. [`checkbox`](#checkbox) *
 1. [`multicheck` and `multicheck_inline`](#multicheck-and-multicheck_inline)
-1. [`taxonomy_multicheck`](#taxonomy_multicheck) * Category/Tag/Taxonomy default metaboxes replacement.
-1. [`taxonomy_multicheck_inline`](#taxonomy_multicheck_inline) Category/Tag/Taxonomy default metaboxes replacement.
+1. [`taxonomy_multicheck`](#taxonomy_multicheck) * Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_multicheck_inline`](#taxonomy_multicheck_inline) Default Category/Tag/Taxonomy metaboxes replacement.
 1. [`wysiwyg`](#wysiwyg) (TinyMCE) *
 1. [`file`](#file) Image/File upload *†
 1. [`file_list`](#file_list) Image Gallery/File list management
