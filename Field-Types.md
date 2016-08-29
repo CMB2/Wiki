@@ -452,8 +452,10 @@ $cmb->add_field( array(
 		'custom'   => __( 'Option Two', 'cmb2' ),
 		'none'     => __( 'Option Three', 'cmb2' ),
 	),
+        'default' => 'standard',
 ) );
 ```
+Note: "default" must be applied after the `options` array.
 
 ##### CSS Field Class:
 `cmb-type-radio-inline`
