@@ -452,10 +452,9 @@ $cmb->add_field( array(
 		'custom'   => __( 'Option Two', 'cmb2' ),
 		'none'     => __( 'Option Three', 'cmb2' ),
 	),
-        'default' => 'standard',
+	'default' => 'standard',
 ) );
 ```
-Note: "default" must be applied after the `options` array.
 
 ##### CSS Field Class:
 `cmb-type-radio-inline`
@@ -523,13 +522,13 @@ Radio buttons pre-populated with taxonomy terms. Example:
 
 ```php
 $cmb->add_field( array(
-	'name'           => 'Test Taxonomy Radio',
-	'desc'           => 'Description Goes Here',
-	'id'             => 'wiki_test_taxonomy_radio',
-	'taxonomy'       => '', // Enter Taxonomy Slug
-	'type'           => 'taxonomy_radio',
+	'name'      => 'Test Taxonomy Radio',
+	'desc'      => 'Description Goes Here',
+	'id'        => 'wiki_test_taxonomy_radio',
+	'taxonomy'  => '', // Enter Taxonomy Slug
+	'type'      => 'taxonomy_radio',
 	// Optional :
-	'text'           => array(
+	'text'      => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
 ) );
@@ -551,11 +550,11 @@ A select field pre-populated with taxonomy terms. Example:
 
 ```php
 $cmb->add_field( array(
-	'name'           => 'Test Taxonomy Select',
-	'desc'           => 'Description Goes Here',
-	'id'             => 'wiki_test_taxonomy_select',
-	'taxonomy'       => 'category', //Enter Taxonomy Slug
-	'type'           => 'taxonomy_select',
+	'name'     => 'Test Taxonomy Select',
+	'desc'     => 'Description Goes Here',
+	'id'       => 'wiki_test_taxonomy_select',
+	'taxonomy' => 'category', //Enter Taxonomy Slug
+	'type'     => 'taxonomy_select',
 ) );
 ```
 
@@ -568,13 +567,13 @@ A field with checkboxes with taxonomy terms, and multiple terms can be selected
 
 ```php
 $cmb->add_field( array(
-	'name'           => 'Test Taxonomy Multicheck',
-	'desc'           => 'Description Goes Here',
-	'id'             => 'wiki_test_taxonomy_multicheck',
-	'taxonomy'       => '', //Enter Taxonomy Slug
-	'type'           => 'taxonomy_multicheck',
+	'name'      => 'Test Taxonomy Multicheck',
+	'desc'      => 'Description Goes Here',
+	'id'        => 'wiki_test_taxonomy_multicheck',
+	'taxonomy'  => '', //Enter Taxonomy Slug
+	'type'      => 'taxonomy_multicheck',
 	// Optional :
-	'text'           => array(
+	'text'      => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
 ) );
