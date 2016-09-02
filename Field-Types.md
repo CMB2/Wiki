@@ -14,7 +14,7 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 1. [`text_money`](#text_money)
 1. [`textarea`](#textarea)
 1. [`textarea_small`](#textarea_small)
-1. [`textarea_code`](#textarea_code) 
+1. [`textarea_code`](#textarea_code)
 1. [`text_time`](#text_time) Time picker
 1. [`select_timezone`](#select_timezone) Time zone dropdown
 1. [`text_date`](#text_date) Date Picker (UNIX timestamp) (`text_date` is an alias)
@@ -24,14 +24,14 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 1. [`colorpicker`](#colorpicker) Color picker
 1. [`radio`](#radio) *
 1. [`radio_inline`](#radio_inline) *
-1. [`taxonomy_radio`](#taxonomy_radio) *
-1. [`taxonomy_radio_inline`](#taxonomy_radio_inline) *
+1. [`taxonomy_radio`](#taxonomy_radio) * Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_radio_inline`](#taxonomy_radio_inline) * Default Category/Tag/Taxonomy metaboxes replacement.
 1. [`select`](#select)
-1. [`taxonomy_select`](#taxonomy_select) *
+1. [`taxonomy_select`](#taxonomy_select) * Default Category/Tag/Taxonomy metaboxes replacement.
 1. [`checkbox`](#checkbox) *
 1. [`multicheck` and `multicheck_inline`](#multicheck-and-multicheck_inline)
-1. [`taxonomy_multicheck`](#taxonomy_multicheck) *
-1. [`taxonomy_multicheck_inline`](#taxonomy_multicheck_inline)
+1. [`taxonomy_multicheck`](#taxonomy_multicheck) * Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_multicheck_inline`](#taxonomy_multicheck_inline) Default Category/Tag/Taxonomy metaboxes replacement.
 1. [`wysiwyg`](#wysiwyg) (TinyMCE) *
 1. [`file`](#file) Image/File upload *†
 1. [`file_list`](#file_list) Image Gallery/File list management
@@ -42,8 +42,8 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 * [Create your own field type](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)
 * [Common field parameters shared by all fields](/WebDevStudios/CMB2/wiki/Field-Parameters)
 
-\* Not available as a repeatable field  
-† Use `file_list` for repeatable  
+\* Not available as a repeatable field
+† Use `file_list` for repeatable
 
 ### `title`
 ____
@@ -452,6 +452,7 @@ $cmb->add_field( array(
 		'custom'   => __( 'Option Two', 'cmb2' ),
 		'none'     => __( 'Option Three', 'cmb2' ),
 	),
+	'default' => 'standard',
 ) );
 ```
 
@@ -676,7 +677,7 @@ The `'id'` should not be set to 'content' as the standard editor has this id and
 
 ### `file`
 ____
-A file uploader. By default it will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `_wiki_test_image` the ID is stored in `_wiki_test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
+A file uploader. By default it will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `wiki_test_image` the ID is stored in `wiki_test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
 
 ```php
 $cmb->add_field( array(
@@ -697,7 +698,7 @@ $cmb->add_field( array(
 ##### CSS Field Class:
 `cmb-type-file`
 
-Example using the `_wiki_test_image_id` to retrieve a medium image:
+Example using the `wiki_test_image_id` meta key to retrieve a medium image:
 ```php
 $image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'wiki_test_image_id', 1 ), 'medium' );
 ```
