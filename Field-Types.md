@@ -42,7 +42,7 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 * [Create your own field type](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)
 * [Common field parameters shared by all fields](/WebDevStudios/CMB2/wiki/Field-Parameters)
 
-\* Not available as a repeatable field
+\* Not available as a repeatable field  
 † Use `file_list` for repeatable
 
 ### `title`
