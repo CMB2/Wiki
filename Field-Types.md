@@ -17,7 +17,7 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 1. [`textarea_code`](#textarea_code)
 1. [`text_time`](#text_time) Time picker
 1. [`select_timezone`](#select_timezone) Time zone dropdown
-1. [`text_date`](#text_date) Date Picker (UNIX timestamp) (`text_date` is an alias)
+1. [`text_date`](#text_date) Date Picker (`text_date` is an alias)
 1. [`text_datetime_timestamp`](#text_datetime_timestamp) Text Date/Time Picker Combo (UNIX timestamp)
 1. [`text_datetime_timestamp_timezone`](#text_datetime_timestamp_timezone) Text Date/Time Picker/Time zone Combo (serialized DateTime object)
 1. [`hidden`](#hidden) Hidden input type
@@ -249,11 +249,11 @@ $cmb->add_field( array(
 
 ### `text_date`
 ____
-Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
+Date field. Stored and displayed according to the `date_format`. Example:
 
 ```php
 $cmb->add_field( array(
-	'name' => 'Test Date Picker (UNIX timestamp)',
+	'name' => 'Test Date Picker',
 	'id'   => 'wiki_test_textdate_timestamp',
 	'type' => 'text_date',
 	// 'timezone_meta_key' => 'wiki_test_timezone',
