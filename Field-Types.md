@@ -388,6 +388,13 @@ $cmb->add_field( array(
 ) );
 ```
 
+##### To use in your template (in the loop):
+```php
+<?php if ( get_post_meta( get_the_ID(), 'wiki_test_checkbox', 1 ) ) : ?>
+	<div>Some HTML</div>
+<?php endif; ?>
+```
+
 ##### CSS Field Class:
 `cmb-type-checkbox`
 
