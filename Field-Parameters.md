@@ -10,6 +10,7 @@
 - [`default`](#default)
 - [`show_names`](#show_names)
 - [`classes`](#classes)
+- [`classes_cb`](#classes_cb)
 - [`on_front`](#on_front)
 - [`attributes`](#attributes)
 - [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field)
@@ -68,6 +69,28 @@ Whether to show the label for the field. Default is `true`.
 ____
 This parameter allows you to add additional classes to the cmb-row wrap. This parameter can take a string, or array, or can take a callback that returns a string or array. Like above, the callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
 > `'classes' => 'additional-class',`
+
+### `classes_cb`
+____
+Like the `classes` parameter, allows adding classes to the row wrap, but takes a callback. That callback should return an array of classes. The callback function gets passed the `$field` object. Example:
+> `'classes_cb' => 'yourprefix_function_to_add_classes',`
+
+```php
+/**
+ * Add classes to the row.
+ * @param  object $field_args Current field args
+ * @param  object $field      Current field object
+ */
+function yourprefix_function_to_add_classes( $field_args, $field ) {
+	$classes = array(
+		'class1',
+		'class2',
+		// etc...
+	);
+
+	return $classes;
+}
+```
 
 ### `on_front`
 ____

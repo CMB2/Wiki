@@ -17,7 +17,8 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 1. [`textarea_code`](#textarea_code)
 1. [`text_time`](#text_time) Time picker
 1. [`select_timezone`](#select_timezone) Time zone dropdown
-1. [`text_date`](#text_date) Date Picker (UNIX timestamp) (`text_date` is an alias)
+1. [`text_date`](#text_date) Date Picker
+1. [`text_date_timestamp`](#text_date_timestamp) Date Picker (UNIX timestamp)
 1. [`text_datetime_timestamp`](#text_datetime_timestamp) Text Date/Time Picker Combo (UNIX timestamp)
 1. [`text_datetime_timestamp_timezone`](#text_datetime_timestamp_timezone) Text Date/Time Picker/Time zone Combo (serialized DateTime object)
 1. [`hidden`](#hidden) Hidden input type
@@ -42,7 +43,7 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 * [Create your own field type](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)
 * [Common field parameters shared by all fields](/WebDevStudios/CMB2/wiki/Field-Parameters)
 
-\* Not available as a repeatable field
+\* Not available as a repeatable field  
 † Use `file_list` for repeatable
 
 ### `title`
@@ -249,11 +250,11 @@ $cmb->add_field( array(
 
 ### `text_date`
 ____
-Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
+Date field. Stored and displayed according to the `date_format`. Example:
 
 ```php
 $cmb->add_field( array(
-	'name' => 'Test Date Picker (UNIX timestamp)',
+	'name' => 'Test Date Picker',
 	'id'   => 'wiki_test_textdate_timestamp',
 	'type' => 'text_date',
 	// 'timezone_meta_key' => 'wiki_test_timezone',
@@ -262,10 +263,24 @@ $cmb->add_field( array(
 ```
 
 ##### CSS Field Class:
-`cmb-type-text-date-timestamp`
+`cmb-type-text-date`
 
-##### Alias:
-`text_date_timestamp`
+### `text_date_timestamp`
+____
+Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
+
+```php
+$cmb->add_field( array(
+	'name' => 'Test Date Picker (UNIX timestamp)',
+	'id'   => 'wiki_test_textdate_timestamp',
+	'type' => 'text_date_timestamp',
+	// 'timezone_meta_key' => 'wiki_test_timezone',
+	// 'date_format' => 'l jS \of F Y',
+) );
+```
+
+##### CSS Field Class:
+`cmb-type-text-date-timestamp`
 
 ##### Custom Field Attributes:
 
@@ -386,6 +401,13 @@ $cmb->add_field( array(
 	'id'   => 'wiki_test_checkbox',
 	'type' => 'checkbox',
 ) );
+```
+
+##### To use in your template (in the loop):
+```php
+<?php if ( get_post_meta( get_the_ID(), 'wiki_test_checkbox', 1 ) ) : ?>
+	<div>Some HTML</div>
+<?php endif; ?>
 ```
 
 ##### CSS Field Class:
@@ -846,17 +868,20 @@ foreach ( (array) $entries as $key => $entry ) {
 
 	$img = $title = $desc = $caption = '';
 
-	if ( isset( $entry['title'] ) )
+	if ( isset( $entry['title'] ) ) {
 		$title = esc_html( $entry['title'] );
+	}
 
-	if ( isset( $entry['description'] ) )
+	if ( isset( $entry['description'] ) ) {
 		$desc = wpautop( $entry['description'] );
+	}
 
 	if ( isset( $entry['image_id'] ) ) {
 		$img = wp_get_attachment_image( $entry['image_id'], 'share-pick', null, array(
 			'class' => 'thumb',
 		) );
 	}
+
 	$caption = isset( $entry['image_caption'] ) ? wpautop( $entry['image_caption'] ) : '';
 
 	// Do something with the data
