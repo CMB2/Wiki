@@ -51,7 +51,7 @@ External Resources:
 
 1. [CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library)
 
-1. [CMB2 Metabox Code Generator](https://github.com/hasinhayder/cmb2-metabox-generator) - Generate CMB2 Metabox code with this visual form builder and save your time
+1. [CMB2 Metabox Code Generator](http://willthemoor.github.io/cmb2-metabox-generator/) - Use this generator to create fully functional CMB2 metaboxes easily.
 
 1. [Adding interactivity in metaboxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/)
 
