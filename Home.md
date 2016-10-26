@@ -59,4 +59,4 @@ External Resources:
 
 1. Tutorial: [Disable CMB2 Styles on Front End Forms](http://kellenmace.com/disable-cmb2-styles-front-end-forms/)
 
-1. [Listing of many great third party libraries](https://github.com/WebDevStudios/CMB2/blob/trunk/README.md#3rd-party-resources)
+1. [Listing of many great third party resources](https://github.com/WebDevStudios/CMB2/blob/trunk/README.md#3rd-party-resources)
