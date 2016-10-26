@@ -38,20 +38,23 @@ Advanced tutorials:
 1. [Adding your own show_on filters](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters)  
 	Even more ways to limit the display of your metaboxes
 
-3. [Displaying metaboxes on the front-end](https://github.com/WebDevStudios/CMB2/wiki/Bringing-Metaboxes-to-the-Front-end)  
+1. [Displaying metaboxes on the front-end](https://github.com/WebDevStudios/CMB2/wiki/Bringing-Metaboxes-to-the-Front-end)  
 	Let's take this outside wp-admin
 
-4. [Using CMB to create an Admin Theme Options Page](https://github.com/WebDevStudios/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)  
+1. [Using CMB to create an Admin Theme Options Page](https://github.com/WebDevStudios/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)  
 	Optional replacement for the WordPress Settings API
+
+1. [Create New Posts (or Custom Post Type) Entries Using A Front End Form](http://webdevstudios.com/2015/03/30/use-cmb2-to-create-a-new-post-submission-form/)  
+  Leverage CMB2 create a front-end submission form
 
 External Resources:
 
+1. [CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library)
+
 1. [CMB2 Metabox Code Generator](https://github.com/hasinhayder/cmb2-metabox-generator) - Generate CMB2 Metabox code with this visual form builder and save your time
 
-2. [Adding interactivity in metaboxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/)
+1. [Adding interactivity in metaboxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/)
 
-3. [CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library)
+1. Basic CMB2 qTranslate-X integration plugin https://wordpress.org/plugins/integration-cmb2-qtranslate/
 
-4. Basic CMB2 qTranslate-X integration plugin https://wordpress.org/plugins/integration-cmb2-qtranslate/
-
-5. Tutorial: [Disable CMB2 Styles on Front End Forms](http://kellenmace.com/disable-cmb2-styles-front-end-forms/)
+1. Tutorial: [Disable CMB2 Styles on Front End Forms](http://kellenmace.com/disable-cmb2-styles-front-end-forms/)
