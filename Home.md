@@ -55,6 +55,6 @@ External Resources:
 
 1. [Adding interactivity in metaboxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/)
 
-1. Basic CMB2 qTranslate-X integration plugin https://wordpress.org/plugins/integration-cmb2-qtranslate/
+1. [Basic CMB2 qTranslate-X integration plugin](https://wordpress.org/plugins/integration-cmb2-qtranslate/)
 
 1. Tutorial: [Disable CMB2 Styles on Front End Forms](http://kellenmace.com/disable-cmb2-styles-front-end-forms/)
