@@ -27,7 +27,7 @@ Documentation:
 1. [Tips & Tricks](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks)  
 	10x your CMB2 skills.
 
-1. [CMB2 REST API](https://github.com/WebDevStudios/CMB2/wiki/REST-API)  
+1. [REST API](https://github.com/WebDevStudios/CMB2/wiki/REST-API)  
 	Access your CMB2 data through the WordPress REST API.
 
 Advanced tutorials:
