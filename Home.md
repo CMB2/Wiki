@@ -58,3 +58,5 @@ External Resources:
 1. [Basic CMB2 qTranslate-X integration plugin](https://wordpress.org/plugins/integration-cmb2-qtranslate/)
 
 1. Tutorial: [Disable CMB2 Styles on Front End Forms](http://kellenmace.com/disable-cmb2-styles-front-end-forms/)
+
+1. [Listing of many great third party libraries](https://github.com/WebDevStudios/CMB2/blob/trunk/README.md#3rd-party-resources)
