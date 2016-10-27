@@ -16,16 +16,27 @@
 
 ## Enabling the REST API for a CMB2 box
 
-To enable the REST API for a specific CMB2 box, you will use the `'show_in_rest'` box property:
+To enable the REST API for a specific CMB2 box, you will use the `'show_in_rest'` box property, and you will need to use the `cmb2_init` hook (vs the `cmb2_admin_init` hook).
+
 
 ```php
-$cmb = new_cmb2_box( array(
-	'id'           => 'cmb2_info_metabox',
-	'title'        => 'Information',
-	'object_types' => array( 'post' ),
-	// Enables CMB2 REST API for this box, and determines which http methods the box is visible in.
-	'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
-) );
+/**
+ * Hook in and add an info metabox. Use the 'cmb2_init' hook to allow REST API registration.
+ */
+function yourprefix_register_demo_metabox() {
+
+	$cmb = new_cmb2_box( array(
+		'id'           => 'cmb2_info_metabox',
+		'title'        => 'Information',
+		'object_types' => array( 'post' ),
+		// Enables CMB2 REST API for this box, and determines which http methods the box is visible in.
+		'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE,
+	) );
+
+	... 
+
+}
+add_action( 'cmb2_init', 'yourprefix_register_demo_metabox' );
 ```
 
 The `'show_in_rest'` property accepts 1 of several values. The values are the same as those you would use to register your own REST routes, and you can read the [`WP_REST_Server` doc blocks](https://github.com/WordPress/WordPress/blob/master/wp-includes/rest-api/class-wp-rest-server.php#L15-L55) for an explanation on what they stand for.
