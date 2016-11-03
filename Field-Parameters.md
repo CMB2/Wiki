@@ -24,6 +24,8 @@
 - [`escape_cb`](#escape_cb)
 - [`render_row_cb`](#render_row_cb)
 - [`display_cb`](#display_cb)
+- [`remove_default` (since 2.2.3)](#remove_default-since-223)
+- [`date_format`](#date_format)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -464,3 +466,7 @@ $cmb_demo->add_field( array(
 	'remove_default' => true,
 ) );
 ```
+
+### `date_format`
+
+Field parameter used in the date field types which allows specifying the php date format for your field. See [php.net/manual/en/function.date.php](php.net/manual/en/function.date.php).
