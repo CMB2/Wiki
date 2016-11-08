@@ -440,7 +440,7 @@ This example replicates the default render method with custom classes assigned t
 ## Limit text field to numbers only
 
 ```php
-array(
+$cmb_demo->add_field( array(
 	'name' => __( 'My Number Field', 'theme-domain' ),
 	'desc' => __( 'Numbers only', 'msft-newscenter' ),
 	'id'   => $prefix . 'number',
@@ -449,5 +449,5 @@ array(
 		'type' => 'number',
 		'pattern' => '\d*',
 	),
-),
+) );
 ```
