@@ -265,6 +265,37 @@ $cmb->add_field( array(
 ##### CSS Field Class:
 `cmb-type-text-date`
 
+##### Additional Field Options:
+
+The CMB2 date-pickers use the [jQuery UI Datepicker](https://jqueryui.com/datepicker/).
+
+All of the default options in the [jQuery UI Datepicker API Documentation](http://api.jqueryui.com/datepicker/) are configurable within the CMB2 datepicker fields.
+
+###### jQuery UI Option Example Usage:
+
+```php
+$cmb_demo->add_field( array(
+	'name' => __( 'Test Date Picker', 'cmb2' ),
+	'desc' => __( 'field description (optional)', 'cmb2' ),
+	'id'   => '_yourprefix_demo_textdate',
+	'type' => 'text_date',
+	'attributes' => array(
+		// CMB2 checks for datepicker override data here:
+		'data-datepicker' => json_encode( array(
+			// dayNames: http://api.jqueryui.com/datepicker/#option-dayNames
+			'dayNames' => array( 'Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi' ),
+			// monthNamesShort: http://api.jqueryui.com/datepicker/#option-monthNamesShort
+			'monthNamesShort' => explode( ',', 'En,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic' ),
+			// yearRange: http://api.jqueryui.com/datepicker/#option-yearRange
+			// and http://stackoverflow.com/a/13865256/1883421
+			'yearRange' => '-100:+0',
+			// Get 1990 through 10 years from now.
+			// 'yearRange' => '1990:'. ( date( 'Y' ) + 10 ),
+		) ),
+	),
+) );
+```
+
 ### `text_date_timestamp`
 ____
 Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
@@ -345,7 +376,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-Additional Field Options:
+##### Additional Field Options:
 
 The CMB2 colorpicker uses the built in WordPress colorpicker, Iris [automattic.github.io/Iris/] (http://automattic.github.io/Iris/)
 
@@ -370,7 +401,7 @@ options = {
 }
 ```
 
-Iris Option Example Usage:
+##### Iris Option Example Usage:
 
 ```php
 $cmb->add_field( array(
