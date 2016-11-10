@@ -265,6 +265,7 @@ $cmb->add_field( array(
 ##### CSS Field Class:
 `cmb-type-text-date`
 
+<a name="datepicker-additional-field-options"></a>
 ##### Additional Field Options:
 
 The CMB2 date-pickers use the [jQuery UI Datepicker](https://jqueryui.com/datepicker/).
