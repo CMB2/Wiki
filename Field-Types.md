@@ -377,6 +377,7 @@ $cmb->add_field( array(
 ) );
 ```
 
+<a name="colorpicker-additional-field-options"></a>
 ##### Additional Field Options:
 
 The CMB2 colorpicker uses the built in WordPress colorpicker, Iris [automattic.github.io/Iris/] (http://automattic.github.io/Iris/)

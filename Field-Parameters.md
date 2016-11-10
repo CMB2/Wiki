@@ -131,7 +131,7 @@ $cmb_demo->add_field( array(
 ) );
 ```
 
-The colorpicker fields and date picker fields can each use the attributes field to set an array of overrides for the picker options using `json_encode`. [Colorpicker example](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#iris-option-example-usage), and [Datepicker example](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#datepicker-additional-field-options).
+The colorpicker fields and date picker fields can each use the attributes field to set an array of overrides for the picker options using `json_encode`. [Colorpicker example](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#colorpicker-additional-field-options), and [Datepicker example](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#datepicker-additional-field-options).
 
 ### `before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`
 ____
