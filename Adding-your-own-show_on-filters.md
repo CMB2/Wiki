@@ -485,48 +485,7 @@ add_filter( 'cmb2_show_on', 'show_meta_to_chosen_user_types', 10, 2 );
 ```
 
 ### Example: Page Template show_on filter
-Shows up on a page using a specific template. Use the template's slug. (e.g. template-name.php would be 'template-name'). Pass empty string `''` to target only default page template.
-```php
-<?php
-/**
- * Metabox for Page Template
- * @author Kenneth White
- * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
- *
- * @param bool $display
- * @param array $meta_box
- * @return bool display metabox
- */
-function be_metabox_show_on_template( $display, $meta_box ) {
-	if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) ) {
-		return $display;
-	}
-
-	if ( 'template' !== $meta_box['show_on']['key'] ) {
-		return $display;
-	}
-
-	$post_id = 0;
-
-	// If we're showing it based on ID, get the current ID
-	if ( isset( $_GET['post'] ) ) {
-		$post_id = $_GET['post'];
-	} elseif ( isset( $_POST['post_ID'] ) ) {
-		$post_id = $_POST['post_ID'];
-	}
-
-	if ( ! $post_id ) {
-		return false;
-	}
-
-	$template_name = get_page_template_slug( $post_id );
-	$template_name = ! empty( $template_name ) ? substr( $template_name, 0, -4 ) : '';
-
-	// See if there's a match
-	return in_array( $template_name, (array) $meta_box['show_on']['value'] );
-}
-add_filter( 'cmb2_show_on', 'be_metabox_show_on_template', 10, 2 );
-```
+This has been added natively to display options. See [https://github.com/WebDevStudios/CMB2/wiki/Display-Options#limit-to-specific-page-templates](Limit to specific page templates in Page Options).
 
 ### Example: Show metabox for certain user roles
 Will display if the current logged-in user's user-role is whitelisted. Props [@Mte90].
