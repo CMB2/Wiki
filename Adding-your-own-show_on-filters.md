@@ -485,7 +485,7 @@ add_filter( 'cmb2_show_on', 'show_meta_to_chosen_user_types', 10, 2 );
 ```
 
 ### Example: Page Template show_on filter
-This has been added natively to display options. See [https://github.com/WebDevStudios/CMB2/wiki/Display-Options#limit-to-specific-page-templates](Limit to specific page templates in Page Options).
+This has been added natively to display options. See [Limit to specific page templates in Page Options](https://github.com/WebDevStudios/CMB2/wiki/Display-Options#limit-to-specific-page-templates).
 
 ### Example: Show metabox for certain user roles
 Will display if the current logged-in user's user-role is whitelisted. Props [@Mte90].
