@@ -693,8 +693,8 @@ function yourprefix_get_wysiwyg_output( $meta_key, $post_id = 0 ) {
 	$content = get_post_meta( $post_id, $meta_key, 1 );
 	$content = $wp_embed->autoembed( $content );
 	$content = $wp_embed->run_shortcode( $content );
-	$content = do_shortcode( $content );
 	$content = wpautop( $content );
+	$content = do_shortcode( $content );
 
 	return $content;
 }
