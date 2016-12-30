@@ -57,6 +57,13 @@ ____
 [Supported by most field types](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#types), and will make the individual field a repeatable one. Default is `false`.
 > `'repeatable' => true,`
 
+In order to customize `Add Row` button label define:
+```php
+'options' => array(
+  'add_row_text' => __( 'Add Another Special Row', 'your_text_domain' ),
+),
+```
+
 ### `default`
 ____
 Specify a default value for the field.
