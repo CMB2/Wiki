@@ -747,6 +747,10 @@ $cmb->add_field( array(
 	'text'    => array(
 		'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
 	),
+	// query_args are passed to wp.media's library query.
+	'query_args' => array(
+		'type' => 'application/pdf', // Make library only display PDFs.
+	),
 ) );
 ```
 
