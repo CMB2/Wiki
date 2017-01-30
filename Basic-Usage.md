@@ -35,10 +35,10 @@ _Note: If you are installing the plugin from [WordPress.org](https://wordpress.o
 /**
  * Get the bootstrap!
  */
-if ( file_exists(  __DIR__ . '/cmb2/init.php' ) ) {
-  require_once  __DIR__ . '/cmb2/init.php';
+if ( file_exists( __DIR__ . '/cmb2/init.php' ) ) {
+  require_once __DIR__ . '/cmb2/init.php';
 } elseif ( file_exists(  __DIR__ . '/CMB2/init.php' ) ) {
-  require_once  __DIR__ . '/CMB2/init.php';
+  require_once __DIR__ . '/CMB2/init.php';
 }
 ```
 
