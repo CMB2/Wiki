@@ -442,7 +442,7 @@ This example replicates the default render method with custom classes assigned t
 ```php
 $cmb_demo->add_field( array(
 	'name' => __( 'My Number Field', 'theme-domain' ),
-	'desc' => __( 'Numbers only', 'msft-newscenter' ),
+	'desc' => __( 'Numbers only', 'theme-domain' ),
 	'id'   => $prefix . 'number',
 	'type' => 'text',
 	'attributes' => array(
