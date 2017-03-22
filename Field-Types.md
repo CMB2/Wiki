@@ -95,6 +95,8 @@ $cmb->add_field( array(
 ##### CSS Field Class:
 `cmb-type-text-small`
 
+##### Screenshot
+![Screenshot of text_small CMB field](https://cloudup.com/ceedrcxmIMp)
 ### `text_medium`
 ____
 Medium text field. Example:
