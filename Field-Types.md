@@ -96,7 +96,7 @@ $cmb->add_field( array(
 `cmb-type-text-small`
 
 ##### Screenshot
-![Screenshot of text_small CMB field](https://cloudup.com/ceedrcxmIMp)
+[Screenshot of text_small CMB field](https://cldup.com/ka2VrkBV_W-3000x3000.jpeg)
 ### `text_medium`
 ____
 Medium text field. Example:
