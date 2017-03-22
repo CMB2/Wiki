@@ -81,7 +81,7 @@ $cmb->add_field( array(
 ### `text_small`
 ____
 Small text field. Example:
-
+![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_small.jpg)
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Text Small',
@@ -95,14 +95,10 @@ $cmb->add_field( array(
 ##### CSS Field Class:
 `cmb-type-text-small`
 
-##### Screenshot
-
-![Screenshot of text_small CMB field](images/text_small.jpg)
-
 ### `text_medium`
 ____
 Medium text field. Example:
-
+![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_medium.jpg)
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Text Medium',
@@ -119,7 +115,7 @@ $cmb->add_field( array(
 ### `text_email`
 ____
 Standard text field which enforces an email address. Example:
-
+![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_email.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Email',
@@ -134,7 +130,7 @@ $cmb->add_field( array(
 ### `text_url`
 ____
 Standard text field which enforces a url. Example:
-
+![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_url.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => __( 'Website URL', 'cmb2' ),
@@ -150,7 +146,7 @@ $cmb->add_field( array(
 ### `text_money`
 ____
 Standard text field with dollar sign in front of it (useful to prevent users from adding a dollar sign to input). Example:
-
+![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_money.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Money',
@@ -218,7 +214,7 @@ $cmb->add_field( array(
 ### `text_time`
 ____
 Time picker field. Example:
-
+![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_time.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Time Picker',
@@ -255,7 +251,7 @@ $cmb->add_field( array(
 ### `text_date`
 ____
 Date field. Stored and displayed according to the `date_format`. Example:
-
+![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_date.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Date Picker',
