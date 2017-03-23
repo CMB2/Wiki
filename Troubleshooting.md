@@ -65,9 +65,9 @@ Since `print_r()` is a callable [php function](http://php.net/manual/en/function
 
 Another example is if you have defined a function in your theme's functions.php file, `crackers()`, and then used `'crackers'` as the value for the 'default' parameter. Again, the default would be the return of the `crackers()` function, which is almost certainly not the expectation.
 
-These paramters accept a callable callback for conveneince, but can cause debugging headaches if your paramater value happens to be callable without you knowing it. It is difficult to change at this point without breaking backwards-compatibility.
+These parameters accept a callable callback for convenience, but can cause debugging headaches if your parameter value happens to be callable without you knowing it. It is difficult to change at this point without breaking backwards-compatibility.
 
-A listing of all the field paramaters (besides the obvious `_cb` parameters) which accept a callable value:
+A listing of all the field parameters (besides the obvious `_cb` parameters) which accept a callable value:
 
 * `'default'`
 * `'options'`
@@ -99,4 +99,10 @@ $cmb->add_field( array(
 ) );
 ```
 
-_Related Issue: [#507](https://github.com/WebDevStudios/CMB2/issues/507)_
+**Update:** As of version 2.2.3, these magical non-_cb parameters being used with a callback are deprecated: `'row_classes'`, `'default'`, `'options'`. If trying to use these parameters with callbacks, notices will show when WordPress Debug is enabled.
+
+We can't completely remove that functionality for a few releases to keep from breaking backwards-compatibility. We need to let the deprecation soak for a while, hopefully causing developers to update their code. Eventually, we will remove the broken functionally, and only the equivalent '`*_cb`' parameters will allow a callback.
+
+An unfortunate side-effect is that you may occasionally see this deprecation notice when you are using a php callable word for the `'default'` or `'row_classes'` parameter (e.g. [#894](https://github.com/WebDevStudios/CMB2/issues/894)). To address, use the workaround demonstrated above.
+
+_Related Issues: [#507](https://github.com/WebDevStudios/CMB2/issues/507), [#894](https://github.com/WebDevStudios/CMB2/issues/894)_
