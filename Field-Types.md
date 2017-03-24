@@ -49,7 +49,7 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 ### `title`
 ____
 A large title (useful for breaking up sections of fields in metabox). Example:
-
+![Screenshot of title CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/e738751763014c803bf50fd19203de9fc7dafa5a/screenshot_title.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Title',
@@ -64,7 +64,7 @@ $cmb->add_field( array(
 ### `text`
 ____
 Standard text field (large). Example:
-
+![Screenshot of text CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/e738751763014c803bf50fd19203de9fc7dafa5a/screenshot_text.jpg)
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Text',
@@ -163,7 +163,7 @@ $cmb->add_field( array(
 ### `textarea`
 ____
 Standard textarea. Example:
-
+![Screenshot of text area CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/e738751763014c803bf50fd19203de9fc7dafa5a/screenshot_textarea.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Area',
@@ -180,7 +180,7 @@ $cmb->add_field( array(
 ### `textarea_small`
 ____
 Smaller textarea. Example:
-
+![Screenshot of text area small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/e738751763014c803bf50fd19203de9fc7dafa5a/screenshot_textarea_small.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Area Small',
@@ -197,7 +197,7 @@ $cmb->add_field( array(
 ### `textarea_code`
 ____
 Code textarea. Example:
-
+![Screenshot of text area code CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/e738751763014c803bf50fd19203de9fc7dafa5a/screenshot_textarea_code.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Area Code',
