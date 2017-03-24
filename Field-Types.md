@@ -163,7 +163,7 @@ $cmb->add_field( array(
 ### `textarea`
 ____
 Standard textarea. Example:
-![Screenshot of text area CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/e738751763014c803bf50fd19203de9fc7dafa5a/screenshot_textarea.jpg)
+![Screenshot of text area CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/ae967aad65daeec5e89200d8663228676b1b960b/screenshot_textarea.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Area',
@@ -180,7 +180,7 @@ $cmb->add_field( array(
 ### `textarea_small`
 ____
 Smaller textarea. Example:
-![Screenshot of text area small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/e738751763014c803bf50fd19203de9fc7dafa5a/screenshot_textarea_small.jpg)
+![Screenshot of text area small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/ae967aad65daeec5e89200d8663228676b1b960b/screenshot_textarea_small.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Area Small',
@@ -197,7 +197,7 @@ $cmb->add_field( array(
 ### `textarea_code`
 ____
 Code textarea. Example:
-![Screenshot of text area code CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/e738751763014c803bf50fd19203de9fc7dafa5a/screenshot_textarea_code.jpg)
+![Screenshot of text area code CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/ae967aad65daeec5e89200d8663228676b1b960b/screenshot_textarea_code.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Area Code',
