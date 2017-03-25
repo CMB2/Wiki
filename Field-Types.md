@@ -426,7 +426,7 @@ $cmb->add_field( array(
 ### `checkbox`
 ____
 Standard checkbox. Example:
-
+![Screenshot of checkbox CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_checkbox.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Checkbox',
@@ -621,7 +621,7 @@ $cmb->add_field( array(
 ### `taxonomy_multicheck`
 ____
 A field with checkboxes with taxonomy terms, and multiple terms can be selected. Example:
-![Screenshot of taxonomy multiple checkbox CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_multicheck.jpg)
+![Screenshot of taxonomy multiple checkbox CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_multiselect.jpg)
 ```php
 $cmb->add_field( array(
 	'name'           => 'Test Taxonomy Multicheck',
@@ -647,7 +647,7 @@ $cmb->add_field( array(
 ### `taxonomy_multicheck_inline`
 ____
 Inline checkboxes with taxonomy terms. Example:
-![Screenshot of taxonomy multiple checkbox inline CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_multicheck_inline.jpg)
+![Screenshot of taxonomy multiple checkbox inline CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_multiselect_inline.jpg)
 ##### CSS Field Class:
 `cmb-type-taxonomy-multicheck-inline`
 
@@ -767,7 +767,7 @@ ____
 A file uploader that allows you to add as many files as you want. Once added, files can be dragged and dropped to reorder.
 
 This is a repeatable field, and will store its data in an array, with the attachment ID as the array key and the attachment url as the value. Example:
-![Screenshot of multiple file/image upload CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_filelist.jpg)
+![Screenshot of multiple file/image upload CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_file_list.jpg)
 ```php
 $cmb->add_field( array(
 	'name' => 'Test File List',
