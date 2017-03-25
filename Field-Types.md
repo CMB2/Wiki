@@ -849,7 +849,7 @@ echo wp_oembed_get( $url );
 ### `group`
 ____
 Hybrid field that supports adding other fields as a repeatable group. Example:
-
+![Screenshot of group / repeatable CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/8bff8bf2ad29e14227b56037227b01ed5e6dce42/screenshot_group.jpg)
 ```php
 $group_field_id = $cmb->add_field( array(
 	'id'          => 'wiki_test_repeat_group',
