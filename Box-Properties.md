@@ -167,8 +167,8 @@ if `object_types` is set to `'term'`, and set to `false`, will remove the fields
 
 ### `show_in_rest`
 ____
-Determines if/how fields/metabox are available in the REST API. ([More info](https://github.com/WebDevStudios/CMB2/wiki/REST-API))
-> `'show_in_rest' => false,`
+Determines if/how fields/metabox are available in the REST API. Default is `false`. ([More info](https://github.com/WebDevStudios/CMB2/wiki/REST-API))
+> `'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE`
 
 
 
