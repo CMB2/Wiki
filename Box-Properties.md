@@ -31,7 +31,10 @@ When registering a [CMB2 metabox/instance](https://github.com/WebDevStudios/CMB2
 ____
 The id of metabox
 
-> `'id' => 'my-metabox',`
+`'id' => 'my-metabox',`
+<br>
+<br>
+<br>
 
 ### `title`
 ____
@@ -42,12 +45,18 @@ To keep from registering an actual post-screen metabox, omit the 'title' propert
 This is a good solution if you want to handle outputting your
 metaboxes/fields elsewhere in the post-screen.
 
-> `'title' => 'Title of the Metabox',`
+`'title' => 'Title of the Metabox',`
+<br>
+<br>
+<br>
 
 ### `object_types`
 ____
 An array containing post type slugs, or 'user', 'term', 'comment', or 'options-page'. This property is required to have a value.
-> `'object_types' => array( 'page' ),`
+`'object_types' => array( 'page' ),`
+<br>
+<br>
+<br>
 
 ### `context`
 ____
@@ -64,7 +73,7 @@ Comments screen contexts include 'normal' and 'side'. Default is `'normal'`.
 ### `priority`
 ____
 Priority of the metabox in its context. Default is `'high'`. ([More Info](https://developer.wordpress.org/reference/functions/add_meta_box/#parameters))
-> `'priority' => 'high',`
+`'priority' => 'high',`
 
 ### `show_names`
 ____
