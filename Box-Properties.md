@@ -69,16 +69,25 @@ For these alternate locations, if it is preferred that the fields are output wit
 
 Comments screen contexts include 'normal' and 'side'. Default is `'normal'`.
 > `'context' => 'normal',`
+<br>
+<br>
+<br>
 
 ### `priority`
 ____
 Priority of the metabox in its context. Default is `'high'`. ([More Info](https://developer.wordpress.org/reference/functions/add_meta_box/#parameters))
 `'priority' => 'high',`
+<br>
+<br>
+<br>
 
 ### `show_names`
 ____
 Whether to show labels for the fields. Default is `true`.
 > `'show_names' => false, // Hide the labels`
+<br>
+<br>
+<br>
 
 ### `classes`
 ____
@@ -86,6 +95,9 @@ This property allows you to optionally add classes to the CMB2 wrapper. This pro
 > `'classes' => 'additional-class',`
 OR  
 > `'classes' => array( 'additional-class', 'another-class' ),`
+<br>
+<br>
+<br>
 
 ### `classes_cb`
 ____
@@ -108,6 +120,9 @@ function yourprefix_function_to_add_classes( $properties, $cmb ) {
 	return $classes;
 }
 ```
+<br>
+<br>
+<br>
 
 ### `show_on_cb`
 ____
@@ -125,56 +140,89 @@ function yourprefix_only_show_for_user_1( $cmb ) {
 	return 1 === get_current_user_id();
 }
 ```
+<br>
+<br>
+<br>
 
 ### `show_on`
 ____
 Post IDs or page templates to display this metabox. Overrides 'show_on_cb'. More info: [Adding your own show_on filters](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters)
 > `'show_on' => array( 'id' => 2 ), // Only show on the "about" page`
+<br>
+<br>
+<br>
 
 ### `cmb_styles`
 ____
 Whether to enqeue CMB2 stylesheet. Default is `true`.
 > `'cmb_styles' => true,`
+<br>
+<br>
+<br>
 
 ### `enqueue_js`
 ____
 Whether to enqeue CMB2 Javascript files. Default is `true`.
 > `'enqueue_js' => true,`
+<br>
+<br>
+<br>
 
 ### `fields`
 ____
 It is possible to pass an array of field arrays as a box property, but it is generally prefered to use the `$cmb->add_field( ... )` method.
 > `'fields' => array( array( ... ) ),`
+<br>
+<br>
+<br>
 
 ### `hookup`
 ____
 Handles hooking CMB2 forms/metaboxes into the post/attachement/user screens, and handles hooking in and saving those fields. Set to `false` if you plan on handling the form/field output/saving (via something like `cmb2_metabox_form()`). Default is `true`.
 > `'hookup' => true,`
+<br>
+<br>
+<br>
 
 ### `save_fields`
 ____
 If false, will not save during hookup (see above). Default is `true`.
 > `'save_fields' => true,`
+<br>
+<br>
+<br>
 
 ### `closed`
 ____
 Set to `true` to default metabox being closed. Default is `false`.
 > `'closed' => false,`
+<br>
+<br>
+<br>
 
 ### `taxonomies`
 ____
 if `object_types` is set to `'term'`, it is required to provide a the `taxonomies` property, which should be an array of Taxonomies.
 > `'taxonomies'       => array( 'category', 'post_tag' ), // Tells CMB2 which taxonomies should have these fields.`
+<br>
+<br>
+<br>
 
 ### `new_user_section`
 ____
 if `object_types` is set to `'user'`, will determine where fields are output in the new-user screen. Options are `'add-existing-user'` and `'add-new-user'`. Default is `'add-new-user'`.
 > `'new_user_section' =>  'add-existing-user',`
+<br>
+<br>
+<br>
 
 ### `new_term_section`
 ____
 if `object_types` is set to `'term'`, and set to `false`, will remove the fields from the new-term screen. Default is `true`.
 > `'new_term_section' => false,`
+<br>
+<br>
+<br>
 
 ### `show_in_rest`
 ____
