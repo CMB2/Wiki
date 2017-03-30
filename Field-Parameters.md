@@ -35,27 +35,39 @@ Most (if not all) fields support the parameters on this page. When a field type 
 ____
 The field label
 
-> `'name' => 'First Name',`
+`'name' => 'First Name',`
+<br>
+<br>
+<br>
 
 ### `desc`
 ____
 Field description. Usually under or adjacent to the field input.
-> `'desc' => 'Please enter your first name.',`
+`'desc' => 'Please enter your first name.',`
+<br>
+<br>
+<br>
 
 ### `id`
 ____
 The data key. If using for posts, will be the post-meta key. If using for an options page, will be the array key. **Required**.
-> `'id' => 'yourprefix_first_name',`
+`'id' => 'yourprefix_first_name',`
+<br>
+<br>
+<br>
 
 ### `type`
 ____
 What makes the whole thing work. **Required**.
-> `'type' => 'text_medium',`
+`'type' => 'text_medium',`
+<br>
+<br>
+<br>
 
 ### `repeatable`
 ____
 [Supported by most field types](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#types), and will make the individual field a repeatable one. Default is `false`.
-> `'repeatable' => true,`
+`'repeatable' => true,`
 
 In order to customize `Add Row` button label, add to your Field's config array:
 
@@ -64,26 +76,38 @@ In order to customize `Add Row` button label, add to your Field's config array:
 		'add_row_text' => 'Add Another Special Row',
 	),
 ```
+<br>
+<br>
+<br>
 
 ### `default`
 ____
 Specify a default value for the field.
-> `'default' => 'John',`
+`'default' => 'John',`
+<br>
+<br>
+<br>
 
 ### `show_names`
 ____
 Whether to show the label for the field. Default is `true`.
-> `'show_names' => false,`
+`'show_names' => false,`
+<br>
+<br>
+<br>
 
 ### `classes`
 ____
 This parameter allows you to add additional classes to the cmb-row wrap. This parameter can take a string, or array, or can take a callback that returns a string or array. Like above, the callback will receive `$field_args` as the first argument, and the CMB2_Field `$field` object as the second argument.
-> `'classes' => 'additional-class',`
+`'classes' => 'additional-class',`
+<br>
+<br>
+<br>
 
 ### `classes_cb`
 ____
 Like the `classes` parameter, allows adding classes to the row wrap, but takes a callback. That callback should return an array of classes. The callback function gets passed the `$field` object. Example:
-> `'classes_cb' => 'yourprefix_function_to_add_classes',`
+`'classes_cb' => 'yourprefix_function_to_add_classes',`
 
 ```php
 /**
@@ -101,11 +125,17 @@ function yourprefix_function_to_add_classes( $field_args, $field ) {
 	return $classes;
 }
 ```
+<br>
+<br>
+<br>
 
 ### `on_front`
 ____
 If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`. Default is `true`.
-> `'on_front' => false,`
+`'on_front' => false,`
+<br>
+<br>
+<br>
 
 ### `attributes`
 ____
@@ -140,6 +170,9 @@ $cmb_demo->add_field( array(
 ```
 
 The colorpicker fields and date picker fields can each use the attributes field to set an array of overrides for the picker options using `json_encode`. [Colorpicker example](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#colorpicker-additional-field-options), and [Datepicker example](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#datepicker-additional-field-options).
+<br>
+<br>
+<br>
 
 ### `before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`
 ____
@@ -166,6 +199,9 @@ function cmb_after_row_cb( $field_args, $field ) {
 	}
 }
 ```
+<br>
+<br>
+<br>
 
 ### `before_group`, `after_group`, `before_group_row`, `after_group_row`
 ____
@@ -182,6 +218,9 @@ $group_field_id = $cmb_group->add_field( array(
 	'after_group_row'  => '<p>Testing <b>"after_group_row"</b> parameter</p>',
 ) );
 ```
+<br>
+<br>
+<br>
 
 ### `before_display_wrap`, `before_display`, `after_display`, `after_display_wrap`
 ____
@@ -202,6 +241,9 @@ $cmb_demo->add_field( array(
 ```
 
 [<img src="images/testing-display-parameters.png" alt="Display callbacks screenshot">](images/testing-display-parameters.png)
+<br>
+<br>
+<br>
 
 ### `column`
 
@@ -222,6 +264,9 @@ $cmb_demo->add_field( array(
 
 [<img src="images/field-columns.png?ver=3" alt="field columns screenshot">](images/field-columns.png?ver=3)
 
+<br>
+<br>
+<br>
 
 ### `show_on_cb`
 ____
@@ -247,17 +292,23 @@ function cmb_only_show_for_user_1( $field ) {
 	return 1 === get_current_user_id();
 }
 ```
+<br>
+<br>
+<br>
 
 ### `options`
 ____
 For fields that take an options array. These include `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Should be a an array where the keys are the option value, and the values are the option text.
-> ```
-> 'options' => array(
-> 	'none'     => 'None',
-> 	'standard' => 'Standard',
-> 	'custom'   => 'Custom',
-> ),
-> ```
+```
+'options' => array(
+	'none'     => 'None',
+	'standard' => 'Standard',
+	'custom'   => 'Custom',
+),
+```
+<br>
+<br>
+<br>
 
 ### `options_cb`
 ____
@@ -299,6 +350,9 @@ function cmb_color_options( $field ) {
 	return $options;
 }
 ```
+<br>
+<br>
+<br>
 
 ### `sanitization_cb`
 ____
@@ -357,6 +411,9 @@ function your_prefix_sanitize_wysiwyg( $content ) {
 	return apply_filters( 'content_save_pre', $content );
 }
 ```
+<br>
+<br>
+<br>
 
 ### `escape_cb`
 ____
@@ -393,6 +450,9 @@ function escape_greater_than_100( $value, $field_args, $field ) {
 	return $escaped_value;
 }
 ```
+<br>
+<br>
+<br>
 
 ### `render_row_cb`
 ____
@@ -430,6 +490,9 @@ function cmb_test_render_row_cb( $field_args, $field ) {
 	<?php
 }
 ```
+<br>
+<br>
+<br>
 
 ### `display_cb`
 ____
@@ -462,6 +525,9 @@ function yourprefix_display_wiki_text( $field_args, $field ) {
 	<?php
 }
 ```
+<br>
+<br>
+<br>
 
 ### `remove_default` (since 2.2.3)
 ____
@@ -476,6 +542,9 @@ $cmb_demo->add_field( array(
 	'remove_default' => true,
 ) );
 ```
+<br>
+<br>
+<br>
 
 ### `date_format`
 
