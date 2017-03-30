@@ -45,11 +45,15 @@ To see examples for how to define your prefixes, as well as examples of the fiel
 
 \* Not available as a repeatable field  
 † Use `file_list` for repeatable
+<br>
+<br>
+<br>
 
 ### `title`
 ____
 A large title (useful for breaking up sections of fields in metabox). Example:
 ![Screenshot of title CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/e738751763014c803bf50fd19203de9fc7dafa5a/screenshot_title.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Title',
@@ -60,11 +64,15 @@ $cmb->add_field( array(
 ```
 ##### CSS Field Class:
 `cmb-type-title`
+<br>
+<br>
+<br>
 
 ### `text`
 ____
 Standard text field (large). Example:
 ![Screenshot of text CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_text.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Text',
@@ -77,11 +85,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-text`
+<br>
+<br>
+<br>
 
 ### `text_small`
 ____
 Small text field. Example:
 ![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_small.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Text Small',
@@ -94,11 +106,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-text-small`
+<br>
+<br>
+<br>
 
 ### `text_medium`
 ____
 Medium text field. Example:
 ![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_medium.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Text Medium',
@@ -111,11 +127,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-text-medium`
+<br>
+<br>
+<br>
 
 ### `text_email`
 ____
 Standard text field which enforces an email address. Example:
 ![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_email.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Email',
@@ -126,11 +146,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-text-email`
+<br>
+<br>
+<br>
 
 ### `text_url`
 ____
 Standard text field which enforces a url. Example:
 ![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_url.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => __( 'Website URL', 'cmb2' ),
@@ -142,11 +166,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-text-url`
+<br>
+<br>
+<br>
 
 ### `text_money`
 ____
 Standard text field with dollar sign in front of it (useful to prevent users from adding a dollar sign to input). Example:
 ![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_money.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Money',
@@ -159,11 +187,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-text-money`
+<br>
+<br>
+<br>
 
 ### `textarea`
 ____
 Standard textarea. Example:
 ![Screenshot of text area CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/ae967aad65daeec5e89200d8663228676b1b960b/screenshot_textarea.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Area',
@@ -176,11 +208,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-textarea`
+<br>
+<br>
+<br>
 
 ### `textarea_small`
 ____
 Smaller textarea. Example:
 ![Screenshot of text area small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/ae967aad65daeec5e89200d8663228676b1b960b/screenshot_textarea_small.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Area Small',
@@ -193,11 +229,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-textarea-small`
+<br>
+<br>
+<br>
 
 ### `textarea_code`
 ____
 Code textarea. Example:
 ![Screenshot of text area code CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/ae967aad65daeec5e89200d8663228676b1b960b/screenshot_textarea_code.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Text Area Code',
@@ -210,11 +250,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-textarea-code`
+<br>
+<br>
+<br>
 
 ### `text_time`
 ____
 Time picker field. Example:
 ![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_time.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Time Picker',
@@ -231,11 +275,15 @@ $cmb->add_field( array(
 
 * `time_format`, defaults to 'h:i A'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
 
+<br>
+<br>
+<br>
 
 ### `select_timezone`
 ____
 Timezone field. Example:
 ![Screenshot of select_timezone CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_select_timezone.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Time zone',
@@ -247,11 +295,15 @@ $cmb->add_field( array(
 ##### CSS Field Class:
 `cmb-type-select-timezone`
 
+<br>
+<br>
+<br>
 
 ### `text_date`
 ____
 Date field. Stored and displayed according to the `date_format`. Example:
 ![Screenshot of text_date CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_text_date.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Date Picker',
@@ -296,11 +348,15 @@ $cmb_demo->add_field( array(
 	),
 ) );
 ```
+<br>
+<br>
+<br>
 
 ### `text_date_timestamp`
 ____
 Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
 ![Screenshot of text_date_timestamp CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_text_date_timestamp.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Date Picker (UNIX timestamp)',
@@ -319,11 +375,15 @@ $cmb->add_field( array(
 * `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/WebDevStudios/CMB2/wiki/Field-Types#select_timezone) field specified above.
 * `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
 
+<br>
+<br>
+<br>
 
 ### `text_datetime_timestamp`
 ____
 Date and time field, stored as UNIX timestamp. Example:
 ![Screenshot of text_datetime_timestamp CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_text_datetime_timestamp.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Date/Time Picker Combo (UNIX timestamp)',
@@ -334,11 +394,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-text-datetime-timestamp`
+<br>
+<br>
+<br>
 
 ### `text_datetime_timestamp_timezone`
 ____
 Date, time and timezone field, stored as serialized DateTime object. Example:
 ![Screenshot of text_datetime_timestamp_timezone CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_text_datetime_timestamp_timezone.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Date/Time Picker/Time zone Combo (serialized DateTime object)',
@@ -349,6 +413,9 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-datetime-timestamp-timezone`
+<br>
+<br>
+<br>
 
 ### `hidden`
 ____
@@ -363,11 +430,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 not applicable to this field type.
+<br>
+<br>
+<br>
 
 ### `colorpicker`
 ____
 A colorpicker field. Example:
 ![Screenshot of color picker CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_colorpicker.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Color Picker',
@@ -422,11 +493,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-colorpicker`
+<br>
+<br>
+<br>
 
 ### `checkbox`
 ____
 Standard checkbox. Example:
 ![Screenshot of checkbox CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_checkbox.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test Checkbox',
@@ -445,11 +520,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-checkbox`
+<br>
+<br>
+<br>
 
 ### `multicheck` and `multicheck_inline`
 ____
 A field with multiple checkboxes (and multiple can be selected). Example:
 ![Screenshot of multi checkbox CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_multicheck.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Multi Checkbox',
@@ -470,11 +549,15 @@ $cmb->add_field( array(
 ##### Custom Field Attributes:
 
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
+<br>
+<br>
+<br>
 
 ### `radio`
 ____
 Standard radio buttons. Example:
 ![Screenshot of standard radio button CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_radio.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'             => 'Test Radio',
@@ -492,11 +575,15 @@ Set the optional paremter, `show_option_none`, to `true` to use the default text
 
 ##### CSS Field Class:
 `cmb-type-radio`
+<br>
+<br>
+<br>
 
 ### `radio_inline`
 ____
 Inline radio buttons. Example:
 ![Screenshot of radio button inline CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_radio_inline.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test Radio inline',
@@ -513,11 +600,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-radio-inline`
+<br>
+<br>
+<br>
 
 ### `select`
 ____
 Standard select dropdown. Example:
 ![Screenshot of select dropdown CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_select.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'             => 'Test Select',
@@ -570,11 +661,15 @@ function show_cat_or_dog_options( $field ) {
 ##### Notes
 
 If you need the label value wherever you are using the select field's value (vs just the value), you can define your options in a function, and get the label by comparing the value against the array given by the function. [Example here](http://wordpress.stackexchange.com/a/220703/45740).
+<br>
+<br>
+<br>
 
 ### `taxonomy_radio`
 ____
 Radio buttons pre-populated with taxonomy terms. Example:
 ![Screenshot of taxonomy radio button CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_radio.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'           => 'Test Taxonomy Radio',
@@ -592,6 +687,9 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-taxonomy-radio`
+<br>
+<br>
+<br>
 
 ### `taxonomy_radio_inline`
 ____
@@ -599,11 +697,15 @@ Inline radio buttons pre-populated with taxonomy terms. Example:
 ![Screenshot of taxonomy radio button inline CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_radio_inline.jpg)
 ##### CSS Field Class:
 `cmb-type-taxonomy-radio-inline`
+<br>
+<br>
+<br>
 
 ### `taxonomy_select`
 ____
 A select field pre-populated with taxonomy terms. Example:
 ![Screenshot of taxonomy select dropdown CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_select.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'           => 'Test Taxonomy Select',
@@ -617,11 +719,15 @@ $cmb->add_field( array(
 
 ##### CSS Field Class:
 `cmb-type-taxonomy-select`
+<br>
+<br>
+<br>
 
 ### `taxonomy_multicheck`
 ____
 A field with checkboxes with taxonomy terms, and multiple terms can be selected. Example:
 ![Screenshot of taxonomy multiple checkbox CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_multiselect.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'           => 'Test Taxonomy Multicheck',
@@ -643,6 +749,9 @@ $cmb->add_field( array(
 ##### Custom Field Attributes:
 
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
+<br>
+<br>
+<br>
 
 ### `taxonomy_multicheck_inline`
 ____
@@ -658,11 +767,15 @@ Inline checkboxes with taxonomy terms. Example:
 ##### Notes
 To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_post_meta`, etc. The taxonomy fields are not intended to provide an arbitrary list of terms to pick from, but are intended to be a replacement for the default taxonomy meta-boxes. I.e. they are meant to set the taxonomy terms on an object, and will not save as a meta value. Any other use of these types will be hacky and/or buggy. Suggest looking at building a custom field type instead - [Example](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
 
+<br>
+<br>
+<br>
 
 ### `wysiwyg`
 ____
 A metabox with TinyMCE editor (same as WordPress' visual editor). Example:
 ![Screenshot of wysiwyg CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_wysiwyg.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test wysiwyg',
@@ -729,11 +842,15 @@ array(
 ```
 
 The `'id'` should not be set to 'content' as the standard editor has this id and it will result in a non working editor.
+<br>
+<br>
+<br>
 
 ### `file`
 ____
 A file uploader. By default it will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `wiki_test_image` the ID is stored in `wiki_test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
 ![Screenshot of file/image upload CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_file.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name'    => 'Test File',
@@ -761,6 +878,9 @@ Example using the `wiki_test_image_id` meta key to retrieve a medium image:
 ```php
 $image = wp_get_attachment_image( get_post_meta( get_the_ID(), 'wiki_test_image_id', 1 ), 'medium' );
 ```
+<br>
+<br>
+<br>
 
 ### `file_list`
 ____
@@ -768,6 +888,7 @@ A file uploader that allows you to add as many files as you want. Once added, fi
 
 This is a repeatable field, and will store its data in an array, with the attachment ID as the array key and the attachment url as the value. Example:
 ![Screenshot of multiple file/image upload CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_file_list.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'Test File List',
@@ -821,11 +942,15 @@ function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
 ```php
 <?php cmb2_output_file_list( 'wiki_test_file_list', 'small' ); ?>
 ```
+<br>
+<br>
+<br>
 
 ### `oembed`
 ____
 Displays embedded media inline using WordPress' built-in oEmbed support. See [codex.wordpress.org/Embeds](http://codex.wordpress.org/Embeds) for more info and for a list of embed services supported. (added in 0.9.1). Example:
 ![Screenshot of oembed CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_oembed.jpg)
+
 ```php
 $cmb->add_field( array(
 	'name' => 'oEmbed',
@@ -845,11 +970,15 @@ Text added in a `oembed` field will not automatically display the embed in your 
 $url = esc_url( get_post_meta( get_the_ID(), 'wiki_test_embed', 1 ) );
 echo wp_oembed_get( $url );
 ```
+<br>
+<br>
+<br>
 
 ### `group`
 ____
 Hybrid field that supports adding other fields as a repeatable group. Example:
 ![Screenshot of group / repeatable CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/8bff8bf2ad29e14227b56037227b01ed5e6dce42/screenshot_group.jpg)
+
 ```php
 $group_field_id = $cmb->add_field( array(
 	'id'          => 'wiki_test_repeat_group',
