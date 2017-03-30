@@ -18,6 +18,9 @@ Documentation:
 1. [Display Options](https://github.com/WebDevStudios/CMB2/wiki/Display-Options)  
 	Limit the display of your metaboxes
 
+1. [Box Properties](https://github.com/WebDevStudios/CMB2/wiki/Box-Properties)  
+	Docs for the possible CMB2 box properties.
+
 1. [Troubleshooting](https://github.com/WebDevStudios/CMB2/wiki/Troubleshooting)  
 	Some common issues and how to deal with them
 
