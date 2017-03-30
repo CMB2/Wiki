@@ -68,7 +68,7 @@ For placement in locations outside of a metabox (but in the post/custom-post-typ
 For these alternate locations, if it is preferred that the fields are output without the metabox, then omit the `'title'` property from the metabox registration array, and instead add `'remove_box_wrap' => true,`.
 
 Comments screen contexts include 'normal' and 'side'. Default is `'normal'`.
-> `'context' => 'normal',`
+`'context' => 'normal',`
 <br>
 <br>
 <br>
@@ -84,7 +84,7 @@ Priority of the metabox in its context. Default is `'high'`. ([More Info](https:
 ### `show_names`
 ____
 Whether to show labels for the fields. Default is `true`.
-> `'show_names' => false, // Hide the labels`
+`'show_names' => false, // Hide the labels`
 <br>
 <br>
 <br>
@@ -92,9 +92,9 @@ Whether to show labels for the fields. Default is `true`.
 ### `classes`
 ____
 This property allows you to optionally add classes to the CMB2 wrapper. This property can take a string, or array.
-> `'classes' => 'additional-class',`
+`'classes' => 'additional-class',`
 OR  
-> `'classes' => array( 'additional-class', 'another-class' ),`
+`'classes' => array( 'additional-class', 'another-class' ),`
 <br>
 <br>
 <br>
@@ -102,7 +102,7 @@ OR
 ### `classes_cb`
 ____
 Like the `classes` property, allows adding classes to the CMB2 wrapper, but takes a callback. That callback should return an array of classes. The callback gets passed the CMB2 `$properties` array as the first argument, and the CMB2 `$cmb` object as the second argument. Example:
-> `'classes_cb' => 'yourprefix_function_to_add_classes',`
+`'classes_cb' => 'yourprefix_function_to_add_classes',`
 
 ```php
 /**
@@ -127,7 +127,7 @@ function yourprefix_function_to_add_classes( $properties, $cmb ) {
 ### `show_on_cb`
 ____
 Callback to determine if metabox should display. The callback gets passed the CMB2 `$cmb` object. More info: [Adding your own show_on filters](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters)
-> `'show_on_cb' => 'yourprefix_only_show_for_user_1'`
+`'show_on_cb' => 'yourprefix_only_show_for_user_1'`
 
 ```php
 /**
@@ -147,7 +147,7 @@ function yourprefix_only_show_for_user_1( $cmb ) {
 ### `show_on`
 ____
 Post IDs or page templates to display this metabox. Overrides 'show_on_cb'. More info: [Adding your own show_on filters](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters)
-> `'show_on' => array( 'id' => 2 ), // Only show on the "about" page`
+`'show_on' => array( 'id' => 2 ), // Only show on the "about" page`
 <br>
 <br>
 <br>
@@ -155,7 +155,7 @@ Post IDs or page templates to display this metabox. Overrides 'show_on_cb'. More
 ### `cmb_styles`
 ____
 Whether to enqeue CMB2 stylesheet. Default is `true`.
-> `'cmb_styles' => true,`
+`'cmb_styles' => true,`
 <br>
 <br>
 <br>
@@ -163,7 +163,7 @@ Whether to enqeue CMB2 stylesheet. Default is `true`.
 ### `enqueue_js`
 ____
 Whether to enqeue CMB2 Javascript files. Default is `true`.
-> `'enqueue_js' => true,`
+`'enqueue_js' => true,`
 <br>
 <br>
 <br>
@@ -171,7 +171,7 @@ Whether to enqeue CMB2 Javascript files. Default is `true`.
 ### `fields`
 ____
 It is possible to pass an array of field arrays as a box property, but it is generally prefered to use the `$cmb->add_field( ... )` method.
-> `'fields' => array( array( ... ) ),`
+`'fields' => array( array( ... ) ),`
 <br>
 <br>
 <br>
@@ -179,7 +179,7 @@ It is possible to pass an array of field arrays as a box property, but it is gen
 ### `hookup`
 ____
 Handles hooking CMB2 forms/metaboxes into the post/attachement/user screens, and handles hooking in and saving those fields. Set to `false` if you plan on handling the form/field output/saving (via something like `cmb2_metabox_form()`). Default is `true`.
-> `'hookup' => true,`
+`'hookup' => true,`
 <br>
 <br>
 <br>
@@ -187,7 +187,7 @@ Handles hooking CMB2 forms/metaboxes into the post/attachement/user screens, and
 ### `save_fields`
 ____
 If false, will not save during hookup (see above). Default is `true`.
-> `'save_fields' => true,`
+`'save_fields' => true,`
 <br>
 <br>
 <br>
@@ -195,7 +195,7 @@ If false, will not save during hookup (see above). Default is `true`.
 ### `closed`
 ____
 Set to `true` to default metabox being closed. Default is `false`.
-> `'closed' => false,`
+`'closed' => false,`
 <br>
 <br>
 <br>
@@ -203,7 +203,7 @@ Set to `true` to default metabox being closed. Default is `false`.
 ### `taxonomies`
 ____
 if `object_types` is set to `'term'`, it is required to provide a the `taxonomies` property, which should be an array of Taxonomies.
-> `'taxonomies'       => array( 'category', 'post_tag' ), // Tells CMB2 which taxonomies should have these fields.`
+`'taxonomies'       => array( 'category', 'post_tag' ), // Tells CMB2 which taxonomies should have these fields.`
 <br>
 <br>
 <br>
@@ -211,7 +211,7 @@ if `object_types` is set to `'term'`, it is required to provide a the `taxonomie
 ### `new_user_section`
 ____
 if `object_types` is set to `'user'`, will determine where fields are output in the new-user screen. Options are `'add-existing-user'` and `'add-new-user'`. Default is `'add-new-user'`.
-> `'new_user_section' =>  'add-existing-user',`
+`'new_user_section' =>  'add-existing-user',`
 <br>
 <br>
 <br>
@@ -219,7 +219,7 @@ if `object_types` is set to `'user'`, will determine where fields are output in 
 ### `new_term_section`
 ____
 if `object_types` is set to `'term'`, and set to `false`, will remove the fields from the new-term screen. Default is `true`.
-> `'new_term_section' => false,`
+`'new_term_section' => false,`
 <br>
 <br>
 <br>
@@ -227,7 +227,7 @@ if `object_types` is set to `'term'`, and set to `false`, will remove the fields
 ### `show_in_rest`
 ____
 Determines if/how fields/metabox are available in the REST API. Default is `false`. ([More info](https://github.com/WebDevStudios/CMB2/wiki/REST-API))
-> `'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE`
+`'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE`
 
 
 
