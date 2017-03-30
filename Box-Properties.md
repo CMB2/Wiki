@@ -25,6 +25,8 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+When registering a [CMB2 metabox/instance](https://github.com/WebDevStudios/CMB2/wiki/Basic-Usage), you will pass an array of properties to the `new_cmb2_box()` function. The possible properties in that array are documented here.
+
 ### `id`
 ____
 The id of metabox
