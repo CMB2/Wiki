@@ -42,6 +42,11 @@ if ( file_exists( __DIR__ . '/cmb2/init.php' ) ) {
 }
 ```
 
+**Notes:**  
+
+* `init.php` needs to be required _outside any hook_. It needs to be loaded as early as possible.
+* Do not do any kind of conditional loading, e.g. `if ( ! class_exists....`. CMB2 will handle that.
+
 ### Create a metabox
 
 Now that you've included the CMB2 engine, you can start adding metaboxes with the following code inside `functions.php`:
