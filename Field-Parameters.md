@@ -26,6 +26,7 @@
 - [`display_cb`](#display_cb)
 - [`remove_default` (since 2.2.3)](#remove_default-since-223)
 - [`date_format`](#date_format)
+- [`query_args`](#query_args)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -549,3 +550,10 @@ $cmb_demo->add_field( array(
 ### `date_format`
 
 Field parameter used in the date field types which allows specifying the php date format for your field. See [php.net/manual/en/function.date.php](php.net/manual/en/function.date.php).
+
+### `query_args`
+
+_(since [2.2.5](https://github.com/CMB2/CMB2/releases/tag/v2.2.5))_
+
+Field parameter used in the date field types which allows specifying the php date format for your field. See [php.net/manual/en/function.date.php](php.net/manual/en/function.date.php).
+Field parameter which can be used by the `'taxonomy_*'` fields. Provides ability to override the arguments passed to `get_terms()`.
