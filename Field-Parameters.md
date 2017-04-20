@@ -27,6 +27,8 @@
 - [`remove_default` (since 2.2.3)](#remove_default-since-223)
 - [`date_format`](#date_format)
 - [`query_args`](#query_args)
+- [`render_class`](#render_class)
+
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -556,3 +558,11 @@ Field parameter used in the date field types which allows specifying the php dat
 _(since [2.2.5](https://github.com/CMB2/CMB2/releases/tag/v2.2.5))_
 
 Field parameter which can be used by the `'taxonomy_*'` fields. Provides ability to override the arguments passed to `get_terms()`.
+<br>
+<br>
+<br>
+
+### `render_class`
+_(since [2.2.4](https://github.com/CMB2/CMB2/releases/tag/v2.2.4))_
+
+Allows overriding the default `'CMB2_Type_Base'` class that is used when rendering the field. This provides interesting object-oriented ways to override default CMB2 behavior by subclassing the default class and overriding methods.
