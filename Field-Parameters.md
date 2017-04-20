@@ -24,11 +24,10 @@
 - [`escape_cb`](#escape_cb)
 - [`render_row_cb`](#render_row_cb)
 - [`display_cb`](#display_cb)
-- [`remove_default`](#remove_default)
 - [`date_format`](#date_format)
+- [`remove_default`](#remove_default)
 - [`render_class`](#render_class)
 - [`query_args`](#query_args)
-
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -532,6 +531,13 @@ function yourprefix_display_wiki_text( $field_args, $field ) {
 <br>
 <br>
 
+### `date_format`
+____
+Field parameter used in the date field types which allows specifying the php date format for your field. See [php.net/manual/en/function.date.php](php.net/manual/en/function.date.php).
+<br>
+<br>
+<br>
+
 ### `remove_default`
 ____
 _(since [2.2.3](https://github.com/CMB2/CMB2/releases/tag/v2.2.3))_
@@ -547,13 +553,6 @@ $cmb_demo->add_field( array(
 	'remove_default' => true,
 ) );
 ```
-<br>
-<br>
-<br>
-
-### `date_format`
-____
-Field parameter used in the date field types which allows specifying the php date format for your field. See [php.net/manual/en/function.date.php](php.net/manual/en/function.date.php).
 <br>
 <br>
 <br>
