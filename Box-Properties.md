@@ -22,6 +22,15 @@
 - [`new_user_section`](#new_user_section)
 - [`new_term_section`](#new_term_section)
 - [`show_in_rest`](#show_in_rest)
+- [`remove_box_wrap`](#remove_box_wrap)
+- [`menu_title`](#menu_title)
+- [`parent_slug`](#parent_slug)
+- [`capability`](#capability)
+- [`icon_url`](#icon_url)
+- [`position`](#position)
+- [`admin_menu_hook`](#admin_menu_hook)
+- [`display_cb`](#display_cb)
+- [`save_button`](#save_button)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -228,6 +237,75 @@ if `object_types` is set to `'term'`, and set to `false`, will remove the fields
 ____
 Determines if/how fields/metabox are available in the REST API. Default is `false`. ([More info](https://github.com/WebDevStudios/CMB2/wiki/REST-API))
 `'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE`
+<br>
+<br>
+<br>
 
+### `remove_box_wrap`
+____
+This parameter is for post [alternate-context metaboxes](#context) only. To output the fields 'naked' (without a postbox wrapper/style):
+`'remove_box_wrap' => true,`
+<br>
+<br>
+<br>
 
+### `menu_title`
+____
+This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()/add_submenu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu title.
+`'menu_title' => 'Site Options',`
+<br>
+<br>
+<br>
 
+### `parent_slug`
+____
+This parameter is for options-page metaboxes only, and is sent along to [`add_submenu_page()`](https://developer.wordpress.org/reference/functions/add_submenu_page/) to define the parent-menu item slug.
+`'parent_slug' => 'tools.php',`
+<br>
+<br>
+<br>
+
+### `capability`
+____
+This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()/add_submenu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the capability required to view the options page.
+`'capability' => 'edit_posts',`
+<br>
+<br>
+<br>
+
+### `icon_url`
+____
+This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu icon. Only applicable if [`parent_slug`](#parent_slug) is left empty.
+`'icon_url' => 'dashicons-chart-pie',`
+<br>
+<br>
+<br>
+
+### `position`
+____
+This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu position. Only applicable if [`parent_slug`](#parent_slug) is left empty.
+`'position' => 1,`
+<br>
+<br>
+<br>
+
+### `admin_menu_hook`
+____
+This parameter is for options-page metaboxes only and defaults to `'admin_menu'`, to register your options-page at the network level:
+`'admin_menu_hook' => 'network_admin_menu',`
+<br>
+<br>
+<br>
+
+### `display_cb`
+____
+This parameter is for options-page metaboxes only and allows overriding the options page form output.
+`'display_cb' => 'my_callback_function_to_display_output',`
+<br>
+<br>
+<br>
+
+### `save_button`
+____
+This parameter is for options-page metaboxes only and defines the text for the options page save button. defaults to 'Save'.
+`'save_button' => 'Save Settings',`
