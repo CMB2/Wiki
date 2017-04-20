@@ -62,6 +62,7 @@ metaboxes/fields elsewhere in the post-screen.
 ### `object_types`
 ____
 An array containing post type slugs, or 'user', 'term', 'comment', or 'options-page'. This property is required to have a value.
+
 `'object_types' => array( 'page' ),`
 <br>
 <br>
@@ -77,6 +78,7 @@ For placement in locations outside of a metabox (but in the post/custom-post-typ
 For these alternate locations, if it is preferred that the fields are output without the metabox, then omit the `'title'` property from the metabox registration array, and instead add `'remove_box_wrap' => true,`.
 
 Comments screen contexts include 'normal' and 'side'. Default is `'normal'`.
+
 `'context' => 'normal',`
 <br>
 <br>
@@ -85,6 +87,7 @@ Comments screen contexts include 'normal' and 'side'. Default is `'normal'`.
 ### `priority`
 ____
 Priority of the metabox in its context. Default is `'high'`. ([More Info](https://developer.wordpress.org/reference/functions/add_meta_box/#parameters))
+
 `'priority' => 'high',`
 <br>
 <br>
@@ -101,6 +104,7 @@ Whether to show labels for the fields. Default is `true`.
 ### `classes`
 ____
 This property allows you to optionally add classes to the CMB2 wrapper. This property can take a string, or array.
+
 `'classes' => 'additional-class',`
 OR  
 `'classes' => array( 'additional-class', 'another-class' ),`
@@ -136,6 +140,7 @@ function yourprefix_function_to_add_classes( $properties, $cmb ) {
 ### `show_on_cb`
 ____
 Callback to determine if metabox should display. The callback gets passed the CMB2 `$cmb` object. More info: [Adding your own show_on filters](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters)
+
 `'show_on_cb' => 'yourprefix_only_show_for_user_1'`
 
 ```php
@@ -156,6 +161,7 @@ function yourprefix_only_show_for_user_1( $cmb ) {
 ### `show_on`
 ____
 Post IDs or page templates to display this metabox. Overrides 'show_on_cb'. More info: [Adding your own show_on filters](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters)
+
 `'show_on' => array( 'id' => 2 ), // Only show on the "about" page`
 <br>
 <br>
@@ -164,6 +170,7 @@ Post IDs or page templates to display this metabox. Overrides 'show_on_cb'. More
 ### `cmb_styles`
 ____
 Whether to enqeue CMB2 stylesheet. Default is `true`.
+
 `'cmb_styles' => true,`
 <br>
 <br>
@@ -172,6 +179,7 @@ Whether to enqeue CMB2 stylesheet. Default is `true`.
 ### `enqueue_js`
 ____
 Whether to enqeue CMB2 Javascript files. Default is `true`.
+
 `'enqueue_js' => true,`
 <br>
 <br>
@@ -180,6 +188,7 @@ Whether to enqeue CMB2 Javascript files. Default is `true`.
 ### `fields`
 ____
 It is possible to pass an array of field arrays as a box property, but it is generally prefered to use the `$cmb->add_field( ... )` method.
+
 `'fields' => array( array( ... ) ),`
 <br>
 <br>
@@ -188,6 +197,7 @@ It is possible to pass an array of field arrays as a box property, but it is gen
 ### `hookup`
 ____
 Handles hooking CMB2 forms/metaboxes into the post/attachement/user screens, and handles hooking in and saving those fields. Set to `false` if you plan on handling the form/field output/saving (via something like `cmb2_metabox_form()`). Default is `true`.
+
 `'hookup' => true,`
 <br>
 <br>
@@ -196,6 +206,7 @@ Handles hooking CMB2 forms/metaboxes into the post/attachement/user screens, and
 ### `save_fields`
 ____
 If false, will not save during hookup (see above). Default is `true`.
+
 `'save_fields' => true,`
 <br>
 <br>
@@ -204,6 +215,7 @@ If false, will not save during hookup (see above). Default is `true`.
 ### `closed`
 ____
 Set to `true` to default metabox being closed. Default is `false`.
+
 `'closed' => false,`
 <br>
 <br>
@@ -212,7 +224,8 @@ Set to `true` to default metabox being closed. Default is `false`.
 ### `taxonomies`
 ____
 if `object_types` is set to `'term'`, it is required to provide a the `taxonomies` property, which should be an array of Taxonomies.
-`'taxonomies'       => array( 'category', 'post_tag' ), // Tells CMB2 which taxonomies should have these fields.`
+
+`'taxonomies' => array( 'category', 'post_tag' ), // Tells CMB2 which taxonomies should have these fields.`
 <br>
 <br>
 <br>
@@ -220,6 +233,7 @@ if `object_types` is set to `'term'`, it is required to provide a the `taxonomie
 ### `new_user_section`
 ____
 if `object_types` is set to `'user'`, will determine where fields are output in the new-user screen. Options are `'add-existing-user'` and `'add-new-user'`. Default is `'add-new-user'`.
+
 `'new_user_section' =>  'add-existing-user',`
 <br>
 <br>
@@ -228,6 +242,7 @@ if `object_types` is set to `'user'`, will determine where fields are output in 
 ### `new_term_section`
 ____
 if `object_types` is set to `'term'`, and set to `false`, will remove the fields from the new-term screen. Default is `true`.
+
 `'new_term_section' => false,`
 <br>
 <br>
@@ -236,6 +251,7 @@ if `object_types` is set to `'term'`, and set to `false`, will remove the fields
 ### `show_in_rest`
 ____
 Determines if/how fields/metabox are available in the REST API. Default is `false`. ([More info](https://github.com/WebDevStudios/CMB2/wiki/REST-API))
+
 `'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE`
 <br>
 <br>
@@ -244,6 +260,7 @@ Determines if/how fields/metabox are available in the REST API. Default is `fals
 ### `remove_box_wrap`
 ____
 This parameter is for post [alternate-context metaboxes](#context) only. To output the fields 'naked' (without a postbox wrapper/style):
+
 `'remove_box_wrap' => true,`
 <br>
 <br>
@@ -252,6 +269,7 @@ This parameter is for post [alternate-context metaboxes](#context) only. To outp
 ### `menu_title`
 ____
 This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()/add_submenu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu title.
+
 `'menu_title' => 'Site Options',`
 <br>
 <br>
@@ -260,6 +278,7 @@ This parameter is for options-page metaboxes only, and is sent along to [`add_me
 ### `parent_slug`
 ____
 This parameter is for options-page metaboxes only, and is sent along to [`add_submenu_page()`](https://developer.wordpress.org/reference/functions/add_submenu_page/) to define the parent-menu item slug.
+
 `'parent_slug' => 'tools.php',`
 <br>
 <br>
@@ -268,6 +287,7 @@ This parameter is for options-page metaboxes only, and is sent along to [`add_su
 ### `capability`
 ____
 This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()/add_submenu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the capability required to view the options page.
+
 `'capability' => 'edit_posts',`
 <br>
 <br>
@@ -276,6 +296,7 @@ This parameter is for options-page metaboxes only, and is sent along to [`add_me
 ### `icon_url`
 ____
 This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu icon. Only applicable if [`parent_slug`](#parent_slug) is left empty.
+
 `'icon_url' => 'dashicons-chart-pie',`
 <br>
 <br>
@@ -284,6 +305,7 @@ This parameter is for options-page metaboxes only, and is sent along to [`add_me
 ### `position`
 ____
 This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu position. Only applicable if [`parent_slug`](#parent_slug) is left empty.
+
 `'position' => 1,`
 <br>
 <br>
@@ -292,6 +314,7 @@ This parameter is for options-page metaboxes only, and is sent along to [`add_me
 ### `admin_menu_hook`
 ____
 This parameter is for options-page metaboxes only and defaults to `'admin_menu'`, to register your options-page at the network level:
+
 `'admin_menu_hook' => 'network_admin_menu',`
 <br>
 <br>
@@ -300,6 +323,7 @@ This parameter is for options-page metaboxes only and defaults to `'admin_menu'`
 ### `display_cb`
 ____
 This parameter is for options-page metaboxes only and allows overriding the options page form output.
+
 `'display_cb' => 'my_callback_function_to_display_output',`
 <br>
 <br>
@@ -308,4 +332,5 @@ This parameter is for options-page metaboxes only and allows overriding the opti
 ### `save_button`
 ____
 This parameter is for options-page metaboxes only and defines the text for the options page save button. defaults to 'Save'.
+
 `'save_button' => 'Save Settings',`
