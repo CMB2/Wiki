@@ -109,6 +109,7 @@ This parameter allows you to add additional classes to the cmb-row wrap. This pa
 ### `classes_cb`
 ____
 Like the `classes` parameter, allows adding classes to the row wrap, but takes a callback. That callback should return an array of classes. The callback function gets passed the `$field` object. Example:
+
 `'classes_cb' => 'yourprefix_function_to_add_classes',`
 
 ```php
@@ -134,6 +135,7 @@ function yourprefix_function_to_add_classes( $field_args, $field ) {
 ### `on_front`
 ____
 If you're planning on using your metabox fields on the front-end as well (user-facing), then you can specify that certain fields do not get displayed there by setting this parameter to `false`. Default is `true`.
+
 `'on_front' => false,`
 <br>
 <br>
@@ -160,7 +162,7 @@ $cmb->add_field( array(
 Another example which uses html5 attributes to validate that an input's value is greater than 100.
 
 ```php
-$cmb_demo->add_field( array(
+$cmb->add_field( array(
 	'name'       => 'Insert a number greater than 100',
 	'id'         => 'greater_than_100',
 	'type'       => 'text',
@@ -210,7 +212,7 @@ ____
 Like the [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field) parameters, but applies specifically to the `'group'` field type. Example:
 
 ```php
-$group_field_id = $cmb_group->add_field( array(
+$group_field_id = $cmb->add_field( array(
 	'id'               => 'wiki_group_field',
 	'type'             => 'group',
 	'description'      => 'Generates reusable form entries',
@@ -229,7 +231,7 @@ ____
 Like the [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field) parameters, but applies specifically to the display context (like in admin columns). Example:
 
 ```php
-$cmb_demo->add_field( array(
+$cmb->add_field( array(
 	'name'                => 'Test Text',
 	'desc'                => 'field description (optional)',
 	'id'                  => 'wiki_text',
@@ -252,7 +254,7 @@ $cmb_demo->add_field( array(
 As of version [2.2.2](https://github.com/WebDevStudios/CMB2/releases/tag/v2.2.2), you can now set admin post-listing columns with an extra field parameter, `'column' => true,`. If you want to dictate what position the column is, use `'column' => array( 'position' => 2 ),`. If you want to dictate the column title (instead of using the field `'name'` value), use `'column' => array( 'name' => 'My Column' ),`. If you need to specify the column display callback, set the `'display_cb'` parameter to [a callback function](#display_cb). Columns work for post (all post-types), comment, user, and term object types.
 
 ```php
-$cmb_demo->add_field( array(
+$cmb->add_field( array(
 	'name'   => 'Test Text',
 	'desc'   => 'field description (optional)',
 	'id'     => 'wiki_text',
@@ -501,7 +503,7 @@ ____
 With the addition of optional columns display output in [2.2.2](https://github.com/WebDevStudios/CMB2/releases/tag/v2.2.2), You can now set the field's `'display_cb'` to dictate how that field value should be displayed.
 
 ```php
-$cmb_demo->add_field( array(
+$cmb->add_field( array(
 	'name'       => 'Test Text',
 	'desc'       => 'field description (optional)',
 	'id'         => 'wiki_text',
@@ -545,7 +547,7 @@ _(since [2.2.3](https://github.com/CMB2/CMB2/releases/tag/v2.2.3))_
 New field parameter for taxonomy fields, `'remove_default'` which allows disabling the default taxonomy metabox.
 
 ```php
-$cmb_demo->add_field( array(
+$cmb->add_field( array(
 	'name'           => 'Test Taxonomy Radio',
 	'id'             => 'wiki_taxonomy_radio',
 	'type'           => 'taxonomy_radio',
@@ -561,7 +563,54 @@ $cmb_demo->add_field( array(
 ____
 _(since [2.2.4](https://github.com/CMB2/CMB2/releases/tag/v2.2.4))_
 
-Allows overriding the default `'CMB2_Type_Base'` class that is used when rendering the field. This provides interesting object-oriented ways to override default CMB2 behavior by subclassing the default class and overriding methods.
+Allows overriding the default `CMB2_Type_Base` class that is used when rendering the field. This provides interesting object-oriented ways to override default CMB2 behavior by subclassing the default class and overriding methods. For best results, your class should extend the class it is overriding. Example field config:
+
+```php
+$cmb->add_field( array(
+	'name'         => 'Test Text Small with Render Class (render_class) and Color param',
+	'id'           => 'wiki_text_render_class',
+	'type'         => 'text',
+	'color'        => '#05838c',
+	'render_class' => 'Myprefix_Render_Color_Text',
+) );
+```
+
+You need to define your render class, but only AFTER `'cmb2_init'`. Your best bet is to include your render class from the `'cmb2_init'` hook. Something like:
+
+```php
+function include_myprefix_render_color_text() {
+	require_once 'myprefix-render-color-text.php';
+}
+add_action( 'cmb2_init', 'include_myprefix_render_color_text' );
+```
+
+For the sake of a complete example, here is a contrived example for `Myprefix_Render_Color_Text`.
+
+```php
+function include_myprefix_render_color_text() {
+	class Myprefix_Render_Color_Text extends CMB2_Type_Text {
+		public function render( $args = array() ) {
+			add_action( is_admin() ? 'admin_footer' : 'wp_footer', array( $this, 'colorize_style' ) );
+
+			return sprintf(
+				'<div class="colorized colorized-%s" style="background:%s;padding:50px;">%s</div>',
+				$this->field->args( 'id' ),
+				esc_attr( $this->field->prop( 'color', 'purple' ) ),
+				parent::render( $args )
+			);
+		}
+
+		public function colorize_style() {
+			printf(
+				'<style type="text/css">.colorized.colorized-%s .regular-text { color: %s; }</style>',
+				$this->field->args( 'id' ),
+				esc_attr( $this->field->prop( 'color', 'purple' ) )
+			);
+		}
+	}
+}
+add_action( 'cmb2_init', 'include_myprefix_render_color_text' );
+```
 <br>
 <br>
 <br>
