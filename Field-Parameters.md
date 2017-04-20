@@ -24,7 +24,7 @@
 - [`escape_cb`](#escape_cb)
 - [`render_row_cb`](#render_row_cb)
 - [`display_cb`](#display_cb)
-- [`remove_default` (since 2.2.3)](#remove_default-since-223)
+- [`remove_default`](#remove_default)
 - [`date_format`](#date_format)
 - [`render_class`](#render_class)
 - [`query_args`](#query_args)
@@ -532,8 +532,10 @@ function yourprefix_display_wiki_text( $field_args, $field ) {
 <br>
 <br>
 
-### `remove_default` (since 2.2.3)
+### `remove_default`
 ____
+_(since [2.2.3](https://github.com/CMB2/CMB2/releases/tag/v2.2.3))_
+
 New field parameter for taxonomy fields, `'remove_default'` which allows disabling the default taxonomy metabox.
 
 ```php
@@ -550,13 +552,14 @@ $cmb_demo->add_field( array(
 <br>
 
 ### `date_format`
-
+____
 Field parameter used in the date field types which allows specifying the php date format for your field. See [php.net/manual/en/function.date.php](php.net/manual/en/function.date.php).
 <br>
 <br>
 <br>
 
 ### `render_class`
+____
 _(since [2.2.4](https://github.com/CMB2/CMB2/releases/tag/v2.2.4))_
 
 Allows overriding the default `'CMB2_Type_Base'` class that is used when rendering the field. This provides interesting object-oriented ways to override default CMB2 behavior by subclassing the default class and overriding methods.
@@ -565,7 +568,7 @@ Allows overriding the default `'CMB2_Type_Base'` class that is used when renderi
 <br>
 
 ### `query_args`
-
+____
 _(since [2.2.5](https://github.com/CMB2/CMB2/releases/tag/v2.2.5))_
 
 Field parameter which can be used by the `'taxonomy_*'` fields. Provides ability to override the arguments passed to `get_terms()`.
