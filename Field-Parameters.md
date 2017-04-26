@@ -302,7 +302,8 @@ function cmb_only_show_for_user_1( $field ) {
 
 ### `options`
 ____
-For fields that take an options array. These include `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Should be a an array where the keys are the option value, and the values are the option text.
+For fields that take an options array. These include `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Should be a an array where the keys are the option value, and the values are the option text. If you are doing any kind of database querying or logic/conditional checking, you're almost always better of using the [`options_cb`](#options_cb) parameter.
+
 ```
 'options' => array(
 	'none'     => 'None',
@@ -316,7 +317,7 @@ For fields that take an options array. These include `select`, `radio`, `multich
 
 ### `options_cb`
 ____
-A callback to provide field options. Callback function should return an options array. The callback function gets passed the `$field` object. Example:
+A callback to provide field options. Callback function should return an options array. The callback function gets passed the `$field` object. It is recommended to use this parameter over the [`options`](#options) parameter if you are doing anything complex to generate your options array, as the `'*_cb'` parameters are run at the moment the field is generated, instead of on every page load (admin or otherwise). Example:
 
 ```php
 $cmb->add_field( array(
