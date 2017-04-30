@@ -896,6 +896,7 @@ $cmb->add_field( array(
 	'id'   => 'wiki_test_file_list',
 	'type' => 'file_list',
 	// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
+        // 'query_args' => array( 'type' => 'image' ), // Only images attachment
 	// Optional, override default text strings
 	'text' => array(
 		'add_upload_files_text' => 'Replacement', // default: "Add or Upload Files"
