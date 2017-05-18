@@ -5,6 +5,7 @@
 - [CMB2 URLs Issues](#cmb2-urls-issues)
 - [Metabox not appearing in WordPress edit page](#metabox-not-appearing-in-wordpress-edit-page)
 - ["Callable" Field Parameters](#callable-field-parameters)
+- [CMB2 is having trouble finding the data or using the right object type](#cmb2-is-having-trouble-finding-the-data-or-using-the-right-object-type)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -106,3 +107,17 @@ We can't completely remove that functionality for a few releases to keep from br
 An unfortunate side-effect is that you may occasionally see this deprecation notice when you are using a php callable word for the `'default'` or `'row_classes'` parameter (e.g. [#894](https://github.com/WebDevStudios/CMB2/issues/894)). To address, use the workaround demonstrated above.
 
 _Related Issues: [#507](https://github.com/WebDevStudios/CMB2/issues/507), [#894](https://github.com/WebDevStudios/CMB2/issues/894)_
+
+## CMB2 is having trouble finding the data or using the right object type
+
+CMB2 does a lot of work to determine magically which object type context it should be working in. For the majority of use-cases, the correct object type context is `post` -- which means we're working with post objects (as opposed to users/terms/comments or options).
+
+If you register a box to multiple types (say a post-type and `user`), then CMB2 looks for known admin variables to determine which part of the admin it is in. It uses this context to determine if we are in the `user` or `post` (for the post-type) object type context. 
+
+If you happen to use that same box/fields on the front-end, then CMB2 does not have the same admin context available. If you're using one of the helper functions like `cmb2_get_metabox_form`, `cmb2_print_metabox_form`, or `cmb2_metabox_form`, you can help CMB2 to know which contexts it is operating in by passing in the proper context object type via the 3rd `$args` parameter:
+
+```php
+$form = cmb2_get_metabox_form( $atts['metabox_id'], $atts['object_id'], array( 'object_type' => 'user' ) );
+```
+
+If you do not provided this parameter, then CMB2 will guess which object type to use, which will fall back to the first object type registered.
