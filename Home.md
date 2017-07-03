@@ -33,6 +33,9 @@ Documentation:
 1. [REST API](https://github.com/WebDevStudios/CMB2/wiki/REST-API)  
 	Access your CMB2 data through the WordPress REST API.
 
+1. [Javascript API](https://github.com/WebDevStudios/CMB2/wiki/Javascript-API)  
+	How to work with the various CMB2 events and hooks in Javascript.
+
 Advanced tutorials:
 
 1. [Adding your own field types](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types)  
