@@ -2,6 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [TODO](#todo)
 - [Triggered Events](#triggered-events)
   - [`cmb_pre_init`](#cmb_pre_init)
   - [`cmb_init`](#cmb_init)
@@ -18,6 +19,14 @@
   - [`cmb2_shift_rows_complete`](#cmb2_shift_rows_complete)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## TODO
+
+* Document unhooking CMB2 event callbacks.
+* Document using various CMB2 custom event callbacks.
+* Document overriding (date/time/color) Picker options.
+* Document log method.
+* Document media modal override options.
 
 ## Triggered Events
 
