@@ -4,6 +4,10 @@ Note that all the id fields should have proper prefixes. It's a good practice to
 
 To see examples for how to define your prefixes, as well as examples of the field-types in use, please review the [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) file. There is always a chance that the documentation is not 100% up-to-date, so reviewing this file is recommended.
 
+Here is a cool video overview of what you will get with the `example-functions.php` file:  
+
+[![video overview of what you will get with the `example-functions.php` file](images/example-functions-video-screenshot.png)](https://www.youtube.com/watch?v=QP3N8_q75Ik)
+
 ## Types:
 1. [`title`](#title) An arbitrary title field *
 1. [`text`](#text)
@@ -896,7 +900,7 @@ $cmb->add_field( array(
 	'id'   => 'wiki_test_file_list',
 	'type' => 'file_list',
 	// 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
-        // 'query_args' => array( 'type' => 'image' ), // Only images attachment
+	// 'query_args' => array( 'type' => 'image' ), // Only images attachment
 	// Optional, override default text strings
 	'text' => array(
 		'add_upload_files_text' => 'Replacement', // default: "Add or Upload Files"
