@@ -19,7 +19,7 @@ Documentation:
 	A breakdown of each of the common field parameters.
 
 1. [Display Options](https://github.com/CMB2/CMB2/wiki/Display-Options)  
-	Limit the display of your metaboxes
+	Limit the display of your boxes
 
 1. [Box Properties](https://github.com/CMB2/CMB2/wiki/Box-Properties)  
 	Docs for the possible CMB2 box properties.
@@ -41,31 +41,32 @@ Documentation:
 
 Advanced tutorials:
 
-1. [Adding your own field types](https://github.com/CMB2/CMB2/wiki/Adding-your-own-field-types)  
+- [Adding your own field types](https://github.com/CMB2/CMB2/wiki/Adding-your-own-field-types)  
 	There's no limit to the kinds of fields you can make with CMB2
 
-1. [Adding your own show_on filters](https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters)  
-	Even more ways to limit the display of your metaboxes
+- [Adding your own show_on filters](https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters)  
+	Even more ways to limit the display of your boxes
 
-1. [Displaying metaboxes on the front-end](https://github.com/CMB2/CMB2/wiki/Bringing-Metaboxes-to-the-Front-end)  
+- [Displaying boxes on the front-end](https://github.com/CMB2/CMB2/wiki/Bringing-Metaboxes-to-the-Front-end)  
 	Let's take this outside wp-admin
 
-1. [Using CMB to create an Admin Theme Options Page](https://github.com/CMB2/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)  
+- [Using CMB to create an Admin Theme Options Page](https://github.com/CMB2/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)  
 	Optional replacement for the WordPress Settings API
 
-1. [Create New Posts (or Custom Post Type) Entries Using A Front End Form](http://webdevstudios.com/2015/03/30/use-cmb2-to-create-a-new-post-submission-form/)  
+- [Create New Posts (or Custom Post Type) Entries Using A Front End Form](http://webdevstudios.com/2015/03/30/use-cmb2-to-create-a-new-post-submission-form/)  
   Leverage CMB2 create a front-end submission form
 
-1. [Disable CMB2 Styles on Front End Forms](http://kellenmace.com/disable-cmb2-styles-front-end-forms/)
+- [Disable CMB2 Styles on Front End Forms](http://kellenmace.com/disable-cmb2-styles-front-end-forms/)
 
 External Resources:
 
-1. [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library)
+- [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library)
 
-1. [CMB2 Metabox Code Generator](http://willthemoor.github.io/cmb2-metabox-generator/) - Use this generator to create fully functional CMB2 metaboxes easily.
+- [CMB2 Box Registration Code Generator](http://willthemoor.github.io/cmb2-metabox-generator/)  
+	Use this generator to create fully functional CMB2 boxes easily.
 
-1. [Adding interactivity in metaboxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/)
+- [Adding interactivity in boxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/)
 
-1. [Basic CMB2 qTranslate-X integration plugin](https://wordpress.org/plugins/integration-cmb2-qtranslate/)
+- [Basic CMB2 qTranslate-X integration plugin](https://wordpress.org/plugins/integration-cmb2-qtranslate/)
 
-1. [Listing of many great third party resources](https://github.com/CMB2/CMB2/blob/trunk/README.md#3rd-party-resources)
+- [Listing of many great third party resources](https://github.com/CMB2/CMB2/blob/trunk/README.md#3rd-party-resources)

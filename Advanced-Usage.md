@@ -1,6 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents** 
 
 - [Using CMB2 to create an Admin Theme Options Page](#using-cmb2-to-create-an-admin-theme-options-page)
   - [Retrieving saved data from the options page](#retrieving-saved-data-from-the-options-page)
