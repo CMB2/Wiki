@@ -1,7 +1,9 @@
 Documentation:
 
+1. [Home](https://github.com/CMB2/CMB2/wiki)  
+
 1. [Basic Usage](https://github.com/CMB2/CMB2/wiki/Basic-Usage)  
-	Get up and running
+	Get up and running.
 
 1. [Field Types](https://github.com/CMB2/CMB2/wiki/Field-Types)  
 	A breakdown of each of the field types included with CMB2.
