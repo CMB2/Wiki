@@ -1,1 +1,0 @@
-Tutorial can be found on the [WebDevStudios blog](http://webdevstudios.com/2015/03/30/use-cmb2-to-create-a-new-post-submission-form/).

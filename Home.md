@@ -9,6 +9,9 @@ Documentation:
 1. [Basic Usage](https://github.com/CMB2/CMB2/wiki/Basic-Usage)  
 	Get up and running
 
+1. [Advanced Usage](https://github.com/CMB2/CMB2/wiki/Advanced-Usage)  
+	Not for the faint of heart
+
 1. [Field Types](https://github.com/CMB2/CMB2/wiki/Field-Types)  
 	A breakdown of each of the field types included with CMB2.
 
