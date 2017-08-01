@@ -114,6 +114,10 @@ function cmb2_sample_metaboxes() {
 
 Note: For more metabox examples, see [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
 
+Here is a cool video overview of what you will get with the `example-functions.php` file:  
+
+[![video overview of what you will get with the `example-functions.php` file](images/example-functions-video-screenshot.png)](https://www.youtube.com/watch?v=QP3N8_q75Ik)
+
 ### Creating the metabox using a plugin
 
 You can also create the metabox by creating a standard WordPress plugin and simply pasting the above code below the header of the plugin.
