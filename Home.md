@@ -53,6 +53,8 @@ Advanced tutorials:
 1. [Create New Posts (or Custom Post Type) Entries Using A Front End Form](http://webdevstudios.com/2015/03/30/use-cmb2-to-create-a-new-post-submission-form/)  
   Leverage CMB2 create a front-end submission form
 
+1. [Disable CMB2 Styles on Front End Forms](http://kellenmace.com/disable-cmb2-styles-front-end-forms/)
+
 External Resources:
 
 1. [CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library)
@@ -62,7 +64,5 @@ External Resources:
 1. [Adding interactivity in metaboxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/)
 
 1. [Basic CMB2 qTranslate-X integration plugin](https://wordpress.org/plugins/integration-cmb2-qtranslate/)
-
-1. Tutorial: [Disable CMB2 Styles on Front End Forms](http://kellenmace.com/disable-cmb2-styles-front-end-forms/)
 
 1. [Listing of many great third party resources](https://github.com/WebDevStudios/CMB2/blob/trunk/README.md#3rd-party-resources)
