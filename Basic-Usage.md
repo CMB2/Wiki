@@ -8,6 +8,8 @@
 - [Creating the metabox using a plugin](#creating-the-metabox-using-a-plugin)
 - [Display the Metadata](#display-the-metadata)
 - [Adding metaboxes to user profile](#adding-metaboxes-to-user-profile)
+- [Using CMB2 to create an Admin Theme Options Page](#using-cmb2-to-create-an-admin-theme-options-page)
+  - [Retrieving saved data from the options page](#retrieving-saved-data-from-the-options-page)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -24,7 +26,7 @@ This code is designed to be run inside themes and plugins. Proper structure woul
 
 ### Quick Start
 
-Open [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) and copy/paste all of the code into `functions.php`. Create a new page and you should see all the example metaboxes in the page editor. Use [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) to get/use the data.
+Open [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php) and copy/paste all of the code into `functions.php`. Create a new page and you should see all the example metaboxes in the page editor. Use [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta) to get/use the data.
 
 ### Getting Started
 
@@ -113,7 +115,7 @@ function cmb2_sample_metaboxes() {
 }
 ```
 
-Note: For more metabox examples, see [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
+Note: For more metabox examples, see [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php)
 
 Here is a cool video overview of what you will get with the `example-functions.php` file:  
 
@@ -183,7 +185,7 @@ get_header(); ?>
 
 For more information on working with post meta, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta), or check out the [Post Meta Bootcamp](http://dsgnwrks.pro/how-to/post-meta-bootcamp/). Remember, to *escape any and all data*! Using proper [data validation](http://codex.wordpress.org/Data_Validation) when working with post meta is the right thing to do. Trust no one! 
 
-For more example code, see [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
+For more example code, see [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php)
 
 ### Adding metaboxes to user profile
 
@@ -192,3 +194,16 @@ To add custom metaboxes to the user profile page, you can set the `object_types`
 An example metabox can be seen in [example-functions.php](https://github.com/CMB2/CMB2/blob/630d305c9f251631e92d2ec1e480bb0692daaf67/example-functions.php#L508-L576)
 
 Note that the Metabox `description` and `name` parameters will not display. You can label your user settings section by adding a `title` field as the first field.
+
+### Using CMB2 to create an Admin Theme Options Page
+
+This snippet has been moved to the [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/tree/master/options-and-settings-pages).
+
+**Remember to replace instances of `myprefix` and `Myprefix` with something unique to your code.**
+
+#### Retrieving saved data from the options page
+Use the `myprefix_get_option` function included in the above snippets (obviously changing the prefix):
+
+```php
+$field_value = myprefix_get_option( 'field_id' );
+```
