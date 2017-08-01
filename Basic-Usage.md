@@ -7,6 +7,7 @@
 - [Create a metabox](#create-a-metabox)
 - [Creating the metabox using a plugin](#creating-the-metabox-using-a-plugin)
 - [Display the Metadata](#display-the-metadata)
+- [Adding metaboxes to user profile](#adding-metaboxes-to-user-profile)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -183,3 +184,11 @@ get_header(); ?>
 For more information on working with post meta, see the Codex page for [get_post_meta()](http://codex.wordpress.org/Function_Reference/get_post_meta), or check out the [Post Meta Bootcamp](http://dsgnwrks.pro/how-to/post-meta-bootcamp/). Remember, to *escape any and all data*! Using proper [data validation](http://codex.wordpress.org/Data_Validation) when working with post meta is the right thing to do. Trust no one! 
 
 For more example code, see [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php)
+
+### Adding metaboxes to user profile
+
+To add custom metaboxes to the user profile page, you can set the `object_types` parameter to `array( 'user' )` to indicate that the metaboxes should be displayed on the user profile (rather than a specific post type) and that the meta information should be stored against user_meta, rather than post_meta.
+
+An example metabox can be seen in [example-functions.php](https://github.com/CMB2/CMB2/blob/630d305c9f251631e92d2ec1e480bb0692daaf67/example-functions.php#L508-L576)
+
+Note that the Metabox `description` and `name` parameters will not display. You can label your user settings section by adding a `title` field as the first field.
