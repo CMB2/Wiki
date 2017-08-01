@@ -22,9 +22,9 @@
 
 ## How does it work?
 
-> **Note:** When registering a metabox, you can now specify the `'show_on_cb'` param to register a "show on" callback which you can use to conditionally display your metabox (much like [the `'show_on_cb'` for individual fields](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#show_on_cb)). This approach is recommended over the `'show_on'` filter, because it only applies to the metabox that you have added it. This saves you from having to do the logic to rule out other metaboxes in the filter.
+> **Note:** When registering a metabox, you can now specify the `'show_on_cb'` param to register a "show on" callback which you can use to conditionally display your metabox (much like [the `'show_on_cb'` for individual fields](https://github.com/CMB2/CMB2/wiki/Field-Types#show_on_cb)). This approach is recommended over the `'show_on'` filter, because it only applies to the metabox that you have added it. This saves you from having to do the logic to rule out other metaboxes in the filter.
 
-A 'show_on' filter is any arbitrary filter that limits where the metabox is shown. As described in [Display Options](https://github.com/WebDevStudios/CMB2/wiki/Display-Options), there's currently two built-in. You can limit a metabox to certain page IDs, or to certain page templates.
+A 'show_on' filter is any arbitrary filter that limits where the metabox is shown. As described in [Display Options](https://github.com/CMB2/CMB2/wiki/Display-Options), there's currently two built-in. You can limit a metabox to certain page IDs, or to certain page templates.
 
 If you'd like to create your own show_on filter, all you have to do is hook into `cmb2_show_on`.
 
@@ -43,7 +43,7 @@ _Have you made some useful `'show_on'` or `'show_on_cb'` filters? List them as e
 
 ### Example: Using the `'show_on_cb'` to limit the display of a metabox unless metadata exists
 
-This example is [taken from an issue](https://github.com/WebDevStudios/CMB2/issues/531). Say you have a dropdown list of statuses, internal and external, and only want your contact metabox to show if the status is set to external and where the default is internal. You can also see this code in the [CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/conditional-display/show-if-matching-meta-value.php) (there's a good chance it will be more up-to-date in the snippet library).
+This example is [taken from an issue](https://github.com/CMB2/CMB2/issues/531). Say you have a dropdown list of statuses, internal and external, and only want your contact metabox to show if the status is set to external and where the default is internal. You can also see this code in the [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/blob/master/conditional-display/show-if-matching-meta-value.php) (there's a good chance it will be more up-to-date in the snippet library).
 
 ```php
 add_action( 'cmb2_admin_init', 'cmb2_register_conditional_metabox' );
@@ -103,7 +103,7 @@ function cmb_only_show_for_external( $cmb ) {
 
 ### Example: Exclude on IDs
 
-> **Note:** As [mentioned above](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/conditional-display/exclude-for-ids.php).
+> **Note:** As [mentioned above](https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/blob/master/conditional-display/exclude-for-ids.php).
 
 Let's say you wanted to build a filter that allowed a metabox to show up everywhere except a specified list of page IDs. So it's basically the reverse of the Include on IDs filter. Here's what the code might look like (in your theme's functions.php file):
 
@@ -112,7 +112,7 @@ Let's say you wanted to build a filter that allowed a metabox to show up everywh
 /**
  * Exclude metabox on specific IDs
  * @author Bill Erickson
- * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
@@ -152,7 +152,7 @@ add_filter( 'cmb2_show_on', 'be_metabox_exclude_for_id', 10, 2 );
 
 ### Example: Exclude on New Post Screens
 
-> **Note:** As [mentioned above](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/conditional-display/hide-on-new-post-page.php).
+> **Note:** As [mentioned above](https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/blob/master/conditional-display/hide-on-new-post-page.php).
 
 Excluding by ID works once the post type and ID has been set, but the metaboxes still display on new post type screens. This filter removes the metaboxes from the new post type screens so that they only appear on the one instance you specify in the show_on filter (like the example above):
 
@@ -196,7 +196,7 @@ where `$post_ID` is the ID of the post you are targeting with the metabox.
 
 ### Example: Exclude on non top level posts
 
-> **Note:** As [mentioned above](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/conditional-display/show-only-for-top-level-posts.php).
+> **Note:** As [mentioned above](https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/blob/master/conditional-display/show-only-for-top-level-posts.php).
 
 This will only show the metabox if the post is a top level post, by checking if get_post_ancestors() returns a value for the current post ID
 
@@ -242,7 +242,7 @@ add_filter( 'cmb2_show_on', 'ba_metabox_add_for_top_level_posts_only', 10, 2 );
 
 ### Example: taxonomy show_on filter
 
-> **Note:** As [mentioned above](https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/WebDevStudios/CMB2-Snippet-Library/blob/master/conditional-display/show-for-taxonomy-terms.php).
+> **Note:** As [mentioned above](https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters#how-does-it-work), the `'show_on_cb'` is the preferred method for conditionally displaying metaboxes. This example has a simpler and more concise [example in the CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/blob/master/conditional-display/show-for-taxonomy-terms.php).
 
 This allows you to specify one or more taxonomies, and for each taxonomy one or more terms. If a post is tagged one of those terms, this metabox shows up on its Edit screen. [Here's an example of it in use](https://gist.github.com/070476e584b04a20c770).
 
@@ -251,7 +251,7 @@ This allows you to specify one or more taxonomies, and for each taxonomy one or 
 /**
  * Taxonomy show_on filter
  * @author Bill Erickson
- * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $metabox
@@ -311,7 +311,7 @@ This allows you to specify one or more parent page ids and the metabox will only
 /**
  * Metabox for Children of Parent ID
  * @author Kenneth White (GitHub: sprclldr)
- * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
@@ -368,7 +368,7 @@ This is similar to the built-in 'id' show_on filter, but it lets you specify the
 /**
  * Metabox for Page Slug
  * @author Tom Morton
- * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
@@ -415,7 +415,7 @@ This shows only if a static page is set and you're editing it.
 /**
  * Include metabox on front page
  * @author Ed Townend
- * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
@@ -461,7 +461,7 @@ Metaboxes show based on user capability.
 /**
  * Show metaboxes to users with specified capabilities
  * @author Missy Cook
- * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box
@@ -485,7 +485,7 @@ add_filter( 'cmb2_show_on', 'show_meta_to_chosen_user_types', 10, 2 );
 ```
 
 ### Example: Page Template show_on filter
-This has been added natively to display options. See [Limit to specific page templates in Page Options](https://github.com/WebDevStudios/CMB2/wiki/Display-Options#limit-to-specific-page-templates).
+This has been added natively to display options. See [Limit to specific page templates in Page Options](https://github.com/CMB2/CMB2/wiki/Display-Options#limit-to-specific-page-templates).
 
 ### Example: Show metabox for certain user roles
 Will display if the current logged-in user's user-role is whitelisted. Props [@Mte90].
@@ -495,7 +495,7 @@ Will display if the current logged-in user's user-role is whitelisted. Props [@M
 /**
  * Display metabox for only certain user roles.
  * @author @Mte90
- * @link   https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
+ * @link   https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param  bool  $display  Whether metabox should be displayed or not.
  * @param  array $meta_box Metabox config array
@@ -539,7 +539,7 @@ Will show the metabox if the post meta matches the provided value.
 /**
  * Show metabox if post meta equals provided value
  * @author Tanner Moushey
- * @link https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-show_on-filters
+ * @link https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters
  *
  * @param bool $display
  * @param array $meta_box

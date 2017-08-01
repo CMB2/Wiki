@@ -33,7 +33,7 @@ function update_cmb2_meta_box_url( $url ) {
 }
 add_filter( 'cmb2_meta_box_url', 'update_cmb2_meta_box_url' );
 ```
-_Related Issues: [#432](https://github.com/WebDevStudios/CMB2/issues/432), [#27](https://github.com/WebDevStudios/CMB2/issues/27)_
+_Related Issues: [#432](https://github.com/CMB2/CMB2/issues/432), [#27](https://github.com/CMB2/CMB2/issues/27)_
 
 ## Metabox not appearing in WordPress edit page
 
@@ -104,9 +104,9 @@ $cmb->add_field( array(
 
 We can't completely remove that functionality for a few releases to keep from breaking backwards-compatibility. We need to let the deprecation soak for a while, hopefully causing developers to update their code. Eventually, we will remove the broken functionally, and only the equivalent '`*_cb`' parameters will allow a callback.
 
-An unfortunate side-effect is that you may occasionally see this deprecation notice when you are using a php callable word for the `'default'` or `'row_classes'` parameter (e.g. [#894](https://github.com/WebDevStudios/CMB2/issues/894)). To address, use the workaround demonstrated above.
+An unfortunate side-effect is that you may occasionally see this deprecation notice when you are using a php callable word for the `'default'` or `'row_classes'` parameter (e.g. [#894](https://github.com/CMB2/CMB2/issues/894)). To address, use the workaround demonstrated above.
 
-_Related Issues: [#507](https://github.com/WebDevStudios/CMB2/issues/507), [#894](https://github.com/WebDevStudios/CMB2/issues/894)_
+_Related Issues: [#507](https://github.com/CMB2/CMB2/issues/507), [#894](https://github.com/CMB2/CMB2/issues/894)_
 
 ## CMB2 is having trouble finding the data or using the right object type
 

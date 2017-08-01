@@ -31,7 +31,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-Most (if not all) fields support the parameters on this page. When a field type supports extra parameters, those parameters are [documented with the given field type](/WebDevStudios/CMB2/wiki/Field-Types). Also, please review the [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php) file for examples/demonstration.
+Most (if not all) fields support the parameters on this page. When a field type supports extra parameters, those parameters are [documented with the given field type](/CMB2/CMB2/wiki/Field-Types). Also, please review the [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php) file for examples/demonstration.
 
 ### `name`
 ____
@@ -68,7 +68,7 @@ What makes the whole thing work. **Required**.
 
 ### `repeatable`
 ____
-[Supported by most field types](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#types), and will make the individual field a repeatable one. Default is `false`.
+[Supported by most field types](https://github.com/CMB2/CMB2/wiki/Field-Types#types), and will make the individual field a repeatable one. Default is `false`.
 `'repeatable' => true,`
 
 In order to customize `Add Row` button label, add to your Field's config array:
@@ -173,7 +173,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-The colorpicker fields and date picker fields can each use the attributes field to set an array of overrides for the picker options using `json_encode`. [Colorpicker example](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#colorpicker-additional-field-options), and [Datepicker example](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#datepicker-additional-field-options).
+The colorpicker fields and date picker fields can each use the attributes field to set an array of overrides for the picker options using `json_encode`. [Colorpicker example](https://github.com/CMB2/CMB2/wiki/Field-Types#colorpicker-additional-field-options), and [Datepicker example](https://github.com/CMB2/CMB2/wiki/Field-Types#datepicker-additional-field-options).
 <br>
 <br>
 <br>
@@ -251,7 +251,7 @@ $cmb->add_field( array(
 
 ### `column`
 
-As of version [2.2.2](https://github.com/WebDevStudios/CMB2/releases/tag/v2.2.2), you can now set admin post-listing columns with an extra field parameter, `'column' => true,`. If you want to dictate what position the column is, use `'column' => array( 'position' => 2 ),`. If you want to dictate the column title (instead of using the field `'name'` value), use `'column' => array( 'name' => 'My Column' ),`. If you need to specify the column display callback, set the `'display_cb'` parameter to [a callback function](#display_cb). Columns work for post (all post-types), comment, user, and term object types.
+As of version [2.2.2](https://github.com/CMB2/CMB2/releases/tag/v2.2.2), you can now set admin post-listing columns with an extra field parameter, `'column' => true,`. If you want to dictate what position the column is, use `'column' => array( 'position' => 2 ),`. If you want to dictate the column title (instead of using the field `'name'` value), use `'column' => array( 'name' => 'My Column' ),`. If you need to specify the column display callback, set the `'display_cb'` parameter to [a callback function](#display_cb). Columns work for post (all post-types), comment, user, and term object types.
 
 ```php
 $cmb->add_field( array(
@@ -461,7 +461,7 @@ function escape_greater_than_100( $value, $field_args, $field ) {
 
 ### `render_row_cb`
 ____
-Bypass the CMB row rendering. You will be completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object. [More info](https://github.com/WebDevStudios/CMB2/issues/596#issuecomment-187941343).
+Bypass the CMB row rendering. You will be completely responsible for outputting that row's html. The callback function gets passed the field `$args` array, and the `$field` object. [More info](https://github.com/CMB2/CMB2/issues/596#issuecomment-187941343).
 
 ```php
 $cmb->add_field( array(
@@ -501,7 +501,7 @@ function cmb_test_render_row_cb( $field_args, $field ) {
 
 ### `display_cb`
 ____
-With the addition of optional columns display output in [2.2.2](https://github.com/WebDevStudios/CMB2/releases/tag/v2.2.2), You can now set the field's `'display_cb'` to dictate how that field value should be displayed.
+With the addition of optional columns display output in [2.2.2](https://github.com/CMB2/CMB2/releases/tag/v2.2.2), You can now set the field's `'display_cb'` to dictate how that field value should be displayed.
 
 ```php
 $cmb->add_field( array(

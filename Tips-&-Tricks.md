@@ -35,7 +35,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-To find a particular string, search for it in the [`CMB2_Types` class](https://github.com/WebDevStudios/CMB2/blob/master/includes/CMB2_Types.php), or search for `'$this->_text('`. The first parameter passed to the `CMB2_Types::_text()` method is the key you will use in the field options parameter array.
+To find a particular string, search for it in the [`CMB2_Types` class](https://github.com/CMB2/CMB2/blob/master/includes/CMB2_Types.php), or search for `'$this->_text('`. The first parameter passed to the `CMB2_Types::_text()` method is the key you will use in the field options parameter array.
 
 ## Inject static content in a field
 
@@ -48,7 +48,7 @@ There are several field properties you can use to inject text or content in your
 * after_row
 * after_field
 
-_(view more in the [Field Parameters documentation](/WebDevStudios/CMB2/wiki/Field-Parameters#before-after-before_row-after_row-before_field-after_field))_
+_(view more in the [Field Parameters documentation](/CMB2/CMB2/wiki/Field-Parameters#before-after-before_row-after_row-before_field-after_field))_
 
 To use them in your field, it would look something like this:
 
@@ -104,7 +104,7 @@ $cmb->add_field( array(
 
 ## Using the dynamic before/after form hooks
 
-If we wanted to hook in before or after our `test_metabox` metabox form from [example-functions.php](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php), our best option would be to use the dynamic action hooks. If you look in the source code, you will see this hook before the form begins:
+If we wanted to hook in before or after our `test_metabox` metabox form from [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php), our best option would be to use the dynamic action hooks. If you look in the source code, you will see this hook before the form begins:
 
 ```php
 do_action( "cmb2_before_{$object_type}_form_{$this->cmb_id}", $object_id, $this );
@@ -288,11 +288,11 @@ function prefix_set_test_default( $field_args, $field ) {
 	return 'Post ID: '. $field->object_id
 }
 ```
-[#256 for reference](https://github.com/WebDevStudios/CMB2/issues/256#issuecomment-84023325)
+[#256 for reference](https://github.com/CMB2/CMB2/issues/256#issuecomment-84023325)
 
 ## Setting dynamic attributes that may use post data, like the post ID
 
-There are [several callback hooks](https://github.com/WebDevStudios/CMB2/wiki/Field-Types#common-field-parameters) in the lifecycle of a field display. These are meant to provide you with a hook to output arbitrary or dynamic data. BUT, you can also use these hooks to modify the `CMB2_Field` `$field` object. In this example, we're going to use a callback on the `'before'` parameter which we'll use to modify that `$field` object's `'attributes'` array. We're going to do this so we can add a custom data attribute with the post ID as the value.
+There are [several callback hooks](https://github.com/CMB2/CMB2/wiki/Field-Types#common-field-parameters) in the lifecycle of a field display. These are meant to provide you with a hook to output arbitrary or dynamic data. BUT, you can also use these hooks to modify the `CMB2_Field` `$field` object. In this example, we're going to use a callback on the `'before'` parameter which we'll use to modify that `$field` object's `'attributes'` array. We're going to do this so we can add a custom data attribute with the post ID as the value.
 
 field config:
 ```php
@@ -312,11 +312,11 @@ function prefix_set_field_data_attr( $args, $field ) {
 
 [<img src="images/post-id-data-attribute.png" alt="post id data attribute screenshot">](images/post-id-data-attribute.png)
 
-[#256 for reference](https://github.com/WebDevStudios/CMB2/issues/256#issuecomment-84023325)
+[#256 for reference](https://github.com/CMB2/CMB2/issues/256#issuecomment-84023325)
 
 ## Modify Field Label Output
 
-In a recent [Github issue](https://github.com/WebDevStudios/CMB2/issues/435) a user asked if they could add tooltips next to the Field label. This snippet doesn't cover the CSS/JS side of things, but documents how you can easily modify the markup to accommodate tooltips, while leveraging some CMB2 methods to store your tooltip data to the field's options parameter.
+In a recent [Github issue](https://github.com/CMB2/CMB2/issues/435) a user asked if they could add tooltips next to the Field label. This snippet doesn't cover the CSS/JS side of things, but documents how you can easily modify the markup to accommodate tooltips, while leveraging some CMB2 methods to store your tooltip data to the field's options parameter.
 
 ```php
 $cmb->add_field( array(
@@ -347,7 +347,7 @@ function prefix_add_tooltip_to_label( $field_args, $field ) {
 
 ## Change the year range for the date field types
 
-In this [Github issue](https://github.com/WebDevStudios/CMB2/issues/567) a user asked how to make the year range in the date picker go back further than 2006 (it happens to span 10 years before today and 10 years after). To change that range for a specific field, you would need to add a `'data-datepicker'` data attribute to the field being registered. (This feature was added in version 2.2.0. Previously you would have had to use the `'cmb2_localized_data'` filter to override the defaults for ALL datepicker fields.) This will allow you to override the jQuery datepicker default value for this field with your own range. In this case, I have set the range to start in 1990 and to end 10 years after the current year (using php's date() function).
+In this [Github issue](https://github.com/CMB2/CMB2/issues/567) a user asked how to make the year range in the date picker go back further than 2006 (it happens to span 10 years before today and 10 years after). To change that range for a specific field, you would need to add a `'data-datepicker'` data attribute to the field being registered. (This feature was added in version 2.2.0. Previously you would have had to use the `'cmb2_localized_data'` filter to override the defaults for ALL datepicker fields.) This will allow you to override the jQuery datepicker default value for this field with your own range. In this case, I have set the range to start in 1990 and to end 10 years after the current year (using php's date() function).
 
 ```php
 $cmb_demo->add_field( array(

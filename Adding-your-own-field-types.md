@@ -26,7 +26,7 @@ You can add actions and filters to these hooks (using WordPress's native `add_ac
 
 ## Example 1: Email field
 
-> **This field is included [in CMB2](https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php#L108-L114), so consider this tutorial simply an example.**
+> **This field is included [in CMB2](https://github.com/CMB2/CMB2/blob/master/example-functions.php#L108-L114), so consider this tutorial simply an example.**
 
 A good example would be a `text_email` field that only allowed users to enter a valid email address.
 
@@ -168,7 +168,7 @@ $cmb_demo->add_field( array(
 ```
 **Alternatively**, you could use the `multicheck`, or `radio` field types as well.
 
-if you're looking for a similar solution for saving a term_id (or term_ids), [read about it on the Tips & Tricks page](https://github.com/WebDevStudios/CMB2/wiki/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
+if you're looking for a similar solution for saving a term_id (or term_ids), [read about it on the Tips & Tricks page](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
 
 ## Example 4: Multiple Inputs, One Field. Let's Create an Address Field.
 
@@ -304,7 +304,7 @@ $address = wp_parse_args( $address, array(
 
 ```
 
-**Note:** It was asked how to make this field repeatable. It's [not impossible, but it's also not super simple](https://github.com/WebDevStudios/CMB2/issues/116#issuecomment-66845137).
+**Note:** It was asked how to make this field repeatable. It's [not impossible, but it's also not super simple](https://github.com/CMB2/CMB2/issues/116#issuecomment-66845137).
 
 ## Add Your Own Examples
 
