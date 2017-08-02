@@ -665,6 +665,18 @@ function show_cat_or_dog_options( $field ) {
 ##### Notes
 
 If you need the label value wherever you are using the select field's value (vs just the value), you can define your options in a function, and get the label by comparing the value against the array given by the function. [Example here](http://wordpress.stackexchange.com/a/220703/45740).
+
+You can write conditional blocks in your code depending on the value of the selected option with something like this:
+```php
+$select_value = get_post_meta( get_the_ID(), 'wiki_test_select', true ) );
+
+// If (Option 2 True)
+if ( 'custom' === $select_value ) {
+	// some PHP code
+} else {
+	// some other PHP code
+}
+```
 <br>
 <br>
 <br>
