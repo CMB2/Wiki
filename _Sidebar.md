@@ -18,7 +18,7 @@ Documentation:
 	Limit display of boxes
 
 1. [Box Properties](https://github.com/CMB2/CMB2/wiki/Box-Properties)  
-	Breadown of box properties
+	Breakdown of box properties
 
 1. [Troubleshooting](https://github.com/CMB2/CMB2/wiki/Troubleshooting)  
 	Common issues & how to deal with them
