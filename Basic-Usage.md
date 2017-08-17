@@ -8,8 +8,8 @@
 - [Creating the metabox using a plugin](#creating-the-metabox-using-a-plugin)
 - [Display the Metadata](#display-the-metadata)
 - [Adding metaboxes to user profile](#adding-metaboxes-to-user-profile)
-- [Using CMB2 to create an Admin Theme Options Page](#using-cmb2-to-create-an-admin-theme-options-page)
-  - [Retrieving saved data from the options page](#retrieving-saved-data-from-the-options-page)
+- [Using CMB2 to create an Admin Theme Options Page](https://github.com/CMB2/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)
+  - [Retrieving saved data from the options page](https://github.com/CMB2/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page#retrieving-saved-data)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -194,16 +194,3 @@ To add custom metaboxes to the user profile page, you can set the `object_types`
 An example metabox can be seen in [example-functions.php](https://github.com/CMB2/CMB2/blob/630d305c9f251631e92d2ec1e480bb0692daaf67/example-functions.php#L508-L576)
 
 Note that the Metabox `description` and `name` parameters will not display. You can label your user settings section by adding a `title` field as the first field.
-
-### Using CMB2 to create an Admin Theme Options Page
-
-This snippet has been moved to the [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/tree/master/options-and-settings-pages).
-
-**Remember to replace instances of `myprefix` and `Myprefix` with something unique to your code.**
-
-#### Retrieving saved data from the options page
-Use the `myprefix_get_option` function included in the above snippets (obviously changing the prefix):
-
-```php
-$field_value = myprefix_get_option( 'field_id' );
-```
