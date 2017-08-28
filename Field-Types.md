@@ -884,6 +884,7 @@ $cmb->add_field( array(
 	'query_args' => array(
 		'type' => 'application/pdf', // Make library only display PDFs.
 	),
+	'preview_size' => 'large', // Image size to use when previewing in the admin.
 ) );
 ```
 
