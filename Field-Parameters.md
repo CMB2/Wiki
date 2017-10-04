@@ -294,6 +294,8 @@ $cmb->add_field( array(
 function cmb_only_show_for_user_1( $field ) {
 	// Returns true if current user's ID is 1, else false
 	return 1 === get_current_user_id();
+	// Use $field->object_id if you need
+	// the current object (post, user, etc) ID.
 }
 ```
 <br>
