@@ -194,7 +194,7 @@ Note that the Metabox `description` and `name` parameters will not display. You 
 
 ### Caveats for bundling and including CMB2.
 
-This section is to hightlight some dos/don'ts for including CMB2.
+This section is to hightlight some dos/don'ts for including CMB2. CMB2 has an intelligent method for loading only one version of itself and only the newest version. If you do not include it properly, it will likely result in unintended consequences. For more background info about how/why CMB2 does it this way, [read this post](https://dsgnwrks.pro/plugins-and-scripts/dont-repeat-yourself-use-wp-lib-loader-instead/).
 
 * **Do:** Include the files directly from your theme or plugin. E.g.:
 	```php
