@@ -8,8 +8,7 @@
 - [Creating the metabox using a plugin](#creating-the-metabox-using-a-plugin)
 - [Display the Metadata](#display-the-metadata)
 - [Adding metaboxes to user profile](#adding-metaboxes-to-user-profile)
-- [Using CMB2 to create an Admin Theme Options Page](https://github.com/CMB2/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)
-  - [Retrieving saved data from the options page](https://github.com/CMB2/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page#retrieving-saved-data)
+- [Caveats for bundling and including CMB2.](#caveats-for-bundling-and-including-cmb2)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -30,19 +29,17 @@ Open [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-fu
 
 ### Getting Started
 
-First, you need to get the bootstrap and start the engine. To do so, add the following code to `functions.php`. 
+First, you need to get the bootstrap and start the engine. To do so, add the following code to `functions.php`. There are some caveats to including CMB2 in your plugin or theme. [Please review them belo.](#caveats-for-bundling-and-including-cmb2).
 
 _Note: If you are installing the plugin from [WordPress.org](https://wordpress.org/plugins/cmb2/), you can skip this step as it is handled by the plugin._
 
 ```php
 /**
  * Get the bootstrap!
+ * (Update path to use cmb2 or CMB2, depending on the name of the folder.
+ * Case-sensitive is important on some systems.)
  */
-if ( file_exists( __DIR__ . '/cmb2/init.php' ) ) {
-  require_once __DIR__ . '/cmb2/init.php';
-} elseif ( file_exists(  __DIR__ . '/CMB2/init.php' ) ) {
-  require_once __DIR__ . '/CMB2/init.php';
-}
+require_once __DIR__ . '/cmb2/init.php';
 ```
 
 **Notes:**  
@@ -194,3 +191,38 @@ To add custom metaboxes to the user profile page, you can set the `object_types`
 An example metabox can be seen in [example-functions.php](https://github.com/CMB2/CMB2/blob/630d305c9f251631e92d2ec1e480bb0692daaf67/example-functions.php#L508-L576)
 
 Note that the Metabox `description` and `name` parameters will not display. You can label your user settings section by adding a `title` field as the first field.
+
+### Caveats for bundling and including CMB2.
+
+This section is to hightlight some dos/don'ts for including CMB2.
+
+* **Do:** Include the files directly from your theme or plugin. E.g.:
+	```php
+	require_once  __DIR__ . '/includes/cmb2/init.php';
+	```
+
+	**Don't:** Include the files from a hook. E.g.:
+	```php
+	// DON'T DO THIS
+	add_action( 'init', 'wprpt_initialize_cmb_init', 10 );
+	function wprpt_initialize_cmb_init() {
+		require_once  __DIR__ . '/includes/cmb2/init.php';
+	}
+	```
+
+* **Do:** Use case-sensitive paths to the include file. E.g.:
+	```php
+	require_once  __DIR__ . '/includes/CMB2/init.php';
+	```  
+	or  
+	```php
+	require_once  __DIR__ . '/includes/cmb2/init.php';
+	```
+
+	**Don't:** Use a `class_exists()` check before including. (CMB2 handles that magic on it's own.)
+	```php
+	// DON'T DO THIS
+	if ( ! class_exists( 'Some_CMB2_Class' ) ) {
+		require_once  __DIR__ . '/includes/cmb2/init.php';
+	}
+	```
