@@ -28,6 +28,7 @@
 - [`remove_default`](#remove_default)
 - [`render_class`](#render_class)
 - [`query_args`](#query_args)
+- [`save_field`](#save_fields)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -623,3 +624,15 @@ ____
 _(since [2.2.5](https://github.com/CMB2/CMB2/releases/tag/v2.2.5))_
 
 Field parameter which can be used by the `'taxonomy_*'` and the `'file_*'` field types. For the `'taxonomy_*'` types, provides ability to override the arguments passed to `get_terms()`, and for the `'file_*'` field types, allows overriding the media library query arguments.
+<br>
+<br>
+<br>
+
+### `save_field`
+____
+Prevents a field from saving into database
+
+`'save_field' => false,`
+<br>
+<br>
+<br>
