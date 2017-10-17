@@ -28,7 +28,7 @@
 - [`remove_default`](#remove_default)
 - [`render_class`](#render_class)
 - [`query_args`](#query_args)
-- [`save_field`](#save_fields)
+- [`save_field`](#save_field)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
