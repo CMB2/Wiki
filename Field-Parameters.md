@@ -630,7 +630,7 @@ Field parameter which can be used by the `'taxonomy_*'` and the `'file_*'` field
 
 ### `save_field`
 ____
-Prevents a field from saving into database
+If false, will prevent a field from saving into the database. Default is `true`.
 
 `'save_field' => false,`
 <br>
