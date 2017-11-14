@@ -24,6 +24,7 @@
 - [`show_in_rest`](#show_in_rest)
 - [`remove_box_wrap`](#remove_box_wrap)
 - [`menu_title`](#menu_title)
+- [`message_cb`](#message_cb)
 - [`parent_slug`](#parent_slug)
 - [`capability`](#capability)
 - [`icon_url`](#icon_url)
@@ -271,6 +272,52 @@ ____
 This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()/add_submenu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu title.
 
 `'menu_title' => 'Site Options',`
+<br>
+<br>
+<br>
+
+### `message_cb`
+____
+This parameter is for options-page metaboxes only, and allows specifying a custom callback for seting the error/success messages. An example has been added to [example-functions.php](https://github.com/CMB2/CMB2/commit/43d513c135e52c327bafa06309821c29323ae2dd#diff-378c74d0ffffc1759b8779a135476777).
+
+`'message_cb' => 'yourprefix_options_page_message_callback',`
+
+```php
+/**
+ * Callback to define the optionss-saved message.
+ *
+ * @param CMB2  $cmb The CMB2 object.
+ * @param array $args {
+ *     An array of message arguments
+ *
+ *     @type bool   $is_options_page Whether current page is this options page.
+ *     @type bool   $should_notify   Whether options were saved and we should be notified.
+ *     @type bool   $is_updated      Whether options were updated with save (or stayed the same).
+ *     @type string $setting         For add_settings_error(), Slug title of the setting to which
+ *                                   this error applies.
+ *     @type string $code            For add_settings_error(), Slug-name to identify the error.
+ *                                   Used as part of 'id' attribute in HTML output.
+ *     @type string $message         For add_settings_error(), The formatted message text to display
+ *                                   to the user (will be shown inside styled `<div>` and `<p>` tags).
+ *                                   Will be 'Settings updated.' if $is_updated is true, else 'Nothing to update.'
+ *     @type string $type            For add_settings_error(), Message type, controls HTML class.
+ *                                   Accepts 'error', 'updated', '', 'notice-warning', etc.
+ *                                   Will be 'updated' if $is_updated is true, else 'notice-warning'.
+ * }
+ */
+function yourprefix_options_page_message_callback( $cmb, $args ) {
+	if ( ! empty( $args['should_notify'] ) ) {
+
+		if ( $args['is_updated'] ) {
+
+			// Modify the updated message.
+			$args['message'] = sprintf( esc_html__( '%s &mdash; Updated!', 'cmb2' ), $cmb->prop( 'title' ) );
+		}
+
+		add_settings_error( $args['setting'], $args['code'], $args['message'], $args['type'] );
+	}
+}
+```
 <br>
 <br>
 <br>
