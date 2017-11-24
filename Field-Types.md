@@ -449,11 +449,16 @@ $cmb->add_field( array(
 	'id'      => 'wiki_test_colorpicker',
 	'type'    => 'colorpicker',
 	'default' => '#ffffff',
+	// 'options' => array(
+	// 	'alpha' => true, // Make this a rgba color picker.
+	// ),
 ) );
 ```
 
 <a name="colorpicker-additional-field-options"></a>
 ##### Additional Field Options:
+
+Enable transparency (rgba) control by adding `'options' => array( 'alpha' => true )` to your field config array.
 
 The CMB2 colorpicker uses the built in WordPress colorpicker, Iris [automattic.github.io/Iris/] (http://automattic.github.io/Iris/)
 
