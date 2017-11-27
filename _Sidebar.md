@@ -11,6 +11,9 @@ Documentation:
 1. [Field Types](https://github.com/CMB2/CMB2/wiki/Field-Types)  
 	Breakdown of field types
 
+1. [Examples](https://github.com/CMB2/CMB2/wiki/Examples)  
+	Examples for registering fields
+
 1. [Field Parameters](https://github.com/CMB2/CMB2/wiki/Field-Parameters)  
 	Breakdown of common field parameters
 
