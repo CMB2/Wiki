@@ -18,24 +18,22 @@ add_action( 'cmb2_admin_init', 'yourprefix_register_comment_metabox' );
  */
 function yourprefix_register_comment_metabox() {
 
-	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_yourprefix_comment_';
+	$prefix = 'yourprefix_comment_';
 
 	/**
 	 * Sample metabox to demonstrate each field type included
 	 */
 	$cmb = new_cmb2_box( array(
-		'id'            => $prefix . 'metabox',
-		'title'         => 'Test Metabox',
-		'object_types'  => array( 'comment' ),
+		'id'           => $prefix . 'metabox',
+		'title'        => 'Test Metabox',
+		'object_types' => array( 'comment' ),
 	) );
 
 	$cmb->add_field( array(
-		'name' => __( 'Test Text Small', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
+		'name' => 'Test Text Small',
+		'desc' => 'field description (optional)',
 		'id'   => $prefix . 'textsmall',
 		'type' => 'text_small',
-		// 'column' => true,
 		'column' => array(
 			'position' => 2,
 			'name' => 'CMB2 Custom Column',
@@ -43,8 +41,8 @@ function yourprefix_register_comment_metabox() {
 	) );
 
 	$cmb->add_field( array(
-		'name'    => __( 'Test Color Picker', 'cmb2' ),
-		'desc'    => __( 'field description (optional)', 'cmb2' ),
+		'name'    => 'Test Color Picker',
+		'desc'    => 'field description (optional)',
 		'id'      => $prefix . 'colorpicker',
 		'type'    => 'colorpicker',
 		'default' => '#ffffff',
