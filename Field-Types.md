@@ -1075,6 +1075,12 @@ foreach ( (array) $entries as $key => $entry ) {
 
 	// Do something with the data
 }
+
+// Or get just the title from the first group.
+$first_entry_title = '';
+if ( isset( $entries[0]['title'] ) ) {
+	$first_entry_title = esc_html( $entries[0]['title'] );
+}`
 ```
 ##### Custom Field Attributes:
 
