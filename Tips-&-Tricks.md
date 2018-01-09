@@ -19,7 +19,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-_**Protip**: If you're looking for an even bigger box of tricks, check out the [CMB2 Snippet Library]((https://github.com/CMB2/CMB2-Snippet-Library/))._
+_**Protip**: If you're looking for an even bigger box of tricks, check out the [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/)._
 ___
 ## Override text strings in field
 
