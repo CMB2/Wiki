@@ -34,6 +34,9 @@ $cmb->add_field( array(
 	'options' => array(
 		'add_upload_file_text' => 'Upload PDF',
 	),
+	'query_args' => array(
+		'type' => 'application/pdf', // Make library only display PDFs.
+	),
 ) );
 ```
 
