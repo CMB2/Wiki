@@ -30,7 +30,7 @@
 
 ## Triggered Events
 
-CMB2 has several events that get triggered during various client-side interactions. Some events are triggered directly on the `document` object, and some are triggered on specific elements. As with all jQuery event callbacks, the first parameter sent to the callback is the event object, but with the CMB2 events, other parameters are also provideed, including the `CMB2` object. Source: [`js/cmb2.js`](https://github.com/CMB2/CMB2/blob/229213a241a1c049c5ba1c47aa176823ea6a9b21/js/cmb2.js#L1027-L1037)
+CMB2 has several events that get triggered during various client-side interactions. Some events are triggered directly on the `document` object, and some are triggered on specific elements. As with all jQuery event callbacks, the first parameter sent to the callback is the event object, but with the CMB2 events, other parameters are also provided, including the `CMB2` object. Source: [`js/cmb2.js`](https://github.com/CMB2/CMB2/blob/229213a241a1c049c5ba1c47aa176823ea6a9b21/js/cmb2.js#L1027-L1037)
 
 ### `cmb_pre_init`
 ____
