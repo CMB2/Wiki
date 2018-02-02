@@ -539,7 +539,7 @@ function yourprefix_display_wiki_text( $field_args, $field ) {
 
 ### `date_format`
 ____
-Field parameter used in the date field types which allows specifying the php date format for your field. See [php.net/manual/en/function.date.php](php.net/manual/en/function.date.php).
+Field parameter used in the date field types which allows specifying the php date format for your field. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
 <br>
 <br>
 <br>
