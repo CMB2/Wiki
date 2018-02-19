@@ -106,7 +106,7 @@ We can't completely remove that functionality for a few releases to keep from br
 
 An unfortunate side-effect is that you may occasionally see this deprecation notice when you are using a php callable word for the `'default'` or `'row_classes'` parameter (e.g. [#894](https://github.com/CMB2/CMB2/issues/894)). To address, use the workaround demonstrated above.
 
-_Related Issues: [#507](https://github.com/CMB2/CMB2/issues/507), [#894](https://github.com/CMB2/CMB2/issues/894)_
+_Related Issues: [#507](https://github.com/CMB2/CMB2/issues/507), [#826](https://github.com/CMB2/CMB2/issues/826), [#894](https://github.com/CMB2/CMB2/issues/894), [#1094.](https://github.com/CMB2/CMB2/issues/1094)_
 
 ## CMB2 is having trouble finding the data or using the right object type
 
