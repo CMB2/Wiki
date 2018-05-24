@@ -31,12 +31,14 @@ Here is a cool video overview of what you will get with the `example-functions.p
 1. [`radio_inline`](#radio_inline) *
 1. [`taxonomy_radio`](#taxonomy_radio) * Default Category/Tag/Taxonomy metaboxes replacement.
 1. [`taxonomy_radio_inline`](#taxonomy_radio_inline) * Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_radio_hierarchical`](#taxonomy_radio_hierarchical) * Default Category/Tag/Taxonomy metaboxes replacement, displayed in a hierarchical fashion (indented).
 1. [`select`](#select)
 1. [`taxonomy_select`](#taxonomy_select) * Default Category/Tag/Taxonomy metaboxes replacement.
 1. [`checkbox`](#checkbox) *
 1. [`multicheck` and `multicheck_inline`](#multicheck-and-multicheck_inline)
 1. [`taxonomy_multicheck`](#taxonomy_multicheck) * Default Category/Tag/Taxonomy metaboxes replacement.
 1. [`taxonomy_multicheck_inline`](#taxonomy_multicheck_inline) Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_multicheck_hierarchical`](#taxonomy_multicheck_hierarchical) Default Category/Tag/Taxonomy metaboxes replacement, displayed in a hierarchical fashion (indented).
 1. [`wysiwyg`](#wysiwyg) (TinyMCE) *
 1. [`file`](#file) Image/File upload *†
 1. [`file_list`](#file_list) Image Gallery/File list management
@@ -721,6 +723,16 @@ Inline radio buttons pre-populated with taxonomy terms. Example:
 <br>
 <br>
 
+### `taxonomy_radio_hierarchical`
+____
+Radio buttons pre-populated with taxonomy terms, displayed in a hierarchical fashion (indented). Example:
+![Screenshot of taxonomy radio hierarchical CMB field type](images/taxonomy_radio_hierarchical-field-type.png)
+##### CSS Field Class:
+`cmb-type-taxonomy-radio-hierarchical`
+<br>
+<br>
+<br>
+
 ### `taxonomy_select`
 ____
 A select field pre-populated with taxonomy terms. Example:
@@ -787,6 +799,16 @@ Inline checkboxes with taxonomy terms. Example:
 ##### Notes
 To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_post_meta`, etc. The taxonomy fields are not intended to provide an arbitrary list of terms to pick from, but are intended to be a replacement for the default taxonomy meta-boxes. I.e. they are meant to set the taxonomy terms on an object, and will not save as a meta value. Any other use of these types will be hacky and/or buggy. Suggest looking at building a custom field type instead - [Example](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
 
+<br>
+<br>
+<br>
+
+### `taxonomy_multicheck_hierarchical`
+____
+A field with checkboxes with taxonomy terms, and multiple terms can be selected. Displayed in a hierarchical fashion (indented). Example:
+![Screenshot of taxonomy multicheck hierarchical CMB field type](images/taxonomy-multicheck-hierarchical-field-type.png)
+##### CSS Field Class:
+`cmb-type-taxonomy-multicheck-hierarchical`
 <br>
 <br>
 <br>
