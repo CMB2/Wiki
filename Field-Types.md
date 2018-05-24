@@ -58,7 +58,7 @@ Here is a cool video overview of what you will get with the `example-functions.p
 ### `title`
 ____
 A large title (useful for breaking up sections of fields in metabox). Example:
-![Screenshot of title CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/e738751763014c803bf50fd19203de9fc7dafa5a/screenshot_title.jpg)
+![Screenshot of title CMB field type](images/screenshot_title.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -77,7 +77,7 @@ $cmb->add_field( array(
 ### `text`
 ____
 Standard text field (large). Example:
-![Screenshot of text CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_text.jpg)
+![Screenshot of text CMB field type](images/screenshot_text.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -98,7 +98,7 @@ $cmb->add_field( array(
 ### `text_small`
 ____
 Small text field. Example:
-![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_small.jpg)
+![Screenshot of text_small CMB field type](images/screenshot_text_small.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -119,7 +119,7 @@ $cmb->add_field( array(
 ### `text_medium`
 ____
 Medium text field. Example:
-![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_medium.jpg)
+![Screenshot of text_small CMB field type](images/screenshot_text_medium.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -140,7 +140,7 @@ $cmb->add_field( array(
 ### `text_email`
 ____
 Standard text field which enforces an email address. Example:
-![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_email.jpg)
+![Screenshot of text_small CMB field type](images/screenshot_text_email.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -159,7 +159,7 @@ $cmb->add_field( array(
 ### `text_url`
 ____
 Standard text field which enforces a url. Example:
-![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_url.jpg)
+![Screenshot of text_small CMB field type](images/screenshot_text_url.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -179,7 +179,7 @@ $cmb->add_field( array(
 ### `text_money`
 ____
 Standard text field with dollar sign in front of it (useful to prevent users from adding a dollar sign to input). Example:
-![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_money.jpg)
+![Screenshot of text_small CMB field type](images/screenshot_text_money.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -200,7 +200,7 @@ $cmb->add_field( array(
 ### `textarea`
 ____
 Standard textarea. Example:
-![Screenshot of text area CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/ae967aad65daeec5e89200d8663228676b1b960b/screenshot_textarea.jpg)
+![Screenshot of text area CMB field type](images/screenshot_textarea.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -221,7 +221,7 @@ $cmb->add_field( array(
 ### `textarea_small`
 ____
 Smaller textarea. Example:
-![Screenshot of text area small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/ae967aad65daeec5e89200d8663228676b1b960b/screenshot_textarea_small.jpg)
+![Screenshot of text area small CMB field type](images/screenshot_textarea_small.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -242,7 +242,7 @@ $cmb->add_field( array(
 ### `textarea_code`
 ____
 Code textarea. Example:
-![Screenshot of text area code CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/ae967aad65daeec5e89200d8663228676b1b960b/screenshot_textarea_code.jpg)
+![Screenshot of text area code CMB field type](images/screenshot_textarea_code.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -263,7 +263,7 @@ $cmb->add_field( array(
 ### `text_time`
 ____
 Time picker field. Example:
-![Screenshot of text_small CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/4a63cfe57d7b71a64d01d37e299189e6930eaeee/screenshot_text_time.jpg)
+![Screenshot of text_small CMB field type](images/screenshot_text_time.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -288,7 +288,7 @@ $cmb->add_field( array(
 ### `select_timezone`
 ____
 Timezone field. Example:
-![Screenshot of select_timezone CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_select_timezone.jpg)
+![Screenshot of select_timezone CMB field type](images/screenshot_select_timezone.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -308,7 +308,7 @@ $cmb->add_field( array(
 ### `text_date`
 ____
 Date field. Stored and displayed according to the `date_format`. Example:
-![Screenshot of text_date CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_text_date.jpg)
+![Screenshot of text_date CMB field type](images/screenshot_text_date.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -361,7 +361,7 @@ $cmb_demo->add_field( array(
 ### `text_date_timestamp`
 ____
 Date field, stored as UNIX timestamp. Useful if you plan to query based on it (ex: [events listing](http://www.billerickson.net/code/event-query/) ). Example:
-![Screenshot of text_date_timestamp CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_text_date_timestamp.jpg)
+![Screenshot of text_date_timestamp CMB field type](images/screenshot_text_date_timestamp.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -387,7 +387,7 @@ $cmb->add_field( array(
 ### `text_datetime_timestamp`
 ____
 Date and time field, stored as UNIX timestamp. Example:
-![Screenshot of text_datetime_timestamp CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_text_datetime_timestamp.jpg)
+![Screenshot of text_datetime_timestamp CMB field type](images/screenshot_text_datetime_timestamp.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -406,7 +406,7 @@ $cmb->add_field( array(
 ### `text_datetime_timestamp_timezone`
 ____
 Date, time and timezone field, stored as serialized DateTime object. Example:
-![Screenshot of text_datetime_timestamp_timezone CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_text_datetime_timestamp_timezone.jpg)
+![Screenshot of text_datetime_timestamp_timezone CMB field type](images/screenshot_text_datetime_timestamp_timezone.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -442,7 +442,7 @@ not applicable to this field type.
 ### `colorpicker`
 ____
 A colorpicker field. Example:
-![Screenshot of color picker CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_colorpicker.jpg)
+![Screenshot of color picker CMB field type](images/screenshot_colorpicker.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -510,7 +510,7 @@ $cmb->add_field( array(
 ### `checkbox`
 ____
 Standard checkbox. Example:
-![Screenshot of checkbox CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_checkbox.jpg)
+![Screenshot of checkbox CMB field type](images/screenshot_checkbox.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -537,7 +537,7 @@ $cmb->add_field( array(
 ### `multicheck` and `multicheck_inline`
 ____
 A field with multiple checkboxes (and multiple can be selected). Example:
-![Screenshot of multi checkbox CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_multicheck.jpg)
+![Screenshot of multi checkbox CMB field type](images/screenshot_multicheck.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -566,7 +566,7 @@ $cmb->add_field( array(
 ### `radio`
 ____
 Standard radio buttons. Example:
-![Screenshot of standard radio button CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_radio.jpg)
+![Screenshot of standard radio button CMB field type](images/screenshot_radio.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -592,7 +592,7 @@ Set the optional paremter, `show_option_none`, to `true` to use the default text
 ### `radio_inline`
 ____
 Inline radio buttons. Example:
-![Screenshot of radio button inline CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_radio_inline.jpg)
+![Screenshot of radio button inline CMB field type](images/screenshot_radio_inline.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -617,7 +617,7 @@ $cmb->add_field( array(
 ### `select`
 ____
 Standard select dropdown. Example:
-![Screenshot of select dropdown CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_select.jpg)
+![Screenshot of select dropdown CMB field type](images/screenshot_select.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -690,7 +690,7 @@ if ( 'custom' === $select_value ) {
 ### `taxonomy_radio`
 ____
 Radio buttons pre-populated with taxonomy terms. Example:
-![Screenshot of taxonomy radio button CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_radio.jpg)
+![Screenshot of taxonomy radio button CMB field type](images/screenshot_taxonomy_radio.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -716,7 +716,8 @@ $cmb->add_field( array(
 ### `taxonomy_radio_inline`
 ____
 Inline radio buttons pre-populated with taxonomy terms. Example:
-![Screenshot of taxonomy radio button inline CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_radio_inline.jpg)
+![Screenshot of taxonomy radio button inline CMB field type](images/screenshot_taxonomy_radio_inline.jpg)
+
 ##### CSS Field Class:
 `cmb-type-taxonomy-radio-inline`
 <br>
@@ -736,7 +737,7 @@ Radio buttons pre-populated with taxonomy terms, displayed in a hierarchical fas
 ### `taxonomy_select`
 ____
 A select field pre-populated with taxonomy terms. Example:
-![Screenshot of taxonomy select dropdown CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_select.jpg)
+![Screenshot of taxonomy select dropdown CMB field type](images/screenshot_taxonomy_select.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -758,7 +759,7 @@ $cmb->add_field( array(
 ### `taxonomy_multicheck`
 ____
 A field with checkboxes with taxonomy terms, and multiple terms can be selected. Example:
-![Screenshot of taxonomy multiple checkbox CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_multiselect.jpg)
+![Screenshot of taxonomy multiple checkbox CMB field type](images/screenshot_taxonomy_multiselect.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -788,7 +789,7 @@ $cmb->add_field( array(
 ### `taxonomy_multicheck_inline`
 ____
 Inline checkboxes with taxonomy terms. Example:
-![Screenshot of taxonomy multiple checkbox inline CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_taxonomy_multiselect_inline.jpg)
+![Screenshot of taxonomy multiple checkbox inline CMB field type](images/screenshot_taxonomy_multiselect_inline.jpg)
 ##### CSS Field Class:
 `cmb-type-taxonomy-multicheck-inline`
 
@@ -816,7 +817,7 @@ A field with checkboxes with taxonomy terms, and multiple terms can be selected.
 ### `wysiwyg`
 ____
 A metabox with TinyMCE editor (same as WordPress' visual editor). Example:
-![Screenshot of wysiwyg CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_wysiwyg.jpg)
+![Screenshot of wysiwyg CMB field type](images/screenshot_wysiwyg.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -891,7 +892,7 @@ The `'id'` should not be set to 'content' as the standard editor has this id and
 ### `file`
 ____
 A file uploader. By default it will store the file url and allow either attachments or URLs. This field type will also store the attachment ID (useful for getting different image sizes). It will store it in `$id . '_id'`, so if your field id is `wiki_test_image` the ID is stored in `wiki_test_image_id`. You can also limit it to only allowing attachments (can't manually type in a URL), which is also useful if you plan to use the attachment ID. The example shows its default values, with possible values commented inline. Example:
-![Screenshot of file/image upload CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_file.jpg)
+![Screenshot of file/image upload CMB field type](images/screenshot_file.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -936,7 +937,7 @@ ____
 A file uploader that allows you to add as many files as you want. Once added, files can be dragged and dropped to reorder.
 
 This is a repeatable field, and will store its data in an array, with the attachment ID as the array key and the attachment url as the value. Example:
-![Screenshot of multiple file/image upload CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_file_list.jpg)
+![Screenshot of multiple file/image upload CMB field type](images/screenshot_file_list.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -999,7 +1000,7 @@ function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
 ### `oembed`
 ____
 Displays embedded media inline using WordPress' built-in oEmbed support. See [codex.wordpress.org/Embeds](http://codex.wordpress.org/Embeds) for more info and for a list of embed services supported. (added in 0.9.1). Example:
-![Screenshot of oembed CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/9c1a3ac294553190fa69ba18bdc1391570134bb5/screenshot_oembed.jpg)
+![Screenshot of oembed CMB field type](images/screenshot_oembed.jpg)
 
 ```php
 $cmb->add_field( array(
@@ -1027,7 +1028,7 @@ echo wp_oembed_get( $url );
 ### `group`
 ____
 Hybrid field that supports adding other fields as a repeatable group. Example:
-![Screenshot of group / repeatable CMB field type](https://gist.github.com/Idealien/acadf34ab8c17c9ac4bbdaaced4f0ff4/raw/8bff8bf2ad29e14227b56037227b01ed5e6dce42/screenshot_group.jpg)
+![Screenshot of group / repeatable CMB field type](images/screenshot_group.jpg)
 
 ```php
 $group_field_id = $cmb->add_field( array(
