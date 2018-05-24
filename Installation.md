@@ -1,5 +1,3 @@
-# Installation
-
 ## If installing the plugin from wordpress.org:
 
 1. Upload the entire /CMB2 directory to the /wp-content/plugins/ directory.
