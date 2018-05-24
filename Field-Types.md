@@ -377,7 +377,7 @@ $cmb->add_field( array(
 ##### Custom Field Attributes:
 
 * `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/CMB2/CMB2/wiki/Field-Types#select_timezone) field specified above.
-* `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php). PHP's strtotime is used internally to parse the date, [this is not compatible with UK/European date formats](https://stackoverflow.com/a/4163696/1868365)
+* `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php). PHP's strtotime is used internally to parse the date, [this is not compatible with UK/European date formats](https://stackoverflow.com/a/4163696/1868365).
 <br>
 <br>
 <br>
