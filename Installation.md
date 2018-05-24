@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [If installing the plugin from wordpress.org:](#if-installing-the-plugin-from-wordpressorg)
+- [If including the library in your plugin or theme:](#if-including-the-library-in-your-plugin-or-theme)
+- [If including the library via composer in PSR-4 format (Example Antonella Framework)](#if-including-the-library-via-composer-in-psr-4-format-example-antonella-framework)
+- [If including the library via composer (not PSR-4 format)](#if-including-the-library-via-composer-not-psr-4-format)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## If installing the plugin from wordpress.org:
 
 1. Upload the entire `/CMB2` directory to the `/wp-content/plugins/` directory.
