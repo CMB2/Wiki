@@ -727,7 +727,7 @@ Inline radio buttons pre-populated with taxonomy terms. Example:
 ### `taxonomy_radio_hierarchical`
 ____
 Radio buttons pre-populated with taxonomy terms, displayed in a hierarchical fashion (indented). Example:
-![Screenshot of taxonomy radio hierarchical CMB field type](images/taxonomy_radio_hierarchical-field-type.png)
+![Screenshot of taxonomy radio hierarchical CMB field type](images/screenshot_taxonomy_radio_hierarchical-field-type.png)
 ##### CSS Field Class:
 `cmb-type-taxonomy-radio-hierarchical`
 <br>
@@ -807,7 +807,7 @@ To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_p
 ### `taxonomy_multicheck_hierarchical`
 ____
 A field with checkboxes with taxonomy terms, and multiple terms can be selected. Displayed in a hierarchical fashion (indented). Example:
-![Screenshot of taxonomy multicheck hierarchical CMB field type](images/taxonomy-multicheck-hierarchical-field-type.png)
+![Screenshot of taxonomy multicheck hierarchical CMB field type](images/screenshot_taxonomy_multicheck_hierarchical-field-type.png)
 ##### CSS Field Class:
 `cmb-type-taxonomy-multicheck-hierarchical`
 <br>
