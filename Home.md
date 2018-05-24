@@ -7,7 +7,7 @@ The best way to get started is look at [example-functions.php](https://github.co
 Documentation:
 
 1. [Installation](https://github.com/CMB2/CMB2/wiki/Installation)  
-	The basic installation in diferents workstations
+	Installation instructions for various environments
 
 1. [Basic Usage](https://github.com/CMB2/CMB2/wiki/Basic-Usage)  
 	Get up and running
