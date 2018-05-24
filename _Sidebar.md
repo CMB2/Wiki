@@ -2,8 +2,8 @@ Documentation:
 
 1. [Home](https://github.com/CMB2/CMB2/wiki)
 
-1. [Installation](https://github.com/CMB2/CMB2/Installation)  
-	The basic installation in diferents workstations
+1. [Installation](https://github.com/CMB2/CMB2/wiki/Installation)  
+	Installation instructions for various environments
 
 1. [Basic Usage](https://github.com/CMB2/CMB2/wiki/Basic-Usage)  
 	Get up and running
