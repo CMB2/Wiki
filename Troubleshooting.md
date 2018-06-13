@@ -6,6 +6,8 @@
 - [Metabox not appearing in WordPress edit page](#metabox-not-appearing-in-wordpress-edit-page)
 - ["Callable" Field Parameters](#callable-field-parameters)
 - [CMB2 is having trouble finding the data or using the right object type](#cmb2-is-having-trouble-finding-the-data-or-using-the-right-object-type)
+- [`Fatal error: Declaration of CMB2_Type_Colorpicker::render()` or similar](#fatal-error-declaration-of-cmb2_type_colorpickerrender-or-similar)
+  - [Workarounds for PHP 7.2 errors](#workarounds-for-php-72-errors)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -121,3 +123,20 @@ $form = cmb2_get_metabox_form( $atts['metabox_id'], $atts['object_id'], array( '
 ```
 
 If you do not provided this parameter, then CMB2 will guess which object type to use, which will fall back to the first object type registered.
+
+
+## `Fatal error: Declaration of CMB2_Type_Colorpicker::render()` or similar
+
+This happens for versions of CMB2 less than 2.3.0 and PHP greater than 7.2. [Version 2.3.0](https://github.com/CMB2/CMB2/releases/tag/v2.3.0) of CMB2 address this issue.
+
+Unfortunately, many themes and plugins bundle CMB2, but do not update the bundled version, and so users are presented with a white screen/fatal error if they update their servers to > PHP 7.2.
+
+### Workarounds for PHP 7.2 errors
+
+The best solution is to request the theme or plugin author to update their bundled version, BUT there are 2 possible workarounds:
+
+1. Install/activate the CMB2 plugin directly via the plugin dashboard: https://wordpress.org/plugins/cmb2/
+	- As CMB2 only loads one version of itself (the most recent version), this will cause your theme/plugin to use the newest version of CMB2 instead of the bundled version (as long as the bundled version was included correctly).
+1. Lower your version of PHP to less than 7.2, or request your web host to do so. This should be temporary, as I never want to recommend users user _lower_ versions of software.
+
+For more context, feel free to read up on some of the support threads that have come through: [WordPress forums](https://wordpress.org/search/CMB2_Type_Colorpicker%3A%3Arender%28%29/?forums=1#gsc.tab=0&gsc.q=CMB2_Type_Colorpicker%3A%3Arender()&gsc.sort=)
