@@ -8,6 +8,7 @@
 - [`type`](#type)
 - [`repeatable`](#repeatable)
 - [`default`](#default)
+- [`default_cb`](#default_cb)
 - [`show_names`](#show_names)
 - [`classes`](#classes)
 - [`classes_cb`](#classes_cb)
@@ -87,6 +88,14 @@ In order to customize `Add Row` button label, add to your Field's config array:
 ____
 Specify a default value for the field.
 `'default' => 'John',`
+<br>
+<br>
+<br>
+
+### `default_cb`
+____
+Defining a callback which will be used to specify a default value for the field when it does not have a value saved.
+`'default_cb' => 'time', // Will set to the current time timstampe`
 <br>
 <br>
 <br>
