@@ -65,7 +65,7 @@ The type of show_on filter (key) is "id" and the value for that filter is an arr
 
 ### Limit to specific page templates
 
-This will limit it to the page template with the file name `template-contact.php`. If you want to include it on multiple page templates, put them all in an array like in the above example.
+This will limit it to the page template with the file name `template-contact.php`. If you want to include it on multiple page templates, put them all in an array like in the example below.
 
 ```php
 $cmb = new_cmb2_box( array(
