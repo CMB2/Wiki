@@ -201,7 +201,7 @@ This section is to hightlight some dos/don'ts for including CMB2. CMB2 has an in
 	require_once  __DIR__ . '/includes/cmb2/init.php';
 	```
 
-	**Don't:** Include the files from a hook. E.g.:
+* **Don't:** Include the files from a hook. E.g.:
 	```php
 	// DON'T DO THIS
 	add_action( 'init', 'wprpt_initialize_cmb_init', 10 );
@@ -221,7 +221,7 @@ This section is to hightlight some dos/don'ts for including CMB2. CMB2 has an in
 
 	If you download CMB2 from the WordPress plugin repo, it will be a lowercase directory, `cmb2`. However, due to Github's naming conventions, if you clone this repo, or download it, or download a release on the releases page, it will be an uppercase directory, `CMB2`. Obviously, you can name the directory anything you want, when you're bundling/including it in your theme or plugin.
 
-	**Don't:** Use a `class_exists()` check before including. (CMB2 handles that magic on it's own.)
+* **Don't:** Use a `class_exists()` check before including. (CMB2 handles that magic on it's own.)
 	```php
 	// DON'T DO THIS
 	if ( ! class_exists( 'Some_CMB2_Class' ) ) {
