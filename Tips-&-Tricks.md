@@ -452,7 +452,9 @@ $cmb_demo->add_field( array(
 	'type' => 'text',
 	'attributes' => array(
 		'type' => 'number',
-		'pattern' => '\d*',
+		'min' => '10',
+		'max' => '100',
+		'step' => '10',
 	),
 ) );
 ```
