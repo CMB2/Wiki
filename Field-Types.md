@@ -261,10 +261,12 @@ As of version 2.4.0, the `'textarea_code'` field type now uses CodeMirror that i
 As with the other javascript-enabled fields, the code-editor defaults can be overridden via a `data-codeeditor` attribute. E.g:
 
 ```php
+// Make code be read-only css
 $cmb->add_field( array(
 	// other field config ...
 	'type' => 'textarea_code'
 	'attributes' => array(
+		'readonly' => 'readonly',
 		'data-codeeditor' => json_encode( array(
 			'codemirror' => array(
 				'mode' => 'css',
