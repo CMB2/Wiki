@@ -254,6 +254,28 @@ $cmb->add_field( array(
 ) );
 ```
 
+##### Notes
+
+As of version 2.4.0, the `'textarea_code'` field type now uses CodeMirror that is [used by WordPress](https://make.wordpress.org/core/2017/10/22/code-editing-improvements-in-wordpress-4-9/) ([#1096](https://github.com/CMB2/CMB2/issues/1096)). A field can opt-out to return to the previous behavior by specifying an `'options'` parameter:  `'options' => array( 'disable_codemirror' => true )`
+
+As with the other javascript-enabled fields, the code-editor defaults can be overridden via a `data-codeeditor` attribute. E.g:
+
+```php
+$cmb->add_field( array(
+	// other field config ...
+	'type' => 'textarea_code'
+	'attributes' => array(
+		'data-codeeditor' => json_encode( array(
+			'codemirror' => array(
+				'mode' => 'css',
+			),
+		) ),
+	),
+) );
+```
+
+The arguments are then passed to the WordPress `wp.codeEditor` method. The top-level parameters to use are: `'codemirror'`, `'csslint'`, `'jshint'`, `'htmlhint'`.
+
 ##### CSS Field Class:
 `cmb-type-textarea-code`
 <br>
