@@ -268,6 +268,7 @@ $cmb->add_field( array(
 		'data-codeeditor' => json_encode( array(
 			'codemirror' => array(
 				'mode' => 'css',
+				'readOnly' => 'nocursor',
 			),
 		) ),
 	),
