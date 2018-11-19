@@ -30,12 +30,12 @@ in composer.json file:
 
 ```json
 "require": {
-	"webdevstudios/cmb2": "dev-master",
+	"cmb2/cmb2": "dev-master",
 	"composer/installers": "v1.0.12"
 },
 "extra": {
 	"installer-paths": {
-		"vendor/{$name}/": ["webdevstudios/cmb2"]
+		"vendor/{$name}/": ["cmb2/cmb2"]
 	}
 }
 ```
@@ -49,14 +49,14 @@ in composer.json file:
 	"require": {
 		"php": ">=5.3.0",
 		"composer/installers": "v1.0.12",
-		"webdevstudios/cmb2": "dev-master",
+		"cmb2/cmb2": "dev-master",
 	},
 	"autoload": {
 		"files": ["vendor/cmb2/init.php"]
 	},
 	"extra": {
 		"installer-paths": {
-			"vendor/{$name}/": ["webdevstudios/cmb2"]
+			"vendor/{$name}/": ["cmb2/cmb2"]
 		}
 	} 
 }
