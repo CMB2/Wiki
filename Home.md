@@ -75,4 +75,4 @@ External Resources:
 
 - [Basic CMB2 qTranslate-X integration plugin](https://wordpress.org/plugins/integration-cmb2-qtranslate/)
 
-- [Listing of many great third party resources](https://github.com/CMB2/CMB2/blob/trunk/README.md#3rd-party-resources)
+- [Listing of many great third party resources](https://github.com/CMB2/CMB2/blob/develop/README.md#3rd-party-resources)

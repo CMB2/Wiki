@@ -56,4 +56,4 @@ External Resources:
 - [CMB2 Box Registration Code Generator](http://willthemoor.github.io/cmb2-metabox-generator/)
 - [Adding interactivity in boxes with javascript](http://hasin.me/2013/10/26/improving-ux-in-the-wordpress-admin-panel-with-interactive-meta-boxes/)
 - [Basic CMB2 qTranslate-X integration plugin](https://wordpress.org/plugins/integration-cmb2-qtranslate/)
-- [Listing of many great third party resources](https://github.com/CMB2/CMB2/blob/trunk/README.md#3rd-party-resources)
+- [Listing of many great third party resources](https://github.com/CMB2/CMB2/blob/develop/README.md#3rd-party-resources)
