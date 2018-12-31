@@ -1062,11 +1062,12 @@ $group_field_id = $cmb->add_field( array(
 	'description' => __( 'Generates reusable form entries', 'cmb2' ),
 	// 'repeatable'  => false, // use false if you want non-repeatable group
 	'options'     => array(
-		'group_title'   => __( 'Entry {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
-		'add_button'    => __( 'Add Another Entry', 'cmb2' ),
-		'remove_button' => __( 'Remove Entry', 'cmb2' ),
-		'sortable'      => true, // beta
-		// 'closed'     => true, // true to have the groups closed by default
+		'group_title'       => __( 'Entry {#}', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+		'add_button'        => __( 'Add Another Entry', 'cmb2' ),
+		'remove_button'     => __( 'Remove Entry', 'cmb2' ),
+		'sortable'          => true, // beta
+		// 'closed'         => true, // true to have the groups closed by default
+		// 'remove_confirm' => esc_html__( 'Are you sure you want to remove?', 'cmb2' ), // Performs confirmation before removing group.
 	),
 ) );
 
@@ -1137,14 +1138,23 @@ if ( isset( $entries[0]['title'] ) ) {
 ```
 ##### Custom Field Attributes:
 
-The `group` field type supports several a few extra parameters:
+The `group` field type supports several a few extra parameters.
+
+The following are documented on the [Field Parameters page](/CMB2/CMB2/wiki/Field-Parameters#before_group-after_group-before_group_row-after_group_row).
 
 * `'before_group'`
 * `'after_group'`
 * `'before_group_row'`
 * `'after_group_row'`
 
-They are documented on the [Field Parameters page](/CMB2/CMB2/wiki/Field-Parameters#before_group-after_group-before_group_row-after_group_row).
+The field also supposrts the following:
+
+* `'group_title'` - Defines the title for each group section. Can use the `{#}` placeholder to output the group number.
+* `'add_button'` - Defines the text for the group add button. Defaults to "Add Group".
+* `'remove_button'` - Defines the text for the group remove button. Defaults to "Remove Group".
+* `'remove_confirm'` - Defines the text used to confirm if group should be removed. By default, it is empty, so there is no confirmation when removing a group.
+* `'sortable'` - Whether groups are sortable. Defaults to false.
+* `'closed'` - Whether groups are displayed closed (collapsed). Defaults to false.
 
 ## Custom Field Types
 You can [define your own field types](/CMB2/CMB2/wiki/Adding-your-own-field-types) as well.
