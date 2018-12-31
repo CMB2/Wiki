@@ -1147,7 +1147,7 @@ The following are documented on the [Field Parameters page](/CMB2/CMB2/wiki/Fiel
 * `'before_group_row'`
 * `'after_group_row'`
 
-The field also supposrts the following:
+The field also supports the following:
 
 * `'group_title'` - Defines the title for each group section. Can use the `{#}` placeholder to output the group number.
 * `'add_button'` - Defines the text for the group add button. Defaults to "Add Group".
