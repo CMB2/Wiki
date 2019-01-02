@@ -295,6 +295,14 @@ $cmb->add_field( array(
 	'name' => 'Test Time Picker',
 	'id' => 'wiki_test_texttime',
 	'type' => 'text_time'
+	// Override default time-picker attributes:
+	// 'attributes' => array(
+	// 	'data-timepicker' => json_encode( array(
+	// 		'timeOnlyTitle' => __( 'Choose your Time', 'cmb2' ),
+	// 		'timeFormat' => 'HH:mm',
+	// 		'stepMinute' => 1, // 1 minute increments instead of the default 5
+	// 	) ),
+	// ),
 	// 'time_format' => 'h:i:s A',
 ) );
 ```
@@ -305,6 +313,9 @@ $cmb->add_field( array(
 ##### Custom Field Attributes:
 
 * `time_format`, defaults to 'h:i A'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php).
+
+##### Notes
+Like the other picker fields, the default attributes sent to the javascript picker widget can be overridden using a data attribute on the field. The above example has the attributes commented out, but you can see an example for how that works.
 
 <br>
 <br>
