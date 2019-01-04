@@ -653,7 +653,7 @@ _(since [2.5.2](https://github.com/CMB2/CMB2/releases/tag/v2.5.2))_
 
 Dictate how the `value` will be returned in the [rest api](https://github.com/CMB2/CMB2/wiki/REST-API) for this field using your own callback.
 
-This example will return a the original value casted to an `integer`.
+This example will return the original value casted to an `integer`.
 ```php
 $cmb->add_field( array(
 	'name'            => 'Test Integer',
