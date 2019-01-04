@@ -169,6 +169,10 @@ The endpoints are just one way to modify view/modify the CMB2 field values. CMB2
 
 This will work for any post type route, as well as terms, users, and comments.
 
+## Overriding a returned value for a individual field
+
+Optionally setting the [rest_value_cb](https://github.com/CMB2/CMB2/wiki/Field-Parameters#rest_value_cb) field parameter will dictate how the `value` will be returned for that field.
+
 ## Requirements
 
 To use the CMB2 REST API, you will be required to use either the [WordPress REST API plugin](https://wordpress.org/plugins/rest-api/), or a current version of WordPress (4.7+).
