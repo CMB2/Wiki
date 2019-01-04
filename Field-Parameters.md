@@ -30,6 +30,7 @@
 - [`render_class`](#render_class)
 - [`query_args`](#query_args)
 - [`save_field`](#save_field)
+- [`rest_value_cb`](#rest_value_cb)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -645,3 +646,21 @@ If false, will prevent a field from saving into the database. Default is `true`.
 <br>
 <br>
 <br>
+
+### `rest_value_cb`
+____
+_(since [2.5.2](https://github.com/CMB2/CMB2/releases/tag/v2.5.2))_
+
+Dictate how the `value` will be returned in the [rest api](https://github.com/CMB2/CMB2/wiki/REST-API) for this field using your own callback.
+
+This example will return a the original value casted to an `integer`.
+```php
+$cmb->add_field( array(
+	'name'            => 'Test Integer',
+	'id'              => 'wiki_custom_rest_value_cb',
+	'type'            => 'text',
+	'rest_value_cb'   => function( $value ) {
+            return (int) $value;
+        },
+) );
+```
