@@ -10,6 +10,7 @@
   - [Permissions callback demo for a box](#permissions-callback-demo-for-a-box)
   - [Permissions callback demo for a field](#permissions-callback-demo-for-a-field)
 - [Registered REST fields](#registered-rest-fields)
+- [Overriding a returned value for a individual field](#overriding-a-returned-value-for-a-individual-field)
 - [Requirements](#requirements)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
