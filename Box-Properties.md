@@ -155,6 +155,21 @@ function yourprefix_only_show_for_user_1( $cmb ) {
 	return 1 === get_current_user_id();
 }
 ```
+
+`'show_on_cb' => 'yourprefix_show_for_pages_without_template'`
+
+```php
+/**
+ * Only display a box if on a page w/o a template assigned.
+ * @param  object $cmb Current box object
+ * @return bool          
+ */
+function yourprefix_show_for_pages_without_template( $cmb ) {
+	$current_template = get_post_meta( $cmb->object_id(), '_wp_page_template', true );
+	return empty( $current_template ) || 'default' === $current_template;
+}
+```
+
 <br>
 <br>
 <br>
