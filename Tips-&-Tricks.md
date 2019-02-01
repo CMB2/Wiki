@@ -342,9 +342,11 @@ Then the callback function would look something like this:
 ```php
 function prefix_add_tooltip_to_label( $field_args, $field ) {
 	// Get default label
-	if ( $label = $field->label() && $field->option( 'tooltip' ) ) {
+	$label = $field->label();
+
+	if ( $label && $field->options( 'tooltip' ) ) {
 		// If label and tooltip exists, add it
-		$label .= sprintf( '<span class="tip"><i class="fa %s"></i>%s</span>', $field->option( 'tooltip-class' ), $field->option( 'tooltip' ) );
+		$label .= sprintf( '<span class="tip"><i class="fa %s"></i>%s</span>', $field->options( 'tooltip-class' ), $field->options( 'tooltip' ) );
 	}
 
 	return $label;
