@@ -739,7 +739,12 @@ $cmb->add_field( array(
 	'text'           => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
-	'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
+	'remove_default' => 'true' // Removes the default metabox provided by WP core.
+	// Optionally override the args sent to the WordPress get_terms function.
+	'query_args' => array(
+		// 'orderby' => 'slug',
+		// 'hide_empty' => true,
+	),
 ) );
 ```
 
@@ -782,7 +787,12 @@ $cmb->add_field( array(
 	'id'             => 'wiki_test_taxonomy_select',
 	'taxonomy'       => 'category', //Enter Taxonomy Slug
 	'type'           => 'taxonomy_select',
-	'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
+	'remove_default' => 'true' // Removes the default metabox provided by WP core.
+	// Optionally override the args sent to the WordPress get_terms function.
+	'query_args' => array(
+		// 'orderby' => 'slug',
+		// 'hide_empty' => true,
+	),
 ) );
 ```
 
@@ -808,7 +818,12 @@ $cmb->add_field( array(
 	'text'           => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
-	'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
+	'remove_default' => 'true' // Removes the default metabox provided by WP core.
+	// Optionally override the args sent to the WordPress get_terms function.
+	'query_args' => array(
+		// 'orderby' => 'slug',
+		// 'hide_empty' => true,
+	),
 ) );
 ```
 
