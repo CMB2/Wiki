@@ -51,14 +51,16 @@ ____
 Allows for specifying a callback to customize the label/name text value. Should return a string.
 
 `'label_cb' => 'yourprefix_function_to_add_label',`
-<br>
-<br>
-<br>
 
+```php
 function yourprefix_function_to_add_classes() {
 
 	return 'Custom label string';
 }
+```
+<br>
+<br>
+<br>
 
 ### `desc`
 ____
