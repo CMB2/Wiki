@@ -50,10 +50,15 @@ The field label
 ____
 Allows for specifying a callback to customize the label/name text value. Should return a string.
 
-`'name' => 'First Name',`
+`'label_cb' => 'yourprefix_function_to_add_label',`
 <br>
 <br>
 <br>
+
+function yourprefix_function_to_add_classes() {
+
+	return 'Custom label string';
+}
 
 ### `desc`
 ____
