@@ -3,6 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [`name`](#name)
+- [`label_cb`](#label_cb)
 - [`desc`](#desc)
 - [`id`](#id)
 - [`type`](#type)
