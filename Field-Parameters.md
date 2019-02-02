@@ -45,6 +45,15 @@ The field label
 <br>
 <br>
 
+### `label_cb`
+____
+Allows for specifying a callback to customize the label/name text value. Should return a string.
+
+`'name' => 'First Name',`
+<br>
+<br>
+<br>
+
 ### `desc`
 ____
 Field description. Usually under or adjacent to the field input.
