@@ -22,7 +22,7 @@
 
 ## How does it work?
 
-> **Note:** When registering a metabox, you can now specify the `'show_on_cb'` param to register a "show on" callback which you can use to conditionally display your metabox (much like [the `'show_on_cb'` for individual fields](https://github.com/CMB2/CMB2/wiki/Field-Types#show_on_cb)). This approach is recommended over the `'show_on'` filter, because it only applies to the metabox that you have added it. This saves you from having to do the logic to rule out other metaboxes in the filter.
+> **Note:** When registering a metabox, you can now specify the `'show_on_cb'` param to register a "show on" callback which you can use to conditionally display your metabox (much like [the `'show_on_cb'` for individual fields](https://github.com/CMB2/CMB2/wiki/Field-Parameters#show_on_cb)). This approach is recommended over the `'show_on'` filter, because it only applies to the metabox that you have added it. This saves you from having to do the logic to rule out other metaboxes in the filter.
 
 A 'show_on' filter is any arbitrary filter that limits where the metabox is shown. As described in [Display Options](https://github.com/CMB2/CMB2/wiki/Display-Options), there's currently two built-in. You can limit a metabox to certain page IDs, or to certain page templates.
 
