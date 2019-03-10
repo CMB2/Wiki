@@ -2,6 +2,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [Override the data storage location for a CMB2 box](#override-the-data-storage-location-for-a-cmb2-box)
+  - [Example of these filters in use](#example-of-these-filters-in-use)
 - [Override text strings in field](#override-text-strings-in-field)
 - [Inject static content in a field](#inject-static-content-in-a-field)
 - [Inject dynamic content in a field via a callback](#inject-dynamic-content-in-a-field-via-a-callback)
@@ -22,6 +24,43 @@
 
 _**Protip**: If you're looking for an even bigger box of tricks, check out the [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/)._
 ___
+
+## Override the data storage location for a CMB2 box
+
+One request I get semi-frequently is, "how do I get/set data to and from a custom table, rather than meta?"
+
+CMB2 actually has several handy filters for accomplishing this. There are 2 filters for overriding the getting of data.
+
+
+**Getting:**
+
+- `cmb2_override_meta_value` - Filter whether to override getting of meta value. Returning a non `'cmb2_field_no_override_val'` value will effectively short-circuit the value retrieval.
+- `cmb2_override_{$field_id}_meta_value` - Operates the same as `cmb2_field_no_override_val`, but is more specific to a single field.
+
+See the [inline docs](https://github.com/CMB2/CMB2/blob/dbfce95ccbfc3132da73d75255827c084796ab1b/includes/CMB2_Field.php#L251-L287) for a definition of each of the parameters passed to the filter.
+
+There are also 2 filters for overriding the setting/removing of data as well.
+
+**Setting:**
+
+- `cmb2_override_meta_save` - Filter whether to override saving of meta value. Returning a non-`null` value will effectively short-circuit the function.
+- `"cmb2_override_{$field_id}_meta_save"` - Operates the same as `cmb2_override_meta_save`, but is more specific to a single field.
+
+See the [inline docs](https://github.com/CMB2/CMB2/blob/dbfce95ccbfc3132da73d75255827c084796ab1b/includes/CMB2_Field.php#L321-L355) for a definition of each of the parameters passed to the filter.
+
+**Removing:**
+- `cmb2_override_meta_remove` - Filter whether to override removing of meta value. Returning a non-null value will effectively short-circuit the function.
+- `"cmb2_override_{$field_id}_meta_remove"` - Operates the same as `cmb2_override_meta_remove`, but is more specific to a single field.
+
+See the [inline docs](https://github.com/CMB2/CMB2/blob/dbfce95ccbfc3132da73d75255827c084796ab1b/includes/CMB2_Field.php#L393-L432) for a definition of each of the parameters passed to the filter.
+
+### Example of these filters in use
+
+For a working example of these filters in use, [see this example in the CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/blob/master/filters-and-actions/override-cmb2-data-source.php).
+
+In that snippet, you can see even a bit more context/help [in the inline comments](https://github.com/CMB2/CMB2-Snippet-Library/blob/master/filters-and-actions/override-cmb2-data-source.php#L73-L98).
+
+
 ## Override text strings in field
 
 Several of the CMB2 field types have text strings in them, and CMB2 provides a way to override each of them.
