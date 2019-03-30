@@ -49,7 +49,7 @@ in composer.json file:
 	"require": {
 		"php": ">=5.3.0",
 		"composer/installers": "v1.0.12",
-		"cmb2/cmb2": "dev-master",
+		"cmb2/cmb2": "dev-master"
 	},
 	"autoload": {
 		"files": ["vendor/cmb2/init.php"]
