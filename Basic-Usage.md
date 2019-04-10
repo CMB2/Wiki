@@ -29,7 +29,7 @@ Open [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-fu
 
 ### Getting Started
 
-First, you need to get the bootstrap and start the engine. To do so, add the following code to `functions.php`. There are some caveats to including CMB2 in your plugin or theme. [Please review them belo.](#caveats-for-bundling-and-including-cmb2).
+First, you need to get the bootstrap and start the engine. To do so, add the following code to `functions.php`. There are some caveats to including CMB2 in your plugin or theme. [Please review them below](#caveats-for-bundling-and-including-cmb2).
 
 _Note: If you are installing the plugin from [WordPress.org](https://wordpress.org/plugins/cmb2/), you can skip this step as it is handled by the plugin._
 
