@@ -18,13 +18,11 @@ add_action( 'cmb2_admin_init', 'yourprefix_register_comment_metabox' );
  */
 function yourprefix_register_comment_metabox() {
 
-	$prefix = 'yourprefix_comment_';
-
 	/**
 	 * Sample metabox to demonstrate each field type included
 	 */
 	$cmb = new_cmb2_box( array(
-		'id'           => $prefix . 'metabox',
+		'id'           => 'yourprefix_comment_metabox',
 		'title'        => 'Test Metabox',
 		'object_types' => array( 'comment' ),
 	) );
@@ -32,7 +30,7 @@ function yourprefix_register_comment_metabox() {
 	$cmb->add_field( array(
 		'name' => 'Test Text Small',
 		'desc' => 'field description (optional)',
-		'id'   => $prefix . 'textsmall',
+		'id'   => 'yourprefix_comment_textsmall',
 		'type' => 'text_small',
 		'column' => array(
 			'position' => 2,
@@ -43,7 +41,7 @@ function yourprefix_register_comment_metabox() {
 	$cmb->add_field( array(
 		'name'    => 'Test Color Picker',
 		'desc'    => 'field description (optional)',
-		'id'      => $prefix . 'colorpicker',
+		'id'      => 'yourprefix_comment_colorpicker',
 		'type'    => 'colorpicker',
 		'default' => '#ffffff',
 		'column' => array(

@@ -69,7 +69,7 @@ The `file` field type has a button with the text, "Add or Upload File." Here is 
 ```php
 $cmb->add_field( array(
 	'name'    => 'PDF',
-	'id'      => $prefix . 'pdf',
+	'id'      => 'yourprefix_pdf',
 	'type'    => 'file',
 	'options' => array(
 		'add_upload_file_text' => 'Upload PDF',
@@ -100,7 +100,7 @@ To use them in your field, it would look something like this:
 ```php
 $cmb->add_field( array(
 	'name'         => 'Testing Field Parameters',
-	'id'           => $prefix . 'test_parameters',
+	'id'           => 'yourprefix_test_parameters',
 	'type'         => 'text',
 	'before_row'   => '<p>Testing <b>"before_row"</b> parameter</p>',
 	'before'       => '<p>Testing <b>"before"</b> parameter</p>',
@@ -141,7 +141,7 @@ Then you can specifiy that callback in your field parameter:
 ```php
 $cmb->add_field( array(
 	'name'       => 'Testing Field Parameters',
-	'id'         => $prefix . 'test_parameters',
+	'id'         => 'yourprefix_test_parameters',
 	'type'       => 'text',
 	'before_row' => 'cmb2_before_row_if_2', // callback
 ) );
@@ -321,7 +321,7 @@ field config:
 ```php
 $cmb->add_field( array(
 	'name'    => __( 'Test', 'cmb2' ),
-	'id'      => $prefix . 'test',
+	'id'      => 'yourprefix_test',
 	'type'    => 'text',
 	'default' => 'prefix_set_test_default',
 ) );
@@ -343,7 +343,7 @@ field config:
 ```php
 $cmb->add_field( array(
 	'name'   => __( 'Test', 'cmb2' ),
-	'id'     => $prefix . 'test',
+	'id'     => 'yourprefix_test',
 	'type'   => 'text',
 	'before' => 'prefix_set_field_data_attr',
 ) );
@@ -366,7 +366,7 @@ In a recent [Github issue](https://github.com/CMB2/CMB2/issues/435) a user asked
 ```php
 $cmb->add_field( array(
 	'name' => __( 'Test Text Area', 'cmb2' ),
-	'id'   => $prefix . 'textarea',
+	'id'   => 'yourprefix_textarea',
 	'type' => 'textarea',
 	'label_cb' => 'prefix_add_tooltip_to_label',
 	'options' => array(
@@ -399,7 +399,7 @@ In this [Github issue](https://github.com/CMB2/CMB2/issues/567) a user asked how
 ```php
 $cmb_demo->add_field( array(
 	'name'       => __( 'Test Date Picker (UNIX timestamp)', 'cmb2' ),
-	'id'         => $prefix . 'textdate_timestamp',
+	'id'         => 'yourprefix_textdate_timestamp',
 	'type'       => 'text_date_timestamp',
 	'attributes' => array(
 		// CMB2 checks for datepicker override data here:
@@ -490,7 +490,7 @@ This example replicates the default render method with custom classes assigned t
 $cmb_demo->add_field( array(
 	'name' => __( 'My Number Field', 'theme-domain' ),
 	'desc' => __( 'Numbers only', 'theme-domain' ),
-	'id'   => $prefix . 'number',
+	'id'   => 'yourprefix_number',
 	'type' => 'text',
 	'attributes' => array(
 		'type' => 'number',
@@ -505,7 +505,7 @@ $cmb_demo->add_field( array(
 $cmb_demo->add_field( array(
 	'name' => __( 'My Number Field', 'theme-domain' ),
 	'desc' => __( 'Numbers only', 'theme-domain' ),
-	'id'   => $prefix . 'number',
+	'id'   => 'yourprefix_number',
 	'type' => 'text',
 	'attributes' => array(
 		'type' => 'number',

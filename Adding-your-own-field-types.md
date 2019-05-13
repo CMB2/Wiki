@@ -160,7 +160,7 @@ Then, when creating our field, we would add the `multicheck` type and use `cmb2_
 $cmb_demo->add_field( array(
 	'name'       => __( 'Select your_post_type Posts', 'cmb2' ),
 	'desc'       => __( 'field description (optional)', 'cmb2' ),
-	'id'         => $prefix . 'post_multicheckbox',
+	'id'         => 'yourprefix_post_multicheckbox',
 	'type'       => 'multicheck',
 	'options_cb' => 'cmb2_get_your_post_type_post_options',
 ) );
@@ -281,7 +281,7 @@ If you wanted to display this address in your theme or plugin, you could do it l
 
 ```php
 $post_id = get_the_ID();
-$address = get_post_meta( $post_id, $prefix . 'address', 1 );
+$address = get_post_meta( $post_id, 'yourprefix_address', 1 );
 
 // Set default values for each address key
 $address = wp_parse_args( $address, array(

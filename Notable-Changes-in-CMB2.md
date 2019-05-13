@@ -10,7 +10,7 @@
 ```php
 $cmb->add_field( array(
 	'name'    => __( 'Test Select', 'cmb2' ),
-	'id'      => $prefix . 'test_select',
+	'id'      => 'yourprefix_test_select',
 	'type'    => 'select',
 	'options' => array(
 		'standard' => __( 'Option One', 'cmb2' ),
