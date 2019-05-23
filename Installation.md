@@ -35,11 +35,10 @@ in composer.json file:
 ```json
 "require": {
 	"cmb2/cmb2": "dev-master",
-	"composer/installers": "v1.0.12"
 },
 "extra": {
 	"installer-paths": {
-		"vendor/{$name}/": ["cmb2/cmb2"]
+		"vendor/cmb2/": ["cmb2/cmb2"]
 	}
 }
 ```
