@@ -42,7 +42,7 @@ Here is a cool video overview of what you will get with the `example-functions.p
 1. [`wysiwyg`](#wysiwyg) (TinyMCE) *
 1. [`file`](#file) Image/File upload *†
 1. [`file_list`](#file_list) Image Gallery/File list management
-1. [`oembed`](#oembed) Converts oembed urls (instagram, twitter, youtube, etc. [oEmbed in the Codex](https://codex.wordpress.org/Embeds))
+1. [`oembed`](#oembed) Converts oembed urls (instagram, twitter, youtube, etc. [oEmbed in the Codex](https://wordpress.org/support/article/embeds/))
 1. [`group`](#group) Hybrid field that supports adding other fields as a repeatable group. *
 
 #### More Info
