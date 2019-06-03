@@ -34,7 +34,7 @@ in composer.json file:
 
 ```json
 "require": {
-	"cmb2/cmb2": "dev-master",
+	"cmb2/cmb2": "dev-master"
 }
 
 ```
