@@ -35,12 +35,8 @@ in composer.json file:
 ```json
 "require": {
 	"cmb2/cmb2": "dev-master",
-},
-"extra": {
-	"installer-paths": {
-		"vendor/cmb2/": ["cmb2/cmb2"]
-	}
 }
+
 ```
 
 ## If including the library via composer (not PSR-4 format)
