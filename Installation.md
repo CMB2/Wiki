@@ -35,7 +35,10 @@ in composer.json file:
 ```json
 "require": {
 	"cmb2/cmb2": "dev-master"
-}
+},
+"autoload": {
+        "files": ["vendor/cmb2/cmb2/init.php"]
+    }
 
 ```
 
