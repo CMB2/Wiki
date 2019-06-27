@@ -739,7 +739,7 @@ $cmb->add_field( array(
 	'text'           => array(
 		'no_terms_text' => 'Sorry, no terms could be found.' // Change default text. Default: "No terms"
 	),
-	'remove_default' => 'true' // Removes the default metabox provided by WP core.
+	'remove_default' => 'true', // Removes the default metabox provided by WP core.
 	// Optionally override the args sent to the WordPress get_terms function.
 	'query_args' => array(
 		// 'orderby' => 'slug',
