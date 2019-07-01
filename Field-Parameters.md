@@ -53,7 +53,7 @@ Allows for specifying a callback to customize the label/name text value. Should 
 `'label_cb' => 'yourprefix_function_to_add_label',`
 
 ```php
-function yourprefix_function_to_add_classes() {
+function yourprefix_function_to_add_label() {
 
 	return 'Custom label string';
 }
