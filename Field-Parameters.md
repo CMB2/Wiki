@@ -113,7 +113,7 @@ Specify a default value for the field.
 ### `default_cb`
 ____
 Defining a callback which will be used to specify a default value for the field when it does not have a value saved.
-`'default_cb' => 'time', // Will set to the current time timstampe`
+`'default_cb' => 'time', // Will set to the current time timestamp`
 <br>
 <br>
 <br>
