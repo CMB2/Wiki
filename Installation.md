@@ -37,9 +37,8 @@ in composer.json file:
 	"cmb2/cmb2": "dev-master"
 },
 "autoload": {
-        "files": ["vendor/cmb2/cmb2/init.php"]
-    }
-
+	"files": ["vendor/cmb2/cmb2/init.php"]
+}
 ```
 
 ## If including the library via composer (not PSR-4 format)
