@@ -72,7 +72,7 @@ $cmb = new_cmb2_box( array(
 	'id'           => 'contact-information',
 	'title'        => 'Contact Information',
 	'object_types' => array( 'page' ), // post type
-	'show_on'      => array( 'key' => '_wp_page_template', 'value' => 'template-contact.php' ),
+	'show_on'      => array( 'key' => 'page-template', 'value' => 'template-contact.php' ),
 	'context'      => 'normal', //  'normal', 'advanced', or 'side'
 	'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
 	'show_names'   => true, // Show field names on the left
