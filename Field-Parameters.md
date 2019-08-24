@@ -32,6 +32,7 @@
 - [`query_args`](#query_args)
 - [`save_field`](#save_field)
 - [`rest_value_cb`](#rest_value_cb)
+- [`text`](#text)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -679,5 +680,31 @@ $cmb->add_field( array(
 	'rest_value_cb'   => function( $value ) {
             return (int) $value;
         },
+) );
+```
+<br>
+<br>
+<br>
+
+### `text`
+____
+Field-types which have text elements as part of the field (e.g. the `file` field type) typically allow overriding that text value through the `text` field parameter. This can be a way to easily translate the text in the CMB2 library.
+
+`'text' => array( 'key' => 'New text value' ),`
+
+Example overriding the `Add or Upload File` text for the `file` field type.
+```php
+$cmb->add_field( array(
+	'name'    => 'Test PDF',
+	'desc'    => 'Upload a PDF.',
+	'id'      => 'wiki_test_image',
+	'type'    => 'file',
+	'text'    => array(
+		'add_upload_file_text' => 'Add PDF',
+	),
+	// query_args are passed to wp.media's library query.
+	'query_args' => array(
+		'type' => 'application/pdf', // Make library only display PDFs.
+	),
 ) );
 ```
