@@ -787,7 +787,7 @@ $cmb->add_field( array(
 	'id'             => 'wiki_test_taxonomy_select',
 	'taxonomy'       => 'category', //Enter Taxonomy Slug
 	'type'           => 'taxonomy_select',
-	'remove_default' => 'true' // Removes the default metabox provided by WP core.
+	'remove_default' => 'true', // Removes the default metabox provided by WP core.
 	// Optionally override the args sent to the WordPress get_terms function.
 	'query_args' => array(
 		// 'orderby' => 'slug',
