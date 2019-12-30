@@ -91,6 +91,10 @@ CMB2 registers its own wp-api namespace, `cmb2/v1`. You can see the list of rout
 * To update field value, POST request to: `<SITE_URL>/wp-json/cmb2/v1/boxes/<BOX_ID>/fields/<FIELD_ID>?object_type=<OBJECT_TYPE>&object_id=<OBJECT_ID>&value=<NEW_VALUE>`.
 * To delete field value, DELETE request to: `<SITE_URL>/wp-json/cmb2/v1/boxes/<BOX_ID>/fields/<FIELD_ID>?object_type=<OBJECT_TYPE>&object_id=<OBJECT_ID>`.
 
+**Note:** The `object_type` REST API parameter does not refer to post-types, but rather the master object type, e.g. `post`, `term`, `user`, `comments`, or `options-page`.
+
+This is required because the `object_id` may be shared across object-types, and CMB2 needs to know which one you are querying.
+
 ### Route parameters
 
 There are several arguments which may modify the return value from these routes:
