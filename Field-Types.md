@@ -617,7 +617,7 @@ $cmb->add_field( array(
 	),
 ) );
 ```
-Set the optional paremter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
+Set the optional parameter, `show_option_none`, to `true` to use the default text, 'None', or specify another value, i.e. 'No selection'. By default `show_option_none` is false.
 
 ##### CSS Field Class:
 `cmb-type-radio`
