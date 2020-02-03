@@ -113,8 +113,74 @@ Specify a default value for the field.
 
 ### `default_cb`
 ____
-Defining a callback which will be used to specify a default value for the field when it does not have a value saved.
-`'default_cb' => 'time', // Will set to the current time timestamp`
+Defining a callback which will be used to specify a default value for the field when it does not have a value saved. Example:
+
+`'default_cb' => 'set_to_today',`
+
+```php
+$cmb->add_field( array(
+	'name'       => 'Favorite day of the week',
+	'id'         => 'wiki_test_favorite_day_of_week',
+	'type'       => 'text',
+	'default_cb' => 'set_to_today',
+) );
+```
+
+```php
+/**
+ * Set to day of week.
+ *
+ * @param  object $field_args Current field args
+ * @param  object $field      Current field object
+ */
+function set_to_today( $field_args, $field ) {
+	return date( 'l' );
+}
+```
+
+<a name="default_cb-example-2"></a>
+Another example where the default value for one date field is set by the value of another:
+
+```php
+$cmb->add_field( array(
+	'name' => 'Start date',
+	'id'   => 'foobar_start_date',
+	'type' => 'text_date_timestamp',
+) );
+
+$cmb->add_field( array(
+	'name'       => 'End date',
+	'id'         => 'foobar_end_date',
+	'type'       => 'text_date_timestamp',
+	'show_on_cb' => 'yourprefix_get_start_date', // Let's only show the end date if the user already saved the start date.
+	'default_cb' => 'yourprefix_default_end_if_no_start_cb',
+) );
+```
+
+```php
+/**
+ * Get the start date value for field.
+ *
+ * @param object $field CMB2 field object
+ *
+ * @return array        Array of field options
+ */
+function yourprefix_get_start_date( $field ) {
+	return get_post_meta( $field->object_id, 'foobar_start_date', true );
+}
+
+/**
+ * Sets to same as Start Date if empty
+ *
+ * @param array  $field_args Array of field args.
+ * @param object $field      Current field object
+ *
+ * @return array             Array of field options
+ */
+function yourprefix_default_end_if_no_start_cb( $field_args, $field ) {
+	return yourprefix_get_start_date( $field );
+}
+```
 <br>
 <br>
 <br>
