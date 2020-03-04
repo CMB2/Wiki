@@ -19,6 +19,7 @@
 - [Modify Field Row Output and Markup](#modify-field-row-output-and-markup)
 - [Limit text field to numbers only](#limit-text-field-to-numbers-only)
 - [Limit text field to numbers with increments of 10](#limit-text-field-to-numbers-with-increments-of-10)
+- [Adding a CMB2 debug helper to your plugin/theme](#adding-a-cmb2-debug-helper-to-your-plugintheme)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -515,3 +516,42 @@ $cmb_demo->add_field( array(
 	),
 ) );
 ```
+
+## Adding a CMB2 debug helper to your plugin/theme
+
+If you are bundling CMB2 in your plugin or theme, there may be times you are trying to determine if the right version of CMB2 is loading for your user. CMB2 is built to _always_ load the newest version of itself, even if it's a newer version than the one bundled with your plugin/theme. The only way this would not be true would be if someone edited the core of CMB2 (please don't do this!), or if they bundled it incorrectly (please don't do this!). You can see the [correct way to bundle CMB2 here](basic-usage#caveats-for-bundling-and-including-cmb2).
+
+To help with debugging your theme/plugin, you can include the following snippet so that you're able to see which version/location of CMB2 is being loaded:
+
+```php
+add_action( 'cmb2_admin_init', 'yourprefix_cmb2_debug_info' );
+/**
+ * Adds a wp-admin notice with some CMB2 debug info, as long as the debug query arg is set.
+ * wp-admin/?yourprefix_cmb2_debug=1
+ */
+function yourprefix_cmb2_debug_info() {
+	if ( ! empty( $_GET['yourprefix_cmb2_debug'] ) ) {
+		add_action( 'all_admin_notices', 'yourprefix_output_cmb2_debug_info' );
+	}
+}
+
+/**
+ * Outputs a wp-admin notice with some CMB2 debug info.
+ */
+function yourprefix_output_cmb2_debug_info() {
+	echo '
+	<div class="notice notice-warning notice-alt is-dismissible">
+		<h2>CMB2 Debug Info</h2>
+		<pre>'. print_r( [
+			'CMB2_VERSION' => defined( 'CMB2_VERSION' ) ? CMB2_VERSION : 'not defined',
+			'CMB2_LOADED' => defined( 'CMB2_LOADED' ) ? CMB2_LOADED : 'not defined',
+			'CMB2_DIR' => defined( 'CMB2_DIR' ) ? CMB2_DIR : 'not defined',
+		], true ) .'</pre>
+	</div>
+	';
+}
+```
+
+Then, to use this snippet, you can go to `wp-admin/?yourprefix_cmb2_debug=1` on your user's site to investigate, or if you don't have wp-admin credentials, ask them to do it for you.
+
+Of course, replace `yourprefix` with a prefix unique to your project.
