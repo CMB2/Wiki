@@ -62,7 +62,7 @@ Keep in mind, you will be required to be authenticated in order to edit field va
 
 ## Overriding the box's `'show_in_rest'` property from a field
 
-CMB2 allows you to specify the visibility of the individual fields. By default, they will have the same visibiliy as is set by the box's `'show_in_rest'` property. **Of note:** If the box's `'show_in_rest'` property is set to `false` or not set at all, the indivdual fields' `'show_in_rest'` properties will have no effect, and they will not be shown in the API.
+CMB2 allows you to specify the visibility of the individual fields. By default, they will have the same visibility as is set by the box's `'show_in_rest'` property. **Of note:** If the box's `'show_in_rest'` property is set to `false` or not set at all, the indivdual fields' `'show_in_rest'` properties will have no effect, and they will not be shown in the API.
 
 If you have set your box's `'show_in_rest'` property as the example above (to `WP_REST_Server::READABLE`), this means that all the associated fields are by default 'readable', and can not be written to. If you wanted to enable a single field to be able to be written to from the API as well, you could set the field's `'show_in_rest'` override parameter to `WP_REST_Server::ALLMETHODS`:
 
