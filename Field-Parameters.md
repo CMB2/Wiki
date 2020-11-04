@@ -268,7 +268,22 @@ $cmb->add_field( array(
 ) );
 ```
 
+<a name="attribute-example-3"></a>
+Another example which uses `type` attribute to create a password-style input:
+
+```php
+$cmb->add_field( array(
+	'name'       => 'API key',
+	'id'         => 'api_key',
+	'type'       => 'text',
+	'attributes' => array(
+		'type' => 'password',
+	),
+) );
+```
+
 The colorpicker fields and date picker fields can each use the attributes field to set an array of overrides for the picker options using `json_encode`. [Colorpicker example](https://github.com/CMB2/CMB2/wiki/Field-Types#colorpicker-additional-field-options), and [Datepicker example](https://github.com/CMB2/CMB2/wiki/Field-Types#datepicker-additional-field-options).
+
 <br>
 <br>
 <br>
