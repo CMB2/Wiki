@@ -126,7 +126,7 @@ Finally, you need to be able to extract the metadata and put it to work. In your
 ```php
 <?php
 // Grab the metadata from the database
-$text = get_post_meta( get_the_ID(), '_yourprefix_text', true );
+$text = get_post_meta( get_the_ID(), 'yourprefix_text', true );
 
 // Echo the metadata
 echo esc_html( $text );
@@ -159,9 +159,9 @@ get_header(); ?>
 					<?php get_template_part( 'content', 'page' ); ?>
 
 					<?php
-					$text  = get_post_meta( get_the_ID(), '_yourprefix_text', true );
-					$email = get_post_meta( get_the_ID(), '_yourprefix_email', true );
-					$url   = get_post_meta( get_the_ID(), '_yourprefix_url', true );
+					$text  = get_post_meta( get_the_ID(), 'yourprefix_text', true );
+					$email = get_post_meta( get_the_ID(), 'yourprefix_email', true );
+					$url   = get_post_meta( get_the_ID(), 'yourprefix_url', true );
 					echo esc_html( $text );
 					echo is_email( $email );
 					echo esc_url( $url );
