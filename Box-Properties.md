@@ -90,6 +90,8 @@ ____
 Priority of the metabox in its context. Default is `'high'`. ([More Info](https://developer.wordpress.org/reference/functions/add_meta_box/#parameters))
 
 `'priority' => 'high',`
+
+For the user, term, and options boxes, this priority is used for the hooks used to register the metaboxes. The text version of the priority is converted to an integer. `'high'` is converted to `5` (since lower numbers indicate higher hook priorities), `'low'` is converted to `20` and all other non-numeric text strings are converted to `10`.
 <br>
 <br>
 <br>
