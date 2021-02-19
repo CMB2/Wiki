@@ -1022,13 +1022,13 @@ $cmb->add_field( array(
 /**
  * Sample template tag function for outputting a cmb2 file_list
  *
- * @param  string  $file_list_meta_key The field meta key. ('wiki_test_file_list')
+ * @param  string  $file_list_meta_id The field meta id. ('wiki_test_file_list')
  * @param  string  $img_size           Size of image to show
  */
-function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
+function cmb2_output_file_list( $file_list_meta_id, $img_size = 'medium' ) {
 
 	// Get the list of files
-	$files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );
+	$files = get_post_meta( get_the_ID(), $file_list_meta_id, 1 );
 
 	echo '<div class="file-list-wrap">';
 	// Loop through them and output an image
