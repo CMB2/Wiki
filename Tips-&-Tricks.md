@@ -225,8 +225,12 @@ One way to get around that is to only set your default if you're on the `post-ne
  * @param  bool  $default On/Off (true/false)
  * @return mixed          Returns true or '', the blank default
  */
-function cmb2_set_checkbox_default_for_new_post( $default ) {
-	return isset( $_GET['post'] ) ? '' : ( $default ? (string) $default : '' );
+function cmb2_set_checkbox_default_for_new_post() {
+	return isset( $_GET['post'] )
+		// No default value.
+		? ''
+		// Default to true.
+		: true;
 }
 ```
 
@@ -249,10 +253,10 @@ function cmb2_checkbox_default_metabox_test() {
 	) );
 
 	$cmb->add_field( array(
-		'desc'    => 'Click Me',
-		'type'    => 'checkbox',
-		'id'      => '_test_checkbox_default',
-		'default' => cmb2_set_checkbox_default_for_new_post( true ),
+		'desc'       => 'Click Me',
+		'type'       => 'checkbox',
+		'id'         => '_test_checkbox_default',
+		'default_cb' => 'cmb2_set_checkbox_default_for_new_post',
 	) );
 }
 add_action( 'cmb2_admin_init', 'cmb2_checkbox_default_metabox_test' );
@@ -316,15 +320,15 @@ $cmb->add_field( array(
 
 ## Setting a default field value via a callback
 
-CMB2 fields have a 'default' parameter, but did you know that same parameter can accept a callback? This allows you to use things like the `$field->object_id` (the `$post` ID) to dynamically set your default value.
+CMB2 fields have a 'default_cb' parameter. This allows you to use things like the `$field->object_id` (the `$post` ID) to dynamically set your default value.
 
 field config:
 ```php
 $cmb->add_field( array(
-	'name'    => __( 'Test', 'cmb2' ),
-	'id'      => 'yourprefix_test',
-	'type'    => 'text',
-	'default' => 'prefix_set_test_default',
+	'name'       => __( 'Test', 'cmb2' ),
+	'id'         => 'yourprefix_test',
+	'type'       => 'text',
+	'default_cb' => 'prefix_set_test_default',
 ) );
 ```
 
