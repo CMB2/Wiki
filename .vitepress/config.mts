@@ -10,8 +10,19 @@ export default defineConfig({
   description: DESCRIPTION,
   lang: 'en-US',
 
-  // The plan/migration lives in meta/ — never build it.
-  srcExclude: ['meta/**', '**/node_modules/**'],
+  // Only index/changelog/contributing + docs/* are real content. Keep
+  // everything else out of the build: the plan (meta/), agent/tooling files
+  // (CLAUDE.md, AGENTS.md, beads/agents dirs), and deps. Dot-dirs are already
+  // ignored by VitePress, but list them defensively.
+  srcExclude: [
+    'meta/**',
+    'CLAUDE.md',
+    'AGENTS.md',
+    'README.md',
+    '.beads/**',
+    '.agents/**',
+    '**/node_modules/**',
+  ],
 
   // Preserve today's extension-less URLs (/changelog, /docs/Basic-Usage, ...).
   cleanUrls: true,

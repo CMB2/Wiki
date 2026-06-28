@@ -6,6 +6,9 @@
   "compatibility_date": "2024-11-01",
   "assets": {
     "directory": "./.vitepress/dist",
+    // VitePress cleanUrls emits extension-less links to .html files; serve
+    // /docs/Foo from Foo.html (matches both with and without a trailing slash).
+    "html_handling": "auto-trailing-slash",
     // VitePress emits a 404.html; serve it for unknown paths.
     "not_found_handling": "404-page"
   }
