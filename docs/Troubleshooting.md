@@ -1,15 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [CMB2 URLs Issues](#cmb2-urls-issues)
-- [Metabox not appearing in WordPress edit page](#metabox-not-appearing-in-wordpress-edit-page)
-- ["Callable" Field Parameters](#callable-field-parameters)
-- [CMB2 is having trouble finding the data or using the right object type](#cmb2-is-having-trouble-finding-the-data-or-using-the-right-object-type)
-- [`Fatal error: Declaration of CMB2_Type_Colorpicker::render()` or similar](#fatal-error-declaration-of-cmb2_type_colorpickerrender-or-similar)
-  - [Workarounds for PHP 7.2 errors](#workarounds-for-php-72-errors)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## CMB2 URLs Issues
 

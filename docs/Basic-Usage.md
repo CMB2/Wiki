@@ -1,16 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Quick Start](#quick-start)
-- [Getting Started](#getting-started)
-- [Create a metabox](#create-a-metabox)
-- [Creating the metabox using a plugin](#creating-the-metabox-using-a-plugin)
-- [Display the Metadata](#display-the-metadata)
-- [Adding metaboxes to user profile](#adding-metaboxes-to-user-profile)
-- [Caveats for bundling and including CMB2.](#caveats-for-bundling-and-including-cmb2)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 This code is designed to be run inside themes and plugins. Proper structure would look like:
 
@@ -113,7 +100,7 @@ Note: For more metabox examples, see [example-functions.php](https://github.com/
 
 Here is a cool video overview of what you will get with the `example-functions.php` file:  
 
-[![video overview of what you will get with the `example-functions.php` file](images/example-functions-video-screenshot.png)](https://www.youtube.com/watch?v=QP3N8_q75Ik)
+[![video overview of what you will get with the `example-functions.php` file](/images/example-functions-video-screenshot.png)](https://www.youtube.com/watch?v=QP3N8_q75Ik)
 
 ### Creating the metabox using a plugin
 

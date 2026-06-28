@@ -1,27 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Override the data storage location for a CMB2 box](#override-the-data-storage-location-for-a-cmb2-box)
-  - [Example of these filters in use](#example-of-these-filters-in-use)
-- [Override text strings in field](#override-text-strings-in-field)
-- [Inject static content in a field](#inject-static-content-in-a-field)
-- [Inject dynamic content in a field via a callback](#inject-dynamic-content-in-a-field-via-a-callback)
-- [Using the dynamic before/after form hooks](#using-the-dynamic-beforeafter-form-hooks)
-- [Setting a metabox to 'closed' by default](#setting-a-metabox-to-closed-by-default)
-- [Using CMB2 helper functions and cmb2_init](#using-cmb2-helper-functions-and-cmb2_init)
-- [Setting a default value for a checkbox](#setting-a-default-value-for-a-checkbox)
-- [A dropdown for taxonomy terms which does NOT set the term on the post](#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post)
-- [Setting a default field value via a callback](#setting-a-default-field-value-via-a-callback)
-- [Setting dynamic attributes that may use post data, like the post ID](#setting-dynamic-attributes-that-may-use-post-data-like-the-post-id)
-- [Modify Field Label Output](#modify-field-label-output)
-- [Change the year range for the date field types](#change-the-year-range-for-the-date-field-types)
-- [Modify Field Row Output and Markup](#modify-field-row-output-and-markup)
-- [Limit text field to numbers only](#limit-text-field-to-numbers-only)
-- [Limit text field to numbers with increments of 10](#limit-text-field-to-numbers-with-increments-of-10)
-- [Adding a CMB2 debug helper to your plugin/theme](#adding-a-cmb2-debug-helper-to-your-plugintheme)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 _**Protip**: If you're looking for an even bigger box of tricks, check out the [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/)._
 ___
@@ -112,7 +88,7 @@ $cmb->add_field( array(
 ) );
 ```
 And that field would look like:
-[<img src="images/testing-parameters.png" alt="testing parameters screenshot">](images/testing-parameters.png)
+[<img src="/images/testing-parameters.png" alt="testing parameters screenshot">](/images/testing-parameters.png)
 
 ## Inject dynamic content in a field via a callback
 
@@ -360,7 +336,7 @@ function prefix_set_field_data_attr( $args, $field ) {
 }
 ```
 
-[<img src="images/post-id-data-attribute.png" alt="post id data attribute screenshot">](images/post-id-data-attribute.png)
+[<img src="/images/post-id-data-attribute.png" alt="post id data attribute screenshot">](/images/post-id-data-attribute.png)
 
 [#256 for reference](https://github.com/CMB2/CMB2/issues/256#issuecomment-84023325)
 

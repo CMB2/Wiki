@@ -1,24 +1,4 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [How does it work?](#how-does-it-work)
-- [Examples](#examples)
-  - [Example: Using the `'show_on_cb'` to limit the display of a metabox unless metadata exists](#example-using-the-show_on_cb-to-limit-the-display-of-a-metabox-unless-metadata-exists)
-  - [Example: Exclude on IDs](#example-exclude-on-ids)
-  - [Example: Exclude on New Post Screens](#example-exclude-on-new-post-screens)
-  - [Example: Exclude on non top level posts](#example-exclude-on-non-top-level-posts)
-  - [Example: taxonomy show_on filter](#example-taxonomy-show_on-filter)
-  - [Example: Child page show_on filter](#example-child-page-show_on-filter)
-  - [Example: Page Slug show_on filter](#example-page-slug-show_on-filter)
-  - [Example: Front Page show_on filter](#example-front-page-show_on-filter)
-  - [Example: By Capability show_on filter](#example-by-capability-show_on-filter)
-  - [Example: Page Template show_on filter](#example-page-template-show_on-filter)
-  - [Example: Show metabox for certain user roles](#example-show-metabox-for-certain-user-roles)
-  - [Example: Show metabox by post meta](#example-show-metabox-by-post-meta)
-  - [Example: Show metabox if post is root menu element](#example-show-metabox-if-post-is-root-menu-element)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## How does it work?
 

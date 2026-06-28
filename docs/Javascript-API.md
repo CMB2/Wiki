@@ -1,24 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [TODO](#todo)
-- [Triggered Events](#triggered-events)
-  - [`cmb_pre_init`](#cmb_pre_init)
-  - [`cmb_init`](#cmb_init)
-  - [`postbox-toggled`](#postbox-toggled)
-  - [`cmb_media_modal_init`](#cmb_media_modal_init)
-  - [`cmb_media_modal_select`](#cmb_media_modal_select)
-  - [`cmb_media_modal_open`](#cmb_media_modal_open)
-  - [`cmb2_add_group_row_start`](#cmb2_add_group_row_start)
-  - [`cmb2_add_row`](#cmb2_add_row)
-  - [`cmb2_remove_group_row_start`](#cmb2_remove_group_row_start)
-  - [`cmb2_remove_row`](#cmb2_remove_row)
-  - [`cmb2_shift_rows_enter`](#cmb2_shift_rows_enter)
-  - [`cmb2_shift_rows_start`](#cmb2_shift_rows_start)
-  - [`cmb2_shift_rows_complete`](#cmb2_shift_rows_complete)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## TODO
 

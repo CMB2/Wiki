@@ -1,40 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [`name`](#name)
-- [`label_cb`](#label_cb)
-- [`desc`](#desc)
-- [`id`](#id)
-- [`type`](#type)
-- [`repeatable`](#repeatable)
-- [`default`](#default)
-- [`default_cb`](#default_cb)
-- [`show_names`](#show_names)
-- [`classes`](#classes)
-- [`classes_cb`](#classes_cb)
-- [`on_front`](#on_front)
-- [`attributes`](#attributes)
-- [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field)
-- [`before_group`, `after_group`, `before_group_row`, `after_group_row`](#before_group-after_group-before_group_row-after_group_row)
-- [`before_display_wrap`, `before_display`, `after_display`, `after_display_wrap`](#before_display_wrap-before_display-after_display-after_display_wrap)
-- [`column`](#column)
-- [`show_on_cb`](#show_on_cb)
-- [`options`](#options)
-- [`options_cb`](#options_cb)
-- [`sanitization_cb`](#sanitization_cb)
-- [`escape_cb`](#escape_cb)
-- [`render_row_cb`](#render_row_cb)
-- [`display_cb`](#display_cb)
-- [`date_format`](#date_format)
-- [`remove_default`](#remove_default)
-- [`render_class`](#render_class)
-- [`query_args`](#query_args)
-- [`save_field`](#save_field)
-- [`rest_value_cb`](#rest_value_cb)
-- [`text`](#text)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 Most (if not all) fields support the parameters on this page. When a field type supports extra parameters, those parameters are [documented with the given field type](/CMB2/CMB2/wiki/Field-Types). Also, please review the [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php) file for examples/demonstration.
 
@@ -354,7 +317,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-[<img src="images/testing-display-parameters.png" alt="Display callbacks screenshot">](images/testing-display-parameters.png)
+[<img src="/images/testing-display-parameters.png" alt="Display callbacks screenshot">](/images/testing-display-parameters.png)
 <br>
 <br>
 <br>
@@ -376,7 +339,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-[<img src="images/field-columns.png?ver=3" alt="field columns screenshot">](images/field-columns.png?ver=3)
+[<img src="/images/field-columns.png?ver=3" alt="field columns screenshot">](/images/field-columns.png?ver=3)
 
 <br>
 <br>

@@ -1,39 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [`id`](#id)
-- [`title`](#title)
-- [`object_types`](#object_types)
-- [`context`](#context)
-- [`priority`](#priority)
-- [`show_names`](#show_names)
-- [`classes`](#classes)
-- [`classes_cb`](#classes_cb)
-- [`show_on_cb`](#show_on_cb)
-- [`show_on`](#show_on)
-- [`cmb_styles`](#cmb_styles)
-- [`enqueue_js`](#enqueue_js)
-- [`fields`](#fields)
-- [`hookup`](#hookup)
-- [`save_fields`](#save_fields)
-- [`closed`](#closed)
-- [`taxonomies`](#taxonomies)
-- [`new_user_section`](#new_user_section)
-- [`new_term_section`](#new_term_section)
-- [`show_in_rest`](#show_in_rest)
-- [`remove_box_wrap`](#remove_box_wrap)
-- [`menu_title`](#menu_title)
-- [`message_cb`](#message_cb)
-- [`parent_slug`](#parent_slug)
-- [`capability`](#capability)
-- [`icon_url`](#icon_url)
-- [`position`](#position)
-- [`admin_menu_hook`](#admin_menu_hook)
-- [`display_cb`](#display_cb)
-- [`save_button`](#save_button)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 When registering a [CMB2 metabox/instance](https://github.com/CMB2/CMB2/wiki/Basic-Usage), you will pass an array of properties to the `new_cmb2_box()` function. The possible properties in that array are documented here.
 

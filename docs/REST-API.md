@@ -1,19 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [Enabling the REST API for a CMB2 box](#enabling-the-rest-api-for-a-cmb2-box)
-- [Overriding the box's `'show_in_rest'` property from a field](#overriding-the-boxs-show_in_rest-property-from-a-field)
-- [Routes](#routes)
-  - [Route parameters](#route-parameters)
-- [Permissions](#permissions)
-  - [Permissions callback demo for a box](#permissions-callback-demo-for-a-box)
-  - [Permissions callback demo for a field](#permissions-callback-demo-for-a-field)
-- [Registered REST fields](#registered-rest-fields)
-- [Overriding a returned value for a individual field](#overriding-a-returned-value-for-a-individual-field)
-- [Requirements](#requirements)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Enabling the REST API for a CMB2 box
 
