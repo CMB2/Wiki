@@ -23,7 +23,8 @@ Make sure you check early on to see if this filter should be running (check `$me
 
 _Have you made some useful `'show_on'` or `'show_on_cb'` filters? List them as examples here so others can use them._
 
-### Example: Using the `'show_on_cb'` to limit the display of a metabox unless metadata exists
+<a name="example-using-the-show-on-cb-to-limit-the-display-of-a-metabox-unless-metadata-exists"></a>
+### Example: Show metabox only if metadata exists
 
 This example is [taken from an issue](https://github.com/CMB2/CMB2/issues/531). Say you have a dropdown list of statuses, internal and external, and only want your contact metabox to show if the status is set to external and where the default is internal. You can also see this code in the [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/blob/master/conditional-display/show-if-matching-meta-value.php) (there's a good chance it will be more up-to-date in the snippet library).
 

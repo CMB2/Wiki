@@ -467,7 +467,8 @@ function override_render_field_callback( $field_args, $field ) {
 
 This example replicates the default render method with custom classes assigned to wrapping divs and the original cmb-row class removed as an example. When writing your callback function make sure to create an instance of the CMB2_Types class, passing the field object, and calling the function on render() on this instance. This will actually render the fields HTML. Also be sure to return the $field object to allow chaining.
 
-## Limit text field to numbers only
+<a name="limit-text-field-to-numbers-only"></a>
+## Limit field to numbers only
 
 ```php
 $cmb_demo->add_field( array(
@@ -482,7 +483,8 @@ $cmb_demo->add_field( array(
 ) );
 ```
 
-## Limit text field to numbers with increments of 10
+<a name="limit-text-field-to-numbers-with-increments-of-10"></a>
+## Limit field to number increments (10)
 
 ```php
 $cmb_demo->add_field( array(

@@ -1,7 +1,8 @@
 # Installation
 
 
-## If installing the plugin from wordpress.org:
+<a name="if-installing-the-plugin-from-wordpress-org"></a>
+## From WordPress.org
 
 1. Upload the entire `/CMB2` directory to the `/wp-content/plugins/` directory.
 2. Activate CMB2 through the 'Plugins' menu in WordPress.
@@ -9,7 +10,8 @@
 4. Edit to only include the fields you need and rename the functions.
 5. Profit.
 
-## If including the library in your plugin or theme:
+<a name="if-including-the-library-in-your-plugin-or-theme"></a>
+## Bundled in plugin or theme
 
 1. Place the CMB2 directory inside of your theme or plugin.
 2. Copy (and rename if desired) `example-functions.php` into a folder above the CMB2 directory OR copy the entirety of its contents to your theme's `functions.php` file.
@@ -22,7 +24,8 @@
 ](/docs/Basic-Usage#caveats-for-bundling-and-including-cmb2).
 - when bundling CMB2 with your theme or plugin, you will want to use the release package. You can download the zip file from the [WordPress plugin repo](https://wordpress.org/plugins/cmb2/), or using the download link on Github. It is recommended that you not clone CMB2 into your project. This will ensure your bundled version does not contain the development-only files/folders.
 
-## If including the library via composer in PSR-4 format (Example Antonella Framework)
+<a name="if-including-the-library-via-composer-in-psr-4-format-example-antonella-framework"></a>
+## Via Composer (PSR-4)
 
 in composer.json file:
 
@@ -35,7 +38,8 @@ in composer.json file:
 }
 ```
 
-## If including the library via composer (not PSR-4 format)
+<a name="if-including-the-library-via-composer-not-psr-4-format"></a>
+## Via Composer (non-PSR-4)
 
 in composer.json file:
 

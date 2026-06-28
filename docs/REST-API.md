@@ -112,7 +112,8 @@ The registered handlers will have a parameter name which matches the filter, exc
 
 So the `'cmb2_api_get_box_permissions_check'` would be registered as a callback like: `'get_box_permissions_check_cb' => 'your_callback_function_name'`.
 
-### Permissions callback demo for a box
+<a name="permissions-callback-demo-for-a-box"></a>
+### Box permissions callback
 
 To demonstrate, let's update our box registration from above and ensure that a user must be logged in before they can see our box/fields in the API:
 
@@ -140,7 +141,8 @@ function your_prefix_only_show_for_logged_in_users( $is_allowed, $cmb_controller
 
 I've registered the same callback (checking if user is logged in) to 3 the different routes public (by default) routes. So now when a user tries to fetch the single box view or a single field view for that box, they will receive a 'rest_forbidden' message. Also, this box will not be returned in the list of boxes.
 
-### Permissions callback demo for a field
+<a name="permissions-callback-demo-for-a-field"></a>
+### Field permissions callback
 
 Maybe you want to keep the defaults as-is, and only want to modify the permissions for a single field. The code is exactly the same for your field registration:
 
