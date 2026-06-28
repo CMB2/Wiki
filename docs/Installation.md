@@ -19,7 +19,7 @@
 **Important Notes**
 
 - Please review the [caveats for bundling and including CMB2
-](https://github.com/CMB2/CMB2/wiki/Basic-Usage#caveats-for-bundling-and-including-cmb2).
+](/docs/Basic-Usage#caveats-for-bundling-and-including-cmb2).
 - when bundling CMB2 with your theme or plugin, you will want to use the release package. You can download the zip file from the [WordPress plugin repo](https://wordpress.org/plugins/cmb2/), or using the download link on Github. It is recommended that you not clone CMB2 into your project. This will ensure your bundled version does not contain the development-only files/folders.
 
 ## If including the library via composer in PSR-4 format (Example Antonella Framework)

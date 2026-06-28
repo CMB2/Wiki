@@ -1,6 +1,10 @@
+---
+outline: [2, 3]
+---
+
 # Field Types
 
-Here's the built-in fields you can include in your metabox. You can also [add your own field types](/CMB2/CMB2/wiki/Adding-your-own-field-types).
+Here's the built-in fields you can include in your metabox. You can also [add your own field types](/docs/Adding-your-own-field-types).
 
 Note that all the id fields should have proper prefixes. It's a good practice to create a unique prefix for your fields so you don't risk using the same id as another theme/plugin.
 
@@ -48,8 +52,8 @@ Here is a cool video overview of what you will get with the `example-functions.p
 1. [`group`](#group) Hybrid field that supports adding other fields as a repeatable group. *
 
 #### More Info
-* [Create your own field type](https://github.com/CMB2/CMB2/wiki/Adding-your-own-field-types)
-* [Common field parameters shared by all fields](/CMB2/CMB2/wiki/Field-Parameters)
+* [Create your own field type](/docs/Adding-your-own-field-types)
+* [Common field parameters shared by all fields](/docs/Field-Parameters)
 
 \* Not available as a repeatable field  
 † Use `file_list` for repeatable
@@ -416,7 +420,7 @@ $cmb->add_field( array(
 
 ##### Custom Field Attributes:
 
-* `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/CMB2/CMB2/wiki/Field-Types#select_timezone) field specified above.
+* `timezone_meta_key`, Optionally make this field honor the timezone selected in the [`select_timezone`](/docs/Field-Types#select-timezone) field specified above.
 * `date_format`, defaults to 'm/d/Y'. See [php.net/manual/en/function.date.php](http://php.net/manual/en/function.date.php). PHP's strtotime is used internally to parse the date, [this is not compatible with UK/European date formats](https://stackoverflow.com/a/4163696/1868365).
 <br>
 <br>
@@ -851,7 +855,7 @@ Inline checkboxes with taxonomy terms. Example:
 * `'select_all_button' => false`, Setting to false disables the 'Select All' button
 
 ##### Notes
-To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_post_meta`, etc. The taxonomy fields are not intended to provide an arbitrary list of terms to pick from, but are intended to be a replacement for the default taxonomy meta-boxes. I.e. they are meant to set the taxonomy terms on an object, and will not save as a meta value. Any other use of these types will be hacky and/or buggy. Suggest looking at building a custom field type instead - [Example](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
+To retrieve the values from the taxonomy fields, use `get_the_terms`, not `get_post_meta`, etc. The taxonomy fields are not intended to provide an arbitrary list of terms to pick from, but are intended to be a replacement for the default taxonomy meta-boxes. I.e. they are meant to set the taxonomy terms on an object, and will not save as a meta value. Any other use of these types will be hacky and/or buggy. Suggest looking at building a custom field type instead - [Example](/docs/Tips-&-Tricks#a-dropdown-for-taxonomy-terms-which-does-not-set-the-term-on-the-post).
 
 <br>
 <br>
@@ -1168,7 +1172,7 @@ if ( isset( $entries[0]['title'] ) ) {
 
 The `group` field type supports several a few extra parameters.
 
-The following are documented on the [Field Parameters page](/CMB2/CMB2/wiki/Field-Parameters#before_group-after_group-before_group_row-after_group_row).
+The following are documented on the [Field Parameters page](/docs/Field-Parameters#before-group-after-group-before-group-row-after-group-row).
 
 * `'before_group'`
 * `'after_group'`
@@ -1185,25 +1189,25 @@ The field also supports the following:
 * `'closed'` - Whether groups are displayed closed (collapsed). Defaults to false.
 
 ## Custom Field Types
-You can [define your own field types](/CMB2/CMB2/wiki/Adding-your-own-field-types) as well.
+You can [define your own field types](/docs/Adding-your-own-field-types) as well.
 
 ## Common Field Parameters
-Common field parameters are now [documented on this page](/CMB2/CMB2/wiki/Field-Parameters). The below anchors are in place to keep incoming links from breaking.
+Common field parameters are now [documented on this page](/docs/Field-Parameters). The below anchors are in place to keep incoming links from breaking.
 
-* <a name="param-name"></a>[`name`](/CMB2/CMB2/wiki/Field-Parameters#name)
-* <a name="param-desc"></a>[`desc`](/CMB2/CMB2/wiki/Field-Parameters#desc)
-* <a name="param-id"></a>[`id`](/CMB2/CMB2/wiki/Field-Parameters#id)
-* <a name="param-type"></a>[`type`](/CMB2/CMB2/wiki/Field-Parameters#type)
-* <a name="param-repeatable"></a>[`repeatable`](/CMB2/CMB2/wiki/Field-Parameters#repeatable)
-* <a name="param-default"></a>[`default`](/CMB2/CMB2/wiki/Field-Parameters#default)
-* <a name="param-show_names"></a>[`show_names`](/CMB2/CMB2/wiki/Field-Parameters#show_names)
-* <a name="options"></a>[`options`](/CMB2/CMB2/wiki/Field-Parameters#options)
-* <a name="before-after-callbacks"></a>[`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](/CMB2/CMB2/wiki/Field-Parameters#before-after-before_row-after_row-before_field-after_field)
-* <a name="row_classes"></a>[`classes`](/CMB2/CMB2/wiki/Field-Parameters#classes)
-* <a name="on_front"></a>[`on_front`](/CMB2/CMB2/wiki/Field-Parameters#on_front)
-* <a name="attributes"></a>[`attributes`](/CMB2/CMB2/wiki/Field-Parameters#attributes)
-* <a name="show_on_cb"></a>[`show_on_cb`](/CMB2/CMB2/wiki/Field-Parameters#show_on_cb)
-* <a name="options_cb"></a>[`options_cb`](/CMB2/CMB2/wiki/Field-Parameters#options_cb)
-* <a name="escape_cb"></a>[`escape_cb`](/CMB2/CMB2/wiki/Field-Parameters#escape_cb)
-* <a name="sanitization_cb"></a>[`sanitization_cb`](/CMB2/CMB2/wiki/Field-Parameters#sanitization_cb)
-* <a name="render_row_cb"></a>[`render_row_cb`](/CMB2/CMB2/wiki/Field-Parameters#render_row_cb)
+* <a name="param-name"></a>[`name`](/docs/Field-Parameters#name)
+* <a name="param-desc"></a>[`desc`](/docs/Field-Parameters#desc)
+* <a name="param-id"></a>[`id`](/docs/Field-Parameters#id)
+* <a name="param-type"></a>[`type`](/docs/Field-Parameters#type)
+* <a name="param-repeatable"></a>[`repeatable`](/docs/Field-Parameters#repeatable)
+* <a name="param-default"></a>[`default`](/docs/Field-Parameters#default)
+* <a name="param-show_names"></a>[`show_names`](/docs/Field-Parameters#show-names)
+* <a name="options"></a>[`options`](/docs/Field-Parameters#options)
+* <a name="before-after-callbacks"></a>[`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](/docs/Field-Parameters#before-after-before-row-after-row-before-field-after-field)
+* <a name="row_classes"></a>[`classes`](/docs/Field-Parameters#classes)
+* <a name="on_front"></a>[`on_front`](/docs/Field-Parameters#on-front)
+* <a name="attributes"></a>[`attributes`](/docs/Field-Parameters#attributes)
+* <a name="show_on_cb"></a>[`show_on_cb`](/docs/Field-Parameters#show-on-cb)
+* <a name="options_cb"></a>[`options_cb`](/docs/Field-Parameters#options-cb)
+* <a name="escape_cb"></a>[`escape_cb`](/docs/Field-Parameters#escape-cb)
+* <a name="sanitization_cb"></a>[`sanitization_cb`](/docs/Field-Parameters#sanitization-cb)
+* <a name="render_row_cb"></a>[`render_row_cb`](/docs/Field-Parameters#render-row-cb)

@@ -3,62 +3,62 @@
 ****
 Welcome to the CMB2 wiki! This is a code library for WordPress themes and plugins that makes it easy to add metaboxes, fields, and forms to WordPress. Easily manage meta for posts, terms, users, comments, or create custom option pages.
 
-The best way to get started is look at [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php) and read the [Basic Usage](https://github.com/CMB2/CMB2/wiki/Basic-Usage) tutorial.
+The best way to get started is look at [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php) and read the [Basic Usage](/docs/Basic-Usage) tutorial.
 ****
 
 Documentation:
 
-1. [Installation](https://github.com/CMB2/CMB2/wiki/Installation)  
+1. [Installation](/docs/Installation)  
 	Installation instructions for various environments
 
-1. [Basic Usage](https://github.com/CMB2/CMB2/wiki/Basic-Usage)  
+1. [Basic Usage](/docs/Basic-Usage)  
 	Get up and running
 
-1. [Advanced Usage](https://github.com/CMB2/CMB2/wiki/Advanced-Usage)  
+1. [Advanced Usage](/docs/Advanced-Usage)  
 	Not for the faint of heart
 
-1. [Field Types](https://github.com/CMB2/CMB2/wiki/Field-Types)  
+1. [Field Types](/docs/Field-Types)  
 	A breakdown of each of the field types included with CMB2.
 
-1. [Examples](https://github.com/CMB2/CMB2/wiki/Examples)  
+1. [Examples](/docs/Examples)  
 	Examples for registering fields for the different object types.
 
-1. [Field Parameters](https://github.com/CMB2/CMB2/wiki/Field-Parameters)  
+1. [Field Parameters](/docs/Field-Parameters)  
 	A breakdown of each of the common field parameters.
 
-1. [Display Options](https://github.com/CMB2/CMB2/wiki/Display-Options)  
+1. [Display Options](/docs/Display-Options)  
 	Limit the display of your boxes
 
-1. [Box Properties](https://github.com/CMB2/CMB2/wiki/Box-Properties)  
+1. [Box Properties](/docs/Box-Properties)  
 	Docs for the possible CMB2 box properties.
 
-1. [Troubleshooting](https://github.com/CMB2/CMB2/wiki/Troubleshooting)  
+1. [Troubleshooting](/docs/Troubleshooting)  
 	Some common issues and how to deal with them
 
-1. [Notable Changes in CMB2 (from original CMB)](https://github.com/CMB2/CMB2/wiki/Notable-Changes-in-CMB2)  
+1. [Notable Changes in CMB2 (from original CMB)](/docs/Notable-Changes-in-CMB2)  
 	CMB2 is a complete re-write
 
-1. [Tips & Tricks](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks)  
+1. [Tips & Tricks](/docs/Tips-&-Tricks)  
 	10x your CMB2 skills.
 
-1. [REST API](https://github.com/CMB2/CMB2/wiki/REST-API)  
+1. [REST API](/docs/REST-API)  
 	Access your CMB2 data through the WordPress REST API.
 
-1. [Javascript API](https://github.com/CMB2/CMB2/wiki/Javascript-API)  
+1. [Javascript API](/docs/Javascript-API)  
 	How to work with the various CMB2 events and hooks in Javascript.
 
 Advanced tutorials:
 
-- [Adding your own field types](https://github.com/CMB2/CMB2/wiki/Adding-your-own-field-types)  
+- [Adding your own field types](/docs/Adding-your-own-field-types)  
 	There's no limit to the kinds of fields you can make with CMB2
 
-- [Adding your own show_on filters](https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters)  
+- [Adding your own show_on filters](/docs/Adding-your-own-show_on-filters)  
 	Even more ways to limit the display of your boxes
 
-- [Displaying boxes on the front-end](https://github.com/CMB2/CMB2/wiki/Bringing-Metaboxes-to-the-Front-end)  
+- [Displaying boxes on the front-end](/docs/Bringing-Metaboxes-to-the-Front-End)  
 	Let's take this outside wp-admin
 
-- [Using CMB to create an Admin Theme Options Page](https://github.com/CMB2/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page)  
+- [Using CMB to create an Admin Theme Options Page](/docs/Using-CMB-to-create-an-Admin-Theme-Options-Page)  
 	Optional replacement for the WordPress Settings API
 
 - [Create New Posts (or Custom Post Type) Entries Using A Front End Form](http://webdevstudios.com/2015/03/30/use-cmb2-to-create-a-new-post-submission-form/)  

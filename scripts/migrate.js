@@ -85,6 +85,31 @@ function slugify(str) {
     .toLowerCase()
 }
 
+// Lowercased doc slug -> actual filename slug, so cross-page wiki links resolve
+// to the right /docs/ path with correct casing (e.g. Front-end -> Front-End).
+const DOC_SLUGS = Object.fromEntries(
+  readdirSync(DOCS)
+    .filter((f) => f.endsWith('.md'))
+    .map((f) => f.replace(/\.md$/, ''))
+    .map((slug) => [slug.toLowerCase(), slug])
+)
+
+function fixCrossPageLinks(src) {
+  // Old wiki cross-page links (absolute /CMB2/CMB2/wiki/... or full
+  // github.com/CMB2/CMB2/wiki/... URLs) point off-site. Rewrite to /docs/<slug>
+  // when the target is one of our pages; slugify the anchor to match VitePress
+  // heading IDs. Unknown pages are left untouched (still work on GitHub).
+  return src.replace(
+    /\]\((?:https:\/\/github\.com\/CMB2\/CMB2\/wiki|\/CMB2\/CMB2\/wiki)\/([^)#\s]+)(#[^)\s]+)?\)/g,
+    (m, page, hash) => {
+      const actual = DOC_SLUGS[decodeURIComponent(page).toLowerCase()]
+      if (!actual) return m
+      const anchor = hash ? `#${slugify(hash.slice(1))}` : ''
+      return `](/docs/${actual}${anchor})`
+    }
+  )
+}
+
 function fixAnchorLinks(src) {
   // Rewrite in-page anchor targets to VitePress's slug form. doctoc/hand TOCs
   // used `#text_email`; VitePress generates `#text-email`. Because each TOC
@@ -105,7 +130,7 @@ function ensureTitle(src, filename) {
 }
 
 function transform(src, { filename, isDoc } = {}) {
-  let out = escapeStrayTags(fixImagePaths(stripDoctoc(src)))
+  let out = fixCrossPageLinks(escapeStrayTags(fixImagePaths(stripDoctoc(src))))
   if (isDoc) out = ensureTitle(fixAnchorLinks(out), filename)
   return out
 }

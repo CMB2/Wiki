@@ -162,7 +162,7 @@ This will work for any post type route, as well as terms, users, and comments.
 
 ## Overriding a returned value for a individual field
 
-Optionally setting the [rest_value_cb](https://github.com/CMB2/CMB2/wiki/Field-Parameters#rest_value_cb) field parameter will dictate how the `value` will be returned for that field.
+Optionally setting the [rest_value_cb](/docs/Field-Parameters#rest-value-cb) field parameter will dictate how the `value` will be returned for that field.
 
 ## Requirements
 

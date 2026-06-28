@@ -1,7 +1,7 @@
 # Field Parameters
 
 
-Most (if not all) fields support the parameters on this page. When a field type supports extra parameters, those parameters are [documented with the given field type](/CMB2/CMB2/wiki/Field-Types). Also, please review the [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php) file for examples/demonstration.
+Most (if not all) fields support the parameters on this page. When a field type supports extra parameters, those parameters are [documented with the given field type](/docs/Field-Types). Also, please review the [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php) file for examples/demonstration.
 
 ### `name`
 ____
@@ -54,7 +54,7 @@ What makes the whole thing work. **Required**.
 
 ### `repeatable`
 ____
-[Supported by most field types](https://github.com/CMB2/CMB2/wiki/Field-Types#types), and will make the individual field a repeatable one. Default is `false`.
+[Supported by most field types](/docs/Field-Types#types), and will make the individual field a repeatable one. Default is `false`.
 `'repeatable' => true,`
 
 In order to customize `Add Row` button label, add to your Field's config array:
@@ -247,7 +247,7 @@ $cmb->add_field( array(
 ) );
 ```
 
-The colorpicker fields and date picker fields can each use the attributes field to set an array of overrides for the picker options using `json_encode`. [Colorpicker example](https://github.com/CMB2/CMB2/wiki/Field-Types#colorpicker-additional-field-options), and [Datepicker example](https://github.com/CMB2/CMB2/wiki/Field-Types#datepicker-additional-field-options).
+The colorpicker fields and date picker fields can each use the attributes field to set an array of overrides for the picker options using `json_encode`. [Colorpicker example](/docs/Field-Types#colorpicker-additional-field-options), and [Datepicker example](/docs/Field-Types#datepicker-additional-field-options).
 
 <br>
 <br>
@@ -715,7 +715,7 @@ If false, will prevent a field from saving into the database. Default is `true`.
 ____
 _(since [2.5.2](https://github.com/CMB2/CMB2/releases/tag/v2.5.2))_
 
-Dictate how the `value` will be returned in the [rest api](https://github.com/CMB2/CMB2/wiki/REST-API) for this field using your own callback.
+Dictate how the `value` will be returned in the [rest api](/docs/REST-API) for this field using your own callback.
 
 This example will return the original value casted to an `integer`.
 ```php

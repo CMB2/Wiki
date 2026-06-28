@@ -1,7 +1,7 @@
 # Box Properties
 
 
-When registering a [CMB2 metabox/instance](https://github.com/CMB2/CMB2/wiki/Basic-Usage), you will pass an array of properties to the `new_cmb2_box()` function. The possible properties in that array are documented here.
+When registering a [CMB2 metabox/instance](/docs/Basic-Usage), you will pass an array of properties to the `new_cmb2_box()` function. The possible properties in that array are documented here.
 
 ### `id`
 ____
@@ -108,7 +108,7 @@ function yourprefix_function_to_add_classes( $properties, $cmb ) {
 
 ### `show_on_cb`
 ____
-Callback to determine if metabox should display. The callback gets passed the CMB2 `$cmb` object. More info: [Adding your own show_on filters](https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters)
+Callback to determine if metabox should display. The callback gets passed the CMB2 `$cmb` object. More info: [Adding your own show_on filters](/docs/Adding-your-own-show_on-filters)
 
 `'show_on_cb' => 'yourprefix_only_show_for_user_1'`
 
@@ -144,7 +144,7 @@ function yourprefix_show_for_pages_without_template( $cmb ) {
 
 ### `show_on`
 ____
-Post IDs or page templates to display this metabox. Overrides 'show_on_cb'. More info: [Adding your own show_on filters](https://github.com/CMB2/CMB2/wiki/Adding-your-own-show_on-filters)
+Post IDs or page templates to display this metabox. Overrides 'show_on_cb'. More info: [Adding your own show_on filters](/docs/Adding-your-own-show_on-filters)
 
 `'show_on' => array( 'id' => 2 ), // Only show on the "about" page`
 <br>
@@ -234,7 +234,7 @@ if `object_types` is set to `'term'`, and set to `false`, will remove the fields
 
 ### `show_in_rest`
 ____
-Determines if/how fields/metabox are available in the REST API. Default is `false`. ([More info](https://github.com/CMB2/CMB2/wiki/REST-API))
+Determines if/how fields/metabox are available in the REST API. Default is `false`. ([More info](/docs/REST-API))
 
 `'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE`
 <br>

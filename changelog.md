@@ -102,7 +102,7 @@ All notable changes to this project will be documented in this file.
 		- `'char_counter'` - Defaults to false, no counter. Set to true, or `words` to count words instead of characters.
 		- `'char_max'` - integer. When defined, counter shows remaining characters/words.
 		- `'char_max_enforce'` - boolean, default: false. Currently only applied (as maxlength attribute) to `text` and `textarea` fields which use `'characters'` for counter.
-	- You can also [override the default text strings](https://github.com/CMB2/CMB2/wiki/Field-Parameters#text) associated with these parameters:
+	- You can also [override the default text strings](/docs/Field-Parameters#text) associated with these parameters:
 		- `'words_left_text'` - Default: "Words left"
 		- `'words_text'` - Default: "Words"
 		- `'characters_left_text'` - Default: "Characters left"
@@ -422,7 +422,7 @@ All notable changes to this project will be documented in this file.
 
 ### Enhancements
 
-* CMB2 REST API! CMB2 now has WP REST API endpoints for displaying your boxes and fields data, as well as registers rest fields in the existing post, user, term, and comment endpoints (in the cmb2 namespace). Enabling the REST API for your boxes/fields is opt-in, meaning it will not be automatically enabled. For more info, [check out the wiki](https://github.com/CMB2/CMB2/wiki/REST-API).
+* CMB2 REST API! CMB2 now has WP REST API endpoints for displaying your boxes and fields data, as well as registers rest fields in the existing post, user, term, and comment endpoints (in the cmb2 namespace). Enabling the REST API for your boxes/fields is opt-in, meaning it will not be automatically enabled. For more info, [check out the wiki](/docs/REST-API).
 * Small string improvement, move a period inside the translatable string. Props [@pedro-mendonca](https://github.com/pedro-mendonca) ([#672](https://github.com/CMB2/CMB2/pull/672)).
 * Introduce the `'save_field'` boolean field parameter for disabling the saving of a field. Useful if you want to display the value of another field, or use a disabled/read-only field. Props [@jamesgol](https://github.com/jamesgol) ([#674](https://github.com/CMB2/CMB2/pull/674), [#346](https://github.com/CMB2/CMB2/issues/346), [#500](https://github.com/CMB2/CMB2/issues/500)).
 * Update docblocks for `CMB2_Field::save_field_from_data()` and `CMB2_Field::save_field()`. Props [@jamesgol](https://github.com/jamesgol) ([#675](https://github.com/CMB2/CMB2/pull/675)).
@@ -467,9 +467,9 @@ All notable changes to this project will be documented in this file.
 
 ### Enhancements
 
-* You can now set admin post-listing columns with an extra field parameter, `'column' => true,`. If you want to dictate what position the column is, use `'column' => array( 'position' => 2 ),`. If you want to dictate the column title (instead of using the field `'name'` value), use `'column' => array( 'name' => 'My Column' ),`. If you need to specify the column display callback, set the `'display_cb'` parameter to [a callback function](https://github.com/CMB2/CMB2/wiki/Field-Parameters#render_row_cb). Columns work for post (all post-types), comment, user, and term object types.
+* You can now set admin post-listing columns with an extra field parameter, `'column' => true,`. If you want to dictate what position the column is, use `'column' => array( 'position' => 2 ),`. If you want to dictate the column title (instead of using the field `'name'` value), use `'column' => array( 'name' => 'My Column' ),`. If you need to specify the column display callback, set the `'display_cb'` parameter to [a callback function](/docs/Field-Parameters#render-row-cb). Columns work for post (all post-types), comment, user, and term object types.
 * Updated Datepicker styles using JJJ's "jQuery UI Datepicker CSS for WordPress", so props Props [@stuttter](https://github.com/stuttter), [@johnjamesjacoby](https://github.com/johnjamesjacoby). Also cleaned up the timepicker styles (specifically the buttons) to more closely align with the datepicker and WordPress styles.
-* CMB2 is now a lot more intelligent about where it is located in your installation. This update should solve almost all of the reasons to use the `'cmb2_meta_box_url'` filter (thought it will continue to work as expected). ([#27](https://github.com/CMB2/CMB2/issues/27), [#118](https://github.com/CMB2/CMB2/issues/118), [#432](https://github.com/CMB2/CMB2/issues/432), [related wiki item](https://github.com/CMB2/CMB2/wiki/Troubleshooting#cmb2-urls-issues))
+* CMB2 is now a lot more intelligent about where it is located in your installation. This update should solve almost all of the reasons to use the `'cmb2_meta_box_url'` filter (thought it will continue to work as expected). ([#27](https://github.com/CMB2/CMB2/issues/27), [#118](https://github.com/CMB2/CMB2/issues/118), [#432](https://github.com/CMB2/CMB2/issues/432), [related wiki item](/docs/Troubleshooting#cmb2-urls-issues))
 * Implement CMB2_Ajax as a singleton. Props [jrfnl](https://github.com/jrfnl) ([#602](https://github.com/CMB2/CMB2/pull/602)).
 * Add `classes` and `classes_cb` CMB2 box params which allows you to add additional classes to the cmb-wrap. The `classes` parameter can take a string or array, and the `classes_cb` takes a callback which returns a string or array. The callback will receive `$cmb` as an argument. These classes are also passed through a new filter, `'cmb2_wrap_classes'`, which receives the array of classes as the first argument, and the CMB2 object as the second. Reported/requested in [#364](https://github.com/CMB2/CMB2/issues/364#issuecomment-213223692).
 * Make the `'title'` field type accept extra arguments. Props [@vladolaru](https://github.com/vladolaru), [@pixelgrade](https://github.com/pixelgrade) ([#656](https://github.com/CMB2/CMB2/pull/656)).
@@ -508,7 +508,7 @@ All notable changes to this project will be documented in this file.
 * `CMB2::show_form()` is now composed of 3 smaller methods, `CMB2::render_form_open()`, `CMB2::render_field()`, `CMB2::render_form_close()` ([#506](https://github.com/CMB2/CMB2/pull/506)).
 * RTL Style generated. Props [@devinsays](https://github.com/devinsays) ([#510](https://github.com/CMB2/CMB2/pull/510)).
 * Properly scope date/time-pickers styling by adding a class to only cmb2 picker instances. ([#527](https://github.com/CMB2/CMB2/pull/527))
-* Allow per-field overrides for the date/time/color picker options (wiki documentation: [Modify Field Date, Time, or Color Picker options](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks#modify-field-date-time-or-color-picker-options))
+* Allow per-field overrides for the date/time/color picker options (wiki documentation: [Modify Field Date, Time, or Color Picker options](/docs/Tips-&-Tricks#modify-field-date-time-or-color-picker-options))
 * Fix some inline documentation issues. Props [@jrfnl](https://github.com/jrfnl) ([#579](https://github.com/CMB2/CMB2/pull/579)).
 * Include `.gitattributes` file for excluding development resources when using Composer. Props [@benoitchantre](https://github.com/benoitchantre) ([#575](https://github.com/CMB2/CMB2/pull/575), [#53](https://github.com/CMB2/CMB2/pull/53)).
 
@@ -701,21 +701,21 @@ All notable changes to this project will be documented in this file.
 * General code standards cleanup. Props [gregrickaby](https://github.com/gregrickaby), ([#17](https://github.com/CMB2/CMB2/pull/17) & others).
 * Use SASS for development. Props [gregrickaby](https://github.com/gregrickaby), ([#18](https://github.com/CMB2/CMB2/pull/18)).
 * New `hidden` field type.
-* [Ability to override text strings in fields via field options parameter](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks#override-text-strings-in-field).
+* [Ability to override text strings in fields via field options parameter](/docs/Tips-&-Tricks#override-text-strings-in-field).
 * Added composer.json. Props [nlemoine](https://github.com/nlemoine), ([#19](https://github.com/CMB2/CMB2/pull/19)).
-* New field 'hooks' can take [static text/html](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks#inject-static-content-in-a-field) or a [callback](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks#inject-dynamic-content-in-a-field-via-a-callback).
+* New field 'hooks' can take [static text/html](/docs/Tips-&-Tricks#inject-static-content-in-a-field) or a [callback](/docs/Tips-&-Tricks#inject-dynamic-content-in-a-field-via-a-callback).
 * New `preview_size` parameter for `file` field type. Takes an array or named image size.
 * Empty index.php file to all folders (for more security). Props [brunoramalho](https://github.com/brunoramalho), ([#41](https://github.com/CMB2/CMB2/pull/41)).
 * Clean up styling. Props [brunoramalho](https://github.com/brunoramalho), ([#43](https://github.com/CMB2/CMB2/pull/43)) and [senicar](https://github.com/senicar).
 * Collapsible field groups. Props [cluke009](https://github.com/cluke009), ([#59](https://github.com/CMB2/CMB2/pull/59)).
 * Allow for override of update/remove for CMB2_Field. Props [sc0ttkclark](https://github.com/sc0ttkclark), ([#65](https://github.com/CMB2/CMB2/pull/65)).
 * Use class button-disabled instead of disabled="disabled" for `<a>` buttons. Props [sc0ttkclark](https://github.com/sc0ttkclark), ([#66](https://github.com/CMB2/CMB2/pull/66)).
-* [New before/after dynamic form hooks](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks#using-the-dynamic-beforeafter-form-hooks).
+* [New before/after dynamic form hooks](/docs/Tips-&-Tricks#using-the-dynamic-beforeafter-form-hooks).
 * Larger unit test coverage. Props to [@pmgarman](https://github.com/pmgarman) for assistance. ([#90](https://github.com/CMB2/CMB2/pull/90) and [#91](https://github.com/CMB2/CMB2/pull/91))
 * Added helper function to update an option. Props [mAAdhaTTah](https://github.com/mAAdhaTTah), ([#110](https://github.com/CMB2/CMB2/pull/110)).
 * More JS hooks during repeat group shifting. Props [AlchemyUnited](https://github.com/AlchemyUnited), ([#125](https://github.com/CMB2/CMB2/pull/125)).
-* [New metabox config option for defaulting to closed](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks#setting-a-metabox-to-closed-by-default).
-* New hooks, [`cmb2_init`](https://github.com/CMB2/CMB2/wiki/Tips-&-Tricks#using-cmb2-helper-functions-and-cmb2_init) and `cmb2_init_{$cmb_id}`.
+* [New metabox config option for defaulting to closed](/docs/Tips-&-Tricks#setting-a-metabox-to-closed-by-default).
+* New hooks, [`cmb2_init`](/docs/Tips-&-Tricks#using-cmb2-helper-functions-and-cmb2-init) and `cmb2_init_{$cmb_id}`.
 
 ### Bug Fixes
 
@@ -749,7 +749,7 @@ All notable changes to this project will be documented in this file.
 * Add support for custom date/time formats. Props [@Scrent](https://github.com/Scrent). ([#506](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/pull/506))
 * Simplify `wysiwyg` escaping and allow it to be overridden via the `escape_cb` parameter. ([#491](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/pull/491))
 * Add a 'Select/Deselect all' button for the `multicheck` field type.
-* Add title option for [repeatable groups](https://github.com/CMB2/CMB2/wiki/Field-Types#group). Title field takes an optional replacement hash, "{#}" that will be replaced by the row number.
+* Add title option for [repeatable groups](/docs/Field-Types#group). Title field takes an optional replacement hash, "{#}" that will be replaced by the row number.
 * New field parameter, `show_on_cb`, allows you to conditionally display a field via a callback. ([#47](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/issues/47))
 * Unit testing (the beginning). Props [@brichards](https://github.com/brichards) and [@camdensegal](https://github.com/camdensegal).
 
@@ -788,11 +788,11 @@ All notable changes to this project will be documented in this file.
 
 ### Enhancements
 
-* [Repeatable groups](https://github.com/CMB2/CMB2/wiki/Field-Types#group)
+* [Repeatable groups](/docs/Field-Types#group)
 * Support for more fields to be repeatable, including oEmbed field, and date, time, and color picker fields, etc.
 * Codebase has been revamped to be more modular and object-oriented.
 * New filter, `"cmb_{$element}_attributes"	` for modifying an element's attributes.
-* Every field now supports an `attributes` parameter that takes an array of attributes. [Read more](https://github.com/CMB2/CMB2/wiki/Field-Types#attributes).
+* Every field now supports an `attributes` parameter that takes an array of attributes. [Read more](/docs/Field-Types#attributes).
 * Removed `cmb_std_filter` in favor of `cmb_default_filter`. **THIS IS A BREAKING CHANGE**
 * Better handling of labels in sidebar. They are now placed on top of the input rather than adjacent.
 * Added i18n compatibility to text_money. props [@ArchCarrier](https://github.com/ArchCarrier), ([#485](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress/pull/485))
@@ -830,7 +830,7 @@ It is now passed a null value vs saved value. If null is returned, default sanit
 
 ### Enhancements
 
-* Now works with option pages and site settings. ([view example in wiki](https://github.com/CMB2/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page))
+* Now works with option pages and site settings. ([view example in wiki](/docs/Using-CMB-to-create-an-Admin-Theme-Options-Page))
 * two filters to override the setting and getting of options, `cmb_override_option_get_$option_key` and `cmb_override_option_save_$option_key` respectively. Handy for using plugins like [WP Large Options](https://github.com/voceconnect/wp-large-options/) ([also here](http://vip.wordpress.com/plugins/wp-large-options/)).
 * Improved styling on taxonomy (\*tease\*) and options pages and for new 3.8 admin UI.
 * New sanitization class to sanitize data when saved.

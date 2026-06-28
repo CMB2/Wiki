@@ -215,6 +215,6 @@ This section is to highlight some dos/don'ts for including CMB2. CMB2 has an int
 	}
 	```
 
-* **Do:** Use the proper CMB2 package. [Composer](https://github.com/CMB2/CMB2/wiki/Installation#if-including-the-library-via-composer-not-psr-4-format) is a good recommended way, but if you're going to bundle CMB2 in your theme/plugin, download the zip file from the [WordPress plugin repo](https://wordpress.org/plugins/cmb2/).
+* **Do:** Use the proper CMB2 package. [Composer](/docs/Installation#if-including-the-library-via-composer-not-psr-4-format) is a good recommended way, but if you're going to bundle CMB2 in your theme/plugin, download the zip file from the [WordPress plugin repo](https://wordpress.org/plugins/cmb2/).
 
 * **Don't:** Clone the repo into your project. You'll clone down all the development-only files/folders. If submitted your theme to the WordPress theme repo with CMB2 bundled, [you may be rejected](https://github.com/CMB2/CMB2/issues/1254) for including these development files.

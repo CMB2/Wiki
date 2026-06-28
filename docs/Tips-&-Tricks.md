@@ -72,7 +72,7 @@ There are several field properties you can use to inject text or content in your
 * after_row
 * after_field
 
-_(view more in the [Field Parameters documentation](/CMB2/CMB2/wiki/Field-Parameters#before-after-before_row-after_row-before_field-after_field))_
+_(view more in the [Field Parameters documentation](/docs/Field-Parameters#before-after-before-row-after-row-before-field-after-field))_
 
 To use them in your field, it would look something like this:
 
@@ -320,7 +320,7 @@ function prefix_set_test_default( $field_args, $field ) {
 
 ## Setting dynamic attributes that may use post data, like the post ID
 
-There are [several callback hooks](https://github.com/CMB2/CMB2/wiki/Field-Types#common-field-parameters) in the lifecycle of a field display. These are meant to provide you with a hook to output arbitrary or dynamic data. BUT, you can also use these hooks to modify the `CMB2_Field` `$field` object. In this example, we're going to use a callback on the `'before'` parameter which we'll use to modify that `$field` object's `'attributes'` array. We're going to do this so we can add a custom data attribute with the post ID as the value.
+There are [several callback hooks](/docs/Field-Types#common-field-parameters) in the lifecycle of a field display. These are meant to provide you with a hook to output arbitrary or dynamic data. BUT, you can also use these hooks to modify the `CMB2_Field` `$field` object. In this example, we're going to use a callback on the `'before'` parameter which we'll use to modify that `$field` object's `'attributes'` array. We're going to do this so we can add a custom data attribute with the post ID as the value.
 
 field config:
 ```php
