@@ -1,0 +1,32 @@
+/**
+ * cmb2.io brand theme
+ * Brand color #5d67ff sampled from the CMB2 WordPress.org banner.
+ */
+:root {
+  --vp-c-brand-1: #5d67ff;
+  --vp-c-brand-2: #4d57e6;
+  --vp-c-brand-3: #4049cc;
+  --vp-c-brand-soft: rgba(93, 103, 255, 0.14);
+
+  /* Home hero / brand accents */
+  --vp-home-hero-name-color: var(--vp-c-brand-1);
+}
+
+.dark {
+  --vp-c-brand-1: #8b93ff;
+  --vp-c-brand-2: #6d77ff;
+  --vp-c-brand-3: #5d67ff;
+  --vp-c-brand-soft: rgba(139, 147, 255, 0.16);
+}
+
+/* GitHub-star iframe injected into the nav bar */
+.gh-star-button {
+  margin-left: 12px;
+  vertical-align: middle;
+  border: 0;
+}
+@media (max-width: 768px) {
+  .gh-star-button {
+    display: none;
+  }
+}

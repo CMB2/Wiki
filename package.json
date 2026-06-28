@@ -1,0 +1,16 @@
+{
+  "name": "cmb2-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "cmb2.io — CMB2 documentation site (VitePress)",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "migrate": "node scripts/migrate.js"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
