@@ -58,20 +58,44 @@ This protocol applies when ending a Beads implementation workflow. It is subordi
 <!-- END BEADS INTEGRATION -->
 
 
-## Build & Test
-
-_Add your build and test commands here_
-
-```bash
-# Example:
-# npm install
-# npm test
-```
-
 ## Architecture Overview
 
-_Add a brief overview of your project architecture_
+This repo (`CMB2/Wiki`) is the **canonical source for https://cmb2.io** — a static
+[VitePress](https://vitepress.dev/) site deployed on **Cloudflare Workers (static assets)**.
+It replaced the old WP Engine mu-plugin + client-side Flatdoc setup.
+
+- Content: `index.md` (CMB2 readme), `changelog.md`, `contributing.md`, and `docs/*.md` (one
+  file per wiki page → `/docs/<Filename>`). Images in `public/`. URLs are extension-less
+  (`cleanUrls`), no `base` override — paths match the historical site.
+- Deploy: Cloudflare Worker `cmb2-io`, Git-connected to this repo, **production branch `master`**.
+  Push to `master` → auto-build (`npm run build`) and deploy. Apex `cmb2.io` is a Worker Custom
+  Domain; `www` 301-redirects to apex. CF account: `Me@jtsternberg.com` (personal, not work).
+- **Full maintainer guide + conventions + gotchas: [`meta/README.md`](meta/README.md).** Read it
+  before non-trivial changes. The migration plan is in `meta/Migration-Plan.md`.
+
+## Build & Test
+
+```bash
+npm install
+npm run dev      # local preview at http://localhost:5173
+npm run build    # production build to .vitepress/dist (this is also the "linter")
+```
+
+There is no test suite; a clean `npm run build` + a visual pass is the QA loop.
 
 ## Conventions & Patterns
 
-_Add your project-specific conventions here_
+- **Never let internal files render.** `meta/`, `CLAUDE.md`, `AGENTS.md`, `README.md`,
+  `.beads/`, `.agents/` are in `srcExclude` (`.vitepress/config.mts`). Any new tooling/agent
+  Markdown at the repo root must be added there, or it becomes a public page. Keep `.DS_Store`
+  out of `public/`.
+- **In-page anchors must match VitePress slugs** (lowercase; spaces *and* underscores → hyphens,
+  e.g. `#text-email`). Slugify hand-written `[jump](#anchor)` targets the same way.
+- **Nav/sidebar are hand-authored** in `.vitepress/config.mts` — add new pages there too.
+- **Every `docs/` page needs an `# H1`** (controls title + heading). Keep headings short so the
+  "On this page" outline doesn't truncate ambiguously; if you rename a heading, add a hidden
+  `<a name="<old-slug>"></a>` above it to preserve old deep-links.
+- **Don't touch DNS MX/email records** if working on the Cloudflare side.
+- `scripts/migrate.js` is a one-time, throwaway transformer — **not** part of the build.
+- The editable GitHub wiki (`CMB2/CMB2.wiki.git`) is a separate, deprecated surface — distinct
+  from this repo. See `meta/README.md`.
