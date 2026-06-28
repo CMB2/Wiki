@@ -71,6 +71,29 @@ function escapeStrayTags(src) {
     .join('\n')
 }
 
+// Mirror of @mdit-vue/shared's slugify (what VitePress uses to build heading
+// IDs): lowercase, strip accents/punctuation, collapse whitespace AND
+// underscores to hyphens.
+function slugify(str) {
+  return str
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]/g, '')
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .toLowerCase()
+}
+
+function fixAnchorLinks(src) {
+  // Rewrite in-page anchor targets to VitePress's slug form. doctoc/hand TOCs
+  // used `#text_email`; VitePress generates `#text-email`. Because each TOC
+  // link's text equals its heading's text, slugifying the target yields the
+  // same ID VitePress assigns the heading. Idempotent (slugged anchors are
+  // stable) and safe for already-correct anchors.
+  return src.replace(/\]\(#([^)\s]+)\)/g, (m, anchor) => `](#${slugify(anchor)})`)
+}
+
 function ensureTitle(src, filename) {
   // GitHub wiki pages carry no <h1> (the page name was the title). Without one
   // VitePress falls back to the bare site title and the page renders headless.
@@ -83,7 +106,7 @@ function ensureTitle(src, filename) {
 
 function transform(src, { filename, isDoc } = {}) {
   let out = escapeStrayTags(fixImagePaths(stripDoctoc(src)))
-  if (isDoc) out = ensureTitle(out, filename)
+  if (isDoc) out = ensureTitle(fixAnchorLinks(out), filename)
   return out
 }
 

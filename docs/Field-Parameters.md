@@ -284,7 +284,7 @@ function cmb_after_row_cb( $field_args, $field ) {
 
 ### `before_group`, `after_group`, `before_group_row`, `after_group_row`
 ____
-Like the [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field) parameters, but applies specifically to the `'group'` field type. Example:
+Like the [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before-row-after-row-before-field-after-field) parameters, but applies specifically to the `'group'` field type. Example:
 
 ```php
 $group_field_id = $cmb->add_field( array(
@@ -303,7 +303,7 @@ $group_field_id = $cmb->add_field( array(
 
 ### `before_display_wrap`, `before_display`, `after_display`, `after_display_wrap`
 ____
-Like the [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before_row-after_row-before_field-after_field) parameters, but applies specifically to the display context (like in admin columns). Example:
+Like the [`before`, `after`, `before_row`, `after_row`, `before_field`, `after_field`](#before-after-before-row-after-row-before-field-after-field) parameters, but applies specifically to the display context (like in admin columns). Example:
 
 ```php
 $cmb->add_field( array(
@@ -326,7 +326,7 @@ $cmb->add_field( array(
 
 ### `column`
 
-As of version [2.2.2](https://github.com/CMB2/CMB2/releases/tag/v2.2.2), you can now set admin post-listing columns with an extra field parameter, `'column' => true,`. If you want to dictate what position the column is, use `'column' => array( 'position' => 2 ),`. If you want to dictate the column title (instead of using the field `'name'` value), use `'column' => array( 'name' => 'My Column' ),`. If you need to specify the column display callback, set the `'display_cb'` parameter to [a callback function](#display_cb). Columns work for post (all post-types), comment, user, and term object types.
+As of version [2.2.2](https://github.com/CMB2/CMB2/releases/tag/v2.2.2), you can now set admin post-listing columns with an extra field parameter, `'column' => true,`. If you want to dictate what position the column is, use `'column' => array( 'position' => 2 ),`. If you want to dictate the column title (instead of using the field `'name'` value), use `'column' => array( 'name' => 'My Column' ),`. If you need to specify the column display callback, set the `'display_cb'` parameter to [a callback function](#display-cb). Columns work for post (all post-types), comment, user, and term object types.
 
 ```php
 $cmb->add_field( array(
@@ -379,7 +379,7 @@ function cmb_only_show_for_user_1( $field ) {
 
 ### `options`
 ____
-For fields that take an options array. These include `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Should be a an array where the keys are the option value, and the values are the option text. If you are doing any kind of database querying or logic/conditional checking, you're almost always better of using the [`options_cb`](#options_cb) parameter.
+For fields that take an options array. These include `select`, `radio`, `multicheck`, `wysiwyg` and `group`. Should be a an array where the keys are the option value, and the values are the option text. If you are doing any kind of database querying or logic/conditional checking, you're almost always better of using the [`options_cb`](#options-cb) parameter.
 
 ```
 'options' => array(
@@ -501,7 +501,7 @@ function your_prefix_sanitize_wysiwyg( $content ) {
 ____
 Bypass the CMB escaping (escapes before display) methods with your own callback. Set to `false` if you do not want any escaping (not recommended).
 
-To use the example from [`sanitization_cb`](#sanitization_cb), we could add an escape callback like:
+To use the example from [`sanitization_cb`](#sanitization-cb), we could add an escape callback like:
 
 ```php
 /**

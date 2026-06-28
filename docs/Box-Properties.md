@@ -325,7 +325,7 @@ This parameter is for options-page metaboxes only, and is sent along to [`add_me
 
 ### `icon_url`
 ____
-This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu icon. Only applicable if [`parent_slug`](#parent_slug) is left empty.
+This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu icon. Only applicable if [`parent_slug`](#parent-slug) is left empty.
 
 `'icon_url' => 'dashicons-chart-pie',`
 <br>
@@ -334,7 +334,7 @@ This parameter is for options-page metaboxes only, and is sent along to [`add_me
 
 ### `position`
 ____
-This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu position. Only applicable if [`parent_slug`](#parent_slug) is left empty.
+This parameter is for options-page metaboxes only, and is sent along to [`add_menu_page()`](https://developer.wordpress.org/reference/functions/add_menu_page/) to define the menu position. Only applicable if [`parent_slug`](#parent-slug) is left empty.
 
 `'position' => 1,`
 <br>

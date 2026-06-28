@@ -13,37 +13,37 @@ Here is a cool video overview of what you will get with the `example-functions.p
 ## Types:
 1. [`title`](#title) An arbitrary title field *
 1. [`text`](#text)
-1. [`text_small`](#text_small)
-1. [`text_medium`](#text_medium)
-1. [`text_email`](#text_email)
-1. [`text_url`](#text_url)
-1. [`text_money`](#text_money)
+1. [`text_small`](#text-small)
+1. [`text_medium`](#text-medium)
+1. [`text_email`](#text-email)
+1. [`text_url`](#text-url)
+1. [`text_money`](#text-money)
 1. [`textarea`](#textarea)
-1. [`textarea_small`](#textarea_small)
-1. [`textarea_code`](#textarea_code)
-1. [`text_time`](#text_time) Time picker
-1. [`select_timezone`](#select_timezone) Time zone dropdown
-1. [`text_date`](#text_date) Date Picker
-1. [`text_date_timestamp`](#text_date_timestamp) Date Picker (UNIX timestamp)
-1. [`text_datetime_timestamp`](#text_datetime_timestamp) Text Date/Time Picker Combo (UNIX timestamp)
-1. [`text_datetime_timestamp_timezone`](#text_datetime_timestamp_timezone) Text Date/Time Picker/Time zone Combo (serialized DateTime object)
+1. [`textarea_small`](#textarea-small)
+1. [`textarea_code`](#textarea-code)
+1. [`text_time`](#text-time) Time picker
+1. [`select_timezone`](#select-timezone) Time zone dropdown
+1. [`text_date`](#text-date) Date Picker
+1. [`text_date_timestamp`](#text-date-timestamp) Date Picker (UNIX timestamp)
+1. [`text_datetime_timestamp`](#text-datetime-timestamp) Text Date/Time Picker Combo (UNIX timestamp)
+1. [`text_datetime_timestamp_timezone`](#text-datetime-timestamp-timezone) Text Date/Time Picker/Time zone Combo (serialized DateTime object)
 1. [`hidden`](#hidden) Hidden input type
 1. [`colorpicker`](#colorpicker) Color picker
 1. [`radio`](#radio) *
-1. [`radio_inline`](#radio_inline) *
-1. [`taxonomy_radio`](#taxonomy_radio) * Default Category/Tag/Taxonomy metaboxes replacement.
-1. [`taxonomy_radio_inline`](#taxonomy_radio_inline) * Default Category/Tag/Taxonomy metaboxes replacement.
-1. [`taxonomy_radio_hierarchical`](#taxonomy_radio_hierarchical) * Default Category/Tag/Taxonomy metaboxes replacement, displayed in a hierarchical fashion (indented).
+1. [`radio_inline`](#radio-inline) *
+1. [`taxonomy_radio`](#taxonomy-radio) * Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_radio_inline`](#taxonomy-radio-inline) * Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_radio_hierarchical`](#taxonomy-radio-hierarchical) * Default Category/Tag/Taxonomy metaboxes replacement, displayed in a hierarchical fashion (indented).
 1. [`select`](#select)
-1. [`taxonomy_select`](#taxonomy_select) * Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_select`](#taxonomy-select) * Default Category/Tag/Taxonomy metaboxes replacement.
 1. [`checkbox`](#checkbox) *
-1. [`multicheck` and `multicheck_inline`](#multicheck-and-multicheck_inline)
-1. [`taxonomy_multicheck`](#taxonomy_multicheck) * Default Category/Tag/Taxonomy metaboxes replacement.
-1. [`taxonomy_multicheck_inline`](#taxonomy_multicheck_inline) Default Category/Tag/Taxonomy metaboxes replacement.
-1. [`taxonomy_multicheck_hierarchical`](#taxonomy_multicheck_hierarchical) Default Category/Tag/Taxonomy metaboxes replacement, displayed in a hierarchical fashion (indented).
+1. [`multicheck` and `multicheck_inline`](#multicheck-and-multicheck-inline)
+1. [`taxonomy_multicheck`](#taxonomy-multicheck) * Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_multicheck_inline`](#taxonomy-multicheck-inline) Default Category/Tag/Taxonomy metaboxes replacement.
+1. [`taxonomy_multicheck_hierarchical`](#taxonomy-multicheck-hierarchical) Default Category/Tag/Taxonomy metaboxes replacement, displayed in a hierarchical fashion (indented).
 1. [`wysiwyg`](#wysiwyg) (TinyMCE) *
 1. [`file`](#file) Image/File upload *†
-1. [`file_list`](#file_list) Image Gallery/File list management
+1. [`file_list`](#file-list) Image Gallery/File list management
 1. [`oembed`](#oembed) Converts oembed urls (instagram, twitter, youtube, etc. [oEmbed in the Codex](https://wordpress.org/support/article/embeds/))
 1. [`group`](#group) Hybrid field that supports adding other fields as a repeatable group. *
 
