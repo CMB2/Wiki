@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "wiki_cmb2",
+  "project_id": "a09dd847-4661-47eb-a678-f5eaa2be6e30"
+}
