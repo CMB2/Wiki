@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers Static Assets config for the cmb2.io VitePress site.
+  // `npm run build` produces ./.vitepress/dist; this serves it as static
+  // assets (no Worker script needed).
+  "name": "cmb2-io",
+  "compatibility_date": "2024-11-01",
+  "assets": {
+    "directory": "./.vitepress/dist",
+    // VitePress emits a 404.html; serve it for unknown paths.
+    "not_found_handling": "404-page"
+  }
+}
