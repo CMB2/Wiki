@@ -1,17 +1,10 @@
 #!/bin/sh
-# core.hooksPath points at .beads/hooks, so git runs THIS file instead of the
-# project's own hook. Delegate to the original custom pre-push (PHP — it prints
-# the CMB2 banner and mirrors pushes to CMB2/Wiki via pushAlternate), which is
-# kept intact at .git/hooks/pre-push, then run the beads integration.
+# Pre-push hook (core.hooksPath = .beads/hooks). Runs the beads integration.
 #
-# Why this wrapper exists: bd init (v1.0.5) copied the project's PHP pre-push
-# hook here and appended its POSIX-shell block to it, producing an invalid file
-# (a PHP script can't contain trailing shell) that failed to parse and blocked
-# all pushes. This wrapper keeps both behaviors in their correct interpreters.
-_orig="$(git rev-parse --git-path hooks/pre-push 2>/dev/null)"
-if [ -n "$_orig" ] && [ -x "$_orig" ]; then
-  "$_orig" "$@" || exit $?
-fi
+# History: a custom PHP hook here used to mirror every push to CMB2/Wiki via
+# pushAlternate, keeping it in sync with the GitHub wiki. That mirror is retired
+# — the wiki is being deprecated and CMB2/Wiki is now the canonical VitePress
+# source. The old hook is parked at .git/hooks/pre-push.disabled.
 
 # --- BEGIN BEADS INTEGRATION v1.0.5 ---
 # This section is managed by beads. Do not remove these markers.
