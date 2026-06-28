@@ -1,31 +1,17 @@
-#!/usr/bin/env php
-<?php
-
-// Get the cli helpers
-$h = require_once getenv( 'HOME' ) . '/.dotfiles/misc/helpers.php';
-
-echo "\n";
-echo "\n";
-// For funsies.
-$h->msg( '
-  ,ad8888ba,   88b           d88  88888888ba    ad888888b,
- d8"\'    `"8b  888b         d888  88      "8b  d8"     "88
-d8\'            88`8b       d8\'88  88      ,8P          a8P
-88             88 `8b     d8\' 88  88aaaaaa8P\'       ,d8P"
-88             88  `8b   d8\'  88  88""""""8b,     a8P"
-Y8,            88   `8b d8\'   88  88      `8b   a8P\'
- Y8a.    .a8P  88    `888\'    88  88      a8P  d8"
-  `"Y8888Y"\'   88     `8\'     88  88888888P"   88888888888
-', 'cyan' );
-
-if ( ! $h->git->pushAlternate( 'git@github.com:CMB2/Wiki.git' ) ) {
-	$h->err( "Could not find the remote repo!" );
-	exit(1);
-}
-echo "\n";
-echo "\n";
-
-exit(0);
+#!/bin/sh
+# core.hooksPath points at .beads/hooks, so git runs THIS file instead of the
+# project's own hook. Delegate to the original custom pre-push (PHP — it prints
+# the CMB2 banner and mirrors pushes to CMB2/Wiki via pushAlternate), which is
+# kept intact at .git/hooks/pre-push, then run the beads integration.
+#
+# Why this wrapper exists: bd init (v1.0.5) copied the project's PHP pre-push
+# hook here and appended its POSIX-shell block to it, producing an invalid file
+# (a PHP script can't contain trailing shell) that failed to parse and blocked
+# all pushes. This wrapper keeps both behaviors in their correct interpreters.
+_orig="$(git rev-parse --git-path hooks/pre-push 2>/dev/null)"
+if [ -n "$_orig" ] && [ -x "$_orig" ]; then
+  "$_orig" "$@" || exit $?
+fi
 
 # --- BEGIN BEADS INTEGRATION v1.0.5 ---
 # This section is managed by beads. Do not remove these markers.
