@@ -43,45 +43,45 @@ export default defineConfig({
       { text: 'Contributing', link: '/contributing' },
     ],
 
-    sidebar: {
-      '/docs/': [
-        {
-          text: 'Documentation',
-          items: [
-            { text: 'Home', link: '/docs/Home' },
-            { text: 'Installation', link: '/docs/Installation' },
-            { text: 'Basic Usage', link: '/docs/Basic-Usage' },
-            { text: 'Advanced Usage', link: '/docs/Advanced-Usage' },
-            { text: 'Field Types', link: '/docs/Field-Types' },
-            { text: 'Examples', link: '/docs/Examples' },
-            { text: 'Field Parameters', link: '/docs/Field-Parameters' },
-            { text: 'Display Options', link: '/docs/Display-Options' },
-            { text: 'Box Properties', link: '/docs/Box-Properties' },
-            { text: 'Troubleshooting', link: '/docs/Troubleshooting' },
-            { text: 'Notable Changes in CMB2', link: '/docs/Notable-Changes-in-CMB2' },
-            { text: 'Tips & Tricks', link: '/docs/Tips-&-Tricks' },
-            { text: 'REST API', link: '/docs/REST-API' },
-            { text: 'Javascript API', link: '/docs/Javascript-API' },
-          ],
-        },
-        {
-          text: 'Advanced tutorials',
-          items: [
-            { text: 'Adding your own field types', link: '/docs/Adding-your-own-field-types' },
-            { text: 'Adding your own show_on filters', link: '/docs/Adding-your-own-show_on-filters' },
-            { text: 'Displaying boxes on the front-end', link: '/docs/Bringing-Metaboxes-to-the-Front-End' },
-            { text: 'Admin Theme Options Page', link: '/docs/Using-CMB-to-create-an-Admin-Theme-Options-Page' },
-          ],
-        },
-        {
-          text: 'Related snippets',
-          items: [
-            { text: 'JS validation for custom post type fields', link: '/docs/JavaScript-validation-for-cmb2-custom-post-type-fields' },
-            { text: 'Plugin code to add JS validation of required fields', link: '/docs/Plugin-code-to-add-JS-validation-of-"required"-fields' },
-          ],
-        },
-      ],
-    },
+    // Flat array → the sidebar shows on every page (home, changelog,
+    // contributing, and all /docs/*), matching the legacy site's menu.
+    sidebar: [
+      {
+        text: 'Documentation',
+        items: [
+          { text: 'Home', link: '/docs/Home' },
+          { text: 'Installation', link: '/docs/Installation' },
+          { text: 'Basic Usage', link: '/docs/Basic-Usage' },
+          { text: 'Advanced Usage', link: '/docs/Advanced-Usage' },
+          { text: 'Field Types', link: '/docs/Field-Types' },
+          { text: 'Examples', link: '/docs/Examples' },
+          { text: 'Field Parameters', link: '/docs/Field-Parameters' },
+          { text: 'Display Options', link: '/docs/Display-Options' },
+          { text: 'Box Properties', link: '/docs/Box-Properties' },
+          { text: 'Troubleshooting', link: '/docs/Troubleshooting' },
+          { text: 'Notable Changes in CMB2', link: '/docs/Notable-Changes-in-CMB2' },
+          { text: 'Tips & Tricks', link: '/docs/Tips-&-Tricks' },
+          { text: 'REST API', link: '/docs/REST-API' },
+          { text: 'Javascript API', link: '/docs/Javascript-API' },
+        ],
+      },
+      {
+        text: 'Advanced tutorials',
+        items: [
+          { text: 'Adding your own field types', link: '/docs/Adding-your-own-field-types' },
+          { text: 'Adding your own show_on filters', link: '/docs/Adding-your-own-show_on-filters' },
+          { text: 'Displaying boxes on the front-end', link: '/docs/Bringing-Metaboxes-to-the-Front-End' },
+          { text: 'Admin Theme Options Page', link: '/docs/Using-CMB-to-create-an-Admin-Theme-Options-Page' },
+        ],
+      },
+      {
+        text: 'Related snippets',
+        items: [
+          { text: 'JS validation for custom post type fields', link: '/docs/JavaScript-validation-for-cmb2-custom-post-type-fields' },
+          { text: 'Plugin code to add JS validation of required fields', link: '/docs/Plugin-code-to-add-JS-validation-of-"required"-fields' },
+        ],
+      },
+    ],
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/CMB2/CMB2' }],
 
