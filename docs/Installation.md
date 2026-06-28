@@ -1,3 +1,5 @@
+# Installation
+
 
 ## If installing the plugin from wordpress.org:
 

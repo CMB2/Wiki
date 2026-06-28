@@ -1,3 +1,5 @@
+# Box Properties
+
 
 When registering a [CMB2 metabox/instance](https://github.com/CMB2/CMB2/wiki/Basic-Usage), you will pass an array of properties to the `new_cmb2_box()` function. The possible properties in that array are documented here.
 

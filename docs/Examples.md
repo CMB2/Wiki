@@ -1,3 +1,5 @@
+# Examples
+
 If you didn't know, the [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php) contains examples for how to use CMB2 in many different contexts, including registering fields for many different object types:
 
 - [Non-post post-types](https://github.com/CMB2/CMB2/blob/b1a7e8fb9f0634337b390a098f0a1f70f0f64085/example-functions.php#L436-L465). in this case, the "Page" post-type, limited to the page with the id of `2`.

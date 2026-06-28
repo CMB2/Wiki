@@ -1,3 +1,5 @@
+# Tips & Tricks
+
 
 _**Protip**: If you're looking for an even bigger box of tricks, check out the [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/)._
 ___

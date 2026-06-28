@@ -1,3 +1,5 @@
+# REST API
+
 
 ## Enabling the REST API for a CMB2 box
 

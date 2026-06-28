@@ -71,13 +71,25 @@ function escapeStrayTags(src) {
     .join('\n')
 }
 
-function transform(src) {
-  return escapeStrayTags(fixImagePaths(stripDoctoc(src)))
+function ensureTitle(src, filename) {
+  // GitHub wiki pages carry no <h1> (the page name was the title). Without one
+  // VitePress falls back to the bare site title and the page renders headless.
+  // Derive an <h1> from the filename — but respect any heading the page already
+  // has (don't create a second h1).
+  if (/^#\s/m.test(src)) return src
+  const title = filename.replace(/\.md$/, '').replace(/-/g, ' ')
+  return `# ${title}\n\n${src}`
 }
 
-function processFile(path, label) {
+function transform(src, { filename, isDoc } = {}) {
+  let out = escapeStrayTags(fixImagePaths(stripDoctoc(src)))
+  if (isDoc) out = ensureTitle(out, filename)
+  return out
+}
+
+function processFile(path, label, opts) {
   const before = readFileSync(path, 'utf8')
-  const after = transform(before)
+  const after = transform(before, opts)
   if (after !== before) {
     writeFileSync(path, after)
     console.log(`  fixed  ${label}`)
@@ -90,7 +102,7 @@ function processFile(path, label) {
 let changed = 0
 console.log('docs/:')
 for (const f of readdirSync(DOCS).filter((f) => f.endsWith('.md')).sort()) {
-  changed += processFile(join(DOCS, f), `docs/${f}`)
+  changed += processFile(join(DOCS, f), `docs/${f}`, { filename: f, isDoc: true })
 }
 console.log('root:')
 changed += processFile(join(ROOT, 'changelog.md'), 'changelog.md')

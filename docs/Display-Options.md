@@ -1,3 +1,5 @@
+# Display Options
+
 
 ---
 Metaboxes should be context-specific, and only show up when relevant. There's two tools you can use to limit their display:

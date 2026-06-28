@@ -1,3 +1,5 @@
+# Notable Changes in CMB2
+
 **Change 1:** The same hooks and filters you're used to will be there, though you'll be required to use the `cmb2_` prefix instead of the original `cmb_`, and the order and type of parameters passed to those actions have likely changed.
 
 **Change 2:** The main filter for adding metaboxes, `'cmb2_meta_boxes'`, is still there, but it is recommended that you instead use the registration functions available and use the `'cmb_init'` action hook. You can see them demonstrated in [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php).

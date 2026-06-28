@@ -1,3 +1,5 @@
+# Using CMB to create an Admin Theme Options Page
+
 This snippet has been moved to the [CMB2 Snippet Library](https://github.com/CMB2/CMB2-Snippet-Library/tree/master/options-and-settings-pages).
 
 **Remember to replace instances of `myprefix` and `Myprefix` with something unique to your code.**

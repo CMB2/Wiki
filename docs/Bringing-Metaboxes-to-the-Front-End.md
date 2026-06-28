@@ -1,3 +1,5 @@
+# Bringing Metaboxes to the Front End
+
 With CMB2, we have a few helper functions that allow us to display metabox forms on the front-end of our site (or anywhere, really).
 
 **Note: If you use `cmb2_admin_init`, like in the example_functions.php file, to register your metaboxes, they will not be available on the front end. Use `cmb2_init` instead.**
