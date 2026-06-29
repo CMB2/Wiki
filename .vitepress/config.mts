@@ -62,6 +62,7 @@ export default defineConfig({
         items: [
           { text: 'Home', link: '/docs/Home' },
           { text: 'Installation', link: '/docs/Installation' },
+          { text: 'Version Loader', link: '/docs/Version-Loader' },
           { text: 'Basic Usage', link: '/docs/Basic-Usage' },
           { text: 'Advanced Usage', link: '/docs/Advanced-Usage' },
           { text: 'Field Types', link: '/docs/Field-Types' },

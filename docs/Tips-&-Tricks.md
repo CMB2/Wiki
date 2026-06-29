@@ -503,7 +503,7 @@ $cmb_demo->add_field( array(
 
 ## Adding a CMB2 debug helper to your plugin/theme
 
-If you are bundling CMB2 in your plugin or theme, there may be times you are trying to determine if the right version of CMB2 is loading for your user. CMB2 is built to _always_ load the newest version of itself, even if it's a newer version than the one bundled with your plugin/theme. The only way this would not be true would be if someone edited the core of CMB2 (please don't do this!), or if they bundled it incorrectly (please don't do this!). You can see the [correct way to bundle CMB2 here](basic-usage#caveats-for-bundling-and-including-cmb2).
+If you are bundling CMB2 in your plugin or theme, there may be times you are trying to determine if the right version of CMB2 is loading for your user. CMB2 is built to _always_ load the newest version of itself, even if it's a newer version than the one bundled with your plugin/theme. The only way this would not be true would be if someone edited the core of CMB2 (please don't do this!), or if they bundled it incorrectly (please don't do this!). You can see the [correct way to bundle CMB2 here](/docs/Basic-Usage#caveats-for-bundling-and-including-cmb2), and a full explanation of the mechanism in the [Version Loader](/docs/Version-Loader) page.
 
 To help with debugging your theme/plugin, you can include the following snippet so that you're able to see which version/location of CMB2 is being loaded:
 
