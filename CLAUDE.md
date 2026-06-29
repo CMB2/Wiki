@@ -85,7 +85,7 @@ There is no test suite; a clean `npm run build` + a visual pass is the QA loop.
 
 ## Conventions & Patterns
 
-- **Never let internal files render.** `meta/`, `CLAUDE.md`, `AGENTS.md`, `README.md`,
+- **Never let internal files render.** `CLAUDE.md`, `AGENTS.md`, `README.md`,
   `.beads/`, `.agents/` are in `srcExclude` (`.vitepress/config.mts`). Any new tooling/agent
   Markdown at the repo root must be added there, or it becomes a public page. Keep `.DS_Store`
   out of `public/`.
