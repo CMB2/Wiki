@@ -1,0 +1,37 @@
+name: Refresh upstream docs
+
+# Manually triggered — run this as part of a CMB2 release to pull the latest
+# README / CHANGELOG / CONTRIBUTING from CMB2/CMB2 into index.md / changelog.md
+# / contributing.md (with the build-safe transforms re-applied). Pushing the
+# refreshed files to master auto-deploys the site.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+
+      - name: Fetch + transform upstream docs
+        run: node scripts/refresh-upstream.mjs
+
+      - name: Commit & push if changed
+        run: |
+          if [ -n "$(git status --porcelain index.md changelog.md contributing.md)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add index.md changelog.md contributing.md
+            git commit -m "Refresh README/changelog/contributing from CMB2/CMB2"
+            git push
+            echo "Refreshed and pushed."
+          else
+            echo "Already up to date — nothing to commit."
+          fi

@@ -29,9 +29,9 @@ CMB2 is a developer's toolkit for building metaboxes, custom fields, and forms f
 
 **[Download plugin on wordpress.org](https://wordpress.org/plugins/cmb2/)**
 
-CMB2 is a complete rewrite of [Custom Metaboxes and Fields for WordPress](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress). To get started, please follow the examples in the included `example-functions.php` file and have a look at the [basic usage instructions](https://github.com/CMB2/CMB2/wiki/Basic-Usage).
+CMB2 is a complete rewrite of [Custom Metaboxes and Fields for WordPress](https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress). To get started, please follow the examples in the included `example-functions.php` file and have a look at the [basic usage instructions](/docs/Basic-Usage).
 
-You can see a list of available field types [here](https://github.com/CMB2/CMB2/wiki/Field-Types#types).
+You can see a list of available field types [here](/docs/Field-Types#types).
 
 If you are coming from the original "Custom Metaboxes and Fields for WordPress" plugin, [please read this post](https://webdevstudios.com/2015/02/02/cmb2-wordpress-plugin/) for the CMB2 background story.
 
@@ -43,12 +43,12 @@ A complete list of all our awesome contributors found here: [github.com/CMB2/CMB
 ## Features:
 
 * Create metaboxes to be used on post edit screens.
-* [Create forms to be used on an options pages](https://github.com/CMB2/CMB2/wiki/Using-CMB-to-create-an-Admin-Theme-Options-Page).
+* [Create forms to be used on an options pages](/docs/Using-CMB-to-create-an-Admin-Theme-Options-Page).
 * Create forms to handle user meta and display them on user profile add/edit pages.
 * Create forms to handle term meta and display wherever your taxonomies are used.
-* [Flexible API that allows you to use CMB forms almost anywhere, even on the front-end](https://github.com/CMB2/CMB2/wiki/Bringing-Metaboxes-to-the-Front-end).
-* [Several field types are included](https://github.com/CMB2/CMB2/wiki/Field-Types).
-* [Custom API hook that allows you to create your own field types](https://github.com/CMB2/CMB2/wiki/Adding-your-own-field-types).
+* [Flexible API that allows you to use CMB forms almost anywhere, even on the front-end](/docs/Bringing-Metaboxes-to-the-Front-End).
+* [Several field types are included](/docs/Field-Types).
+* [Custom API hook that allows you to create your own field types](/docs/Adding-your-own-field-types).
 * There are numerous hooks and filters, allowing you to modify many aspects of the library (without editing it directly).
 * Repeatable fields for most field types are supported, as well as repeatable field groups.
 * CMB2 is safe to bundle with any project. It will only load the newest version in the system.

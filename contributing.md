@@ -7,7 +7,7 @@ _Support is not offered for this library, and the likelihood that the maintainer
 
 Before reporting a bug
 ---
-1. Please review the [documentation](https://github.com/CMB2/CMB2/wiki). Most questions revolve around the [field types](https://github.com/CMB2/CMB2/wiki/Field-Types), [field parameters](https://github.com/CMB2/CMB2/wiki/Field-Parameters), or are addressed in the [troubleshooting](https://github.com/CMB2/CMB2/wiki/Troubleshooting) section.
+1. Please review the [documentation](https://github.com/CMB2/CMB2/wiki). Most questions revolve around the [field types](/docs/Field-Types), [field parameters](/docs/Field-Parameters), or are addressed in the [troubleshooting](/docs/Troubleshooting) section.
 2. Search [issues](https://github.com/CMB2/CMB2/issues) to see if the issue has been previously reported.
 3. Install the [`develop`](https://github.com/CMB2/CMB2/tree/develop) version of CMB2 and test there.
 
