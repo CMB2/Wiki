@@ -29,7 +29,7 @@ Local preview: `npm install` then `npm run dev` (→ http://localhost:5173). Bui
 | `.vitepress/theme/` | brand color (`#5d67ff`) + GitHub-star button | — |
 | `wrangler.jsonc` | Cloudflare Worker config (assets dir, html handling) | — |
 | `scripts/migrate.js` | **one-time, throwaway** content transformer (not built) | — |
-| `meta/` | this doc + the migration plan (**excluded from build**) | — |
+| `README.md` | this maintainer guide / repo GitHub landing page (**excluded from build**) | — |
 
 URLs are extension-less (`cleanUrls: true`) and there is **no `base` override**, so paths match the old site exactly — `/docs/Basic-Usage`, etc. Filenames are the slugs, so renaming a file changes its URL.
 
@@ -48,7 +48,7 @@ URLs are extension-less (`cleanUrls: true`) and there is **no `base` override**,
 
 ## Conventions & gotchas (read before editing)
 
-- **Files that must NOT render** are in `srcExclude` (`config.mts`): `meta/`, `CLAUDE.md`, `AGENTS.md`, `README.md`, `.beads/`, `.agents/`. If you add an internal/tooling Markdown file at the repo root, add it to `srcExclude` or it becomes a public page. Also keep `.DS_Store` out of `public/`.
+- **Files that must NOT render** are in `srcExclude` (`config.mts`): `CLAUDE.md`, `AGENTS.md`, `README.md`, `.beads/`, `.agents/`. If you add an internal/tooling Markdown file at the repo root, add it to `srcExclude` or it becomes a public page. Also keep `.DS_Store` out of `public/`.
 - **Page titles:** GitHub-wiki pages had no `# H1` (the page name was the title). Every `docs/` page now starts with an `# H1` so the browser title and on-page heading are correct. New pages should include an `# H1`.
 - **In-page anchors must match VitePress slugs.** VitePress lowercases headings and turns spaces **and underscores** into hyphens (`### \`text_email\`` → `#text-email`). Old `#text_email`-style links were rewritten. If you hand-write a `[jump](#anchor)`, slugify the target the same way.
 - **Sidebar / nav** are hand-authored in `config.mts` (a flat array → shows on every page). Adding a page? Add a `{ text, link }` entry there too.
