@@ -11,10 +11,11 @@ export default defineConfig({
   lang: 'en-US',
 
   // Only index/changelog/contributing + docs/* are real content. Keep
-  // everything else out of the build: agent/tooling docs (CLAUDE.md,
-  // AGENTS.md, README.md) and beads/agents dirs. Dot-dirs are already ignored
-  // by VitePress, but list them defensively.
+  // everything else out of the build: the maintainer guide (meta/), agent/
+  // tooling docs (CLAUDE.md, AGENTS.md, README.md), and beads/agents dirs.
+  // Dot-dirs are already ignored by VitePress, but list them defensively.
   srcExclude: [
+    'meta/**',
     'CLAUDE.md',
     'AGENTS.md',
     'README.md',
