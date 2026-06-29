@@ -70,7 +70,7 @@ It replaced the old WP Engine mu-plugin + client-side Flatdoc setup.
 - Deploy: Cloudflare Worker `cmb2-io`, Git-connected to this repo, **production branch `master`**.
   Push to `master` → auto-build (`npm run build`) and deploy. Apex `cmb2.io` is a Worker Custom
   Domain; `www` 301-redirects to apex. CF account: `Me@jtsternberg.com` (personal, not work).
-- **Full maintainer guide + conventions + gotchas: [`meta/README.md`](meta/README.md).** Read it
+- **Full maintainer guide + conventions + gotchas: [`README.md`](README.md).** Read it
   before non-trivial changes.
 
 ## Build & Test
@@ -98,4 +98,4 @@ There is no test suite; a clean `npm run build` + a visual pass is the QA loop.
 - **Don't touch DNS MX/email records** if working on the Cloudflare side.
 - `scripts/migrate.js` is a one-time, throwaway transformer — **not** part of the build.
 - The editable GitHub wiki (`CMB2/CMB2.wiki.git`) is a separate, deprecated surface — distinct
-  from this repo. See `meta/README.md`.
+  from this repo. See `README.md`.

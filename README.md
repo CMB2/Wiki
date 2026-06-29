@@ -2,7 +2,7 @@
 
 **cmb2.io** is the documentation site for [CMB2](https://github.com/CMB2/CMB2). As of June 2026 it is a **static [VitePress](https://vitepress.dev/) site deployed on Cloudflare Workers (static assets)**. This README is for humans and agents maintaining it.
 
-> The whole `meta/` directory (including this doc) is excluded from the build. Migration history is in the git log.
+> This README is the repo's GitHub landing page and is excluded from the VitePress build (`srcExclude`) — it documents the repo, not a site page. Migration history is in the git log.
 
 ---
 
