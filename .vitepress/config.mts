@@ -74,6 +74,7 @@ export default defineConfig({
           { text: 'Notable Changes in CMB2', link: '/docs/Notable-Changes-in-CMB2' },
           { text: 'Tips & Tricks', link: '/docs/Tips-&-Tricks' },
           { text: 'REST API', link: '/docs/REST-API' },
+          { text: 'REST API Read Permissions', link: '/docs/REST-API-Read-Permissions' },
           { text: 'Javascript API', link: '/docs/Javascript-API' },
         ],
       },
