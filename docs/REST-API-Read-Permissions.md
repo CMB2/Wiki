@@ -117,7 +117,7 @@ exposing them via a purpose-built endpoint.
 ### Opting out of the gate wholesale (not recommended)
 
 ```php
-add_filter( '{{gate_filter_name}}', '__return_false' );
+add_filter( 'cmb2_rest_enforce_options_page_read_permissions', '__return_false' );
 ```
 
 This preserves the historical behavior for all options-page boxes on the site.
