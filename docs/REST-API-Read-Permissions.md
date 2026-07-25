@@ -142,8 +142,13 @@ $cmb->add_field( array(
 ) );
 ```
 
-A field the current user may not read is also **left out of the fields-collection
-listing** — it isn't merely refused on a direct request to that field.
+A field the current user may not read is **left out of the
+`/boxes/{id}/fields` listing** rather than rejected: the listing request itself
+still succeeds with a `200`, even when every field is filtered out and the
+collection comes back empty. Requesting that same field directly returns
+`rest_forbidden` instead. That split is intentional — it mirrors WordPress core,
+where collection endpoints omit the items you may not see and single-resource
+endpoints deny outright.
 
 ### Which setting do I want?
 
