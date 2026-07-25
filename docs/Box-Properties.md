@@ -241,6 +241,17 @@ Determines if/how fields/metabox are available in the REST API. Default is `fals
 <br>
 <br>
 
+### `rest_read_capability`
+____
+Declares who may read this box's data through the REST API, and is only applicable when `show_in_rest` is readable. Accepts `false` (no one may read it, administrators included), `true` (everyone may read it, logged-out visitors included), `'box-capability'` (only holders of this box's `capability` property, falling back to `manage_options`), or any other capability string such as `'edit_posts'` (only holders of the named capability). Default is `null`, which means CMB2's default policy: these reads are public today, but options-page boxes left unset will require the box capability in a future release. ([More info](/docs/REST-API-Read-Permissions))
+
+The same parameter may be set on an [individual field](/docs/Field-Parameters#rest-read-capability), where it takes precedence over the box's for reads of that field. The `cmb2_api_get_box_permissions_check`/`cmb2_api_get_field_permissions_check` filters still run afterward and have the final say.
+
+`'rest_read_capability' => 'box-capability',`
+<br>
+<br>
+<br>
+
 ### `remove_box_wrap`
 ____
 This parameter is for post [alternate-context metaboxes](#context) only. To output the fields 'naked' (without a postbox wrapper/style):
