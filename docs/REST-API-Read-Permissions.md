@@ -11,8 +11,24 @@ what's changing, who is affected, and what (if anything) you need to do.
 **What is CMB2?** CMB2 is a developer library used by many WordPress themes and
 plugins to create custom fields and settings screens. You may have never
 installed it directly — it often arrives bundled inside a theme or plugin you
-use. If you're seeing an admin notice that linked you here, something on your
-site uses CMB2.
+use.
+
+**Why am I seeing this notice?** The notice that linked you here only appears
+when *all* of the following are true:
+
+- You're logged into the WordPress admin with an administrator-level account —
+  one that can manage the site's settings.
+- Your site has at least one settings page built with CMB2 whose data is marked
+  as readable through the WordPress REST API.
+- That settings page still uses the original read behavior — the developer who
+  set it up hasn't switched on the new alignment with WordPress core conventions
+  yet.
+- Nobody has dismissed the notice yet. Dismissing it hides it permanently, for
+  every administrator on the site.
+
+If even one of those isn't true, the notice won't show up. It also goes away on
+its own once a developer enables the new behavior — you don't have to dismiss
+it.
 
 **What's changing?** WordPress core follows a simple convention: content data
 (like post fields) can be readable through the REST API, but **site settings**
