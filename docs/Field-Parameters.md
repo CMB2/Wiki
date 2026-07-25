@@ -3,6 +3,15 @@
 
 Most (if not all) fields support the parameters on this page. When a field type supports extra parameters, those parameters are [documented with the given field type](/docs/Field-Types). Also, please review the [example-functions.php](https://github.com/CMB2/CMB2/blob/master/example-functions.php) file for examples/demonstration.
 
+### Parameters that fall back to box properties
+____
+A few parameters exist as both a field parameter and a [box property](/docs/Box-Properties). Entries below marked with an asterisk (\*) cascade: leave the parameter off the field and CMB2 uses the box's value for it, then its own default. Setting it on the field overrides the box for that field alone.
+
+The parameters which cascade this way are [`show_in_rest`](#show-in-rest) and [`rest_read_capability`](#rest-read-capability).
+<br>
+<br>
+<br>
+
 ### `name`
 ____
 The field label
@@ -707,6 +716,30 @@ ____
 If false, will prevent a field from saving into the database. Default is `true`.
 
 `'save_field' => false,`
+<br>
+<br>
+<br>
+
+### `show_in_rest`
+____
+_\* [Falls back to the box property](#parameters-that-fall-back-to-box-properties) when unset._
+
+Determines if/how this field is available in the [REST API](/docs/REST-API), overriding the box's `show_in_rest` for this field. Set it to `false` to keep the field out of the REST API entirely, even when its box is exposed.
+
+`'show_in_rest' => WP_REST_Server::READABLE, // or WP_REST_Server::ALLMETHODS/WP_REST_Server::EDITABLE`
+<br>
+<br>
+<br>
+
+### `rest_read_capability`
+____
+_(since 2.12.0)_
+
+_\* [Falls back to the box property](#parameters-that-fall-back-to-box-properties) when unset._
+
+Declares who may read this field's value through the REST API, overriding the box's `rest_read_capability` for this field. Accepts `false` (no one may read it, administrators included), `true` (everyone may read it, logged-out visitors included), `'box-capability'` (only holders of the box's `capability` property, falling back to `manage_options`), or any other capability string such as `'edit_posts'` (only holders of the named capability). A field the current user may not read is also left out of the fields-collection listing, not just refused when requested directly. ([More info](/docs/REST-API-Read-Permissions))
+
+`'rest_read_capability' => 'box-capability',`
 <br>
 <br>
 <br>
