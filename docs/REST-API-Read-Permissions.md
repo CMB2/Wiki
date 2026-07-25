@@ -63,11 +63,11 @@ forward, boxes whose `object_types` include `options-page` will have REST
 `manage_options` while object *meta* reads remain public
 (`WP_REST_Meta_Fields::get_value()` performs no capability check).
 
-Alongside the staged default change, boxes can now declare their own read
-requirement with the **`rest_read_capability`** registration property. That
-property is the primary per-box interface — it takes precedence over the staged
-default, and it's the recommended way to state intent (see
-[below](#the-rest-read-capability-box-property)).
+Alongside the staged default change, a box — or a single field on it — can now
+declare its own read requirement with the **`rest_read_capability`** property.
+That property is the primary interface: it takes precedence over the staged
+default entirely, and it's the recommended way to state intent (see
+[below](#the-rest-read-capability-property)).
 
 Scope notes:
 
@@ -89,10 +89,10 @@ public reads were the period-correct convention for REST-exposed data. Core
 subsequently established a different convention for settings specifically, and
 this change brings CMB2 in line with it.
 
-### The `rest_read_capability` box property
+### The `rest_read_capability` property
 
-Set `rest_read_capability` in the box registration array to declare, per box,
-what reading its REST data requires. No filters involved:
+Set `rest_read_capability` in the box registration array to declare what reading
+that box's REST data requires. No filters involved:
 
 ```php
 $cmb = new_cmb2_box( array(
@@ -103,30 +103,72 @@ $cmb = new_cmb2_box( array(
 	'capability'   => 'manage_options',
 	'show_in_rest' => WP_REST_Server::READABLE,
 
-	'rest_read_capability' => true, // Gate reads by this box's `capability`.
+	'rest_read_capability' => 'box-capability', // Gate reads by this box's `capability`.
 ) );
 ```
 
-Accepted values:
+Recognized values:
 
-| Value | Effect |
+| Value | Who may read |
 | --- | --- |
-| *unset* (default) | Historical behavior today. Options-page reads become capability-gated when the default flips in a future release. |
-| `true` | Gate reads by the box's own `capability` property (defaults to `manage_options`), starting immediately. |
-| a capability string, e.g. `'edit_posts'` | Gate reads by that capability, starting immediately. |
-| `'exist'` | Everyone — reads stay public, before and after the default change. |
-
-`'exist'` is the capability WordPress grants every visitor unconditionally, so
-declaring it says "anyone may read" in the same vocabulary as any other
-capability — no special-case value needed.
+| `false` | Nobody. REST reads are disabled for everyone, administrators included (it maps to core's `do_not_allow`). |
+| `true` | Everyone, logged in or not — an alias for core's `exist` capability, which WordPress grants every visitor. |
+| `'box-capability'` | Holders of the box's own `capability` property (falling back to `manage_options`). A reserved sentinel rather than a real capability: it's the spelling that doesn't duplicate a value living elsewhere, so use it when you don't want to repeat — or don't know — the box's capability. |
+| any other non-empty string, e.g. `'edit_posts'` | Holders of that capability. |
+| *unset* (default) | CMB2's default policy — see [Which setting do I want?](#which-setting-do-i-want) for what that means today and later. |
 
 Two things worth knowing:
 
 - It applies to **any** box with a readable `show_in_rest`, not just
-  options-pages — post, user, term, and comment boxes can be gated this way too.
+  options-pages — post, user, term, and comment boxes can be declared this way too.
 - The `cmb2_api_get_box_permissions_check` and
   `cmb2_api_get_field_permissions_check` filters still run last and have final
   say, so a runtime filter can override whatever a registration declares.
+
+#### Per-field declarations
+
+`rest_read_capability` is also a [field parameter](/docs/Field-Parameters), and
+it cascades exactly the way `show_in_rest` does: the field's own value wins, then
+the box's, then CMB2's default policy. The recognized values are identical.
+
+```php
+$cmb->add_field( array(
+	'name' => 'License Key',
+	'id'   => 'license_key',
+	'type' => 'text',
+
+	// Just this field is gated; the rest of the box keeps the box's setting.
+	'rest_read_capability' => 'box-capability',
+) );
+```
+
+A field the current user may not read is also **left out of the fields-collection
+listing** — it isn't merely refused on a direct request to that field.
+
+### Which setting do I want?
+
+Four intents, four settings:
+
+**"Only privileged users should read this."** → `'box-capability'`, or name a
+capability outright such as `'edit_posts'`. Prefer `'box-capability'` when the
+alternative is repeating the box's own `capability` value, which can drift.
+
+**"Reads should keep working publicly, exactly as they do today — permanently."**
+→ `true`. This is a standing declaration: the future default change leaves the
+box alone.
+
+**"REST reads should be off entirely."** → `false`. Nobody reads this box's data
+through the REST API — administrators included.
+
+**"I'll follow CMB2's default."** → leave it unset. Concretely, that means:
+
+- **Today:** these reads are public. Anyone who can reach the site's REST API can
+  read the values.
+- **In a future release:** options-page boxes left unset will require the box's
+  capability in order to be read. Any anonymous integration reading those
+  settings **will stop working at that update** — that's the change to plan for.
+- **Non-options-page boxes** (post, user, term, comment) left unset stay public,
+  with no change planned.
 
 ### Adopting the new behavior early (recommended)
 
@@ -135,7 +177,7 @@ you own the registration code:
 
 ```php
 // In the box registration array — either of:
-'rest_read_capability' => true,             // Gate by the box's own `capability`.
+'rest_read_capability' => 'box-capability', // Gate by the box's own `capability`.
 'rest_read_capability' => 'manage_options', // Or name the capability outright.
 ```
 
@@ -164,15 +206,16 @@ $cmb = new_cmb2_box( array(
 	'option_key'   => 'public_display_settings',
 	'show_in_rest' => WP_REST_Server::READABLE,
 
-	'rest_read_capability' => 'exist', // Everyone; reads stay public.
+	'rest_read_capability' => true, // Everyone; reads stay public.
 ) );
 ```
 
 Before opting a box out, consider whether every field on it is truly fit for
 anonymous consumption — options pages often accumulate values (API keys,
 license keys, email addresses) that were never meant to be world-readable.
-Where only some fields are public, prefer moving those to their own box or
-exposing them via a purpose-built endpoint.
+Where only some fields are public, you can keep the box public and gate the
+exceptions individually with a
+[per-field declaration](#per-field-declarations).
 
 #### If you cannot edit the box registration
 
@@ -204,7 +247,8 @@ add_filter( 'cmb2_rest_enforce_options_page_read_permissions', '__return_false' 
 ```
 
 This preserves the historical behavior for every options-page box on the site
-whose registration doesn't say otherwise — **a per-box `rest_read_capability`
+whose registration doesn't say otherwise — **a `rest_read_capability`
 declaration always wins over this filter**, so a box registered with
-`'rest_read_capability' => true` stays gated regardless. It exists as a
-transition aid; prefer declaring `rest_read_capability` per box.
+`'rest_read_capability' => 'box-capability'` stays gated regardless, and one
+declaring `false` stays closed. It exists as a transition aid; prefer declaring
+`rest_read_capability` per box.
