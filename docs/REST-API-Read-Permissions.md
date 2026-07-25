@@ -112,9 +112,13 @@ Accepted values:
 | Value | Effect |
 | --- | --- |
 | *unset* (default) | Historical behavior today. Options-page reads become capability-gated when the default flips in a future release. |
-| `false` | Reads stay public, explicitly — and this declaration **survives** the future default change, so the box is never re-gated. |
 | `true` | Gate reads by the box's own `capability` property (defaults to `manage_options`), starting immediately. |
 | a capability string, e.g. `'edit_posts'` | Gate reads by that capability, starting immediately. |
+| `'exist'` | Everyone — reads stay public, before and after the default change. |
+
+`'exist'` is the capability WordPress grants every visitor unconditionally, so
+declaring it says "anyone may read" in the same vocabulary as any other
+capability — no special-case value needed.
 
 Two things worth knowing:
 
@@ -160,7 +164,7 @@ $cmb = new_cmb2_box( array(
 	'option_key'   => 'public_display_settings',
 	'show_in_rest' => WP_REST_Server::READABLE,
 
-	'rest_read_capability' => false, // Reads stay public.
+	'rest_read_capability' => 'exist', // Everyone; reads stay public.
 ) );
 ```
 
