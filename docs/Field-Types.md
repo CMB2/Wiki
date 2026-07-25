@@ -1,7 +1,3 @@
----
-outline: [2, 3]
----
-
 # Field Types
 
 Here's the built-in fields you can include in your metabox. You can also [add your own field types](/docs/Adding-your-own-field-types).

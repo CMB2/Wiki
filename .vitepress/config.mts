@@ -48,6 +48,11 @@ export default defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+
+    // "On this page" lists h2 + h3 (VitePress defaults to h2 only). Most docs
+    // pages nest field/option details one level down, so h3s belong in the TOC.
+    outline: [2, 3],
+
     nav: [
       { text: 'Docs', link: '/docs/Home', activeMatch: '/docs/' },
       { text: 'Changelog', link: '/changelog' },
