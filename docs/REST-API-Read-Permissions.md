@@ -3,8 +3,6 @@
 CMB2 is changing how its REST API handles **read** access to **options-page**
 boxes and fields, to match WordPress core conventions.
 
----
-
 ## For site owners (non-technical)
 
 **What is CMB2?** A developer library many themes and plugins use to build
@@ -25,14 +23,13 @@ else you installed.
 It also disappears on its own once a developer enables the new behavior.
 
 **What's changing, and what should I do?** Core lets content like post fields be
-read publicly but restricts **site settings** to administrators. CMB2 has allowed
-anyone to read options-page values exposed to the REST API; a future release will
-require the permission needed to view that settings screen. For almost all sites
-nothing changes — settings screens keep working, and only direct REST API reads
-are affected. If a custom front-end reads your settings, send this page to your
-developer.
-
----
+read publicly but restricts **site settings** to administrators. Where a
+developer has deliberately opted a CMB2 settings page into the REST API — which
+is off by default, so most settings pages aren't in the API at all — CMB2 has
+allowed anyone to read its values; a future release will require the permission
+needed to view that settings screen. For almost all sites nothing changes —
+settings screens keep working, and only direct REST API reads are affected. If a
+custom front-end reads your settings, send this page to your developer.
 
 ## For developers
 
