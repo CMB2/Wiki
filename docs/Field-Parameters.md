@@ -733,7 +733,7 @@ Determines if/how this field is available in the [REST API](/docs/REST-API), ove
 
 ### `rest_read_capability`
 ____
-_(since 2.12.0)_
+_(since 2.13.0)_
 
 _\* [Falls back to the box property](#parameters-that-fall-back-to-box-properties) when unset._
 

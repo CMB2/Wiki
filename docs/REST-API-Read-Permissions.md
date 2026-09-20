@@ -41,9 +41,10 @@ will have **reads** gated by the box's `capability` (default `manage_options`) �
 matching core, where
 `WP_REST_Settings_Controller::get_item_permissions_check()` requires
 `manage_options` while object *meta* reads stay public. Writes and deletes are
-unchanged. The change ships opt-in first, with an admin notice naming affected
-registrations, then default-on. A box — or a single field on it — can override
-all of it with the **`rest_read_capability`** property below.
+unchanged. The change ships opt-in in 2.13.0, with an admin notice naming
+affected registrations, and becomes the default in a later release. A box — or a
+single field on it — can override all of it with the
+**`rest_read_capability`** property below.
 
 ### Why now — a bit of history
 
