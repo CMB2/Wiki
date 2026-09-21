@@ -243,7 +243,7 @@ Determines if/how fields/metabox are available in the REST API. Default is `fals
 
 ### `rest_read_capability`
 ____
-_(since 2.13.0)_
+_(since [2.13.0](https://github.com/CMB2/CMB2/releases/tag/v2.13.0))_
 
 Declares who may read this box's data through the REST API, and is only applicable when `show_in_rest` is readable. Accepts `false` (no one may read it, administrators included), `true` (everyone may read it, logged-out visitors included), `'box-capability'` (only holders of this box's `capability` property, falling back to `manage_options`), or any other capability string such as `'edit_posts'` (only holders of the named capability). Default is `null`, which means CMB2's default policy: these reads are public today, but options-page boxes left unset will require the box capability in a future release. ([More info](/docs/REST-API-Read-Permissions))
 
